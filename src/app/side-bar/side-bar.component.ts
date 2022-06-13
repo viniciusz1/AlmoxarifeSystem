@@ -22,8 +22,7 @@ import { state, style, trigger, transition, animate} from '@angular/animations';
     trigger('letras', [
       state('aberto', style({
         'width': '210px',
-        'text-align': 'left',
-        transform: 'translateX(100px)'
+        'text-align': 'left'
       })),
       state('fechado', style({
         'width': '60px'
@@ -48,15 +47,7 @@ export class SideBarComponent implements OnInit {
     }else{
       this.state = "fechado"
     }
-    let estado = this.state;
-
-    setTimeout(function(){      
-      if(estado == "fechado"){
-        estado = "aberto"
-      }else{
-        estado = "fechado"
-      }
-    },400)
+    console.log(this.state)
   }
   
   ngOnInit(): void {
