@@ -1,1 +1,30 @@
-<p>side-bar works!</p>
+<div [@teste]="state" class="border d-flex flex-column
+ flex-shrink-0 p-3 bg-light " style="height: 91vh;" (mouseenter)="changeStatus()"
+    (mouseleave)="changeStatus()">
+    <div class="mb-3">
+        <i class="bi bi-alarm-fill icons-size"></i>
+        <span [@letras]="state" *ngIf="state == 'aberto'" class="margin-icons">
+            Histórico
+        </span>
+    </div>
+    <div class="mb-3">
+        <i class="bi bi-calculator-fill icons-size mb-3"></i>
+        <div style="width: 500px">
+            <span [@letras]="state"  *ngIf="state == 'aberto'" class="margin-icons">
+                Devolver entregas
+            </span>
+        </div>
+        
+    </div>
+    <div class="mb-3 ">
+        <i class="bi bi-cart icons-size mb-3"></i>
+        <span [@letras]="state" *ngIf="state == 'aberto'" class="margin-icons">
+            Realizar entregas
+        </span>
+    </div>
+    <div class="mb-3">
+        <i class="bi bi-lightning-charge icons-size mb-3"></i>
+        <span [@letras]="state" *ngIf="state == 'aberto'" class="margin-icons">
+            Salve Time
+        </span>
+    </div>
