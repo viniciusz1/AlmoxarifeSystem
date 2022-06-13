@@ -9,7 +9,7 @@ import { state, style, trigger, transition, animate} from '@angular/animations';
   animations: [
     trigger('teste', [
       state('aberto', style({
-        'width': '210px',
+        'width': '230px',
         'text-align': 'left'
       })),
       state('fechado', style({
@@ -19,18 +19,6 @@ import { state, style, trigger, transition, animate} from '@angular/animations';
         animate('100ms')
       ]),
     ]),
-    trigger('letras', [
-      state('aberto', style({
-        'width': '210px',
-        'text-align': 'left'
-      })),
-      state('fechado', style({
-        'width': '60px'
-      })),
-      transition('fechado => aberto', [
-        animate('2000ms')
-      ]),
-    ])
   ]
 })
 export class SideBarComponent implements OnInit {

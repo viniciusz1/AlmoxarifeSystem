@@ -7,6 +7,7 @@ import { LoginModule } from './login/login.module';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { SideBarComponent } from './side-bar/side-bar.component';
       }
     ]),
     FormsModule,
-    LoginModule
+    LoginModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
