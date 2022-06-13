@@ -34,9 +34,10 @@ export class SideBarComponent implements OnInit {
       this.state = "aberto"
       setTimeout(() => {
         this.stateTxt= "aberto";
-      }, 200)
+      }, 85)
     }else{
       this.state = "fechado"
+      this.stateTxt = "fechado"
     }
     console.log(this.state)
   }
