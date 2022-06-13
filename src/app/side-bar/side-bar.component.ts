@@ -32,6 +32,9 @@ export class SideBarComponent implements OnInit {
   changeStatus(){
     if(this.state == "fechado"){
       this.state = "aberto"
+      setTimeout(() => {
+        this.stateTxt= "aberto";
+      }, 200)
     }else{
       this.state = "fechado"
     }
