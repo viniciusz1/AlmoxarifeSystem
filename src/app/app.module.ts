@@ -5,10 +5,14 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { LoginModule } from './login/login.module';
 import { HomeComponent } from './home/home.component';
+import { NavComponent } from './nav/nav.component';
+import { SideBarComponent } from './side-bar/side-bar.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavComponent,
+    SideBarComponent
   ],
   imports: [
     BrowserModule,
