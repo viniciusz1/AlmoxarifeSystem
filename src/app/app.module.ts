@@ -12,7 +12,8 @@ import { SideBarComponent } from './side-bar/side-bar.component';
   declarations: [
     AppComponent,
     NavComponent,
-    SideBarComponent
+    SideBarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
