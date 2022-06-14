@@ -1,9 +1,22 @@
 .icons-size{
     font-size: 23px;
 }
+.cursor{
+    cursor: pointer;
+}
 .margin-icons{
     margin-left: 15px;
+    align-self: center;
 }
 .center{
-    padding: 5px
+    padding: 2px;
+    margin-bottom: 10px;
+}
+.cor-azul{
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+.cor-azul:hover{
+    background-color: #0047B5;
+    color: white;
 }
