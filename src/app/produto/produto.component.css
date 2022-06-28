@@ -12,9 +12,11 @@
     bottom: 0;
     right: 0;
 }
-itens-retangulo{
-    
+.itens-retangulo{
+    padding-left: 50px;
+
 }
+
 .card{
     height: 8rem;
     
