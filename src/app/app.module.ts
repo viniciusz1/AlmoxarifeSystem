@@ -8,6 +8,7 @@ import { NavComponent } from './nav/nav.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PerfilComponent } from './perfil/perfil.component';
+import { ModalSenhaComponent } from './modal-senha/modal-senha.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { PerfilComponent } from './perfil/perfil.component';
     NavComponent,
     SideBarComponent,
     HomeComponent,
-    PerfilComponent
+    PerfilComponent,
+    ModalSenhaComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +30,11 @@ import { PerfilComponent } from './perfil/perfil.component';
       {
         path: 'perfil',
         component: PerfilComponent,
+        canActivate: []
+      },
+      {
+        path: 'redefinirsenha',
+        component: ModalSenhaComponent,
         canActivate: []
       }
     ]),
