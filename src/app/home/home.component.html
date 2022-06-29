@@ -1,6 +1,6 @@
 <app-nav></app-nav>
 <div class="d-flex bg-light">
-    <app-side-bar class="position-fixed"></app-side-bar>
+    <app-side-bar class="position-fixed" style="z-index: 999;"></app-side-bar>
     <div class="margin-fixed"></div>
     <div class="container">
         <div class="row mt-5">
@@ -18,10 +18,9 @@
         
         <div class="container-fluid">
             <div class="row">
-                <app-produto class="col-xl-4 col-md-6" *ngFor="let lista of lista"></app-produto>
+                <app-produto class="col-xl-4 index col-md-6" *ngFor="let lista of lista"></app-produto>
             </div>
         </div>
-        <app-modal-filtro></app-modal-filtro>
-
     </div>
+    <!-- <app-modal-filtro class="fundo opacity-75"></app-modal-filtro> -->
 </div>

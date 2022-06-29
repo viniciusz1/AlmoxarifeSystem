@@ -11,6 +11,16 @@
     outline: 0;
     margin-left: 5px;
 }
+
+.fundo{
+    position: fixed;
+    background-color: black;
+    opacity: 10px;
+    width: 100vw;
+    height: 100vh;
+    right: 0;
+    top: 0;
+}
 .filtrar-mais{
     background-color: blue;
     margin-left: 50px;
