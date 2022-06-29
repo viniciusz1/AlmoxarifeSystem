@@ -8,6 +8,7 @@ import { NavComponent } from './nav/nav.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProdutoComponent } from './produto/produto.component';
+import { ModalFiltroComponent } from './modal-filtro/modal-filtro.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ProdutoComponent } from './produto/produto.component';
     NavComponent,
     SideBarComponent,
     HomeComponent,
-    ProdutoComponent
+    ProdutoComponent,
+    ModalFiltroComponent
   ],
   imports: [
     BrowserModule,
