@@ -5,3 +5,11 @@
 .linha{
     width: 20%;
 }
+.input-input{
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+}
+.div-input{
+    border-bottom: 1px black solid;
+}

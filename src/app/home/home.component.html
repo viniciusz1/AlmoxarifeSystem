@@ -1,14 +1,15 @@
 <app-nav></app-nav>
 <div class="d-flex bg-light">
     <app-side-bar class="position-fixed"></app-side-bar>
-    
     <div class="margin-fixed"></div>
     <div class="container">
         <div class="row mt-5">
-            <p class="h3 col-3">Home</p>
-    
-            <div class="filtro offset-5 col-4">
-                <input type="text">
+            <p class="h3 col-3">Home</p>    
+            <div class="filtro d-flex offset-5 col-4">
+                <div class="div-input">
+                    <i class="bi bi-search"></i>
+                    <input type="text" class="input-input">
+                </div>
                 <button class="btn btn-primary">Filtrar mais</button>
                 <i class="bi bi-cart4"></i>
             </div>
@@ -17,7 +18,7 @@
         
         <div class="container-fluid">
             <div class="row">
-                <app-produto class="col-4"></app-produto>
+                <app-produto class="col-4" *ngFor="let lista of lista"></app-produto>
             </div>
         </div>
 
