@@ -1,0 +1,106 @@
+img{
+    border-radius: 50%;
+    border: 2px solid black;
+    width: 200px;
+    height: 200px;
+}
+
+.imagem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.perfil{
+    font-size: calc(1.3rem + .6vw);
+    text-decoration: underline;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.container{
+    display: flex;
+    column-gap: 100px;
+    border: 1px solid black;
+    padding: 30px;
+    width: 100%;
+}
+
+.esquerda{
+    justify-content: center;
+    align-items: center;
+    margin-left: 3vw;
+}
+
+.direita{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botao{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+body{
+    display: grid;
+    justify-content: center;
+    /* align-items: center; */
+    width: 100vw;
+}
+
+
+button{
+    background-color: #0047B5;
+    border: transparent;
+    color: white; 
+    margin: 10px;
+    height: 5vh;
+    width: 20vw;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+
+.span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nome{
+    font-weight: bold;
+    font-size: 30px;
+    padding: 10px;
+}
+
+.control{
+    display: block;
+    width: 25vw;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    margin-bottom: 20px;
+}
+
+.cargo{
+
+}
+
+.prof{
+    
+}
