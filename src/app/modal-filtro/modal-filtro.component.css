@@ -1,0 +1,13 @@
+.fundo{
+    background-color: black;
+    width: 100%;
+    height: 100%;
+}
+.quadrado-modal{
+    position: absolute;
+    top: 15%;
+    left: 27%;
+    background-color: white;
+    height: 70%;
+    width: 40%;
+}
