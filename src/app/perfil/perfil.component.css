@@ -1,8 +1,11 @@
-img{
+i{
     border-radius: 50%;
     border: 2px solid black;
     width: 200px;
     height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .imagem{
@@ -24,6 +27,7 @@ img{
     border: 1px solid black;
     padding: 30px;
     width: 100%;
+    position: relative;
 }
 
 .esquerda{
@@ -94,13 +98,18 @@ button{
     appearance: none;
     border-radius: 0.25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .cargo{
-
-}
-
-.prof{
-    
+ position: absolute;
+ top: 0;
+ right: 0;
+ background-color: #0047B5;
+ color: white;
+ font-size: 24px;
+ padding-top: 5px ;
+ padding-bottom: 5px;
+ padding-left: 7vw;
+ padding-right: 7vw;
 }
