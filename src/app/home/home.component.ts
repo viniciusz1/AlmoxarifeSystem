@@ -22,13 +22,13 @@ export class HomeComponent implements OnInit {
       item3: "4232131",
     },
     {
-      titulo: "sadoifjpasod",
+      titulo: "sadfsdfsdafasdfsadfaoifjpasod",
       item1: "1342421",
       item2: "432423441",
       item3: "4232131",
     },
     {
-      titulo: "sadoifjpasod",
+      titulo: "sadoifjpsdçnjlsdçfnjsdçknlfsdçfnuosdçfnksdafnjkasod",
       item1: "1342421",
       item2: "432423441",
       item3: "4232131",
