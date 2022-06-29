@@ -2,3 +2,34 @@
     width: 60px;
     height: 91vh;
 }
+.linha{
+    width: 20%;
+}
+.input-input{
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+    margin-left: 5px;
+}
+
+.fundo{
+    position: fixed;
+    opacity: 10px;
+    width: 100vw;
+    height: 100vh;
+    right: 0;
+    top: 0;
+}
+.filtrar-mais{
+    background-color: blue;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.div-input{
+    border-bottom: 1px black solid;
+    align-items: flex-end;
+    justify-content: center;
+}
+.carrinho{
+    font-size: 25px
+}

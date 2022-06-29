@@ -16,6 +16,9 @@
     border: 1px solid transparent;
     border-radius: 5px;
 }
+.index{
+    z-index: 1;
+}
 .cor-azul:hover{
     background-color: #0047B5;
     color: white;
