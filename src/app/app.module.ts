@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PerfilComponent } from './perfil/perfil.component';
 import { ProdutoComponent } from './produto/produto.component';
 import { ModalFiltroComponent } from './modal-filtro/modal-filtro.component';
 
@@ -25,6 +26,11 @@ import { ModalFiltroComponent } from './modal-filtro/modal-filtro.component';
       {
         path: '',
         component: HomeComponent,
+        canActivate: []
+      },
+      {
+        path: 'perfil',
+        component: PerfilComponent,
         canActivate: []
       }
     ]),
