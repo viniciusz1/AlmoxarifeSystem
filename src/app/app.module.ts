@@ -8,7 +8,8 @@ import { NavComponent } from './nav/nav.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PerfilComponent } from './perfil/perfil.component';
-import { ModalSenhaComponent } from './modal-senha/modal-senha.component';
+import { ProdutoComponent } from './produto/produto.component';
+import { ModalFiltroComponent } from './modal-filtro/modal-filtro.component';
 
 @NgModule({
   declarations: [
@@ -16,8 +17,8 @@ import { ModalSenhaComponent } from './modal-senha/modal-senha.component';
     NavComponent,
     SideBarComponent,
     HomeComponent,
-    PerfilComponent,
-    ModalSenhaComponent
+    ProdutoComponent,
+    ModalFiltroComponent
   ],
   imports: [
     BrowserModule,
@@ -30,11 +31,6 @@ import { ModalSenhaComponent } from './modal-senha/modal-senha.component';
       {
         path: 'perfil',
         component: PerfilComponent,
-        canActivate: []
-      },
-      {
-        path: 'redefinirsenha',
-        component: ModalSenhaComponent,
         canActivate: []
       }
     ]),

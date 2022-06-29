@@ -1,8 +1,8 @@
-<div [@teste]="state" class="border d-flex flex-column
- flex-shrink-0 p-3 bg-light" style="height: 91vh;" 
+<div [@teste]="state" class="index border d-flex flex-column
+ flex-shrink-0 p-3 bg-light position-relative" style="height: 91vh;" 
  (mouseenter)="changeStatus()" (mouseleave)="changeStatus()">
 
-    <div class="center cor-azul cursor">
+    <div class="index center cor-azul cursor">
         <i class="bi bi-alarm-fill icons-size"></i>
         <span  *ngIf="stateTxt == 'aberto'" class="margin-icons">
             Histórico
