@@ -4,7 +4,7 @@ body {
 }
 
 .centro {
-    height: 550px;
+    height: 500px;
     width: 500px;
     background-color: white;
 }
@@ -22,7 +22,7 @@ body {
 
 .logo {
     position: absolute;
-    margin: 42px 10px 10px 92px;
+    margin: 45px 10px 10px 40px;
 }
 
 .ladoInput {
@@ -51,4 +51,18 @@ input {
     height: 40px;
     border-radius: 2px;
     border-color: transparent;
+}
+
+.botaoBranco {
+    background-color: white;
+    color: #0047B5;
+    border: 1px solid #0047B5;
+}
+
+.numTel {
+    border: 1px solid rgba(15, 15, 15, 0.137);
+    width: 50px;
+    height: 30px;
+    font-size: 18px;
+    margin-left: 10px;
 }

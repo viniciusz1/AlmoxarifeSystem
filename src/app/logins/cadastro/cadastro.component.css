@@ -22,7 +22,7 @@ body {
 
 .logo {
     position: absolute;
-    margin: 42px 10px 10px 92px;
+    margin: 35px 10px 10px 40px;
 }
 
 .ladoInput {
@@ -47,8 +47,14 @@ input {
 }
 
 .botao {
-    width: 170px;
+    width: 160px;
     height: 40px;
     border-radius: 2px;
     border-color: transparent;
+}
+
+.botaoBranco {
+    background-color: white;
+    color: #0047B5;
+    border: 1px solid #0047B5;
 }

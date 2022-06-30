@@ -9,6 +9,9 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginsModule } from './logins/logins.module';
 import { LoginComponent } from './logins/login/login.component';
+import { CadastroComponent } from './logins/cadastro/cadastro.component';
+import { TelefoneComponent } from './logins/telefone/telefone.component';
+import { VerificarTelComponent } from './logins/verificar-tel/verificar-tel.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,21 @@ import { LoginComponent } from './logins/login/login.component';
       {
         path: 'login',
         component: LoginComponent,
+        canActivate: []
+      },
+      {
+        path: 'cadastro',
+        component: CadastroComponent,
+        canActivate: []
+      },
+      {
+        path: 'cadastro/telefone',
+        component: TelefoneComponent,
+        canActivate: []
+      },
+      {
+        path: 'cadastro/telefone/verificar',
+        component: VerificarTelComponent,
         canActivate: []
       }
     ]),
