@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { state, style, trigger, transition, animate} from '@angular/animations';
 
 @Component({
@@ -8,7 +8,7 @@ import { state, style, trigger, transition, animate} from '@angular/animations';
   animations: [
     trigger('teste', [
       state('aberto', style({
-        'width': '230px',
+        'width': '300px',
         'text-align': 'left'
       })),
       state('fechado', style({
@@ -21,10 +21,12 @@ import { state, style, trigger, transition, animate} from '@angular/animations';
   ]
 })
 export class CarrinhoComponent implements OnInit {
+  @Output() fechaCarrinho = new EventEmitter<boolean>();
+  clicouModal(){
+    this.fechaCarrinho.emit(false)
+  }
 
-
-
-  @Input('state') state = "fechado";
+  @Input('state') state = "aberto";
   stateTxt= "fechado";
 
   changeStatus(){

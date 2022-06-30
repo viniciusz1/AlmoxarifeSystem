@@ -13,10 +13,14 @@ export class HomeComponent implements OnInit {
     this.modal = !this.modal
   }
   openCart(){
-    this.state = "aberto"
+    this.carState = "aberto"
+    console.log(this.state)
   }
   state = "fechado";
-
+  carState = "aberto";
+  closeCart(param: boolean | Event){
+    this.carState = "fechado"
+  }
   lista = [
     {
       titulo: "sadoifjpasod",

@@ -26,7 +26,7 @@
             </div>
         </div>
     </div>
-    <app-carrinho [state]="state" class="position-fixed bg-primary carrinho-side"></app-carrinho>
+    <app-carrinho (fechaCarrinho)="closeCart($event)" [state]="carState" class="position-fixed bg-primary carrinho-side"></app-carrinho>
     <app-modal-filtro (fechaModal)="modalOpen($event)" *ngIf="modal" style="z-index: 2;" class="fundo">
     </app-modal-filtro>
 </div>
