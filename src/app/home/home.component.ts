@@ -8,6 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   constructor() { }
+  modal = true;
+  modalOpen(arg: boolean | Event) {
+    this.modal = !this.modal
+  }
+
+
   lista = [
     {
       titulo: "sadoifjpasod",
