@@ -19,16 +19,11 @@ export class VerificarTelComponent implements OnInit {
 // }, 3000);
   
 fim = 30;
-max = 0;
 repeat(){
-  if (--this.fim < 0) return;
-  setTimeout(() => {
-    console.log("waited for: " +  + " seconds");
+  if (this.fim < 0) return
+  setInterval(() => {
+    this.fim --;
   }, 1000);
-  if(this.fim > 0){ 
-    this.repeat()
-  }
-  
 };
 
 
