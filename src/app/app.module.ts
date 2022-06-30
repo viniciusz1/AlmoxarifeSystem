@@ -10,6 +10,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PerfilComponent } from './perfil/perfil.component';
 import { ProdutoComponent } from './produto/produto.component';
 import { ModalFiltroComponent } from './modal-filtro/modal-filtro.component';
+import { ModalSenhaComponent } from './modal-senha/modal-senha.component';
+import { HistoricoComponent } from './historico/historico.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,10 @@ import { ModalFiltroComponent } from './modal-filtro/modal-filtro.component';
     SideBarComponent,
     HomeComponent,
     ProdutoComponent,
-    ModalFiltroComponent
+    ModalFiltroComponent,
+    ModalSenhaComponent,
+    PerfilComponent,
+    HistoricoComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +36,11 @@ import { ModalFiltroComponent } from './modal-filtro/modal-filtro.component';
       {
         path: 'perfil',
         component: PerfilComponent,
+        canActivate: []
+      },
+      {
+        path: 'historico',
+        component: HistoricoComponent,
         canActivate: []
       }
     ]),

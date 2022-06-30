@@ -1,0 +1,71 @@
+.pg{
+    font-size: calc(1.3rem + .6vw);
+    text-decoration: underline;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+.topo{
+    display: flex;
+}
+
+
+
+
+.duas-div{
+    display: grid;
+}
+
+.div-cima{
+    background-color: #0047B5;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    padding: 10px 0px 10px 20px;
+    border-bottom: 1px solid black;
+}
+
+.container{
+    border: 1px solid black;
+    padding: 0px;
+}
+
+p{
+    margin: 0px;
+}
+
+.div-baixo{
+}
+
+.bold{
+    font-weight: 700;
+}
+
+i{
+    margin: 10px;
+}
+
+.baixo{
+    display: flex;
+    column-gap: 30%;
+}
+
+.footer{
+    display: flex;
+    column-gap: 60%;
+    padding: 10px;
+    font-weight: 500;
+}
+
+.datas{
+    display: flex;
+}
+
+.dataRetirada, .dataDevolucao, nome{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
