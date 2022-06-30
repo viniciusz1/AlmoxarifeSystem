@@ -23,3 +23,11 @@
     background-color: #0047B5;
     color: white;
 }
+.adicionar{
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+
+}

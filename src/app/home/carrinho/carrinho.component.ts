@@ -1,5 +1,7 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { state, style, trigger, transition, animate} from '@angular/animations';
+import { CarrinhoService } from 'src/app/services/carrinho.service';
+import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-carrinho',
@@ -8,7 +10,7 @@ import { state, style, trigger, transition, animate} from '@angular/animations';
   animations: [
     trigger('teste', [
       state('aberto', style({
-        'width': '300px',
+        'width': '32vw',
         'text-align': 'left'
       })),
       state('fechado', style({
@@ -40,10 +42,13 @@ export class CarrinhoComponent implements OnInit {
       this.stateTxt = "fechado"
     }
   }
+  listaItens:{} = [];
 
-  constructor() { }
+  constructor(private car: CarrinhoService) { 
+  }
 
   ngOnInit(): void {
+    this.listaItens = this.car.getLista();
   }
 
 }
