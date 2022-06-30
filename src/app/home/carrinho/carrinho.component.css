@@ -31,3 +31,8 @@
     flex-direction: column;
 
 }
+.DivWithScroll{
+    height:70%;
+    overflow:scroll;
+    overflow-x:hidden;
+}
