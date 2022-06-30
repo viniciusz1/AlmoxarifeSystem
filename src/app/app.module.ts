@@ -9,7 +9,8 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PerfilComponent } from './perfil/perfil.component';
 import { ProdutoComponent } from './produto/produto.component';
-import { ModalFiltroComponent } from './modal-filtro/modal-filtro.component';
+import { ModalFiltroComponent } from './home/modal-filtro/modal-filtro.component';
+import { CarrinhoComponent } from './home/carrinho/carrinho.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,9 @@ import { ModalFiltroComponent } from './modal-filtro/modal-filtro.component';
     SideBarComponent,
     HomeComponent,
     ProdutoComponent,
-    ModalFiltroComponent
+    PerfilComponent,
+    ModalFiltroComponent,
+    CarrinhoComponent
   ],
   imports: [
     BrowserModule,
