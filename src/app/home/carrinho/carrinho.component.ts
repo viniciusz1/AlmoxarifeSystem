@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { state, style, trigger, transition, animate} from '@angular/animations';
 
 @Component({
@@ -24,7 +24,7 @@ export class CarrinhoComponent implements OnInit {
 
 
 
-  state = "fechado";
+  @Input('state') state = "fechado";
   stateTxt= "fechado";
 
   changeStatus(){

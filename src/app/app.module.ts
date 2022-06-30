@@ -10,7 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PerfilComponent } from './perfil/perfil.component';
 import { ProdutoComponent } from './produto/produto.component';
 import { ModalFiltroComponent } from './home/modal-filtro/modal-filtro.component';
-import { CarrinhoComponent } from './carrinho/carrinho.component';
+import { CarrinhoComponent } from './home/carrinho/carrinho.component';
 
 @NgModule({
   declarations: [

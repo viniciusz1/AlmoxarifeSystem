@@ -8,11 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   constructor() { }
-  modal = true;
+  modal = false;
   modalOpen(arg: boolean | Event) {
     this.modal = !this.modal
   }
-
+  openCart(){
+    this.state = "aberto"
+  }
+  state = "fechado";
 
   lista = [
     {

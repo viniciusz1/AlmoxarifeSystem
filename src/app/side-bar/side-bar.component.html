@@ -2,6 +2,25 @@
  flex-shrink-0 p-3 bg-light position-relative" style="height: 91vh;" 
  (mouseenter)="changeStatus()" (mouseleave)="changeStatus()">
 
-    
+    <div class="index center cor-azul cursor">
+        <i class="bi bi-alarm-fill icons-size"></i>
+        <span  *ngIf="stateTxt == 'aberto'" class="margin-icons">
+            Histórico
+        </span>
+    </div>
+
+    <div class="center cor-azul cursor">
+        <i class="bi bi-calculator-fill icons-size"></i>
+        <span *ngIf="stateTxt == 'aberto'" class="margin-icons">
+            Devolver
+        </span>
+    </div>
+
+    <div class="center cor-azul cursor">
+        <i class="bi bi-cart icons-size"></i>
+        <span  *ngIf="stateTxt == 'aberto'" class="margin-icons">
+            Realizar entregas
+        </span>
+    </div>
 
 </div>
