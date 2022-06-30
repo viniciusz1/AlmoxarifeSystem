@@ -24,6 +24,7 @@ import { ThisReceiver } from '@angular/compiler';
 })
 export class CarrinhoComponent implements OnInit {
   @Output() fechaCarrinho = new EventEmitter<boolean>();
+  @Output() reserva = new EventEmitter<boolean>();
   clicouModal(){
     this.fechaCarrinho.emit(false)
   }
@@ -43,7 +44,9 @@ export class CarrinhoComponent implements OnInit {
     }
   }
   listaItens:{} = [];
-
+  abreReserva(){
+    this.reserva.emit(false)
+  }
   constructor(private car: CarrinhoService) { 
   }
 
