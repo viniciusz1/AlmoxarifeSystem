@@ -10,7 +10,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private car: CarrinhoService) { }
   modal = false;
-  modalReserva: boolean = false;
+  modalReserva: boolean = true;
   state = "fechado";
   carState = "aberto";
 
