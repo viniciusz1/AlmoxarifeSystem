@@ -11,6 +11,8 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { ProdutoComponent } from './produto/produto.component';
 import { ModalFiltroComponent } from './home/modal-filtro/modal-filtro.component';
 import { CarrinhoComponent } from './home/carrinho/carrinho.component';
+import { CarrinhoService } from './services/carrinho.service';
+import { ReservaComponent } from './home/reserva/reserva.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { CarrinhoComponent } from './home/carrinho/carrinho.component';
     ProdutoComponent,
     PerfilComponent,
     ModalFiltroComponent,
-    CarrinhoComponent
+    CarrinhoComponent,
+    ReservaComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,7 @@ import { CarrinhoComponent } from './home/carrinho/carrinho.component';
     FormsModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [CarrinhoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

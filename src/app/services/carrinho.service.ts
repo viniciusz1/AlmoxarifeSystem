@@ -1,42 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { CarrinhoService } from '../services/carrinho.service';
+import { Injectable } from '@angular/core';
 
-@Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+@Injectable({
+  providedIn: 'root'
 })
-export class HomeComponent implements OnInit {
+export class CarrinhoService {
 
-  constructor(private car: CarrinhoService) { }
-  modal = false;
-  modalReserva: boolean = false;
-  state = "fechado";
-  carState = "aberto";
-
-  mudarModalReserva(arg: boolean | Event){
-    this.modalReserva = !this.modalReserva;
-  }
   
-  modalOpen(arg: boolean | Event) {
-    this.modal = !this.modal
-  }
-  openCart(){
-    this.carState = "aberto"
-    console.log(this.state)
-  }
-  closeCart(param: boolean | Event){
-    this.carState = "fechado"
-  }
-  
-
-  ngOnInit(): void {
-  }
-
 
   lista = [
     {
-      titulo: "sadoifjpasod",
+      titulo: "sadoif",
       item1: "1342421",
       item2: "432423441",
       item3: "4232131",
@@ -48,13 +21,13 @@ export class HomeComponent implements OnInit {
       item3: "4232131",
     },
     {
-      titulo: "sadfsdfsdafasdfsadfaoifjpasod",
+      titulo: "sadfsdfsda",
       item1: "1342421",
       item2: "432423441",
       item3: "4232131",
     },
     {
-      titulo: "sadoifjpsdçnjlsdçfnjsdçknlfsdçfnuosdçfnksdafnjkasod",
+      titulo: "sadoifjpsdçn",
       item1: "1342421",
       item2: "432423441",
       item3: "4232131",
@@ -90,6 +63,9 @@ export class HomeComponent implements OnInit {
       item3: "4232131",
     },
    ]
-  
 
+   getLista(){
+      return this.lista
+   }
+  constructor() { }
 }
