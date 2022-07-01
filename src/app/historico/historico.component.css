@@ -8,10 +8,9 @@
 
 .topo{
     display: flex;
+    width: 80vw;
+    column-gap: 20%;
 }
-
-
-
 
 .duas-div{
     display: grid;
@@ -31,13 +30,11 @@
 .container{
     border: 1px solid black;
     padding: 0px;
+    width: 80vw;
 }
 
 p{
     margin: 0px;
-}
-
-.div-baixo{
 }
 
 .bold{
@@ -45,27 +42,90 @@ p{
 }
 
 i{
-    margin: 10px;
+    margin: 10px 10px 10px 0px;
 }
 
 .baixo{
     display: flex;
-    column-gap: 30%;
+    column-gap: 45%;
+    width: 100%;
 }
 
 .footer{
     display: flex;
-    column-gap: 60%;
+    column-gap: 65%;
     padding: 10px;
     font-weight: 500;
 }
 
 .datas{
     display: flex;
+    column-gap: 10px;
 }
 
-.dataRetirada, .dataDevolucao, nome{
+.dataRetirada, .dataDevolucao, .nome{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.nome, .produtos{
+    margin-left: 10px;
+}
+
+.topo-2{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 50vw;
+    column-gap: 15px;
+}
+
+.pesquisa{
+    border-bottom: 0.5px solid black;
+}
+
+input{
+    border: transparent;
+    outline: none;
+}
+
+::-webkit-input-placeholder {
+    color: black;
+ }
+
+.icone{
+    color: white;
+}
+
+.ordenar, .filtrar{
+    background-color: #0047B5;
+    border: 1px solid black;
+    padding: 5px 10px;
+}
+
+.filtross{
+    border: none;
+    background-color: transparent;
+    color: white;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+  }
+
+  .body{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+
+  body{
+    display: grid;
+    justify-content: center;
+    /* align-items: center; */
+    width: 150vw;
 }

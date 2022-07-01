@@ -1,0 +1,121 @@
+.pg {
+    font-size: calc(1.3rem + .6vw);
+    text-decoration: underline;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+.topo {
+    display: flex;
+    width: 80vw;
+    column-gap: 20%;
+}
+
+.duas-div {
+    display: grid;
+    border: solid 1px black;
+    padding: 0px;
+}
+
+.div-cima {
+    background-color: #0047B5;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    padding: 10px 0px 10px 20px;
+    border-bottom: 1px solid black;
+    column-gap: 16vw;
+}
+
+p {
+    margin: 0px;
+}
+
+.bold {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+i {
+    margin: 0px 10px 0px 0px;
+}
+
+.baixo {
+    display: flex;
+    margin-left: 10px;
+}
+
+.footer {
+    display: flex;
+    padding: 10px;
+    font-weight: 500;
+    font-size: 15px;
+    column-gap: 12vw;
+    display: flex;
+    align-items: center;
+}
+
+.datas {
+    display: flex;
+    column-gap: 7vw;
+}
+
+.dataRetirada,
+.dataDevolucao,
+.nome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nome,
+.produtos,
+.div-baixo,
+.footer {
+    margin-left: 10px;
+}
+
+.topo-2 {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 50vw;
+    column-gap: 15px;
+}
+
+.pesquisa {
+    border-bottom: 0.5px solid black;
+}
+
+body {
+    display: grid;
+    justify-content: center;
+    /* align-items: center; */
+    width: 150vw;
+}
+
+.info{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.produtos,
+.baixo{
+    margin-top: 5px;
+}
+
+.cancelar{
+    background-color: #E82D2D;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+button{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: white;
+}

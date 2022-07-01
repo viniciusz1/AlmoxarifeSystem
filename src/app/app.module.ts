@@ -12,6 +12,8 @@ import { ProdutoComponent } from './produto/produto.component';
 import { ModalFiltroComponent } from './modal-filtro/modal-filtro.component';
 import { ModalSenhaComponent } from './modal-senha/modal-senha.component';
 import { HistoricoComponent } from './historico/historico.component';
+import { PedidosComponent } from './pedidos/pedidos.component';
+import { EntregasComponent } from './entregas/entregas.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { HistoricoComponent } from './historico/historico.component';
     ModalFiltroComponent,
     ModalSenhaComponent,
     PerfilComponent,
-    HistoricoComponent
+    HistoricoComponent,
+    PedidosComponent,
+    EntregasComponent
   ],
   imports: [
     BrowserModule,
@@ -39,9 +43,9 @@ import { HistoricoComponent } from './historico/historico.component';
         canActivate: []
       },
       {
-        path: 'historico',
-        component: HistoricoComponent,
-        canActivate: []
+        path: 'entregas',
+        component: EntregasComponent,
+        canActivate:[]
       }
     ]),
     FormsModule,
