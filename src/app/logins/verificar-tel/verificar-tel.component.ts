@@ -11,7 +11,7 @@ export class VerificarTelComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    
+    this.repeat();
   }
   
 //  setTimeout(()=>{                           //<<<---using ()=> syntax
@@ -21,9 +21,13 @@ export class VerificarTelComponent implements OnInit {
 fim = 30;
 repeat(){
   if (this.fim < 0) return
-  setInterval(() => {
+  var meuInterval = setInterval(() => {
     this.fim --;
+    if(this.fim <= 0){
+      clearInterval(meuInterval);
+    }
   }, 1000);
+  
 };
 
 

@@ -1,0 +1,28 @@
+body {
+    background-color: #cacaca;
+    box-shadow: inset 4px 4px 250px 10px #000;
+}
+
+.centro {
+    height: 550px;
+    width: 500px;
+    background-color: white;
+}
+
+.centralizar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.certo {
+    height: 280px;
+    width: 280px;
+    border-radius: 1000px;
+    background-color: #1F8D0E;
+}
+
+.icons {
+    font-size: 30px;
+    color: #0047B5;
+}

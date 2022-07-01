@@ -12,13 +12,19 @@ import { LoginComponent } from './logins/login/login.component';
 import { CadastroComponent } from './logins/cadastro/cadastro.component';
 import { TelefoneComponent } from './logins/telefone/telefone.component';
 import { VerificarTelComponent } from './logins/verificar-tel/verificar-tel.component';
+import { ConfirmarComponent } from './confirmar/confirmar.component';
+import { ModalPedidosComponent } from './modal-pedidos/modal-pedidos.component';
+import { ModalDevolucaoComponent } from './modal-devolucao/modal-devolucao.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     SideBarComponent,
-    HomeComponent
+    HomeComponent,
+    ConfirmarComponent,
+    ModalPedidosComponent,
+    ModalDevolucaoComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +52,21 @@ import { VerificarTelComponent } from './logins/verificar-tel/verificar-tel.comp
       {
         path: 'cadastro/telefone/verificar',
         component: VerificarTelComponent,
+        canActivate: []
+      },
+      {
+        path: 'confirmar',
+        component: ConfirmarComponent,
+        canActivate: []
+      },
+      {
+        path: 'modalPedidos',
+        component: ModalPedidosComponent,
+        canActivate: []
+      },
+      {
+        path: 'modalDevolucao',
+        component: ModalDevolucaoComponent,
         canActivate: []
       }
     ]),
