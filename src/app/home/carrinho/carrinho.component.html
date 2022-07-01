@@ -1,0 +1,49 @@
+<div *ngIf="state == 'aberto'" [@teste]="state" class="index border d-flex flex-column
+ flex-shrink-0 p-3 bg-light po" style="height: 91vh; width: 50vw;">
+ 
+
+ <div class="container">
+    <div class="row justify-content-end">
+        <div class="col-2">
+            <i (click)="clicouModal()" style="" class="bi bi-x-lg"></i>
+        </div>    
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-12 ">
+            <h5 class="d-flex justify-content-center">Carrinho da reserva</h5>
+            <hr>
+        </div>
+    </div>
+    <div class="row DivWithScroll"> 
+
+        <i class="bi bi-trash-fill col-1" style="align-self: center;"></i>
+        <app-produto class="col-9"></app-produto>
+        <div class="div col-2 adicionar" style="align-self: center;">
+            <i class="bi bi-plus-lg"></i>
+            <input type="text" class="form-control" style="width: 40px;">
+            <i class="bi bi-dash-lg"></i>
+        </div>
+
+        <i class="bi bi-trash-fill col-1" style="align-self: center;"></i>
+        <app-produto class="col-9"></app-produto>
+        <div class="div col-2 adicionar" style="align-self: center;">
+            <i class="bi bi-plus-lg"></i>
+            <input type="text" class="form-control" style="width: 40px;">
+            <i class="bi bi-dash-lg"></i>
+        </div>
+
+        <i class="bi bi-trash-fill col-1" style="align-self: center;"></i>
+        <app-produto class="col-9"></app-produto>
+        <div class="div col-2 adicionar" style="align-self: center;">
+            <i class="bi bi-plus-lg"></i>
+            <input type="text" class="form-control" style="width: 40px;">
+            <i class="bi bi-dash-lg"></i>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-5">
+        <button class="btn btn-primary w-50" (click)="abreReserva()">Realizar Pedido</button>
+    </div>
+ </div>
+
+
+</div>

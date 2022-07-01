@@ -15,6 +15,13 @@ import { VerificarTelComponent } from './logins/verificar-tel/verificar-tel.comp
 import { ConfirmarComponent } from './confirmar/confirmar.component';
 import { ModalPedidosComponent } from './modal-pedidos/modal-pedidos.component';
 import { ModalDevolucaoComponent } from './modal-devolucao/modal-devolucao.component';
+import { PerfilComponent } from './perfil/perfil.component';
+import { ProdutoComponent } from './produto/produto.component';
+import { ModalFiltroComponent } from './home/modal-filtro/modal-filtro.component';
+import { CarrinhoComponent } from './home/carrinho/carrinho.component';
+import { CarrinhoService } from './services/carrinho.service';
+import { ReservaComponent } from './home/reserva/reserva.component';
+
 
 @NgModule({
   declarations: [
@@ -25,6 +32,11 @@ import { ModalDevolucaoComponent } from './modal-devolucao/modal-devolucao.compo
     ConfirmarComponent,
     ModalPedidosComponent,
     ModalDevolucaoComponent
+    ProdutoComponent,
+    PerfilComponent,
+    ModalFiltroComponent,
+    CarrinhoComponent,
+    ReservaComponent
   ],
   imports: [
     BrowserModule,
@@ -68,13 +80,18 @@ import { ModalDevolucaoComponent } from './modal-devolucao/modal-devolucao.compo
         path: 'modalDevolucao',
         component: ModalDevolucaoComponent,
         canActivate: []
+      },
+      {
+        path: 'perfil',
+        component: PerfilComponent,
+        canActivate: []
       }
     ]),
     LoginsModule,
     FormsModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [CarrinhoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
