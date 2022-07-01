@@ -24,27 +24,5 @@
     </div>
     <app-carrinho (fechaCarrinho)="closeCart($event)" (reserva)="mudarModalReserva($event)" [state]="carState" class="position-fixed bg-primary carrinho-side"></app-carrinho>
     <app-modal-filtro (fechaModal)="modalOpen($event)" *ngIf="modal" style="z-index: 2;" class="fundo"></app-modal-filtro>
-    <app-reserva style="z-index: 2;" class="fundo" *ngIf="modalReserva"></app-reserva>
-
-
-
-<!-- // Reserva -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <app-reserva (fechaReserva)="mudarModalReserva($event)" style="z-index: 2;" class="fundo" *ngIf="modalReserva"></app-reserva>
 </div>

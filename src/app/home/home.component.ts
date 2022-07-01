@@ -16,7 +16,6 @@ export class HomeComponent implements OnInit {
 
   mudarModalReserva(arg: boolean | Event){
     this.modalReserva = !this.modalReserva;
-    console.log(this.modalReserva);
   }
   
   modalOpen(arg: boolean | Event) {

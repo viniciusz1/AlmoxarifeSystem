@@ -7,7 +7,9 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class ReservaComponent implements OnInit {
   @Output() fechaReserva = new EventEmitter<boolean>();
-  
+  fecharReserva(){
+    this.fechaReserva.emit(false)
+  }
   constructor() { }
 
   ngOnInit(): void {
