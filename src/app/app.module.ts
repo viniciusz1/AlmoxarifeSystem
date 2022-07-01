@@ -45,6 +45,11 @@ import { DetalhesProdutoComponent } from './detalhes-produto/detalhes-produto.co
         path: 'detalhes-produto',
         component: DetalhesProdutoComponent,
         canActivate: []
+      },
+      {  
+        path: 'sidebar',
+        component: SideBarComponent,
+        canActivate: []
       }
       ]),
     FormsModule,
