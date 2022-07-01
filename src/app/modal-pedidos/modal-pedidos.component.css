@@ -1,0 +1,35 @@
+body {
+    background-color: #cacaca;
+    box-shadow: inset 4px 4px 250px 10px #000;
+}
+
+.centro {
+    height: 500px;
+    width: 500px;
+    background-color: white;
+}
+
+.centralizar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icons {
+    font-size: 30px;
+    color: #0047B5;
+}
+
+.topo {
+    background-color: #0047B5;
+    width: 500px;
+    height: 50px;
+    color: white;
+}
+
+.tabelinha {
+    border: 1px solid black;
+    height: 80px;
+    width: 400px;
+    box-shadow: 4px 4px 10px 4px rgba(0, 0, 0, 0.171);
+}

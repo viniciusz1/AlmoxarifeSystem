@@ -1,0 +1,29 @@
+body {
+    background-color: #cacaca;
+    box-shadow: inset 4px 4px 250px 10px #000;
+}
+
+.centro {
+    height: 500px;
+    width: 550px;
+    background-color: white;
+}
+
+.centralizar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icons {
+    font-size: 30px;
+    color: #0047B5;
+}
+
+.botao {
+    width: 150px;
+    height: 50px;
+    border-radius: 2px;
+    border-color: transparent;
+    font-size: 15px;
+}

@@ -1,0 +1,68 @@
+body {
+    background-color: #0047B5;
+    box-shadow: inset 4px 4px 250px 10px #000;
+}
+
+.centro {
+    height: 500px;
+    width: 500px;
+    background-color: white;
+}
+
+.centralizar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.textAl {
+    color: #0047B5;
+    font-size: 30px;
+}
+
+.logo {
+    position: absolute;
+    margin: 45px 10px 10px 40px;
+}
+
+.ladoInput {
+    border: 1px solid black;
+    border-right: 0px;
+}
+
+.inputs {
+    border: 1px solid black;
+    border-left: 0px;
+    width: 280px;
+    height: 50px;
+}
+
+.icons {
+    font-size: 30px;
+    color: #0047B5;
+}
+
+input {
+    outline: none;
+}
+
+.botao {
+    width: 170px;
+    height: 40px;
+    border-radius: 2px;
+    border-color: transparent;
+}
+
+.botaoBranco {
+    background-color: white;
+    color: #0047B5;
+    border: 1px solid #0047B5;
+}
+
+.numTel {
+    border: 1px solid rgba(15, 15, 15, 0.137);
+    width: 50px;
+    height: 30px;
+    font-size: 18px;
+    margin-left: 10px;
+}
