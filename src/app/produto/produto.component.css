@@ -1,27 +1,34 @@
 .imagem{
     position:absolute;
     left: 0;
-    width: 100px;
-    height: 100px;
+    top: 0;
+    width: 90px;
+    height: 90px;
     border-radius: 500px 
 }
 .bloco{
     height: 8rem;
+    /* border: 1px solid black; */
+    align-items: flex-end;
+    justify-content: right;
+}
+.list{
+    list-style: none;
 }
 .sombra{
     box-shadow: 2px 2px 5px 1px;
 }
 .retangulo{
-    position: absolute;
-    width: 88%;
-    height: 100px;
+    padding-left: 60px;
+    /* position: absolute;
     bottom: 0;
-    right: 0;
-}
-.itens-retangulo{
-    margin-left: 24%;
+    right: 0; 
 
+    */
+    height: 100px;
+    width: 90%;
 }
+
 .caixa{
     align-self: flex-end;
 }

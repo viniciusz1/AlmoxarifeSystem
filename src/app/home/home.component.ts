@@ -10,9 +10,9 @@ export class HomeComponent implements OnInit {
 
   constructor(private car: CarrinhoService) { }
   modal = false;
-  modalReserva: boolean = true;
+  modalReserva: boolean = false;
   state = "fechado";
-  carState = "aberto";
+  carState = "fechado";
 
   mudarModalReserva(arg: boolean | Event){
     this.modalReserva = !this.modalReserva;
