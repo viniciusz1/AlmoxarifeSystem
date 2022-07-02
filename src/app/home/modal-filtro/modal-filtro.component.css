@@ -1,0 +1,21 @@
+.fundo{
+    background-color: black;
+    width: 100%;
+    height: 100%;
+}
+.fonte{
+    font-size: 85%;
+}
+
+.quadrado-modal{
+    position: absolute;
+    top: 15%;
+    left: 27%;
+    background-color: white;
+    height: 70%;
+    width: 40%;
+    padding: 17px 50px 50px 67px;
+}
+.titulo{
+    margin: 7%;
+}
