@@ -62,6 +62,7 @@ i {
 
 .datas {
     display: flex;
+    
     column-gap: 18vw;
 }
 
