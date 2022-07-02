@@ -22,6 +22,7 @@ import { CarrinhoComponent } from './home/carrinho/carrinho.component';
 import { CarrinhoService } from './services/carrinho.service';
 import { ReservaComponent } from './home/reserva/reserva.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
