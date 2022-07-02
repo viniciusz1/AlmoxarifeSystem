@@ -8,7 +8,7 @@ import { NavComponent } from './nav/nav.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PerfilComponent } from './perfil/perfil.component';
-import { ProdutoComponent } from './produto/produto.component';
+import { ProdutoComponent } from './home/produto/produto.component';
 import { ModalFiltroComponent } from './home/modal-filtro/modal-filtro.component';
 import { CarrinhoComponent } from './home/carrinho/carrinho.component';
 import { CarrinhoService } from './services/carrinho.service';

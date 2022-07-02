@@ -12,14 +12,14 @@
                 </div>
                 <button class="btn filtrar-mais text-light" (click)="modalOpen(false)">Filtrar mais <i
                         class="bi bi-chevron-double-down"></i></button>
-                <i class="bi bi-cart4 carrinho" (c lick)="openCart()"></i>
+                <i class="bi bi-cart4 carrinho" (click)="openCart()"></i>
             </div>
         </div>
         <hr class="linha">
         <div class="container-fluid">
             <div class="row">
                 <app-produto class="col-xl-4 index col-md-6"
-                [infoProduto]="lista"
+                
                 *ngFor="let lista of lista"></app-produto>
             </div>
         </div>

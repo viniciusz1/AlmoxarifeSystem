@@ -3,14 +3,15 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class CarrinhoService {
+export class ProdutosService {
 
-  
+  lista:{}[] = []
 
-  lista = []
-
-   getLista(){
+   getListaProdutos(){
       return this.lista
+   }
+   addProduto(produto: {}){
+    this.lista.push(produto)
    }
   constructor() { }
 }
