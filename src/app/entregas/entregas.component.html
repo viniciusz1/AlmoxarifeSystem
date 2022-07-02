@@ -1,12 +1,15 @@
-<app-nav></app-nav>
+<app-nav style=""></app-nav>
 
 <div class="d-flex bg-light">
     <app-side-bar class="position-fixed"></app-side-bar>
 
     <body>
         <div class="topo">
-            <div class="pg">
+            <div class="pg" *ngIf="this.contador == 1">
                 <span>Realizar Entregas_______</span>
+            </div>
+            <div class="pg" *ngIf="this.contador == 2">
+                <span>Realizar Devoluções_______</span>
             </div>
         </div>
 
@@ -32,23 +35,27 @@
                     <span>Data</span>
                 </div>
             </div>
-            <div class="lista">
+            <div class="lista shadow" *ngFor="let lista of lista">
                 <div class="pedido">
-                    <span>001</span>
+                    <span>{{lista.pedido}}</span>
                 </div>
                 <div class="professor">
-                    <span>Carlinhos</span>
+                    <span>{{lista.Professor}}</span>
                 </div>
-                <div class="d-inline-block text-truncate produtos">
-                    <span>Resistor 1k Ohms, Resistor 10k Ohms, Resistor 10k Ohms, Resistor 10k
-                        Ohms, Resistor 10k
-                        Ohms...</span>
+                <div class="central">
+                    <div class="d-inline-block text-truncate">
+                        <span>{{lista.Produtos}}</span>
+                    </div>
                 </div>
+
                 <div class="data">
-                    <span>DD/MM/AAAA</span>
+                    <span>{{lista.Data}}</span>
                 </div>
-                <div class="botao">
+                <div class="botao" *ngIf="this.contador == 1">
                     <button>Realizar Entrega</button>
+                </div>
+                <div class="botao" *ngIf="this.contador == 2">
+                    <button>Devolver</button>
                 </div>
             </div>
 

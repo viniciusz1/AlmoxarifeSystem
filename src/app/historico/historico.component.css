@@ -31,6 +31,7 @@
     border: 1px solid black;
     padding: 0px;
     width: 80vw;
+    margin-bottom: 15px;
 }
 
 p{
@@ -47,13 +48,13 @@ i{
 
 .baixo{
     display: flex;
-    column-gap: 45%;
+    column-gap: 50vw;
     width: 100%;
 }
 
 .footer{
     display: flex;
-    column-gap: 65%;
+    column-gap: 58vw;
     padding: 10px;
     font-weight: 500;
 }

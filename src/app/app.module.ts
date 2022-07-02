@@ -44,7 +44,7 @@ import { EntregasComponent } from './entregas/entregas.component';
       },
       {
         path: 'entregas',
-        component: EntregasComponent,
+        component: PedidosComponent,
         canActivate:[]
       }
     ]),

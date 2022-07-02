@@ -36,35 +36,33 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container" *ngFor="let lista of lista">
         <div class="duas-div">
             <div class="div-cima">
-                <p>Código Pedido: ###</p>
+                <p>Código Pedido: {{lista.pedido}}</p>
             </div>
             <div class="div-baixo">
                 <div class="Cima">
                     <div class="d-inline-block text-truncate produtos">
                         <i style="font-size: 30px;" class="bi bi-box2-fill"></i>
-                        <span class="bold">Resistor 1k Ohms, Resistor 10k Ohms, Resistor 10k Ohms, Resistor 10k
-                            Ohms, Resistor 10k
-                            Ohms...</span>
+                        <span class="bold">{{lista.Produtos}}</span>
                     </div>
                 </div>
                 <div class="baixo">
                     <div>
                         <div class="nome">
                             <i style="font-size: 30px;" class="bi bi-person"></i>
-                            <span class="bold">Carlinhos Rech</span>
+                            <span class="bold">{{lista.Professor}}</span>
                         </div>
                     </div>
                     <div class="datas">
                         <div class="dataRetirada">
                             <i style="font-size: 30px;" class="bi bi-calendar2-plus"></i>
-                            <span class="bold">DD/MM/AAAA</span>
+                            <span class="bold">{{lista.Data}}</span>
                         </div>
                         <div class="dataDevolucao">
                             <i style="font-size: 30px;" class="bi bi-calendar2-check"></i>
-                            <span class="bold">DD/MM/AAAA</span>
+                            <span class="bold">{{lista.DataDev}}</span>
                         </div>
                     </div>
 
@@ -72,7 +70,7 @@
             </div>
             <div class="footer">
                 <div class="status">
-                    <span>Status: Finalizado</span>
+                    <span>Status: {{lista.status}}</span>
                 </div>
                 <div class="info">
                     <span>Mais Informações...</span>

@@ -45,7 +45,7 @@ input{
 .indice, .lista{
     margin-top: 20px;
     display: flex;
-    column-gap: 10px;
+    column-gap: 15px;
 }
 
 .professor{
@@ -74,6 +74,7 @@ input{
     width: 40vw;
     display: flex;
     align-items: center;
+    text-align: center;
 }
 
 button{
@@ -83,11 +84,25 @@ button{
     color: white;
     border-radius: 5px;
     width: 12vw;
-    padding: 10px 20px;
+    padding: 10px 15px;
+    margin: 10px;
 }
 
-.d-inline-block.text-truncate.produtos{
+.divprodutos{
+    width: 40vw;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+}
+
+.central{
+    width: 35vw;
+    margin-right: 5vw;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+
+

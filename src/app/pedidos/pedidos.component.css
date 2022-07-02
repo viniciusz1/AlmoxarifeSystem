@@ -16,6 +16,9 @@
     display: grid;
     border: solid 1px black;
     padding: 0px;
+    width: auto;
+    height: auto;
+    margin-bottom: 15px;
 }
 
 .div-cima {
@@ -27,7 +30,7 @@
     align-items: center;
     padding: 10px 0px 10px 20px;
     border-bottom: 1px solid black;
-    column-gap: 16vw;
+    column-gap: 22vw;
 }
 
 p {
@@ -45,7 +48,6 @@ i {
 
 .baixo {
     display: flex;
-    margin-left: 10px;
 }
 
 .footer {
@@ -53,14 +55,14 @@ i {
     padding: 10px;
     font-weight: 500;
     font-size: 15px;
-    column-gap: 12vw;
+    column-gap: 18vw;
     display: flex;
     align-items: center;
 }
 
 .datas {
     display: flex;
-    column-gap: 7vw;
+    column-gap: 18vw;
 }
 
 .dataRetirada,
@@ -90,11 +92,11 @@ i {
     border-bottom: 0.5px solid black;
 }
 
-body {
-    display: grid;
+.body {
+    display: flex;
     justify-content: center;
     /* align-items: center; */
-    width: 150vw;
+    width: 80vw;
 }
 
 .info{
@@ -119,3 +121,9 @@ button{
     border: none;
     color: white;
 }
+
+.principais{
+    display: grid;
+}
+
+
