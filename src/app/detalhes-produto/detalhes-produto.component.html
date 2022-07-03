@@ -1,80 +1,53 @@
-<app-nav></app-nav>
-<div class="d-flex bg-light">
-    <app-side-bar class="position-fixed" style="z-index: 1 ;"></app-side-bar>
-    <div class="margin-fixed"></div>
-    <div class="container-fluid">
-        <p class="h3 col-3">Detalhes</p>
-        <hr>
-        <div class="quadrado container">
-            <form (ngSubmit)="onSubmit(f)" #f="ngForm" action="">
-                <div class="row">
-                    <div class="col-6">
-                        <div class="div-imagem">
-                            <img class="img-fluid imagem"
-                                src="https://cdn.domtotal.com/img/noticias/2018-05/1263018_361876.jpg" alt="">
-                        </div>
-                        <div class="row">
-                            <div class="mt-2 padding-input">
-                                <label for="">Opcao de uso</label>
-                                <select
-                                ngModel
-                                name="uso"
-                                class="form-control" id="uso">
-                            <option value="Descartavel">Descartavel</option>
-                            <option value="Não Descartavel">Não Descartavel</option>
+<div class="container-fluid">
+    <p class="h3 col-3">Detalhes</p>
+    <hr>
+    <div class="quadrado container">
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm" action="">
+            <div class="row">
+                <div class="col-6">
+                    <div class="div-imagem">
+                        <img class="img-fluid imagem"
+                            src="https://cdn.domtotal.com/img/noticias/2018-05/1263018_361876.jpg" alt="">
+                    </div>
+                    <div class="row">
+                        <div class="mt-2 padding-input">
+                            <label for="">Opcao de uso</label>
+                            <select ngModel name="uso" class="form-control" id="uso">
+                                <option value="Descartavel">Descartavel</option>
+                                <option value="Não Descartavel">Não Descartavel</option>
                             </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="row input-group mb-3 padding-input">
-                            <label for="">Nome do produto</label>
-                            <input
-                            name="nome"
-                            ngModel
-                            #nome="ngModel"
-                            class="form-control" type="text">
-                        </div>
-                        <div class="row input-group mb-3 padding-input">
-                            <label for="">Quantide em estoque</label>
-                            <input 
-                            name="quantidade"
-                            ngModel
-                            #quantidade="ngModel"
-                            class="form-control" type="text">
-                        </div>
-                        <div class="row input-group mb-3 padding-input">
-                            <label for="">Classificação</label>
-                            <input 
-                            name="classificacao"
-                            ngModel
-                            #classificacao="ngModel"
-                            class="form-control" type="text">
-                        </div>
-                        <div class="row input-group mb-3 padding-input">
-                            <label for="">Localidade</label>
-                            <input 
-                            name="localidade"
-                            ngModel
-                            #localidade="ngModel"
-                            class="form-control" type="text">
                         </div>
                     </div>
                 </div>
-                <div class="row mb-5">
-                    <div class="padding-select">
-                        <label for="exampleFormControlTextarea1" class="">Descrição</label>
-                        <textarea 
-                        name="descricacao"
-                        ngModel
-                        #descricacao="ngModel"
-                        class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <div class="col-6">
+                    <div class="row input-group mb-3 padding-input">
+                        <label for="">Nome do produto</label>
+                        <input name="nome" ngModel #nome="ngModel" class="form-control" type="text">
+                    </div>
+                    <div class="row input-group mb-3 padding-input">
+                        <label for="">Quantide em estoque</label>
+                        <input name="quantidade" ngModel #quantidade="ngModel" class="form-control" type="text">
+                    </div>
+                    <div class="row input-group mb-3 padding-input">
+                        <label for="">Classificação</label>
+                        <input name="classificacao" ngModel #classificacao="ngModel" class="form-control" type="text">
+                    </div>
+                    <div class="row input-group mb-3 padding-input">
+                        <label for="">Localidade</label>
+                        <input name="localidade" ngModel #localidade="ngModel" class="form-control" type="text">
                     </div>
                 </div>
-                <div class="m-5"style="display: flex; justify-content: end;">
-                    <button (click)="onSubmit" class="btn btn-primary">Cadastrar Produto</button>
+            </div>
+            <div class="row mb-5">
+                <div class="padding-select">
+                    <label for="exampleFormControlTextarea1" class="">Descrição</label>
+                    <textarea name="descricacao" ngModel #descricacao="ngModel" class="form-control"
+                        id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
-            </form>
-        </div>
+            </div>
+            <div class="m-5" style="display: flex; justify-content: end;">
+                <button (click)="onSubmit" class="btn btn-primary">Cadastrar Produto</button>
+            </div>
+        </form>
     </div>
 </div>

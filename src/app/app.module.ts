@@ -1,7 +1,7 @@
+import { RotasModule } from './rotas.module';
 import { ProdutosService } from 'src/app/services/produtos.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
@@ -15,6 +15,7 @@ import { CarrinhoComponent } from './home/carrinho/carrinho.component';
 import { CarrinhoService } from './services/carrinho.service';
 import { ReservaComponent } from './home/reserva/reserva.component';
 import { DetalhesProdutoComponent } from './detalhes-produto/detalhes-produto.component';
+import { PosLoginComponent } from './pos-login/pos-login.component';
 
 @NgModule({
   declarations: [
@@ -27,34 +28,14 @@ import { DetalhesProdutoComponent } from './detalhes-produto/detalhes-produto.co
     ModalFiltroComponent,
     CarrinhoComponent,
     ReservaComponent,
-    DetalhesProdutoComponent
+    DetalhesProdutoComponent,
+    PosLoginComponent
   ],
   imports: [
-    BrowserModule,
-    RouterModule.forRoot([
-      {
-        path: '',
-        component: HomeComponent,
-        canActivate: []
-      },
-      {
-        path: 'perfil',
-        component: PerfilComponent,
-        canActivate: []
-      },
-      {  
-        path: 'detalhes-produto',
-        component: DetalhesProdutoComponent,
-        canActivate: []
-      },
-      {  
-        path: 'sidebar',
-        component: SideBarComponent,
-        canActivate: []
-      }
-      ]),
+    BrowserModule,   
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RotasModule
   ],
   providers: [CarrinhoService, ProdutosService],
   bootstrap: [AppComponent]
