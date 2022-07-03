@@ -9,6 +9,6 @@ export class Produto {
     this.item1 = item1;
     this.item2 = item2;
     this.item3 = item3
-
   }
+  
   }

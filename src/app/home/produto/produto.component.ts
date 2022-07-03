@@ -6,10 +6,12 @@ import { Produto } from 'src/app/shared/produto.model';
   styleUrls: ['./produto.component.css']
 })
 export class ProdutoComponent implements OnInit {
-  @Input() itensProduto: Produto;
+  @Input() produto: Produto = new Produto("1", "2","3","5");
+
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.produto)
   }
 
 }
