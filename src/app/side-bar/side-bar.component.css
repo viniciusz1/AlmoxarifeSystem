@@ -12,6 +12,13 @@
     padding: 2px;
     margin-bottom: 10px;
 }
+.user{
+    display: flex;
+    flex-direction: column;
+    height:100%;
+    align-items: center;
+    justify-content: end;
+}
 .cor-azul{
     border: 1px solid transparent;
     border-radius: 5px;

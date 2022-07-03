@@ -1,0 +1,40 @@
+.quadrado{
+    width: 900px;
+    height: 500px;
+    padding: 2%;
+}
+.margin-fixed{
+    width: 60px;
+    height: 91vh;
+}
+
+label{
+    padding: 0;
+}
+form{
+    margin-left: 28px;
+    margin-top: 15px;
+}
+.padding-input{
+    padding: 0 50px 0px 50px;
+}
+.padding-select{
+    padding: 0 72px 0px 50px;
+}
+input{
+    /* max-width: 70%; */
+}
+textarea{
+    max-width: 100%;
+}
+input, textarea, select{
+    border: 0.5px solid black
+}
+.div-imagem{
+    padding-left: 50px;
+}
+.imagem{
+    width: 235px;
+    height: 235px;
+    border-radius: 500px;
+}
