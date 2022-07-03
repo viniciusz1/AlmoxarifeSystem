@@ -24,13 +24,13 @@ import { Produto } from 'src/app/shared/produto.model';
 export class CarrinhoComponent implements OnInit {
   @Output() fechaCarrinho = new EventEmitter<boolean>();
   @Output() reserva = new EventEmitter<boolean>();
+  @Input('state') state = "aberto";
+  stateTxt= "fechado";
+  listaCarrinho:Produto[] = [];
+
   clicouModal(){
     this.fechaCarrinho.emit(false)
   }
-
-  @Input('state') state = "aberto";
-  stateTxt= "fechado";
-
   changeStatus(){
     if(this.state == "fechado"){
       this.state = "aberto"
@@ -41,14 +41,13 @@ export class CarrinhoComponent implements OnInit {
       this.state = "fechado"
       this.stateTxt = "fechado"
     }
-  }
-  
+  }  
   abreReserva(){
     this.reserva.emit(false)
   }
   constructor(private car: CarrinhoService) { 
   }
-  listaCarrinho:Produto[] = [];
+
   lixo(i:number){
     this.car.removeLista(i)
   }

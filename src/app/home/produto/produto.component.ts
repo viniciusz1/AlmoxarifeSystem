@@ -11,7 +11,6 @@ export class ProdutoComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.produto)
   }
 
 }

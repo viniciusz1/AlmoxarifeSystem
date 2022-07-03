@@ -1,3 +1,4 @@
+import { ProdutosService } from 'src/app/services/produtos.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
@@ -55,7 +56,7 @@ import { DetalhesProdutoComponent } from './detalhes-produto/detalhes-produto.co
     FormsModule,
     BrowserAnimationsModule
   ],
-  providers: [CarrinhoService],
+  providers: [CarrinhoService, ProdutosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -14,7 +14,7 @@
                 <hr>
             </div>
         </div>
-        <div class="row DivWithScroll">
+        <div *ngIf="listaCarrinho " class="row DivWithScroll">
             <div *ngFor="let produto of listaCarrinho; let i = index" class="d-flex justify-content-center align-items-center">
                 <i (click)="lixo(i)" class="bi bi-trash-fill col-1" style="align-self: center;"></i>
                 <app-produto [produto]="produto" class="col-9"></app-produto>
