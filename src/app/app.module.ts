@@ -43,7 +43,7 @@ import { PosLoginComponent } from './pos-login/pos-login.component';
     DetalhesProdutoComponent,
     PosLoginComponent
   ],
-  imports: [
+  imports: [ 
     BrowserModule,
     LoginsModule,
     FormsModule,
