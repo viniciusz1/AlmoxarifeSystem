@@ -1,3 +1,5 @@
+import { Produto } from './../shared/produto.model';
+import { ProdutosService } from './../services/produtos.service';
 import { Component, OnInit } from '@angular/core';
 import { CarrinhoService } from '../services/carrinho.service';
 
@@ -7,17 +9,16 @@ import { CarrinhoService } from '../services/carrinho.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  constructor(private car: CarrinhoService) { }
+  constructor(private car: CarrinhoService, private prod: ProdutosService) { }
   modal = false;
   modalReserva: boolean = false;
   state = "fechado";
   carState = "fechado";
+  lista: Produto[] =  [];
 
   mudarModalReserva(arg: boolean | Event){
     this.modalReserva = !this.modalReserva;
   }
-  
   modalOpen(arg: boolean | Event) {
     this.modal = !this.modal
   }
@@ -29,67 +30,8 @@ export class HomeComponent implements OnInit {
     this.carState = "fechado"
   }
   
-
-  ngOnInit(): void {
+  ngOnInit(): void {  
+    this.lista = this.prod.getListaProdutos()  
+    console.log(this.lista)
   }
-
-
-  lista = [
-    {
-      titulo: "sadoifjpasod",
-      item1: "1342421",
-      item2: "432423441",
-      item3: "4232131",
-    },
-    {
-      titulo: "sadoifjpasod",
-      item1: "1342421",
-      item2: "432423441",
-      item3: "4232131",
-    },
-    {
-      titulo: "sadfsdfsdafasdfsadfaoifjpasod",
-      item1: "1342421",
-      item2: "432423441",
-      item3: "4232131",
-    },
-    {
-      titulo: "sadoifjpsdçnjlsdçfnjsdçknlfsdçfnuosdçfnksdafnjkasod",
-      item1: "1342421",
-      item2: "432423441",
-      item3: "4232131",
-    },
-    {
-      titulo: "sadoifjpasod",
-      item1: "1342421",
-      item2: "432423441",
-      item3: "4232131",
-    },
-    {
-      titulo: "sadoifjpasod",
-      item1: "1342421",
-      item2: "432423441",
-      item3: "4232131",
-    },
-    {
-      titulo: "sadoifjpasod",
-      item1: "1342421",
-      item2: "432423441",
-      item3: "4232131",
-    },
-    {
-      titulo: "sadoifjpasod",
-      item1: "1342421",
-      item2: "432423441",
-      item3: "4232131",
-    },
-    {
-      titulo: "sadoifjpasod",
-      item1: "1342421",
-      item2: "432423441",
-      item3: "4232131",
-    },
-   ]
-  
-
 }
