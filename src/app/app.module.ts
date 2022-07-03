@@ -8,6 +8,14 @@ import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginsModule } from './logins/logins.module';
+import { LoginComponent } from './logins/login/login.component';
+import { CadastroComponent } from './logins/cadastro/cadastro.component';
+import { TelefoneComponent } from './logins/telefone/telefone.component';
+import { VerificarTelComponent } from './logins/verificar-tel/verificar-tel.component';
+import { ConfirmarComponent } from './confirmar/confirmar.component';
+import { ModalPedidosComponent } from './modal-pedidos/modal-pedidos.component';
+import { ModalDevolucaoComponent } from './modal-devolucao/modal-devolucao.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { ProdutoComponent } from './home/produto/produto.component';
 import { ModalFiltroComponent } from './home/modal-filtro/modal-filtro.component';
@@ -17,12 +25,16 @@ import { ReservaComponent } from './home/reserva/reserva.component';
 import { DetalhesProdutoComponent } from './detalhes-produto/detalhes-produto.component';
 import { PosLoginComponent } from './pos-login/pos-login.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     SideBarComponent,
     HomeComponent,
+    ConfirmarComponent,
+    ModalPedidosComponent,
+    ModalDevolucaoComponent
     ProdutoComponent,
     PerfilComponent,
     ModalFiltroComponent,
@@ -32,7 +44,8 @@ import { PosLoginComponent } from './pos-login/pos-login.component';
     PosLoginComponent
   ],
   imports: [
-    BrowserModule,   
+    BrowserModule,
+    LoginsModule,
     FormsModule,
     BrowserAnimationsModule,
     RotasModule
