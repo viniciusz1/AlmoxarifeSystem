@@ -1,0 +1,37 @@
+<body style="height: 100vh; width: 100vw;">
+
+    <div style="height: 100vh;" class="centralizar">
+        <div class="centro">
+            <div class="topo centralizar">
+                <h5 style="margin-top: 5px;">Código do Pedido: ##</h5>
+                <h2 style="margin-left: 250px;">x</h2>
+            </div>
+            <div class="centralizar" style="margin-top: 10px;">
+                <div class="centralizar">
+                    <i class="bi bi-calendar-plus" style="font-size: 40px;"></i>
+                    <span style="margin-left: 15px;">DD/MM/AAAA</span>
+                </div>
+                <div class="centralizar" style="margin-left: 30px;">
+                    <i class="bi bi-calendar-check" style="font-size: 40px;"></i>
+                    <span style="margin-left: 15px;">DD/MM/AAAA</span>
+                </div>
+            </div>
+            <div style="margin-top: 10px; overflow: scroll; overflow-x: hidden; height: 350px;">
+                <div class="centralizar" style="margin-top: 30px; position: relative; " *ngFor="let item of listaProdutos">
+                    <div class="tabelinha">
+                        <div class="centralizar" style="column-gap: 30px; margin-top: 10px;">
+                            <h5>Produto</h5>
+                            <h5>Estoque</h5>
+                            <h5>Quantidade</h5>
+                        </div>
+                        <div class="centralizar" style="margin-top: 15px;">
+                            <h6 style="position: absolute; margin-right: 240px;">{{item.Produto}}</h6>
+                            <h6 style="position: absolute; margin-right: 30px;">{{item.Estoque}}</h6>
+                            <h6 style="position: absolute; margin-left: 200px;">{{item.Quantidade}}</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
