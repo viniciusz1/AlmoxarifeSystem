@@ -5,8 +5,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
-import { NavComponent } from './nav/nav.component';
-import { SideBarComponent } from './side-bar/side-bar.component';
+import { NavComponent } from './pos-login/nav/nav.component';
+import { SideBarComponent } from './pos-login/side-bar/side-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginsModule } from './logins/logins.module';
 import { LoginComponent } from './logins/login/login.component';
@@ -34,7 +34,7 @@ import { PosLoginComponent } from './pos-login/pos-login.component';
     HomeComponent,
     ConfirmarComponent,
     ModalPedidosComponent,
-    ModalDevolucaoComponent
+    ModalDevolucaoComponent,
     ProdutoComponent,
     PerfilComponent,
     ModalFiltroComponent,
