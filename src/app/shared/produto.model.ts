@@ -1,14 +1,21 @@
 export class Produto {
     public nome: string;
-    public item1: string;
-    public item2: string;
-    public item3: string;
+    public quantidade: string;
+    public classificacao: string;
+    public localidade: string;
+    public opcaoUso: string;
+    public descricao: string;
+    public codigo: number;
 
-  constructor(nome: string, item1: string, item2: string, item3: string) {
+  constructor(nome: string, quantidade: string, classificacao: string, localidade: string,
+    opcaoUso: string,descricao: string,codigo: number) {
     this.nome = nome;
-    this.item1 = item1;
-    this.item2 = item2;
-    this.item3 = item3
+    this.quantidade = quantidade;
+    this.classificacao = classificacao;
+    this.localidade = localidade;
+    this.opcaoUso = opcaoUso;
+    this.descricao = descricao;
+    this.codigo = codigo;
   }
   
   }

@@ -1,8 +1,7 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { state, style, trigger, transition, animate} from '@angular/animations';
 import { CarrinhoService } from 'src/app/services/carrinho.service';
-import { ThisReceiver } from '@angular/compiler';
-
+import { Produto } from 'src/app/shared/produto.model';
 @Component({
   selector: 'app-carrinho',
   templateUrl: './carrinho.component.html',
@@ -43,15 +42,18 @@ export class CarrinhoComponent implements OnInit {
       this.stateTxt = "fechado"
     }
   }
-  listaItens:{} = [];
+  
   abreReserva(){
     this.reserva.emit(false)
   }
   constructor(private car: CarrinhoService) { 
   }
-
+  listaCarrinho:Produto[] = [];
+  lixo(i:number){
+    this.car.removeLista(i)
+  }
   ngOnInit(): void {
-    this.listaItens = this.car.getLista();
+    this.listaCarrinho = this.car.getLista();
   }
 
 }

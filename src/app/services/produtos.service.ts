@@ -7,13 +7,14 @@ import { Produto } from '../shared/produto.model';
 
 export class ProdutosService {
 
-  private lista: Produto[] = [new Produto ("vinicius", "criou", "Um", "produto")]
+  private lista: Produto[] = [new Produto ("vinicius", "criou", "Um", "produto", "adsçf", "fdosai", 1)]
 
    getListaProdutos(){
       return this.lista
    }
    addProduto(produto: Produto){
     this.lista.push(produto)
+    console.log(this.lista)
    }
   constructor() { }
 }

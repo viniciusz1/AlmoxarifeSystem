@@ -1,5 +1,7 @@
+import { ProdutosService } from './../services/produtos.service';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import {  Router } from '@angular/router';
 
 @Component({
   selector: 'app-detalhes-produto',
@@ -8,11 +10,12 @@ import { NgForm } from '@angular/forms';
 })
 export class DetalhesProdutoComponent implements OnInit {
   select = ""
-  constructor() { }
+  constructor(private prod: ProdutosService,
+    private router: Router) { }
 
   onSubmit(form: NgForm){
-    console.log(this.select)
-    console.log(form)
+    this.prod.addProduto(form.value)
+    this.router.navigate(['/'])
   }
 
   ngOnInit(): void {
