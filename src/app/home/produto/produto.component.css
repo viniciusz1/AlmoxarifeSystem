@@ -1,0 +1,35 @@
+.imagem{
+    position:absolute;
+    left: 0;
+    top: 0;
+    width: 90px;
+    height: 90px;
+    border-radius: 500px 
+}
+.bloco{
+    height: 8rem;
+    /* border: 1px solid black; */
+    align-items: flex-end;
+    justify-content: right;
+}
+.list{
+    list-style: none;
+    width:20px;
+}
+.sombra{
+    box-shadow: 2px 2px 5px 1px;
+}
+.retangulo{ 
+    padding-left: 60px;
+    /* position: absolute;
+    bottom: 0;
+    right: 0; 
+
+    */
+    height: 100px;
+    width: 90%;
+}
+
+.caixa{
+    align-self: flex-end;
+}
