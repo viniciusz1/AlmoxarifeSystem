@@ -1,4 +1,4 @@
-.margin-fixed{
+.margin-fixed {
     width: 60px;
     height: 91vh;
 }
@@ -32,4 +32,7 @@
 }
 .carrinho{
     font-size: 25px
+}
+.carrinho-side{
+    right: 0;
 }

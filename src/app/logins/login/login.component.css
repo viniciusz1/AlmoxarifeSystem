@@ -1,0 +1,54 @@
+body {
+    background-color: #0047B5;
+    box-shadow: inset 4px 4px 250px 10px #000;
+}
+
+.centro {
+    height: 550px;
+    width: 500px;
+    background-color: white;
+}
+
+.centralizar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.textAl {
+    color: #0047B5;
+    font-size: 30px;
+}
+
+.logo {
+    position: absolute;
+    margin: 42px 10px 10px 92px;
+}
+
+.ladoInput {
+    border: 1px solid black;
+    border-right: 0px;
+}
+
+.inputs {
+    border: 1px solid black;
+    border-left: 0px;
+    width: 280px;
+    height: 50px;
+}
+
+.icons {
+    font-size: 30px;
+    color: #0047B5;
+}
+
+input {
+    outline: none;
+}
+
+.botao {
+    width: 170px;
+    height: 40px;
+    border-radius: 2px;
+    border-color: transparent;
+}

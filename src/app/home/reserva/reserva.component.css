@@ -1,0 +1,45 @@
+.fundo{
+    background-color: black;
+    width: 100%;
+    height: 100%;
+}
+.fonte{
+    font-size: 85%;
+}
+hr{
+    margin:1px
+}
+.DivWithScroll{
+    height:350px;
+    overflow:scroll;
+    overflow-x:hidden;
+}
+.titulo-secundario{
+    margin-bottom: 30px;
+}
+input{
+    width: 215px;
+    margin: 10% 10% 10% 17%;
+}
+
+.adicionar{
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+
+}
+.quadrado-modal{
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    background-color: white;
+    height: 80%;
+    width: 70%;
+    padding: 17px 50px 50px 67px;
+}
+
+.titulo{
+    margin: 7%;
+}
