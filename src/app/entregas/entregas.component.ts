@@ -62,7 +62,8 @@ export class EntregasComponent implements OnInit {
 }]
   param = "";
   palavras = {
-    titulo: "Reservas"
+    titulo: "Reservas",
+    
   }
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
