@@ -60,13 +60,18 @@ export class EntregasComponent implements OnInit {
       Produtos: "Resistor 1k Ohms, Resistor 10k Ohms, Resistor 10k Ohms, Resistor 10kOhms, Resistor 10kOhms...",
       Data: "02/02/2022",
 }]
-  name = "";
+  param = "";
+  palavras = {
+    titulo: "Reservas"
+  }
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
-      this.name = params[':id'];
-      console.log(this.name)
+      this.param = params[':id'];
+      console.log(this.param)
     });
-    
+    if(this.param == "devolucoes"){
+      this.palavras.titulo = "Devoluções"
+    }
 
 
   }
