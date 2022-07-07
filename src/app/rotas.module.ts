@@ -1,3 +1,4 @@
+import { DevolucoesComponent } from './devolucoes/devolucoes.component';
 import { EntregasComponent } from './entregas/entregas.component';
 import { HistoricoComponent } from './historico/historico.component';
 import { VerificarTelComponent } from './logins/verificar-tel/verificar-tel.component';
@@ -50,14 +51,15 @@ import { PedidosComponent } from './pedidos/pedidos.component';
                     path: 'entregas',
                     component: EntregasComponent,
                     canActivate: [],
-                    children: [
-                        {
-                            path: ':id',
-                            component: EntregasComponent,
-                            canActivate: []
-                        },
-                    ]
+                    
+                    
                 },
+                {
+                    path: 'devolucoes',
+                    component: DevolucoesComponent,
+                    canActivate: []                 
+                    
+                }
                 ]
             },
             {
