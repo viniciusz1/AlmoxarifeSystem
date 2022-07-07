@@ -1,0 +1,63 @@
+<app-nav style=""></app-nav>
+
+<div class="d-flex bg-light">
+    <app-side-bar class="position-fixed"></app-side-bar>
+
+    <body>
+        <div class="topo">
+            <div class="pg" *ngIf="this.contador == 1">
+                <span>Realizar Entregas_______</span>
+            </div>
+            <div class="pg" *ngIf="this.contador == 2">
+                <span>Realizar Devoluções_______</span>
+            </div>
+        </div>
+
+        <div class="pesquisa-total">
+            <div class="pesquisa">
+                <i class="bi bi-search"></i>
+                <input placeholder="Pesquisar por solicitante">
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="indice">
+                <div class="pedido">
+                    <span>Pedidos</span>
+                </div>
+                <div class="professor">
+                    <span>Professor</span>
+                </div>
+                <div class="produtos">
+                    <span>Produtos</span>
+                </div>
+                <div class="data">
+                    <span>Data</span>
+                </div>
+            </div>
+            <div class="lista shadow" *ngFor="let lista of lista">
+                <div class="pedido">
+                    <span>{{lista.pedido}}</span>
+                </div>
+                <div class="professor">
+                    <span>{{lista.Professor}}</span>
+                </div>
+                <div class="central">
+                    <div class="d-inline-block text-truncate">
+                        <span>{{lista.Produtos}}</span>
+                    </div>
+                </div>
+
+                <div class="data">
+                    <span>{{lista.Data}}</span>
+                </div>
+                <div class="botao" *ngIf="this.contador == 1">
+                    <button>Realizar Entrega</button>
+                </div>
+                <div class="botao" *ngIf="this.contador == 2">
+                    <button>Devolver</button>
+                </div>
+            </div>
+
+        </div>
+    </body>
