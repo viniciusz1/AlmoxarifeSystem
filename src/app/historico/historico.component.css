@@ -1,0 +1,132 @@
+.pg{
+    font-size: calc(1.3rem + .6vw);
+    text-decoration: underline;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+.topo{
+    display: flex;
+    width: 80vw;
+    column-gap: 20%;
+}
+
+.duas-div{
+    display: grid;
+}
+
+.div-cima{
+    background-color: #0047B5;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    padding: 10px 0px 10px 20px;
+    border-bottom: 1px solid black;
+}
+
+.container{
+    border: 1px solid black;
+    padding: 0px;
+    width: 80vw;
+    margin-bottom: 15px;
+}
+
+p{
+    margin: 0px;
+}
+
+.bold{
+    font-weight: 700;
+}
+
+i{
+    margin: 10px 10px 10px 0px;
+}
+
+.baixo{
+    display: flex;
+    column-gap: 50vw;
+    width: 100%;
+}
+
+.footer{
+    display: flex;
+    column-gap: 58vw;
+    padding: 10px;
+    font-weight: 500;
+}
+
+.datas{
+    display: flex;
+    column-gap: 10px;
+}
+
+.dataRetirada, .dataDevolucao, .nome{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nome, .produtos{
+    margin-left: 10px;
+}
+
+.topo-2{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 50vw;
+    column-gap: 15px;
+}
+
+.pesquisa{
+    border-bottom: 0.5px solid black;
+}
+
+input{
+    border: transparent;
+    outline: none;
+}
+
+::-webkit-input-placeholder {
+    color: black;
+ }
+
+.icone{
+    color: white;
+}
+
+.ordenar, .filtrar{
+    background-color: #0047B5;
+    border: 1px solid black;
+    padding: 5px 10px;
+}
+
+.filtross{
+    border: none;
+    background-color: transparent;
+    color: white;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+  }
+
+  .body{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+
+  body{
+    display: grid;
+    justify-content: center;
+    /* align-items: center; */
+    width: 150vw;
+}

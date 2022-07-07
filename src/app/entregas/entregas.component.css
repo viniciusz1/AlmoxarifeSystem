@@ -1,0 +1,108 @@
+body{
+    display: grid;
+    justify-content: center;
+    /* align-items: center; */
+    width: 150vw;
+}
+
+.pg{
+    font-size: calc(1.3rem + .6vw);
+    text-decoration: underline;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+.topo{
+    display: flex;
+    width: 80vw;
+    column-gap: 20%;
+}
+
+.pesquisa{
+    border-bottom: 0.5px solid black;
+}
+
+input{
+    border: transparent;
+    outline: none;
+}
+
+::-webkit-input-placeholder {
+    color: black;
+ }
+
+ i{
+    margin: 10px 10px 10px 0px;
+}
+
+.pesquisa-total{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.indice, .lista{
+    margin-top: 20px;
+    display: flex;
+    column-gap: 15px;
+}
+
+.professor{
+    width: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.data{
+    width: 10vw;
+    display: flex;
+    align-items: center;
+}
+
+
+
+.pedido{
+    width: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.produtos{
+    width: 40vw;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+button{
+    background-color: #0047B5;
+    border: none;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 5px;
+    width: 12vw;
+    padding: 10px 15px;
+    margin: 10px;
+}
+
+.divprodutos{
+    width: 40vw;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+}
+
+.central{
+    width: 35vw;
+    margin-right: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+

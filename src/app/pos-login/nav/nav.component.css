@@ -1,3 +1,5 @@
-.blue{
-    background-color: #0047B5
+.blue {
+    background-color: #0047B5;
+    position: sticky;
+    top: 0;
 }
