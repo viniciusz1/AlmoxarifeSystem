@@ -1,13 +1,13 @@
-<div routerLink="detalhes-produto"class="position-relative d-flex bloco" style="max-width: 540px;">
+<div  class="position-relative d-flex bloco" style="max-width: 540px;">
 
-        <img class="imagem "
+        <img (click)="abreDetalhesProduto()" class="imagem "
         src="https://super.abril.com.br/wp-content/uploads/2018/07/52d0469d865be2752d0003a9emperor-cold_hg.jpeg" alt="">
-        <div class="sombra retangulo">
-            <div class="itens-retangulo d-flex">
+        <div (click)="abreDetalhesProduto()" class="sombra retangulo">
+            <div class="itens-retangulo d-flex" >
                 <div>
                     <div class="d-flex">
                         <label for="">{{produto.nome}}</label>
-                        <i class="bi bi-plus-square position-absolute" style="right: 5px"></i>
+                        
                     </div>
                     <ul class="list">
                         <li>{{produto.classificacao}}</li>
@@ -17,4 +17,6 @@
                 </div>
             </div>
         </div>
+        <i (click)="adicionarCarrinho()" class="bi bi-plus-square 
+        position-absolute" style="right: 5px; top:29px; z-index: 10;"></i>
 </div>
