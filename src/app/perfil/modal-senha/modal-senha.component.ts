@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-modal-senha',
@@ -6,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./modal-senha.component.css']
 })
 export class ModalSenhaComponent implements OnInit {
-
+  @Output() alterandoModal = new EventEmitter();
   constructor() { }
+  fecharModal(){
+    this.alterandoModal.emit()
+  }
 
   ngOnInit(): void {
   }

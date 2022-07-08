@@ -1,3 +1,4 @@
+import { PerfilAdminComponent } from './perfil-admin/perfil-admin.component';
 import { DevolucoesComponent } from './devolucoes/devolucoes.component';
 import { RotasModule } from './rotas.module';
 import { ProdutosService } from 'src/app/services/produtos.service';
@@ -16,7 +17,7 @@ import { ModalDevolucaoComponent } from './modal-devolucao/modal-devolucao.compo
 import { PerfilComponent } from './perfil/perfil.component';
 
 import { ModalFiltroComponent } from './home/modal-filtro/modal-filtro.component';
-import { ModalSenhaComponent } from './modal-senha/modal-senha.component';
+import { ModalSenhaComponent } from './perfil/modal-senha/modal-senha.component';
 import { HistoricoComponent } from './historico/historico.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { EntregasComponent } from './entregas/entregas.component';
@@ -50,7 +51,8 @@ import { PosLoginComponent } from './pos-login/pos-login.component';
     ReservaComponent,
     DetalhesProdutoComponent,
     PosLoginComponent,
-    DevolucoesComponent
+    DevolucoesComponent,
+    PerfilAdminComponent
   ],
   imports: [ 
     BrowserModule,

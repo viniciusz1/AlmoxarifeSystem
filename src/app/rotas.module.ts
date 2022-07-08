@@ -1,3 +1,4 @@
+import { PerfilAdminComponent } from './perfil-admin/perfil-admin.component';
 import { DevolucoesComponent } from './devolucoes/devolucoes.component';
 import { EntregasComponent } from './entregas/entregas.component';
 import { HistoricoComponent } from './historico/historico.component';
@@ -57,6 +58,12 @@ import { PedidosComponent } from './pedidos/pedidos.component';
                 {
                     path: 'devolucoes',
                     component: DevolucoesComponent,
+                    canActivate: []                 
+                    
+                },
+                {
+                    path: 'perfil-admin',
+                    component: PerfilAdminComponent,
                     canActivate: []                 
                     
                 }

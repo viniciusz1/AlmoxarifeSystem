@@ -7,7 +7,12 @@ import { Produto } from 'src/app/shared/produto.model';
 })
 export class ProdutoComponent implements OnInit {
   @Input() produto: Produto = new Produto("1", "2","3","4", "5", "6", 7);
-
+  adicionarCarrinho(){
+    console.log("adicionarCarrinho")
+  }
+  abreDetalhesProduto(){
+    console.log("Detalhes produto")
+  }
   constructor() { }
 
   ngOnInit(): void {
