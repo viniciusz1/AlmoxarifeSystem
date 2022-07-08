@@ -3,3 +3,14 @@
     position: sticky;
     top: 0;
 }
+.imagem-logo{
+    width: 40px;
+    position: absolute;
+    top: -25px;
+    left: 40px;
+}
+.span-logo{
+    position: absolute;
+    top: -13px;
+    left: 57px;
+}
