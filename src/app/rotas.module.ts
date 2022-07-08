@@ -29,10 +29,10 @@ import { PedidosComponent } from './pedidos/pedidos.component';
         CommonModule,
         RouterModule.forRoot([
             {
-                path: '',
+                path: 'home',
                 component: PosLoginComponent,
                 canActivate: [], children: [{
-                    path: '',
+                    path: 'home',
                     component: HomeComponent,
                     canActivate: []
                 },
@@ -73,28 +73,7 @@ import { PedidosComponent } from './pedidos/pedidos.component';
                 ]
             },
             {
-                path: 'cadastro',
-                component: CadastroComponent
-            },
-            {
-                path: 'login',
-                component: LoginComponent
-            },
-            {
-                path: 'telefone',
-                component: CadastroComponent
-            },
-            {
-                path: 'verificar-tel',
-                component: VerificarTelComponent
-            },
-            {
                 path: '',
-                component: HomeComponent,
-                canActivate: [],
-            },
-            {
-                path: 'login',
                 component: LoginComponent,
                 canActivate: []
             },
