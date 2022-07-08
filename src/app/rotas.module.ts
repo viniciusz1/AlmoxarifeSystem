@@ -22,9 +22,6 @@ import { ConfirmarComponent } from './confirmar/confirmar.component';
 import { ModalPedidosComponent } from './modal-pedidos/modal-pedidos.component';
 import { ModalDevolucaoComponent } from './modal-devolucao/modal-devolucao.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
-
-import { HistoricoComponent } from './historico/historico.component';
-import { EntregasComponent } from './entregas/entregas.component';
 import { SolicitacoesComponent } from './solicitacoes/solicitacoes.component';
 import { ContasComponent } from './contas/contas.component';
 
@@ -145,7 +142,7 @@ import { ContasComponent } from './contas/contas.component';
                 canActivate: []
             }
       ])
-  ]
+  ],
   exports: [RouterModule]
 })
 export class RotasModule { }

@@ -18,7 +18,7 @@ import { PerfilComponent } from './perfil/perfil.component';
 
 import { ModalFiltroComponent } from './home/modal-filtro/modal-filtro.component';
 
-import { ModalSenhaComponent } from './modal-senha/modal-senha.component';
+import { ModalSenhaComponent } from './perfil/modal-senha/modal-senha.component';
 
 import { HistoricoComponent } from './historico/historico.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
@@ -58,7 +58,7 @@ import { ContasComponent } from './contas/contas.component';
     PosLoginComponent,
     SolicitacoesComponent,
     ContasComponent,
-	DevolucoesComponent,
+	  DevolucoesComponent,
     PerfilAdminComponent
   ],
   imports: [ 
