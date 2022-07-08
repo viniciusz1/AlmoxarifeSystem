@@ -17,7 +17,9 @@ import { ModalDevolucaoComponent } from './modal-devolucao/modal-devolucao.compo
 import { PerfilComponent } from './perfil/perfil.component';
 
 import { ModalFiltroComponent } from './home/modal-filtro/modal-filtro.component';
+
 import { ModalSenhaComponent } from './perfil/modal-senha/modal-senha.component';
+
 import { HistoricoComponent } from './historico/historico.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { EntregasComponent } from './entregas/entregas.component';
@@ -29,39 +31,44 @@ import { ReservaComponent } from './home/reserva/reserva.component';
 import { DetalhesProdutoComponent } from './detalhes-produto/detalhes-produto.component';
 import { PosLoginComponent } from './pos-login/pos-login.component';
 
+import { SolicitacoesComponent } from './solicitacoes/solicitacoes.component';
+import { ContasComponent } from './contas/contas.component';
+
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavComponent,
-    SideBarComponent,
-    HomeComponent,
-    ConfirmarComponent,
-    ModalPedidosComponent,
-    ModalDevolucaoComponent,
-    ProdutoComponent,
-    ModalFiltroComponent,
-    ModalSenhaComponent,
-    PerfilComponent,
-    HistoricoComponent,
-    PedidosComponent,
-    EntregasComponent,
-    PerfilComponent,
-    CarrinhoComponent,
-    ReservaComponent,
-    DetalhesProdutoComponent,
-    PosLoginComponent,
-    DevolucoesComponent,
+  declarations: [
+    AppComponent,
+    NavComponent,
+    SideBarComponent,
+    HomeComponent,
+    ConfirmarComponent,
+    ModalPedidosComponent,
+    ModalDevolucaoComponent,
+    ProdutoComponent,
+    ModalFiltroComponent,
+    ModalSenhaComponent,
+    PerfilComponent,
+    HistoricoComponent,
+    PedidosComponent,
+    EntregasComponent,
+    PerfilComponent,
+    CarrinhoComponent,
+    ReservaComponent,
+    DetalhesProdutoComponent,
+    PosLoginComponent,
+    SolicitacoesComponent,
+    ContasComponent,
+	  DevolucoesComponent,
     PerfilAdminComponent
-  ],
-  imports: [ 
-    BrowserModule,
-    LoginsModule,
-    FormsModule,
-    BrowserAnimationsModule,
-    RotasModule
-  ],
-  providers: [CarrinhoService, ProdutosService],
-  bootstrap: [AppComponent]
+  ],
+  imports: [ 
+    BrowserModule,
+    LoginsModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    RotasModule
+  ],
+  providers: [CarrinhoService, ProdutosService],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

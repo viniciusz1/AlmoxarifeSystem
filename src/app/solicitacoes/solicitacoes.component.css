@@ -35,7 +35,12 @@ input{
  i{
     margin: 10px 10px 10px 0px;
 }
-
+.botao{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .pesquisa-total{
     display: flex;
     justify-content: end;
@@ -48,26 +53,24 @@ input{
     column-gap: 15px;
 }
 
-.professor{
-    width: 10vw;
+.email{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .data{
-    width: 10vw;
     display: flex;
     align-items: center;
 }
 
 
 
-.pedido{
-    width: 5vw;
+.nome{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 600;
 }
 
 .produtos{
@@ -97,7 +100,6 @@ button{
 }
 
 .central{
-    width: 35vw;
     margin-right: 5vw;
     display: flex;
     justify-content: center;
@@ -109,3 +111,32 @@ button{
     width: 5px;
 }
 
+.icons{
+    display: flex;
+    justify-content: end;
+    column-gap: 15px;
+    font-size: 30px;
+}
+
+.lista.shadow{
+    width: 100%;
+}
+
+.icon-1{
+    color: red;
+}
+
+.icon-2{
+    color: green;
+}
+
+.nome{
+    margin: 10px 0px;
+    padding: 10px;
+    font-weight: bold;
+    width: 30%;
+}
+
+.email{
+    width: 70%;
+}

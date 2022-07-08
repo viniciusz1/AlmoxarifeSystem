@@ -1,0 +1,37 @@
+<div class="d-flex bg-light">
+    <body>
+        <div class="topo">
+            <div class="pg">
+                <span>Contas_______</span>
+            </div>
+            <div class="pesquisa-total">
+                <div class="pesquisa">
+                    <i class="bi bi-search"></i>
+                    <input placeholder="Pesquisar por Conta">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="lista shadow" style="font-size: 18px; background-color: #f3f3f3;" *ngFor="let lista of lista">
+                <div class="px">
+                </div>
+                <div class="iconePerfil">
+                    <i class="bi bi-person-circle"></i>
+                </div>
+                <div class="nome">
+                    <div class="d-inline-block text-truncate">
+                        <span>{{lista.nome}}</span>
+                    </div>
+                </div>
+                <div class="email">
+                    <div class="d-inline-block text-truncate">
+                        <span>{{lista.email}}</span>
+                    </div>
+                </div>
+                <div class="botao">
+                    <button>Mais Informações</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</div>

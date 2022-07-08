@@ -14,6 +14,7 @@ import { SideBarComponent } from './pos-login/side-bar/side-bar.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { DetalhesProdutoComponent } from './detalhes-produto/detalhes-produto.component';
 
+
 import { ConferenciaComponent } from './conferencia/conferencia.component';
 
 import { TelefoneComponent } from './logins/telefone/telefone.component';
@@ -21,9 +22,12 @@ import { ConfirmarComponent } from './confirmar/confirmar.component';
 import { ModalPedidosComponent } from './modal-pedidos/modal-pedidos.component';
 import { ModalDevolucaoComponent } from './modal-devolucao/modal-devolucao.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
+import { SolicitacoesComponent } from './solicitacoes/solicitacoes.component';
+import { ContasComponent } from './contas/contas.component';
 
 
 @NgModule({
+
     declarations: [],
     imports: [
         CommonModule,
@@ -117,9 +121,8 @@ import { PedidosComponent } from './pedidos/pedidos.component';
                 component: HistoricoComponent,
                 canActivate: []
             }
-        ]),
-    ],
-    exports: [RouterModule]
-
+      ])
+  ],
+  exports: [RouterModule]
 })
 export class RotasModule { }
