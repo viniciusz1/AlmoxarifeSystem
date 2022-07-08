@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Produto } from 'src/app/shared/produto.model';
 @Component({
   selector: 'app-produto',
@@ -11,9 +12,9 @@ export class ProdutoComponent implements OnInit {
     console.log("adicionarCarrinho")
   }
   abreDetalhesProduto(){
-    console.log("Detalhes produto")
+    this.router.navigate(['/detalhes-produto'])
   }
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
