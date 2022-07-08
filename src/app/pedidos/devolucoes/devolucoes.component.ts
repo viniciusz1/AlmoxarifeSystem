@@ -12,6 +12,9 @@ export class DevolucoesComponent implements OnInit {
   constructor(private router: Router) {
     console.log(this.router.url)
   }
+  gotoConferencia(){
+    this.router.navigate(['/conferencia'])
+  }
 
   lista = [
     {
