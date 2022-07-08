@@ -1,3 +1,4 @@
+import { DevolucoesComponent } from './pedidos/devolucoes/devolucoes.component';
 import { ConferenciaComponent } from './pedidos/conferencia/conferencia.component';
 import { EntregasComponent } from './pedidos/entregas/entregas.component';
 import { HistoricoComponent } from './pedidos/historico/historico.component';
@@ -11,7 +12,7 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { SideBarComponent } from './pos-login/side-bar/side-bar.component';
 import { PerfilComponent } from './perfil/perfil.component';
-import { DetalhesProdutoComponent } from './detalhes-produto/detalhes-produto.component';
+import { DetalhesProdutoComponent } from './home/produto/detalhes-produto/detalhes-produto.component';
 import { TelefoneComponent } from './logins/telefone/telefone.component';
 import { ConfirmarComponent } from './confirmar/confirmar.component';
 import { ModalPedidosComponent } from './pedidos/modal-pedidos/modal-pedidos.component';
@@ -37,6 +38,11 @@ import { ContasComponent } from './contas/contas.component';
         {
           path: 'pedidos',
           component: PedidosComponent,
+          canActivate: []
+        },
+        {
+          path: 'devolucoes',
+          component: DevolucoesComponent,
           canActivate: []
         },
         {
@@ -142,11 +148,11 @@ import { ContasComponent } from './contas/contas.component';
         component: PerfilComponent,
         canActivate: []
       },
-            {
-                path: 'historico',
-                component: HistoricoComponent,
-                canActivate: []
-            }
+      {
+          path: 'historico',
+          component: HistoricoComponent,
+          canActivate: []
+      }
       ])
   ],
   exports: [RouterModule]
