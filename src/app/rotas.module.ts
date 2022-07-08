@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { SideBarComponent } from './pos-login/side-bar/side-bar.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { DetalhesProdutoComponent } from './detalhes-produto/detalhes-produto.component';
+import { ConferenciaComponent } from './conferencia/conferencia.component';
 
 
 
@@ -23,7 +24,7 @@ import { DetalhesProdutoComponent } from './detalhes-produto/detalhes-produto.co
         canActivate: [], children: [{
           path: '',
           component: HomeComponent,
-          canActivate: []
+          canActivate: [],
         },
         {
           path: 'perfil',
@@ -39,7 +40,13 @@ import { DetalhesProdutoComponent } from './detalhes-produto/detalhes-produto.co
           path: 'sidebar',
           component: SideBarComponent,
           canActivate: []
-        }]
+        },
+        {
+          path: 'realizar',
+          component: ConferenciaComponent,
+          canActivate: []
+        }
+      ]
       },
       {
         path: 'cadastro',
@@ -57,6 +64,7 @@ import { DetalhesProdutoComponent } from './detalhes-produto/detalhes-produto.co
         path: 'verificar-tel',
         component: VerificarTelComponent
       },
+      
 
       ]),
   ],
