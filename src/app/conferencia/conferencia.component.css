@@ -1,0 +1,56 @@
+.topo {
+    margin-top: 50px;
+    margin-bottom: 5px;
+    font-size: 25px;
+}
+
+.produto {
+    background-color: #f3f3f3;
+    width: 100%;
+    height: 120px;
+    box-shadow: 4px 4px 5px 1px rgba(0, 0, 0, 0.322);
+}
+
+.centralizar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    height: 110px;
+    width: 130px;
+    border-radius: 200%;
+    /* border: 1px solid black; */
+}
+
+.quantidade {
+    background-color: white;
+    height: 35px;
+    width: 40px;
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.219);
+}
+
+.valor {
+    height: 450px;
+    width: 400px;
+    background-color: #f3f3f3;
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.219);
+    padding: 25px;
+}
+
+.azul {
+    height: 40px;
+    width: 350px;
+    background-color: #C2D6F4;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.botao {
+    width: 250px;
+    height: 55px;
+    border-radius: 5px;
+    border-color: transparent;
+    font-size: 20px;
+}

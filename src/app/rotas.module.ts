@@ -13,6 +13,9 @@ import { HomeComponent } from './home/home.component';
 import { SideBarComponent } from './pos-login/side-bar/side-bar.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { DetalhesProdutoComponent } from './detalhes-produto/detalhes-produto.component';
+
+import { ConferenciaComponent } from './conferencia/conferencia.component';
+
 import { TelefoneComponent } from './logins/telefone/telefone.component';
 import { ConfirmarComponent } from './confirmar/confirmar.component';
 import { ModalPedidosComponent } from './modal-pedidos/modal-pedidos.component';
@@ -138,5 +141,6 @@ import { PedidosComponent } from './pedidos/pedidos.component';
         ]),
     ],
     exports: [RouterModule]
+
 })
 export class RotasModule { }
