@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-entregas',
@@ -9,10 +9,13 @@ import { ActivatedRoute } from '@angular/router';
 export class EntregasComponent implements OnInit {
 
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
-
+  gotoConferencia(){
+    this.router.navigate(['/conferencia'])
+  }
   lista = [
     {
       pedido: "001",

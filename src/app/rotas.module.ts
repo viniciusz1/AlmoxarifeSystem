@@ -1,7 +1,6 @@
-import { PerfilAdminComponent } from './perfil-admin/perfil-admin.component';
-import { DevolucoesComponent } from './devolucoes/devolucoes.component';
-import { EntregasComponent } from './entregas/entregas.component';
-import { HistoricoComponent } from './historico/historico.component';
+import { ConferenciaComponent } from './pedidos/conferencia/conferencia.component';
+import { EntregasComponent } from './pedidos/entregas/entregas.component';
+import { HistoricoComponent } from './pedidos/historico/historico.component';
 import { VerificarTelComponent } from './logins/verificar-tel/verificar-tel.component';
 import { LoginComponent } from './logins/login/login.component';
 import { CadastroComponent } from './logins/cadastro/cadastro.component';
@@ -13,14 +12,10 @@ import { HomeComponent } from './home/home.component';
 import { SideBarComponent } from './pos-login/side-bar/side-bar.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { DetalhesProdutoComponent } from './detalhes-produto/detalhes-produto.component';
-
-
-import { ConferenciaComponent } from './conferencia/conferencia.component';
-
 import { TelefoneComponent } from './logins/telefone/telefone.component';
 import { ConfirmarComponent } from './confirmar/confirmar.component';
-import { ModalPedidosComponent } from './modal-pedidos/modal-pedidos.component';
-import { ModalDevolucaoComponent } from './modal-devolucao/modal-devolucao.component';
+import { ModalPedidosComponent } from './pedidos/modal-pedidos/modal-pedidos.component';
+import { ModalDevolucaoComponent } from './pedidos/modal-devolucao/modal-devolucao.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { SolicitacoesComponent } from './solicitacoes/solicitacoes.component';
 import { ContasComponent } from './contas/contas.component';
@@ -37,6 +32,11 @@ import { ContasComponent } from './contas/contas.component';
         canActivate: [], children: [{
           path: '',
           component: HomeComponent,
+          canActivate: []
+        },
+        {
+          path: 'pedidos',
+          component: PedidosComponent,
           canActivate: []
         },
         {
@@ -73,7 +73,13 @@ import { ContasComponent } from './contas/contas.component';
           path: 'contas',
           component: ContasComponent,
           canActivate:[]
-        }]
+        },
+        {
+          path: 'conferencia',
+          component: ConferenciaComponent,
+          canActivate:[]
+        },
+      ]
       },
       {
         path: 'cadastro',
