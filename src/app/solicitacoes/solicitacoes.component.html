@@ -1,0 +1,38 @@
+<div class="d-flex bg-light">
+    <body>
+        <div class="topo">
+            <div class="pg">
+                <span>Solicitações_______</span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="lista shadow" style="font-size: 18px; background-color: #f3f3f3;" *ngFor="let lista of lista">
+                <div class="px">
+                </div>
+                <div class="nome">
+                    <div class="d-inline-block text-truncate">
+                        <span>{{lista.nome}}</span>
+                    </div>
+                </div>
+                <div class="email">
+                    <div class="d-inline-block text-truncate">
+                        <span>{{lista.email}}</span>
+                    </div>
+                </div>
+                <div class="data">
+                    <span>{{lista.Data}}</span>
+                </div>
+                <div class="botao">
+                    <div class="icons">
+                        <div class="icon-1">
+                            <i class="bi bi-x-circle"></i>
+                        </div>
+                        <div class="icon-2">
+                            <i class="bi bi-check-circle"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</div>

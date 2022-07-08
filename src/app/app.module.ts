@@ -18,7 +18,7 @@ import { ModalPedidosComponent } from './modal-pedidos/modal-pedidos.component';
 import { ModalDevolucaoComponent } from './modal-devolucao/modal-devolucao.component';
 import { PerfilComponent } from './perfil/perfil.component';
 
-import { ModalFiltroComponent } from './modal-filtro/modal-filtro.component';
+import { ModalFiltroComponent } from './home/modal-filtro/modal-filtro.component';
 import { ModalSenhaComponent } from './modal-senha/modal-senha.component';
 import { HistoricoComponent } from './historico/historico.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
@@ -30,6 +30,9 @@ import { CarrinhoService } from './services/carrinho.service';
 import { ReservaComponent } from './home/reserva/reserva.component';
 import { DetalhesProdutoComponent } from './detalhes-produto/detalhes-produto.component';
 import { PosLoginComponent } from './pos-login/pos-login.component';
+
+import { SolicitacoesComponent } from './solicitacoes/solicitacoes.component';
+import { ContasComponent } from './contas/contas.component';
 
 
 @NgModule({
@@ -47,67 +50,17 @@ import { PosLoginComponent } from './pos-login/pos-login.component';
     PerfilComponent,
     HistoricoComponent,
     PedidosComponent,
-    EntregasComponent
+    EntregasComponent,
     PerfilComponent,
     CarrinhoComponent,
     ReservaComponent,
     DetalhesProdutoComponent,
-    PosLoginComponent
+    PosLoginComponent,
+    SolicitacoesComponent,
+    ContasComponent
   ],
   imports: [ 
     BrowserModule,
-    RouterModule.forRoot([
-      {
-        path: '',
-        component: HomeComponent,
-        canActivate: [],
-      },
-      {
-        path: 'login',
-        component: LoginComponent,
-        canActivate: []
-      },
-      {
-        path: 'cadastro',
-        component: CadastroComponent,
-        canActivate: []
-      },
-      {
-        path: 'cadastro/telefone',
-        component: TelefoneComponent,
-        canActivate: []
-      },
-      {
-        path: 'cadastro/telefone/verificar',
-        component: VerificarTelComponent,
-        canActivate: []
-      },
-      {
-        path: 'confirmar',
-        component: ConfirmarComponent,
-        canActivate: []
-      },
-      {
-        path: 'modalPedidos',
-        component: ModalPedidosComponent,
-        canActivate: []
-      },
-      {
-        path: 'modalDevolucao',
-        component: ModalDevolucaoComponent,
-        canActivate: []
-      },
-      {
-        path: 'perfil',
-        component: PerfilComponent,
-        canActivate: []
-      },
-      {
-        path: 'entregas',
-        component: PedidosComponent,
-        canActivate:[]
-      }
-    ]),
     LoginsModule,
     FormsModule,
     BrowserAnimationsModule,

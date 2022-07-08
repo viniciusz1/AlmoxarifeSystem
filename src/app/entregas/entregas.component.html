@@ -1,7 +1,5 @@
-<app-nav style=""></app-nav>
 
 <div class="d-flex bg-light">
-    <app-side-bar class="position-fixed"></app-side-bar>
 
     <body>
         <div class="topo">
@@ -35,7 +33,11 @@
                     <span>Data</span>
                 </div>
             </div>
+
+            
             <div class="lista shadow" *ngFor="let lista of lista">
+                <div class="px">
+                </div>
                 <div class="pedido">
                     <span>{{lista.pedido}}</span>
                 </div>
