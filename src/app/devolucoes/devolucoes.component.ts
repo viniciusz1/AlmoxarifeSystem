@@ -1,17 +1,17 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-entregas',
-  templateUrl: './entregas.component.html',
-  styleUrls: ['./entregas.component.css']
+  selector: 'app-devolucoes',
+  templateUrl: './devolucoes.component.html',
+  styleUrls: ['./devolucoes.component.css']
 })
-export class EntregasComponent implements OnInit {
+export class DevolucoesComponent implements OnInit {
 
-  constructor(
-    private route: ActivatedRoute
-  ) {}
 
+  constructor(private router: Router) {
+    console.log(this.router.url)
+  }
 
   lista = [
     {

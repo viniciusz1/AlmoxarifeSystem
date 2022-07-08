@@ -8,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class PerfilComponent implements OnInit {
 
   constructor() { }
-
+  alteraSenha = false;
+  modificaAlteraSenha(){
+    this.alteraSenha = !this.alteraSenha
+  }
   ngOnInit(): void {
   }
 

@@ -18,7 +18,7 @@
           </div>
           <div class="botao">
             <button>Alterar Perfil</button>
-            <button>Redefinir Senha</button>
+            <button (click)="modificaAlteraSenha()">Redefinir Senha</button>
           </div>
         </div>
         <div class="direita">
@@ -37,5 +37,5 @@
     </div>
   </div>
   </body>
-
+<app-modal-senha (alterandoModal)="modificaAlteraSenha()" *ngIf="alteraSenha"></app-modal-senha>
 </div>

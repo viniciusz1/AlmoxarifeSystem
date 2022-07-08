@@ -1,3 +1,5 @@
+import { PerfilAdminComponent } from './perfil-admin/perfil-admin.component';
+import { DevolucoesComponent } from './devolucoes/devolucoes.component';
 import { RotasModule } from './rotas.module';
 import { ProdutosService } from 'src/app/services/produtos.service';
 import { NgModule } from '@angular/core';
@@ -9,17 +11,15 @@ import { NavComponent } from './pos-login/nav/nav.component';
 import { SideBarComponent } from './pos-login/side-bar/side-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginsModule } from './logins/logins.module';
-import { LoginComponent } from './logins/login/login.component';
-import { CadastroComponent } from './logins/cadastro/cadastro.component';
-import { TelefoneComponent } from './logins/telefone/telefone.component';
-import { VerificarTelComponent } from './logins/verificar-tel/verificar-tel.component';
 import { ConfirmarComponent } from './confirmar/confirmar.component';
 import { ModalPedidosComponent } from './modal-pedidos/modal-pedidos.component';
 import { ModalDevolucaoComponent } from './modal-devolucao/modal-devolucao.component';
 import { PerfilComponent } from './perfil/perfil.component';
 
 import { ModalFiltroComponent } from './home/modal-filtro/modal-filtro.component';
+
 import { ModalSenhaComponent } from './modal-senha/modal-senha.component';
+
 import { HistoricoComponent } from './historico/historico.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { EntregasComponent } from './entregas/entregas.component';
@@ -57,7 +57,9 @@ import { ContasComponent } from './contas/contas.component';
     DetalhesProdutoComponent,
     PosLoginComponent,
     SolicitacoesComponent,
-    ContasComponent
+    ContasComponent,
+	DevolucoesComponent,
+    PerfilAdminComponent
   ],
   imports: [ 
     BrowserModule,

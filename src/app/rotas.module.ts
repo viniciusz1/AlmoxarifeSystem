@@ -1,3 +1,7 @@
+import { PerfilAdminComponent } from './perfil-admin/perfil-admin.component';
+import { DevolucoesComponent } from './devolucoes/devolucoes.component';
+import { EntregasComponent } from './entregas/entregas.component';
+import { HistoricoComponent } from './historico/historico.component';
 import { VerificarTelComponent } from './logins/verificar-tel/verificar-tel.component';
 import { LoginComponent } from './logins/login/login.component';
 import { CadastroComponent } from './logins/cadastro/cadastro.component';
@@ -9,11 +13,16 @@ import { HomeComponent } from './home/home.component';
 import { SideBarComponent } from './pos-login/side-bar/side-bar.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { DetalhesProdutoComponent } from './detalhes-produto/detalhes-produto.component';
+
+
+import { ConferenciaComponent } from './conferencia/conferencia.component';
+
 import { TelefoneComponent } from './logins/telefone/telefone.component';
 import { ConfirmarComponent } from './confirmar/confirmar.component';
 import { ModalPedidosComponent } from './modal-pedidos/modal-pedidos.component';
 import { ModalDevolucaoComponent } from './modal-devolucao/modal-devolucao.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
+
 import { HistoricoComponent } from './historico/historico.component';
 import { EntregasComponent } from './entregas/entregas.component';
 import { SolicitacoesComponent } from './solicitacoes/solicitacoes.component';
@@ -129,9 +138,14 @@ import { ContasComponent } from './contas/contas.component';
         path: 'perfil',
         component: PerfilComponent,
         canActivate: []
-      }
-      ]),
-  ],
+      },
+            {
+                path: 'historico',
+                component: HistoricoComponent,
+                canActivate: []
+            }
+      ])
+  ]
   exports: [RouterModule]
 })
 export class RotasModule { }
