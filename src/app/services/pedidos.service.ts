@@ -9,6 +9,9 @@ export class PedidosService {
   addPedido(pedido: Pedido){
     this.pedidos.push(pedido)
   }
+  removePedido(index: number){
+    this.pedidos.splice(index, 1)
+  }
   getPedido(){
     return this.pedidos;
   }

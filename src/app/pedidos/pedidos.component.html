@@ -10,7 +10,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-6" *ngFor="let lista of lista">
+                <div class="col-6" *ngFor="let lista of lista; let i = index">
                     <div class="duas-div col-5">
                         <div class="div-cima">
                             <div>
@@ -45,7 +45,7 @@
                                 <span>Status: {{lista.status}}</span>
                             </div>
                             <div class="cancelar">
-                                <button>Cancelar Pedido</button>
+                                <button (click)="removerPedido(i)">Cancelar Pedido</button>
                             </div>
                         </div>
                     </div>
