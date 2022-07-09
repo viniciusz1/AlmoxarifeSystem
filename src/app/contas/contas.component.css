@@ -1,4 +1,4 @@
-body{
+.body{
     display: grid;
     justify-content: center;
     /* align-items: center; */
@@ -7,7 +7,6 @@ body{
 
 .pg{
     font-size: calc(1.3rem + .6vw);
-    text-decoration: underline;
     margin-top: 50px;
     margin-bottom: 50px;
 }

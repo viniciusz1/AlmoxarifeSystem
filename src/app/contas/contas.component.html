@@ -1,9 +1,10 @@
 <div class="d-flex bg-light container">
-    <body>
+    <div class="body">
         <div class="topo">
-            <div class="pg">
-                <span>Contas_______</span>
-            </div>
+            <div class="pg" style="font-size: calc(1.3rem + .6vw);">
+                        <span>Home</span>
+                        <hr style="margin: 0; width: 200%;">    
+                    </div>
             <div class="pesquisa-total">
                 <div class="pesquisa">
                     <i class="bi bi-search"></i>
@@ -33,6 +34,6 @@
                 </div>
             </div>
         </div>
-    </body>
+    </div>
     <app-perfil-admin *ngIf="perfilState == true"></app-perfil-admin>
 </div>
