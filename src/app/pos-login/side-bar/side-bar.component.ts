@@ -46,6 +46,9 @@ export class SideBarComponent implements OnInit {
   }
   
   ngOnInit(): void {
+    if(this.state == "fechado"){
+      
+    }
   }
 
 }

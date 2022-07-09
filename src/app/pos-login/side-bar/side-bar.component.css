@@ -1,6 +1,9 @@
 .icons-size{
     font-size: 23px;
 }
+.bg-blue{
+    background-color: #0047B5;
+}
 .cursor{
     cursor: pointer;
 }
@@ -11,6 +14,9 @@
 .center{
     padding: 2px;
     margin-bottom: 10px;
+}
+i{
+    padding-left: 8px;
 }
 .user{
     display: flex;

@@ -1,49 +1,44 @@
 <div [@teste]="state" class="index border d-flex flex-column
- flex-shrink-0 p-3 bg-light position-relative" style="height: 91vh;" 
+ flex-shrink-0 bg-light position-relative" style="height: 91vh;padding: 6px;" 
  (mouseenter)="changeStatus()" (mouseleave)="changeStatus()">
-
-
-    <div routerLink="/" class="center cor-azul cursor d-flex text-center">
-        <i class="bi bi-house-door-fill icons-size"></i>
+    <div [routerLinkActiveOptions]="{exact: true}" 
+    routerLinkActive="bg-blue text-light" routerLink="/" class="center cor-azul cursor d-flex text-center">
+        <i class="bi bi-house-door icons-size"></i>
         <span *ngIf="stateTxt == 'aberto'" class="margin-icons">
             Home
         </span>
     </div>
-
-    <div routerLink="/historico" class="index center cor-azul cursor d-flex text-center">
-        <i class="bi bi-alarm-fill icons-size"></i>
+    <div routerLinkActive="bg-blue text-light" routerLink="/historico" class="index center cor-azul cursor d-flex text-center">
+        <i class="bi bi-alarm icons-size"></i>
         <span *ngIf="stateTxt == 'aberto'" class="margin-icons">
             Histórico
         </span>
     </div>
-
-    
-
-    <div routerLink="/entregas" class="center cor-azul cursor d-flex text-center">
+    <div routerLinkActive="bg-blue text-light" routerLink="/entregas" class="center cor-azul cursor d-flex text-center">
         <i class="bi bi-journal-text icons-size"></i>
         <span  *ngIf="stateTxt == 'aberto'" class="margin-icons">
             Reservas
         </span>
     </div>
-    <div *ngIf="(user == 'atendente' || user == 'admin')" routerLink="/devolucoes" class="center cor-azul cursor d-flex text-center">
+    <div routerLinkActive="bg-blue text-light" *ngIf="(user == 'atendente' || user == 'admin')" routerLink="/devolucoes" class="center cor-azul cursor d-flex text-center">
         <i class="bi bi-cart icons-size"></i>
         <span  *ngIf="stateTxt == 'aberto'" class="margin-icons">
             Devoluções
         </span>
     </div>
-    <div *ngIf="(user == 'admin' || user == 'supervisor')" routerLink="/produtos" class="center cor-azul cursor d-flex text-center">
+    <div routerLinkActive="bg-blue text-light" *ngIf="(user == 'admin' || user == 'supervisor')" routerLink="/produtos" class="center cor-azul cursor d-flex text-center">
         <i class="bi bi-bag icons-size"></i>
         <span  *ngIf="stateTxt == 'aberto'" class="margin-icons">
             Produtos
         </span>
     </div>
-    <div *ngIf="user == 'admin'" routerLink="/contas" class="center cor-azul cursor d-flex text-center">
+    <div routerLinkActive="bg-blue text-light" *ngIf="user == 'admin'" routerLink="/contas" class="center cor-azul cursor d-flex text-center">
         <i class="bi bi-arrow-repeat icons-size"></i>
         <span  *ngIf="stateTxt == 'aberto'" class="margin-icons">
             Alterar Status
         </span>
     </div>
-    <div *ngIf="user == 'admin'" routerLink="/solicitacoes" class="center cor-azul cursor d-flex text-center">
+    <div  routerLinkActive="bg-blue text-light" *ngIf="user == 'admin'" routerLink="/solicitacoes" class="center cor-azul cursor d-flex text-center">
         <i class="bi bi-bell icons-size"></i>
         <span  *ngIf="stateTxt == 'aberto'" class="margin-icons">
             Solicitações
