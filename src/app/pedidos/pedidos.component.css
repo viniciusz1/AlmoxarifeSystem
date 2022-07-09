@@ -30,7 +30,7 @@
     align-items: center;
     padding: 10px 0px 10px 20px;
     border-bottom: 1px solid black;
-    column-gap: 22vw;
+    justify-content: space-between;
 }
 
 p {
@@ -55,30 +55,26 @@ i {
     padding: 10px;
     font-weight: 500;
     font-size: 15px;
-    column-gap: 18vw;
     display: flex;
     align-items: center;
 }
 
-.datas {
-    display: flex;
-    
-    column-gap: 18vw;
-}
-
-.dataRetirada,
-.dataDevolucao,
 .nome {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
+.dataDevolucao{
+    margin-right:16px
+}
 .nome,
 .produtos,
 .div-baixo,
 .footer {
     margin-left: 10px;
+}
+.footer{
+    justify-content: space-between;
 }
 
 .topo-2 {
@@ -108,8 +104,11 @@ i {
 .produtos,
 .baixo{
     margin-top: 5px;
-}
 
+}
+.baixo{
+    justify-content: space-between;
+}
 .cancelar{
     background-color: #E82D2D;
     padding: 10px 15px;
