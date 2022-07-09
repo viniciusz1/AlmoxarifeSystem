@@ -73,6 +73,11 @@ import { ContasComponent } from './contas/contas.component';
           path: 'contas',
           component: ContasComponent,
           canActivate:[]
+        },
+        {
+          path: 'perfil-admin',
+          component: PerfilAdminComponent,
+          canActivate:[]
         }]
       },
       {
