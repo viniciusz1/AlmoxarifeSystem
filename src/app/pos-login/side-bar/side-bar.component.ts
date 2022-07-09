@@ -27,8 +27,8 @@ export class SideBarComponent implements OnInit {
 
   // user = "atendente"
   // user = "supervisor"
-  user = "admin"
-  // user = "professor"
+  // user = "admin"
+  user = "professor"
   state = "fechado";
   stateTxt= "fechado";
 

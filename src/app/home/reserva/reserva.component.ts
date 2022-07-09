@@ -21,6 +21,7 @@ export class ReservaComponent implements OnInit {
   }
   addPedido(){
     this.pedidoService.addPedido(new Pedido("Jubileu", this.listaCarrinho, this.dataRetirada, this.dataDevolucao, 1, 1))
+    this.fecharReserva()
   }
   constructor(private car: CarrinhoService,
     private pedidoService: PedidosService) { }

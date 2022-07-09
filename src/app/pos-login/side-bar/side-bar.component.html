@@ -16,10 +16,16 @@
             Histórico
         </span>
     </div>
-    <div routerLinkActive="bg-blue text-light" routerLink="/entregas" class="center cor-azul cursor d-flex text-center">
+    <div *ngIf="user != 'professor'" routerLinkActive="bg-blue text-light" routerLink="/entregas" class="center cor-azul cursor d-flex text-center">
         <i class="bi bi-journal-text icons-size"></i>
         <span  *ngIf="stateTxt == 'aberto'" class="margin-icons">
             Reservas
+        </span>
+    </div>
+    <div *ngIf="user == 'professor'" routerLinkActive="bg-blue text-light" routerLink="/pedidos" class="center cor-azul cursor d-flex text-center">
+        <i class="bi bi-journal-text icons-size"></i>
+        <span  *ngIf="stateTxt == 'aberto'" class="margin-icons">
+            Seus Pedidos
         </span>
     </div>
     <div routerLinkActive="bg-blue text-light" *ngIf="(user == 'atendente' || user == 'admin')" routerLink="/devolucoes" class="center cor-azul cursor d-flex text-center">

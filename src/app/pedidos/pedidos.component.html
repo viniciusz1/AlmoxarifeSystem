@@ -14,7 +14,7 @@
                     <div class="duas-div col-5">
                         <div class="div-cima">
                             <div>
-                                <p>Código Pedido: {{lista.pedido}}</p>
+                                <p>Código Pedido: {{lista.codigo}}</p>
                             </div>
                             <div>
                                 <div class="info">
@@ -26,18 +26,18 @@
                             <div class="Cima">
                                 <div class="d-inline-block text-truncate" style="max-width: 30vw;">
                                     <i style="font-size: 30px;" class="bi bi-box2-fill"></i>
-                                    <span class="bold">{{lista.Produtos}}</span>
+                                    <span class="bold" *ngFor="let produto of lista.listaProdutos">{{produto.nome}}, </span>
                                 </div>
                             </div>
                             <div class="baixo">
                                 <div class="datas">
                                     <div class="dataRetirada">
                                         <i style="font-size: 30px;" class="bi bi-calendar2-plus"></i>
-                                        <span class="bold">{{lista.Data}}</span>
+                                        <span class="bold">{{lista.dataReserva | date: 'dd/MM/yyyy'}}</span>
                                     </div>
                                     <div class="dataDevolucao">
                                         <i style="font-size: 30px;" class="bi bi-calendar2-check"></i>
-                                        <span class="bold">{{lista.DataDev}}</span>
+                                        <span class="bold">{{lista.dataDevolucao | date: 'dd/MM/yyyy'}}</span>
                                     </div>
                                 </div>
 
