@@ -39,7 +39,6 @@
 .topo{
     display: flex;
     width: 80vw;
-    column-gap: 20%;
     margin-bottom: 52px;
 }
 
@@ -102,7 +101,7 @@ i{
     display: flex;
     justify-content: end;
     align-items: center;
-    width: 50vw;
+    width: 100%;
     column-gap: 15px;
 }
 

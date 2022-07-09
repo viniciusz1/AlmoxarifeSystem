@@ -1,6 +1,6 @@
 <div class="d-flex">
         <div class="container">
-            <div class="row mt-5">
+            <div class="row mt-5" style="display: flex; justify-content: center;">
                 <div class="topo">
                     <div style="font-size: calc(1.3rem + .6vw);">
                         <span>Home</span>
@@ -16,9 +16,10 @@
                     <div class="filtrar">
                         <div class="icone">
                             <button class="filtross" (click)="modalOpen(false)">Filtrar Mais</button>
-                            <i class="bi bi-sliders" (click)="openCart()"></i>
+                            <i class="bi bi-sliders"></i>
                         </div>
                     </div>
+                    <i class="bi bi-cart4 carrinho" (click)="openCart()"></i>
                 </div>
             </div>
         </div>
