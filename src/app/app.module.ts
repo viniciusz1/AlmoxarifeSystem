@@ -34,7 +34,6 @@ import { PosLoginComponent } from './pos-login/pos-login.component';
 import { SolicitacoesComponent } from './solicitacoes/solicitacoes.component';
 import { ContasComponent } from './contas/contas.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

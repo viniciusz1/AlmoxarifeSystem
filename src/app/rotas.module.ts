@@ -36,7 +36,7 @@ import { ContasComponent } from './contas/contas.component';
                 path: 'home',
                 component: PosLoginComponent,
                 canActivate: [], children: [{
-                    path: 'home',
+                    path: '',
                     component: HomeComponent,
                     canActivate: []
                 },

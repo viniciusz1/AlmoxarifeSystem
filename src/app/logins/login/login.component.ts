@@ -17,15 +17,15 @@ export class LoginComponent implements OnInit {
 
   listaUsuario = [
     {
-    usuario: "Otavio",
+    usuario: "otavio",
     senha: "123"
   },
   {
-    usuario: "Vinicius",
+    usuario: "vinicius",
     senha: "123"
   },
   {
-    usuario: "Camilly",
+    usuario: "camilly",
     senha: "123"
   }
   
@@ -36,11 +36,7 @@ export class LoginComponent implements OnInit {
 
   login(){
     let usuarios =  this.listaUsuario.find(lista => lista.usuario == this.usuario && lista.senha == this.senha);
-    if(usuarios){
-      console.log("aaa")
-    }else{
-      console.log("bbb")
-    }
+    console.log(usuarios)
   }
 
   
