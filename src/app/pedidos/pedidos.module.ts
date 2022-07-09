@@ -5,6 +5,7 @@ import { DevolucoesComponent } from './devolucoes/devolucoes.component'
 import { ConferenciaComponent } from './conferencia/conferencia.component'
 import { PedidosComponent } from './pedidos.component'
 import { NgModule } from '@angular/core';
+import { ConfirmarComponent } from './confirmar/confirmar.component';
 import { CommonModule } from '@angular/common';
 
 
@@ -17,7 +18,8 @@ import { CommonModule } from '@angular/common';
     ModalDevolucaoComponent,
     ModalDevolucaoComponent,
     PedidosComponent,
-    HistoricoComponent
+    HistoricoComponent,
+    ConfirmarComponent
   ],
   imports: [
     CommonModule
@@ -27,7 +29,8 @@ import { CommonModule } from '@angular/common';
     DevolucoesComponent,
     EntregasComponent,
     ModalDevolucaoComponent,
-    ModalDevolucaoComponent
+    ModalDevolucaoComponent,
+    ConfirmarComponent
   ]
 })
 export class PedidosModule { }

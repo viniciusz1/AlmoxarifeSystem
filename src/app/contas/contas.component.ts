@@ -6,6 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contas.component.css']
 })
 export class ContasComponent implements OnInit {
+  perfilState = false
+
+  mudarPerfilState(){
+    this.perfilState = !this.perfilState
+  }
 
   lista = [
     {

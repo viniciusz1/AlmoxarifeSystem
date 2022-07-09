@@ -29,9 +29,10 @@
                     </div>
                 </div>
                 <div class="botao">
-                    <button>Mais Informações</button>
+                    <button (click)="mudarPerfilState()">Mais Informações</button>
                 </div>
             </div>
         </div>
     </body>
+    <app-perfil-admin *ngIf="perfilState == true"></app-perfil-admin>
 </div>

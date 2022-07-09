@@ -1,6 +1,5 @@
 body {
     background-color: #cacaca;
-    box-shadow: inset 4px 4px 250px 10px #000;
 }
 
 .centro {
@@ -8,7 +7,9 @@ body {
     width: 500px;
     background-color: white;
 }
-
+.fundo{
+    background-color: black;
+}
 .centralizar {
     display: flex;
     align-items: center;

@@ -14,7 +14,7 @@ import { SideBarComponent } from './pos-login/side-bar/side-bar.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { DetalhesProdutoComponent } from './home/produto/detalhes-produto/detalhes-produto.component';
 import { TelefoneComponent } from './logins/telefone/telefone.component';
-import { ConfirmarComponent } from './confirmar/confirmar.component';
+import { ConfirmarComponent } from './pedidos/confirmar/confirmar.component';
 import { ModalPedidosComponent } from './pedidos/modal-pedidos/modal-pedidos.component';
 import { ModalDevolucaoComponent } from './pedidos/modal-devolucao/modal-devolucao.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
