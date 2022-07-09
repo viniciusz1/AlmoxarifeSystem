@@ -36,13 +36,6 @@
 .carrinho-side{
     right: 0;
 }
-
-.pg{
-    font-size: calc(1.3rem + .6vw);
-    text-decoration: underline;  
-}
-
-
 .topo{
     display: flex;
     width: 80vw;

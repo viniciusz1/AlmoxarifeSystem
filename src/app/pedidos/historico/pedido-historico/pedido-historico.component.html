@@ -1,0 +1,43 @@
+
+    <div class="container">
+        <div class="duas-div">
+            <div class="div-cima">
+                <p>Código Pedido: {{lista.pedido}}</p>
+            </div>
+            <div class="div-baixo">
+                <div class="Cima">
+                    <div class="d-inline-block text-truncate produtos">
+                        <i style="font-size: 30px;" class="bi bi-box2-fill"></i>
+                        <span class="bold">{{lista.Produtos}}</span>
+                    </div>
+                </div>
+                <div class="baixo">
+                    <div>
+                        <div class="nome">
+                            <i style="font-size: 30px;" class="bi bi-person"></i>
+                            <span class="bold">{{lista.Professor}}</span>
+                        </div>
+                    </div>
+                    <div class="datas">
+                        <div class="dataRetirada">
+                            <i style="font-size: 30px;" class="bi bi-calendar2-plus"></i>
+                            <span class="bold">{{lista.Data}}</span>
+                        </div>
+                        <div class="dataDevolucao">
+                            <i style="font-size: 30px;" class="bi bi-calendar2-check"></i>
+                            <span class="bold">{{lista.DataDev}}</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="footer">
+                <div class="status">
+                    <span>Status: {{lista.status}}</span>
+                </div>
+                <div class="info">
+                    <span>Mais Informações...</span>
+                </div>
+            </div>
+        </div>
+</div>

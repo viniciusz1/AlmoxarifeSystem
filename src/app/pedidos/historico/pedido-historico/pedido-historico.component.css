@@ -27,6 +27,13 @@
     border-bottom: 1px solid black;
 }
 
+.container{
+    border: 1px solid black;
+    padding: 0px;
+    width: 80vw;
+    margin-bottom: 15px;
+}
+
 
 p{
     margin: 0px;
@@ -113,8 +120,14 @@ select {
   }
 
   .body{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+
+  body{
     display: grid;
     justify-content: center;
     /* align-items: center; */
     width: 150vw;
-  }
+}

@@ -7,7 +7,7 @@ import { PedidosComponent } from './pedidos.component'
 import { NgModule } from '@angular/core';
 import { ConfirmarComponent } from './confirmar/confirmar.component';
 import { CommonModule } from '@angular/common';
-
+import { PedidoHistoricoComponent } from './historico/pedido-historico/pedido-historico.component';
 
 
 @NgModule({
@@ -19,7 +19,8 @@ import { CommonModule } from '@angular/common';
     ModalDevolucaoComponent,
     PedidosComponent,
     HistoricoComponent,
-    ConfirmarComponent
+    ConfirmarComponent,
+    PedidoHistoricoComponent
   ],
   imports: [
     CommonModule

@@ -1,10 +1,10 @@
-<div class="d-flex bg-light">
-    <body>
+<div class="d-flex">
         <div class="container">
             <div class="row mt-5">
                 <div class="topo">
-                    <div class="pg">
-                        <span>Home_______</span>
+                    <div style="font-size: calc(1.3rem + .6vw);">
+                        <span>Home</span>
+                        <hr style="margin: 0; width: 200%;">    
                     </div>
                     <div class="topo-2">
                     <div class="pesquisa">
@@ -35,5 +35,5 @@
         </app-modal-filtro>
         <app-reserva (fechaReserva)="mudarModalReserva($event)" style="z-index: 2;" class="fundo" *ngIf="modalReserva">
         </app-reserva>
-    </body>
+
     </div>
