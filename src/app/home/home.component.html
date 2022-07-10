@@ -25,14 +25,16 @@
         </div>
         <div class="container-fluid">
             <div class="row">
-                <app-produto class="col-xl-4 index col-md-6" [produto]="lista" *ngFor="let lista of (lista) | filtroProdutos: pesquisaProduto">
+                <app-produto class="col-xl-4 index col-md-6" [produto]="lista" *ngFor="let lista of (lista) | filtroEspecializadoProdutos: filtroEspecializado | filtroProdutos: pesquisaProduto ">
                 </app-produto>
             </div>
         </div>
     </div>
     <app-carrinho (fechaCarrinho)="closeCart($event)" (reserva)="mudarModalReserva($event)" [state]="carState"
         class="position-fixed bg-primary carrinho-side"></app-carrinho>
-        <app-modal-filtro (fechaModal)="modalOpen($event)" *ngIf="modal" style="z-index: 2;" class="fundo">
+        <app-modal-filtro (fechaModal)="modalOpen($event)" 
+        (filtragem)="executarFiltroEspecializado($event)"
+        *ngIf="modal" style="z-index: 2;" class="fundo">
         </app-modal-filtro>
         <app-reserva (fechaReserva)="mudarModalReserva($event)" style="z-index: 2;" class="fundo" *ngIf="modalReserva">
         </app-reserva>

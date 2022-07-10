@@ -17,8 +17,12 @@ export class HomeComponent implements OnInit {
   carState = "fechado";
   lista: Produto[] = [];
   pesquisaProduto = "";
+  filtroEspecializado = {}
   mudarModalReserva(arg: boolean | Event){
     this.modalReserva = !this.modalReserva;
+  }
+  executarFiltroEspecializado(evento: Event | {}){
+    this.filtroEspecializado = evento
   }
   modalOpen(arg: boolean | Event) {
     this.modal = !this.modal

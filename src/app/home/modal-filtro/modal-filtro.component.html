@@ -12,31 +12,31 @@
         <div class="input-group">
             <div style="padding-right: 7%;" class="col-12">
                 <label for="font label" class="fonte">Nome do produto</label>
-                <input type="text" class=" form-control">
+                <input [(ngModel)]="nome" type="text" class=" form-control">
             </div>
         </div>
         <div class="input-group row">
             <div class="col-6">                
                 <label for="font label"  class="fonte">Código do produto</label>
-                <input type="text" class="form-control">
+                <input [(ngModel)]="codigo" type="text" class="form-control">
             </div>
             <div class="col-6">                
                 <label for="font label" class="fonte">Disponibilidade em estoque</label>
-                <input type="text" class="form-control">
+                <input [(ngModel)]="estoque" type="text" class="form-control">
             </div>
         </div>
         <div class="input-group row">
             <div class="col-6">           
                 <label for="font label" class="fonte">Selecionar classificação</label>
-                <select name="" class="form-select" id=""></select>
+                <select [(ngModel)]="classificacao" name="" class="form-select" id=""></select>
             </div>
             <div class="col-6">       
                 <label for="font label" class="fonte">Selecionar opção de uso</label>
-                <select name="" class="form-select" id=""></select>
+                <select [(ngModel)]="opcaoUso" name="" class="form-select" id=""></select>
             </div>
         </div>
     </div>
     <div class="row">
-        <button class="col-6 offset-6 btn btn-primary mt-5">filtrar</button>
+        <button (click)="filtrar()" class="col-6 offset-6 btn btn-primary mt-5">filtrar</button>
     </div>
 </div>
