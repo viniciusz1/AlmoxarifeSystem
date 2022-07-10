@@ -10,7 +10,7 @@
                     <div class="pesquisa">
                         <div class="pesquisa">
                             <i class="bi bi-search"></i>
-                            <input placeholder="Pesquisar Pedido">
+                            <input [(ngModel)]="pesquisaProduto" placeholder="Pesquisar Pedido">
                         </div>
                     </div>
                     <div class="filtrar">
@@ -25,7 +25,7 @@
         </div>
         <div class="container-fluid">
             <div class="row">
-                <app-produto class="col-xl-4 index col-md-6" [produto]="lista" *ngFor="let lista of lista">
+                <app-produto class="col-xl-4 index col-md-6" [produto]="lista" *ngFor="let lista of (lista) | filtroProdutos: pesquisaProduto">
                 </app-produto>
             </div>
         </div>

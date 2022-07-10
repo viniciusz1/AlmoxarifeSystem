@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   state = "fechado";
   carState = "fechado";
   lista: Produto[] = [];
-
+  pesquisaProduto = "";
   mudarModalReserva(arg: boolean | Event){
     this.modalReserva = !this.modalReserva;
   }
