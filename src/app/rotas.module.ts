@@ -28,7 +28,7 @@ import { ContasComponent } from './contas/contas.component';
     CommonModule,
     RouterModule.forRoot([
       {
-        path: '',
+        path: 'home',
         component: PosLoginComponent,
         canActivate: [], children: [{
           path: '',
@@ -92,7 +92,7 @@ import { ContasComponent } from './contas/contas.component';
         component: CadastroComponent
       },
       {
-        path: 'login',
+        path: '',
         component: LoginComponent
       },
       {
@@ -153,6 +153,7 @@ import { ContasComponent } from './contas/contas.component';
           component: HistoricoComponent,
           canActivate: []
       }
+
       ])
   ],
   exports: [RouterModule]
