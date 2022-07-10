@@ -1,3 +1,5 @@
+import { NgForm } from '@angular/forms';
+import { Produto } from 'src/app/shared/produto.model';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
@@ -12,22 +14,15 @@ export class ModalFiltroComponent implements OnInit {
     this.fechaModal.emit(false)
   }
  
-  nome = ""
-  codigo = "";
-  estoque = ""
-  classificacao = ""
-  opcaoUso = ""
 
+  onSubmit(form: NgForm){
+    console.log("OI")
+   console.log(form)
+  }
   
-  filtrar(){
-    let filtro = {
-      nome: this.nome,
-      codigo: this.codigo,
-      estoque: this.estoque,
-      classificacao: this.classificacao,
-      opcaoUso: this.opcaoUso
-      }
-    this.filtragem.emit(filtro)
+  filtrar(form: NgForm){
+  
+    this.filtragem.emit(new Produto(form.value.nome, form.value.estoque, form.value.classificacao, "", form.value.opcaoUso, "", form.value.codigo))
   }
   constructor() { }
 
