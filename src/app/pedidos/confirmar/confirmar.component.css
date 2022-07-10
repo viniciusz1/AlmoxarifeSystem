@@ -10,6 +10,7 @@ body {
 .fundo{
     background-color: black;
 }
+
 .centralizar {
     display: flex;
     align-items: center;

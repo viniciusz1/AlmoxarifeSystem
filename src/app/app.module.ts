@@ -1,3 +1,5 @@
+import { FiltroEspecializadoProdutosPipe } from './pipes/filtro-especializado-produtos.pipe';
+import { FiltroProdutosPipe } from './pipes/filtro-produtos.pipe';
 import { PedidosModule } from './pedidos/pedidos.module';
 import { PerfilAdminComponent } from './contas/perfil-admin/perfil-admin.component';
 import { RotasModule } from './rotas.module';
@@ -41,7 +43,9 @@ import { ContasComponent } from './contas/contas.component';
     PosLoginComponent,
     SolicitacoesComponent,
     ContasComponent,
-    PerfilAdminComponent
+    PerfilAdminComponent,
+    FiltroProdutosPipe,
+    FiltroEspecializadoProdutosPipe
   ],
   imports: [ 
     BrowserModule,

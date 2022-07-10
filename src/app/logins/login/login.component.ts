@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     senha: "123"
   },
   {
-    usuario: "Vinicius",
+    usuario: "vinicius",
     senha: "123"
   },
   {
