@@ -41,13 +41,13 @@ i{
 
 .baixo{
     display: flex;
-    column-gap: 50vw;
+    justify-content: space-between;
     width: 100%;
 }
 
 .footer{
-    display: flex;
-    column-gap: 58vw;
+    display: flex;    
+    justify-content: space-between;
     padding: 10px;
     font-weight: 500;
 }
