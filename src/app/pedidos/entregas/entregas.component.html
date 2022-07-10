@@ -1,9 +1,10 @@
 
-<div class="d-flex bg-light">
-    <body>
+<div class="d-flex bg-light container">
+    <div class="body">
         <div class="topo">
-            <div class="pg">
-                <span>Realizar Entregas_______</span>
+            <div class="pg" style="font-size: calc(1.3rem + .6vw);">
+                <span>Entregas</span>
+                <hr style="margin: 0; width: 200%;">    
             </div>
         </div>
 
@@ -49,10 +50,10 @@
                 <div class="data">
                     <span>{{lista.Data}}</span>
                 </div>
-                <div class="botao">
-                    <button>Realizar Entrega</button>
+                <div class="botao" >
+                    <button (click)="gotoConferencia()" >Realizar Entrega</button>
                 </div>
             </div>
 
         </div>
-    </body>
+    </div>

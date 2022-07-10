@@ -25,10 +25,10 @@ export class SideBarComponent implements OnInit {
 
   constructor() { }
 
-  user = "atendente"
+  // user = "atendente"
   // user = "supervisor"
   // user = "admin"
-  // user = "professor"
+  user = "professor"
   state = "fechado";
   stateTxt= "fechado";
 
@@ -46,6 +46,9 @@ export class SideBarComponent implements OnInit {
   }
   
   ngOnInit(): void {
+    if(this.state == "fechado"){
+      
+    }
   }
 
 }

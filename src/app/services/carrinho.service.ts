@@ -13,5 +13,8 @@ export class CarrinhoService {
    getLista(){
       return this.lista
    }
+   addProduto(produto: Produto){
+    this.lista.push(produto)
+   }
   constructor() { }
 }

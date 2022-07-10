@@ -1,21 +1,21 @@
-<app-nav></app-nav>
+
 
 <div class="d-flex bg-light">
-    <app-side-bar class="position-fixed"></app-side-bar>
 
     <div class="container body">
         <div class="principais">
             <div class="topo">
-                <div class="pg">
-                    <span>Pedidos_______</span>
+                <div class="pg" style="font-size: calc(1.3rem + .6vw);">
+                    <span>Seus Pedidos</span>
+                    <hr style="margin: 0; width: 200%;">    
                 </div>
             </div>
             <div class="row">
-                <div class="col-6" *ngFor="let lista of lista">
+                <div class="col-6" *ngFor="let lista of lista; let i = index">
                     <div class="duas-div col-5">
                         <div class="div-cima">
                             <div>
-                                <p>Código Pedido: {{lista.pedido}}</p>
+                                <p>Código Pedido: {{lista.codigo}}</p>
                             </div>
                             <div>
                                 <div class="info">
@@ -27,21 +27,18 @@
                             <div class="Cima">
                                 <div class="d-inline-block text-truncate" style="max-width: 30vw;">
                                     <i style="font-size: 30px;" class="bi bi-box2-fill"></i>
-                                    <span class="bold">{{lista.Produtos}}</span>
+                                    <span class="bold" *ngFor="let produto of lista.listaProdutos">{{produto.nome}}, </span>
                                 </div>
                             </div>
                             <div class="baixo">
-                                <div class="datas">
                                     <div class="dataRetirada">
                                         <i style="font-size: 30px;" class="bi bi-calendar2-plus"></i>
-                                        <span class="bold">{{lista.Data}}</span>
+                                        <span class="bold">{{lista.dataReserva | date: 'dd/MM/yyyy'}}</span>
                                     </div>
                                     <div class="dataDevolucao">
                                         <i style="font-size: 30px;" class="bi bi-calendar2-check"></i>
-                                        <span class="bold">{{lista.DataDev}}</span>
+                                        <span class="bold">{{lista.dataDevolucao | date: 'dd/MM/yyyy'}}</span>
                                     </div>
-                                </div>
-
                             </div>
                         </div>
                         <div class="footer">
@@ -49,7 +46,7 @@
                                 <span>Status: {{lista.status}}</span>
                             </div>
                             <div class="cancelar">
-                                <button>Cancelar Pedido</button>
+                                <button (click)="removerPedido(i)">Cancelar Pedido</button>
                             </div>
                         </div>
                     </div>

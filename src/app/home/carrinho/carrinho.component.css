@@ -32,7 +32,7 @@
 
 }
 .DivWithScroll{
-    height:70%;
+    height:330px;
     overflow:scroll;
     overflow-x:hidden;
 }

@@ -1,4 +1,4 @@
-body{
+.body{
     display: grid;
     justify-content: center;
     /* align-items: center; */
@@ -7,7 +7,6 @@ body{
 
 .pg{
     font-size: calc(1.3rem + .6vw);
-    text-decoration: underline;
     margin-top: 50px;
     margin-bottom: 50px;
 }
@@ -18,7 +17,10 @@ body{
     width: 80vw;
     column-gap: 20%;
 }
-
+.bloco{
+    background-color: #e8e9eb;
+    box-shadow: 4px 5px 7px -5px;
+}
 .pesquisa{
     border-bottom: 0.5px solid black;
 }
@@ -43,7 +45,7 @@ input{
 }
 
 .indice, .lista{
-    margin-top: 20px;
+    margin-top: 8px;
     display: flex;
     column-gap: 15px;
 }
