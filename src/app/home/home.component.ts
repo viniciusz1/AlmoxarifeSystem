@@ -17,11 +17,11 @@ export class HomeComponent implements OnInit {
   carState = "fechado";
   lista: Produto[] = [];
   pesquisaProduto = "";
-  filtroEspecializado = {}
+  filtroEspecializado: Produto = new Produto("Resistor Elétrico1", "1", "Material Elétrico", "produto", "Descartável", "Descrição", 1)
   mudarModalReserva(arg: boolean | Event){
     this.modalReserva = !this.modalReserva;
   }
-  executarFiltroEspecializado(evento: Event | {}){
+  executarFiltroEspecializado(evento: Produto){
     this.filtroEspecializado = evento
   }
   modalOpen(arg: boolean | Event) {

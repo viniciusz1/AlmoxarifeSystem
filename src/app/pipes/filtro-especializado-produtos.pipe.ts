@@ -14,11 +14,15 @@ interface teste{
 })
 export class FiltroEspecializadoProdutosPipe implements PipeTransform {
 
-  transform(listaProdutos: Produto[], filtragem: {} | teste): Produto[] {
-    if(listaProdutos && filtragem)
-      console.log(filtragem)
+  transform(listaProdutos: Produto[], filtragem: Produto | teste): Produto[] {
+    if(listaProdutos && filtragem.nome){
+      
+    }
+    // let novo: teste = filtragem
+    // if(listaProdutos && filtragem.nome)
+    //   console.log(filtragem)
       // listaProdutos.filter(e => e.classificacao.startsWith())
-      return listaProdutos
+      // return listaProdutos
 
     return listaProdutos
   }

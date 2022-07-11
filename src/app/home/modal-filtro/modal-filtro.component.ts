@@ -9,7 +9,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class ModalFiltroComponent implements OnInit {
   @Output() fechaModal = new EventEmitter<boolean>();
-  @Output() filtragem = new EventEmitter<{}>();
+  @Output() filtragem = new EventEmitter<Produto>();
   clicouModal(){
     this.fechaModal.emit(false)
   }
