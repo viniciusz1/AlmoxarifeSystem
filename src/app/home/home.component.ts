@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   carState = "fechado";
   lista: Produto[] = [];
   pesquisaProduto = "";
-  filtroEspecializado: Produto = new Produto("Resistor Elétrico1", "1", "Material Elétrico", "produto", "Descartável", "Descrição", 1)
+  filtroEspecializado: Produto = new Produto("","","","","","",-1)
   mudarModalReserva(arg: boolean | Event){
     this.modalReserva = !this.modalReserva;
   }

@@ -21,7 +21,6 @@ export class ModalFiltroComponent implements OnInit {
   }
   
   filtrar(form: NgForm){
-  
     this.filtragem.emit(new Produto(form.value.nome, form.value.estoque, form.value.classificacao, "", form.value.opcaoUso, "", form.value.codigo))
   }
   constructor() { }
