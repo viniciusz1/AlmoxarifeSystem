@@ -1,18 +1,21 @@
-import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-devolucoes',
-  templateUrl: './devolucoes.component.html',
-  styleUrls: ['./devolucoes.component.css']
+  selector: 'app-entregas',
+  templateUrl: './entregas.component.html',
+  styleUrls: ['./entregas.component.css']
 })
-export class DevolucoesComponent implements OnInit {
+export class EntregasComponent implements OnInit {
 
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
-  constructor(private router: Router) {
-    console.log(this.router.url)
+  gotoConferencia(){
+    this.router.navigate(['/conferencia'])
   }
-
   lista = [
     {
       pedido: "001",

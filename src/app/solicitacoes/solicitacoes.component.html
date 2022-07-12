@@ -1,12 +1,13 @@
-<div class="d-flex bg-light">
-    <body>
+<div class="d-flex bg-light container">
+    <div class="body">
         <div class="topo">
-            <div class="pg">
-                <span>Solicitações_______</span>
+            <div class="pg" style="font-size: calc(1.3rem + .6vw);">
+                <span>Solicitações</span>
+                <hr style="margin: 0; width: 200%;">    
             </div>
         </div>
         <div class="container">
-            <div class="lista shadow" style="font-size: 18px; background-color: #f3f3f3;" *ngFor="let lista of lista">
+            <div class="lista bloco" style="font-size: 18px; background-color: #f3f3f3;" *ngFor="let lista of lista">
                 <div class="px">
                 </div>
                 <div class="nome">
@@ -34,5 +35,5 @@
                 </div>
             </div>
         </div>
-    </body>
+    </div>
 </div>

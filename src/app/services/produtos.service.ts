@@ -7,7 +7,19 @@ import { Produto } from '../shared/produto.model';
 
 export class ProdutosService {
 
-  private lista: Produto[] = [new Produto ("vinicius", "criou", "Um", "produto", "adsçf", "fdosai", 1)]
+  private lista: Produto[] = 
+  [new Produto ("Resistor Elétrico1", "1", "Material Elétrico", "produto", "Descartável", "Descrição", 1),
+  new Produto ("Resistor Elétrico2", "1", "Material Elétrico", "produto", "Descartável", "Descrição", 1),
+  new Produto ("Resistor Elétrico3", "1", "Material Elétrico", "produto", "Descartável", "Descrição", 1),
+  new Produto ("Resistor Elétrico4", "1", "Material Elétrico", "produto", "Descartável", "Descrição", 1),
+  new Produto ("Resistor Elétrico5", "1", "Material Elétrico", "produto", "Descartável", "Descrição", 1),
+  new Produto ("Resistor Elétrico6", "1", "Material Elétrico", "produto", "Descartável", "Descrição", 1),
+  new Produto ("Resistor Elétrico7", "1", "Material Elétrico", "produto", "Descartável", "Descrição", 1),
+  new Produto ("Resistor Elétrico8", "1", "Material Elétrico", "produto", "Descartável", "Descrição", 1),
+  new Produto ("Resistor Elétrico9", "1", "Material Elétrico", "produto", "Descartável", "Descrição", 1),
+  new Produto ("Resistor Elétrico0", "1", "Material Elétrico", "produto", "Descartável", "Descrição", 1),
+  new Produto ("Resistor Elétrico10", "1", "Material Elétrico", "produto", "Descartável", "Descrição", 1),
+  new Produto ("Resistor Elétrico11", "1", "Material Elétrico", "produto", "Descartável", "Descrição", 1),]
 
    getListaProdutos(){
       return this.lista
