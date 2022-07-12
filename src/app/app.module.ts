@@ -1,5 +1,7 @@
-import { PerfilAdminComponent } from './perfil-admin/perfil-admin.component';
-import { DevolucoesComponent } from './devolucoes/devolucoes.component';
+import { FiltroEspecializadoProdutosPipe } from './pipes/filtro-especializado-produtos.pipe';
+import { FiltroProdutosPipe } from './pipes/filtro-produtos.pipe';
+import { PedidosModule } from './pedidos/pedidos.module';
+import { PerfilAdminComponent } from './contas/perfil-admin/perfil-admin.component';
 import { RotasModule } from './rotas.module';
 import { ProdutosService } from 'src/app/services/produtos.service';
 import { NgModule } from '@angular/core';
@@ -11,26 +13,15 @@ import { NavComponent } from './pos-login/nav/nav.component';
 import { SideBarComponent } from './pos-login/side-bar/side-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginsModule } from './logins/logins.module';
-import { ConfirmarComponent } from './confirmar/confirmar.component';
-import { ModalPedidosComponent } from './modal-pedidos/modal-pedidos.component';
-import { ModalDevolucaoComponent } from './modal-devolucao/modal-devolucao.component';
 import { PerfilComponent } from './perfil/perfil.component';
-
 import { ModalFiltroComponent } from './home/modal-filtro/modal-filtro.component';
-
 import { ModalSenhaComponent } from './perfil/modal-senha/modal-senha.component';
-
-import { HistoricoComponent } from './historico/historico.component';
-import { PedidosComponent } from './pedidos/pedidos.component';
-import { EntregasComponent } from './entregas/entregas.component';
 import { ProdutoComponent } from './home/produto/produto.component';
-
 import { CarrinhoComponent } from './home/carrinho/carrinho.component';
 import { CarrinhoService } from './services/carrinho.service';
 import { ReservaComponent } from './home/reserva/reserva.component';
-import { DetalhesProdutoComponent } from './detalhes-produto/detalhes-produto.component';
+import { DetalhesProdutoComponent } from './home/produto/detalhes-produto/detalhes-produto.component';
 import { PosLoginComponent } from './pos-login/pos-login.component';
-
 import { SolicitacoesComponent } from './solicitacoes/solicitacoes.component';
 import { ContasComponent } from './contas/contas.component';
 
@@ -40,16 +31,10 @@ import { ContasComponent } from './contas/contas.component';
     NavComponent,
     SideBarComponent,
     HomeComponent,
-    ConfirmarComponent,
-    ModalPedidosComponent,
-    ModalDevolucaoComponent,
     ProdutoComponent,
     ModalFiltroComponent,
     ModalSenhaComponent,
     PerfilComponent,
-    HistoricoComponent,
-    PedidosComponent,
-    EntregasComponent,
     PerfilComponent,
     CarrinhoComponent,
     ReservaComponent,
@@ -57,15 +42,17 @@ import { ContasComponent } from './contas/contas.component';
     PosLoginComponent,
     SolicitacoesComponent,
     ContasComponent,
-	  DevolucoesComponent,
-    PerfilAdminComponent
+    PerfilAdminComponent,
+    FiltroProdutosPipe,
+    FiltroEspecializadoProdutosPipe
   ],
   imports: [ 
     BrowserModule,
     LoginsModule,
     FormsModule,
     BrowserAnimationsModule,
-    RotasModule
+    RotasModule,
+    PedidosModule
   ],
   providers: [CarrinhoService, ProdutosService],
   bootstrap: [AppComponent]

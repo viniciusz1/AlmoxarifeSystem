@@ -1,8 +1,9 @@
-<div class="d-flex bg-light">
-    <body>
+<div class="d-flex bg-light container">
+    <div class="body">
         <div class="topo">
-            <div class="pg">
-                <span>Realizar Devoluções_______</span>
+            <div class="pg" style="font-size: calc(1.3rem + .6vw);">
+                <span>Devoluções</span>
+                <hr style="margin: 0; width: 200%;">    
             </div>
         </div>
 
@@ -28,7 +29,7 @@
                     <span>Data</span>
                 </div>
             </div>
-            <div class="lista shadow" *ngFor="let lista of lista">
+            <div class="lista bloco" *ngFor="let lista of lista">
                 <div class="pedido">
                     <span>{{lista.pedido}}</span>
                 </div>
@@ -44,10 +45,10 @@
                 <div class="data">
                     <span>{{lista.Data}}</span>
                 </div>
-                <div class="botao">
-                    <button>Devolver</button>
+                <div class="botao" >
+                    <button (click)="gotoConferencia()" >Devolver</button>
                 </div>
             </div>
 
         </div>
-    </body>
+    </div>

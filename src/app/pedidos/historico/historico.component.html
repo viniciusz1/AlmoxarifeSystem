@@ -1,0 +1,39 @@
+
+<div class="d-flex bg-light container">  
+  <div class="body">
+    <div class="topo">
+        <div class="pg" style="font-size: calc(1.3rem + .6vw);">
+            <span>Histórico</span>
+            <hr style="margin: 0; width: 200%;">    
+        </div>
+        <div class="topo-2">
+            <div class="pesquisa">
+                <div class="pesquisa">
+                    <i class="bi bi-search"></i>
+                    <input placeholder="Pesquisar Pedido">
+                </div>
+            </div>
+            <div class="ordenar">
+                <div class="icone">
+                    <select class="filtross">
+                        <option>Ordenar</option>
+                        <option>Mais Recentes</option>
+                        <option>Mais Antigos</option>
+                        <option>Maior Quantidade</option>
+                        <option>Menor Quantidade</option>
+                    </select>
+                    <i class="bi bi-chevron-double-down"></i>
+                </div>
+            </div>
+            <div class="filtrar">
+                <div class="icone">
+                    <button class="filtross">Filtrar Mais</button>
+                    <i class="bi bi-sliders"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-pedido-historico *ngFor="let lista of lista" [lista]="lista"></app-pedido-historico>
+
+</div>
+</div>

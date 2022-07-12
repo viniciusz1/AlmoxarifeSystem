@@ -1,6 +1,5 @@
 .pg{
     font-size: calc(1.3rem + .6vw);
-    text-decoration: underline;
     margin-top: 50px;
     margin-bottom: 50px;
 }
@@ -27,12 +26,6 @@
     border-bottom: 1px solid black;
 }
 
-.container{
-    border: 1px solid black;
-    padding: 0px;
-    width: 80vw;
-    margin-bottom: 15px;
-}
 
 p{
     margin: 0px;
@@ -48,13 +41,13 @@ i{
 
 .baixo{
     display: flex;
-    column-gap: 50vw;
+    justify-content: space-between;
     width: 100%;
 }
 
 .footer{
-    display: flex;
-    column-gap: 58vw;
+    display: flex;    
+    justify-content: space-between;
     padding: 10px;
     font-weight: 500;
 }
@@ -119,14 +112,8 @@ select {
   }
 
   .body{
-    display: flex;
-    justify-content: end;
-    align-items: center;
-  }
-
-  body{
     display: grid;
     justify-content: center;
     /* align-items: center; */
     width: 150vw;
-}
+  }

@@ -1,3 +1,4 @@
+import { PedidosService } from './../services/pedidos.service';
 import { Produto } from './../shared/produto.model';
 import { ProdutosService } from './../services/produtos.service';
 import { Component, OnInit } from '@angular/core';
@@ -9,15 +10,19 @@ import { CarrinhoService } from '../services/carrinho.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  constructor(private car: CarrinhoService, private prod: ProdutosService) { }
+  constructor(private car: CarrinhoService, private prod: ProdutosService, private pedidosService: PedidosService) { }
   modal = false;
   modalReserva: boolean = false;
   state = "fechado";
   carState = "fechado";
   lista: Produto[] = [];
-
+  pesquisaProduto = "";
+  filtroEspecializado = {}
   mudarModalReserva(arg: boolean | Event){
     this.modalReserva = !this.modalReserva;
+  }
+  executarFiltroEspecializado(evento: Event | {}){
+    this.filtroEspecializado = evento
   }
   modalOpen(arg: boolean | Event) {
     this.modal = !this.modal
@@ -28,6 +33,9 @@ export class HomeComponent implements OnInit {
   }
   closeCart(param: boolean | Event){
     this.carState = "fechado"
+  }
+  checando(){
+    console.log(this.pedidosService.getPedido())
   }
   
   ngOnInit(): void {  

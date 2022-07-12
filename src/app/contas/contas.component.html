@@ -1,9 +1,10 @@
-<div class="d-flex bg-light">
-    <body>
+<div class="d-flex bg-light container">
+    <div class="body">
         <div class="topo">
-            <div class="pg">
-                <span>Contas_______</span>
-            </div>
+            <div class="pg" style="font-size: calc(1.3rem + .6vw);">
+                        <span>Contas</span>
+                        <hr style="margin: 0; width: 200%;">    
+                    </div>
             <div class="pesquisa-total">
                 <div class="pesquisa">
                     <i class="bi bi-search"></i>
@@ -12,7 +13,7 @@
             </div>
         </div>
         <div class="container">
-            <div class="lista shadow" style="font-size: 18px; background-color: #f3f3f3;" *ngFor="let lista of lista">
+            <div class="lista bloco" style="font-size: 18px; background-color: #f3f3f3;" *ngFor="let lista of lista">
                 <div class="px">
                 </div>
                 <div class="iconePerfil">
@@ -29,9 +30,10 @@
                     </div>
                 </div>
                 <div class="botao">
-                    <button>Mais Informações</button>
+                    <button (click)="mudarPerfilState()">Mais Informações</button>
                 </div>
             </div>
         </div>
-    </body>
+    </div>
+    <app-perfil-admin *ngIf="perfilState == true"></app-perfil-admin>
 </div>
