@@ -14,11 +14,16 @@
 
 .bola-carrinho{
     background-color: orange;
-    background-color: orange;
     width: 15px;
     border-radius: 12px;
     height: 15px;
-
+    position:absolute;
+    right: 5px;
+    display: flex;
+    justify-content: center;
+    color: aliceblue;
+    align-items: center;
+    font-size: 12px;
 }
 
 .fundo{
