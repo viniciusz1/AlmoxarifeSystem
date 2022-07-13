@@ -21,11 +21,11 @@
                     <div class="datas">
                         <div class="dataRetirada">
                             <i style="font-size: 30px;" class="bi bi-calendar2-plus"></i>
-                            <span class="bold">{{lista.dataReserva}}</span>
+                            <span class="bold">{{lista.dataReserva | date: 'dd/MM/yyyy'}}</span>
                         </div>
                         <div class="dataDevolucao">
                             <i style="font-size: 30px;" class="bi bi-calendar2-check"></i>
-                            <span class="bold">{{lista.dataDevolucao}}</span>
+                            <span class="bold">{{lista.dataDevolucao | date: 'dd/MM/yyyy'}}</span>
                         </div>
                     </div>
 
