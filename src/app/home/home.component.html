@@ -23,10 +23,10 @@
                 </div>
             </div>
             <div class="div-filtros">
-                <div class="icones">
-                    <i style="margin-left: 8px;" [ngClass]="{'first': true, 'second': true, 'third': false}" class="bi bi-list-ul" (click)="exibicaoLista()"></i>
+                <div class="default-icones" [ngClass]="{icones: exibicao}" >
+                    <i style="margin-left: 8px;"  class="bi bi-list-ul" (click)="exibicaoLista()"></i>
                 </div>
-                <div class="icones">
+                <div [ngClass]="{icones: !exibicao}">
                     <i style="margin-left: 8px;" class="bi bi-grid-3x3-gap-fill" (click)="exibicaoCard()"></i>
                 </div>
             </div>
