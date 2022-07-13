@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
+import { UsuariosService } from 'src/app/services/usuarios.service';
 
 @Component({
   selector: 'app-login',
@@ -8,38 +10,27 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
   
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private usuariosService: UsuariosService
+  ) { }
 
   ngOnInit(): void {
-    localStorage.removeItem('usuario');
-    localStorage.removeItem('senha');
+    localStorage.removeItem('USUARIO');
+    localStorage.removeItem('SENHA');
   }
-
-  listaUsuario = [
-    {
-    usuario: "Otavio",
-    senha: "123"
-  },
-  {
-    usuario: "vinicius",
-    senha: "123"
-  },
-  {
-    usuario: "Camilly",
-    senha: "123"
-  }
-  
-  ]
 
   usuario = "";
   senha = "";
 
   login(){
-    let usuarios =  this.listaUsuario.find(lista => lista.usuario == this.usuario && lista.senha == this.senha);
+    let usuarios =  this.usuariosService.getListaProdutos().find(lista => lista.usuario == this.usuario && lista.senha == this.senha);
     if(usuarios){
-      console.log("aaa")
+      localStorage.setItem('USUARIO', this.usuario);
+      localStorage.setItem('SENHA', this.senha);
+      this.router.navigate(['/home'])
     }else{
-      console.log("bbb")
+      alert('Usuário não cadastrado!');
     }
   }
 

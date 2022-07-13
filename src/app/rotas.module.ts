@@ -20,6 +20,7 @@ import { ModalDevolucaoComponent } from './pedidos/modal-devolucao/modal-devoluc
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { SolicitacoesComponent } from './solicitacoes/solicitacoes.component';
 import { ContasComponent } from './contas/contas.component';
+import CheckLogged from './checklogged';
 
 
 @NgModule({
@@ -30,7 +31,7 @@ import { ContasComponent } from './contas/contas.component';
       {
         path: 'home',
         component: PosLoginComponent,
-        canActivate: [], children: [{
+        canActivate: [CheckLogged], children: [{
           path: '',
           component: HomeComponent,
           canActivate: []
@@ -38,52 +39,52 @@ import { ContasComponent } from './contas/contas.component';
         {
           path: 'pedidos',
           component: PedidosComponent,
-          canActivate: []
+          canActivate: [CheckLogged]
         },
         {
           path: 'devolucoes',
           component: DevolucoesComponent,
-          canActivate: []
+          canActivate: [CheckLogged]
         },
         {
           path: 'perfil',
           component: PerfilComponent,
-          canActivate: []
+          canActivate: [CheckLogged]
         },
         {  
           path: 'detalhes-produto',
           component: DetalhesProdutoComponent,
-          canActivate: []
+          canActivate: [CheckLogged]
         },
         {  
           path: 'sidebar',
           component: SideBarComponent,
-          canActivate: []
+          canActivate: [CheckLogged]
         },
         {  
           path: 'historico',
           component: HistoricoComponent,
-          canActivate: []
+          canActivate: [CheckLogged]
         },
         {
           path: 'entregas',
           component: EntregasComponent,
-          canActivate:[]
+          canActivate:[CheckLogged]
         },
         {
           path: 'solicitacoes',
           component: SolicitacoesComponent,
-          canActivate:[]
+          canActivate:[CheckLogged]
         },
         {
           path: 'contas',
           component: ContasComponent,
-          canActivate:[]
+          canActivate:[CheckLogged]
         },
         {
           path: 'conferencia',
           component: ConferenciaComponent,
-          canActivate:[]
+          canActivate:[CheckLogged]
         },
       ]
       },
@@ -107,11 +108,6 @@ import { ContasComponent } from './contas/contas.component';
         path: '',
         component: HomeComponent,
         canActivate: [],
-      },
-      {
-        path: 'login',
-        component: LoginComponent,
-        canActivate: []
       },
       {
         path: 'cadastro',
@@ -144,16 +140,10 @@ import { ContasComponent } from './contas/contas.component';
         canActivate: []
       },
       {
-        path: 'perfil',
-        component: PerfilComponent,
-        canActivate: []
-      },
-      {
           path: 'historico',
           component: HistoricoComponent,
           canActivate: []
       }
-
       ])
   ],
   exports: [RouterModule]
