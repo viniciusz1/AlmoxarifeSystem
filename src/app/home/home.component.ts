@@ -20,7 +20,8 @@ export class HomeComponent implements OnInit {
   pesquisaProduto = "";
   filtroEspecializado: Produto = new Produto()
   exibicao = false; // false == bloco ! == lista
-
+  numeroCarrinho = 1
+  
   exibicaoLista(){
     this.exibicao = true;
   }

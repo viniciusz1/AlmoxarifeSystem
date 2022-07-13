@@ -12,6 +12,15 @@
     margin-left: 5px;
 }
 
+.bola-carrinho{
+    background-color: orange;
+    background-color: orange;
+    width: 15px;
+    border-radius: 12px;
+    height: 15px;
+
+}
+
 .fundo{
     position: fixed;
     opacity: 10px;
