@@ -36,6 +36,7 @@ import { ContasComponent } from './contas/contas.component';
           component: HomeComponent,
           canActivate: []
         },
+        
         {
           path: 'pedidos',
           component: PedidosComponent,
@@ -85,6 +86,11 @@ import { ContasComponent } from './contas/contas.component';
           path: 'conferencia',
           component: ConferenciaComponent,
           canActivate:[]
+        },
+        {
+          path: ':id',
+          component: HomeComponent,
+          canActivate: []
         },
       ]
       },

@@ -17,6 +17,8 @@
                 </div>
             </div>
         </div>
-        <i (click)="adicionarCarrinho()" class="bi bi-plus-square 
+        <i *ngIf="rota == 'produtos'" (click)="adicionarCarrinho()" class="bi bi-plus-square 
+        position-absolute" style="right: 5px; top:29px;"></i>
+        <i *ngIf="rota == undefined" (click)="adicionarCarrinho()" class="bi bi-plus-square 
         position-absolute" style="right: 5px; top:29px;"></i>
 </div>
