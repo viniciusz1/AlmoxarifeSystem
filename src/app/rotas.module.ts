@@ -20,6 +20,7 @@ import { ModalDevolucaoComponent } from './pedidos/modal-devolucao/modal-devoluc
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { SolicitacoesComponent } from './solicitacoes/solicitacoes.component';
 import { ContasComponent } from './contas/contas.component';
+import { PerfilAdminComponent } from './contas/perfil-admin/perfil-admin.component';
 
 
 @NgModule({
@@ -85,6 +86,11 @@ import { ContasComponent } from './contas/contas.component';
           component: ConferenciaComponent,
           canActivate:[]
         },
+        {
+          path: 'perfiladmin',
+          component: PerfilAdminComponent,
+          canActivate:[]
+        }
       ]
       },
       {
