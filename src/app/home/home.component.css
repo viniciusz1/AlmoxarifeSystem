@@ -35,6 +35,14 @@
 }
 .icones{
     font-size: 20px;
+    background: blue;
+    border-radius: 30px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 .div-filtros{
     display: flex;
