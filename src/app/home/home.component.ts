@@ -3,6 +3,7 @@ import { Produto } from './../shared/produto.model';
 import { ProdutosService } from './../services/produtos.service';
 import { Component, OnInit } from '@angular/core';
 import { CarrinhoService } from '../services/carrinho.service';
+import { ElementSchemaRegistry } from '@angular/compiler';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,15 @@ export class HomeComponent implements OnInit {
   carState = "fechado";
   lista: Produto[] = [];
   pesquisaProduto = "";
-  filtroEspecializado: Produto = new Produto("","","","","","",-1)
+  filtroEspecializado: Produto = new Produto()
+  exibicao = true; // false == bloco ! == lista
+
+  exibicaoLista(){
+    this.exibicao = true;
+  }
+  exibicaoCard(){
+    this.exibicao = false;
+  }
   mudarModalReserva(arg: boolean | Event){
     this.modalReserva = !this.modalReserva;
   }

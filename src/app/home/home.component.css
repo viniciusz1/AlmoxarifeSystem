@@ -33,13 +33,21 @@
 .carrinho{
     font-size: 25px
 }
+.icones{
+    font-size: 20px;
+}
+.div-filtros{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 5px;
+}
 .carrinho-side{
     right: 0;
 }
 .topo{
     display: flex;
     width: 80vw;
-    margin-bottom: 52px;
 }
 
 .duas-div{

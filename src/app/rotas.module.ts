@@ -1,3 +1,4 @@
+import { ProdutoListaComponent } from './home/produto-lista/produto-lista.component';
 import { DevolucoesComponent } from './pedidos/devolucoes/devolucoes.component';
 import { ConferenciaComponent } from './pedidos/conferencia/conferencia.component';
 import { EntregasComponent } from './pedidos/entregas/entregas.component';
@@ -152,7 +153,13 @@ import { ContasComponent } from './contas/contas.component';
           path: 'historico',
           component: HistoricoComponent,
           canActivate: []
+      },
+      {
+          path: 'produto-lista',
+          component: ProdutoListaComponent,
+          canActivate: []
       }
+
 
       ])
   ],
