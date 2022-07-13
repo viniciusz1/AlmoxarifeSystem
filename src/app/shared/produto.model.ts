@@ -20,5 +20,3 @@ export class Produto {
   }
   
   }
-
-new Produto()
