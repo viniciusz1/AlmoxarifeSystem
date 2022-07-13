@@ -25,6 +25,7 @@ import { DetalhesProdutoComponent } from './home/produto/detalhes-produto/detalh
 import { PosLoginComponent } from './pos-login/pos-login.component';
 import { SolicitacoesComponent } from './solicitacoes/solicitacoes.component';
 import { ContasComponent } from './contas/contas.component';
+import { Pedido } from './shared/pedido.model';
 
 
 @NgModule({
@@ -55,7 +56,6 @@ import { ContasComponent } from './contas/contas.component';
     FormsModule,
     BrowserAnimationsModule,
     RotasModule,
-    PedidosModule
   ],
   providers: [CarrinhoService, ProdutosService],
   bootstrap: [AppComponent]
