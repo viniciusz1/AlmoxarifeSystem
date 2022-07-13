@@ -24,6 +24,7 @@ import { DetalhesProdutoComponent } from './home/produto/detalhes-produto/detalh
 import { PosLoginComponent } from './pos-login/pos-login.component';
 import { SolicitacoesComponent } from './solicitacoes/solicitacoes.component';
 import { ContasComponent } from './contas/contas.component';
+import CheckLogged from './checklogged';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,7 @@ import { ContasComponent } from './contas/contas.component';
     RotasModule,
     PedidosModule
   ],
-  providers: [CarrinhoService, ProdutosService],
+  providers: [CarrinhoService, ProdutosService, CheckLogged],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
