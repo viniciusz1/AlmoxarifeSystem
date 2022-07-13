@@ -46,6 +46,7 @@
     text-align: center;
 }
 .default-icones{
+    cursor:pointer;
     font-size: 20px;
     background: white;
     border-radius: 30px;
