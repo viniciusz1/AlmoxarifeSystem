@@ -13,16 +13,16 @@
 }
 
 .bola-carrinho{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: orange;
     width: 13px;
     height: 13px;
     border-radius: 12px;
     position:absolute;
     right: 5px;
-    display: flex;
-    justify-content: center;
     color: aliceblue;
-    align-items: center;
     font-size: 10px;
 }
 
