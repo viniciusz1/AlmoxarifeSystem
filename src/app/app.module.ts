@@ -26,6 +26,7 @@ import { PosLoginComponent } from './pos-login/pos-login.component';
 import { SolicitacoesComponent } from './solicitacoes/solicitacoes.component';
 import { ContasComponent } from './contas/contas.component';
 import { Pedido } from './shared/pedido.model';
+import { HistoricoService } from './services/historico.service';
 
 
 @NgModule({
@@ -57,7 +58,7 @@ import { Pedido } from './shared/pedido.model';
     BrowserAnimationsModule,
     RotasModule,
   ],
-  providers: [CarrinhoService, ProdutosService],
+  providers: [CarrinhoService, ProdutosService, HistoricoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

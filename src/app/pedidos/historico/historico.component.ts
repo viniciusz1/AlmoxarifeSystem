@@ -10,10 +10,11 @@ export class HistoricoComponent implements OnInit {
 
   constructor(private historicoService: HistoricoService) { }
 
-  lista = []
+  lista:Pedido[] = [new Pedido()]
 
   ngOnInit(): void {
-    // this.lista = this.historicoService.getPedido()
+    this.lista = this.historicoService.getPedido()
+    console.log(this.lista)
   }
 
 }
