@@ -12,6 +12,7 @@
 }
 .h-mais:hover{
     color:blue;
+    cursor: pointer;
 }
 .bloco-azul{
     width: 5px; 
