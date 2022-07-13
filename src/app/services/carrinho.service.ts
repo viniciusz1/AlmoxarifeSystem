@@ -12,6 +12,9 @@ export class CarrinhoService {
   removeLista(index: number){
     this.lista.splice(index, 1)
   }
+  getLength(){
+    return this.lista.length
+  }
    getLista(){
       return this.lista
    }

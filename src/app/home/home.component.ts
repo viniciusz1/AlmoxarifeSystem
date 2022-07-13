@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
   filtroEspecializado: Produto = new Produto()
   exibicao = false; // false == bloco ! == lista
   numeroCarrinho = 1
-  
+
   exibicaoLista(){
     this.exibicao = true;
   }
@@ -37,6 +37,7 @@ export class HomeComponent implements OnInit {
   modalOpen(arg: boolean | Event) {
     this.modal = !this.modal
   }
+  
   openCart(){
     this.carState = "aberto"
     console.log(this.state)
@@ -50,6 +51,7 @@ export class HomeComponent implements OnInit {
   
   ngOnInit(): void {  
     this.lista = this.prod.getListaProdutos()  
+    this.numeroCarrinho = this.car.getLength();
     console.log(this.lista)
   }
 }
