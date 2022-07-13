@@ -21,6 +21,8 @@ import { PedidosComponent } from './pedidos/pedidos.component';
 import { SolicitacoesComponent } from './solicitacoes/solicitacoes.component';
 import { ContasComponent } from './contas/contas.component';
 import { PerfilAdminComponent } from './contas/perfil-admin/perfil-admin.component';
+import { FiltroHistoricoComponent } from './pedidos/historico/filtro-historico/filtro-historico/filtro-historico.component';
+import { ModalFiltroComponent } from './home/modal-filtro/modal-filtro.component';
 
 
 @NgModule({
@@ -90,6 +92,16 @@ import { PerfilAdminComponent } from './contas/perfil-admin/perfil-admin.compone
           path: 'perfiladmin',
           component: PerfilAdminComponent,
           canActivate:[]
+        },
+        {
+          path: 'filtro-historico',
+          component: FiltroHistoricoComponent,
+          canActivate: []
+        },
+        {
+          path: 'modal-filtro',
+          component: ModalFiltroComponent,
+          canActivate: []
         }
       ]
       },

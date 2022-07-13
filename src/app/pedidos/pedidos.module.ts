@@ -8,6 +8,7 @@ import { NgModule } from '@angular/core';
 import { ConfirmarComponent } from './confirmar/confirmar.component';
 import { CommonModule } from '@angular/common';
 import { PedidoHistoricoComponent } from './historico/pedido-historico/pedido-historico.component';
+import { FiltroHistoricoComponent } from './historico/filtro-historico/filtro-historico/filtro-historico.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { PedidoHistoricoComponent } from './historico/pedido-historico/pedido-hi
     PedidosComponent,
     HistoricoComponent,
     ConfirmarComponent,
-    PedidoHistoricoComponent
+    PedidoHistoricoComponent,
+    FiltroHistoricoComponent
   ],
   imports: [
     CommonModule

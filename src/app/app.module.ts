@@ -24,6 +24,7 @@ import { DetalhesProdutoComponent } from './home/produto/detalhes-produto/detalh
 import { PosLoginComponent } from './pos-login/pos-login.component';
 import { SolicitacoesComponent } from './solicitacoes/solicitacoes.component';
 import { ContasComponent } from './contas/contas.component';
+import { FiltroHistoricoComponent } from './pedidos/historico/filtro-historico/filtro-historico/filtro-historico.component';
 
 
 @NgModule({
