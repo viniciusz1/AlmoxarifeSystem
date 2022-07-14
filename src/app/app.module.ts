@@ -30,6 +30,7 @@ import { HistoricoService } from './services/historico.service';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import CheckLogged from './checklogged';
+import { HomeModule } from './home/home.module';
 
 
 @NgModule({
@@ -37,22 +38,13 @@ import CheckLogged from './checklogged';
     AppComponent,
     NavComponent,
     SideBarComponent,
-    HomeComponent,
-    ProdutoComponent,
-    ModalFiltroComponent,
-    ModalSenhaComponent,
     PerfilComponent,
-    PerfilComponent,
-    CarrinhoComponent,
-    ReservaComponent,
     PosLoginComponent,
     SolicitacoesComponent,
     ContasComponent,
     PerfilAdminComponent,
     FiltroProdutosPipe,
     FiltroEspecializadoProdutosPipe,
-    ProdutoListaComponent,
-    DetalhesProdutoComponent
   ],
   imports: [ 
     BrowserModule,
@@ -60,7 +52,8 @@ import CheckLogged from './checklogged';
     FormsModule,
     BrowserAnimationsModule,
     RotasModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HomeModule
   ],
   providers: [CarrinhoService, ProdutosService, CheckLogged, HistoricoService],
   bootstrap: [AppComponent]
