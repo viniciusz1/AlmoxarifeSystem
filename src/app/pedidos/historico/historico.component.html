@@ -27,13 +27,14 @@
             </div>
             <div class="filtrar">
                 <div class="icone">
-                    <button class="filtross">Filtrar Mais</button>
+                    <button class="filtross"(click)="mudaFiltro()">Filtrar Mais</button>
                     <i class="bi bi-sliders"></i>
                 </div>
             </div>
         </div>
     </div>
     <app-pedido-historico *ngFor="let lista of lista" [lista]="lista"></app-pedido-historico>
+    <app-filtro-historico *ngIf="filtroState" (mudarFiltro)="mudaFiltro()" class="meu-fixed"></app-filtro-historico>
 
 </div>
 </div>

@@ -16,5 +16,9 @@ export class HistoricoComponent implements OnInit {
     this.lista = this.historicoService.getPedido()
     console.log(this.lista)
   }
+  filtroState = false
+  mudaFiltro(){
+    this.filtroState = !this.filtroState;
+  }
 
 }
