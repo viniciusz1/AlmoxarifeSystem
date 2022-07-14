@@ -12,6 +12,7 @@ export class UsuariosService {
     new Usuario("otavio", "otavio@gmail.com", "otavio", "123"),
     new Usuario("vinicius", "vinicius@gmail.com", "vinicius", "123"),
     new Usuario("camilly", "camilly@gmail.com", "camilly", "123"),
+    new Usuario("1", "1", "1", "1"),
   ]
 
 
