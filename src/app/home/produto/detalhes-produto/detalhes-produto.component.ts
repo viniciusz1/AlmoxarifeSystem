@@ -27,12 +27,7 @@ export class DetalhesProdutoComponent implements OnInit {
   });
   
   onSubmit() {
-    console.log(this.detalhesForm)
-    // this.profileForm.patchValue({
-      
-    //   firstName: 
-
-    // })
+    this.prod.addProduto()
   }
   rota = "";
   informacoes = new Produto()
