@@ -4,7 +4,7 @@
         <hr style="margin: 0; width: 25%;">    
     </div>
     <div class="quadrado container">
-        <form (ngSubmit)="onSubmit(f)" #f="ngForm" action="">
+        <form [formGroup]="detalhesForm" action="">
             <div class="row">
                 <div class="col-6">
                     <div class="div-imagem">
@@ -14,7 +14,7 @@
                     <div class="row">
                         <div class="mt-2 padding-input">
                             <label for="">Opcao de uso</label>
-                            <select ngModel name="uso" class="form-control" id="uso">
+                            <select class="form-control" formControlName="opcaoUso" id="uso">
                                 <option value="Descartavel">Descartavel</option>
                                 <option value="Não Descartavel">Não Descartavel</option>
                             </select>
@@ -24,31 +24,31 @@
                 <div class="col-6">
                     <div class="row input-group mb-3 padding-input">
                         <label for="">Nome do produto</label>
-                        <input name="nome" ngModel #nome="ngModel" class="form-control" type="text">
+                        <input  class="form-control" type="text" formControlName="nome">
                     </div>
                     <div class="row input-group mb-3 padding-input">
                         <label for="">Quantide em estoque</label>
-                        <input name="quantidade" ngModel #quantidade="ngModel" class="form-control" type="text">
+                        <input class="form-control" type="text" formControlName="quantidade">
                     </div>
                     <div class="row input-group mb-3 padding-input">
                         <label for="">Classificação</label>
-                        <input name="classificacao" ngModel #classificacao="ngModel" class="form-control" type="text">
+                        <input class="form-control" type="text" formControlName="classificacao">
                     </div>
                     <div class="row input-group mb-3 padding-input">
                         <label for="">Localidade</label>
-                        <input name="localidade" ngModel #localidade="ngModel" class="form-control" type="text">
+                        <input class="form-control" type="text" formControlName="localidade">
                     </div>
                 </div>
             </div>
             <div class="row mb-5">
                 <div class="padding-select">
                     <label for="exampleFormControlTextarea1" class="">Descrição</label>
-                    <textarea name="descricacao" ngModel #descricacao="ngModel" class="form-control"
-                        id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea class="form-control"
+                        id="exampleFormControlTextarea1" formControlName="descricao" rows="3"></textarea>
                 </div>
             </div>
             <div class="m-5" style="display: flex; justify-content: end;">
-                <button (click)="onSubmit" class="btn btn-primary">Cadastrar Produto</button>
+                <button (click)="onSubmit()" class="btn btn-primary">Cadastrar Produto</button>
             </div>
         </form>
     </div>

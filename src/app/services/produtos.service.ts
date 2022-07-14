@@ -24,7 +24,13 @@ export class ProdutosService {
    getListaProdutos(){
       return this.lista
    }
+   getIdProduto(id: number){
+    return this.lista[id]
+   }
    addProduto(produto: Produto){
+    if(!produto.codigo){
+      produto.codigo = this.lista.length + 1
+    }
     this.lista.push(produto)
     console.log(this.lista)
    }

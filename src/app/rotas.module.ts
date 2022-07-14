@@ -53,9 +53,10 @@ import { ContasComponent } from './contas/contas.component';
           canActivate: []
         },
         {  
-          path: 'detalhes-produto',
+          path: 'detalhes-produto/:tipo',
           component: DetalhesProdutoComponent,
-          canActivate: []
+          canActivate: [],
+          
         },
         {  
           path: 'sidebar',
@@ -90,7 +91,8 @@ import { ContasComponent } from './contas/contas.component';
         {
           path: ':id',
           component: HomeComponent,
-          canActivate: []
+          canActivate: [],
+          
         },
       ]
       },

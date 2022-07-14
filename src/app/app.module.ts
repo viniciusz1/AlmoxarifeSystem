@@ -25,9 +25,8 @@ import { DetalhesProdutoComponent } from './home/produto/detalhes-produto/detalh
 import { PosLoginComponent } from './pos-login/pos-login.component';
 import { SolicitacoesComponent } from './solicitacoes/solicitacoes.component';
 import { ContasComponent } from './contas/contas.component';
-import { Pedido } from './shared/pedido.model';
 import { HistoricoService } from './services/historico.service';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -57,6 +56,7 @@ import { HistoricoService } from './services/historico.service';
     FormsModule,
     BrowserAnimationsModule,
     RotasModule,
+    ReactiveFormsModule
   ],
   providers: [CarrinhoService, ProdutosService, HistoricoService],
   bootstrap: [AppComponent]
