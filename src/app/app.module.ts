@@ -1,3 +1,4 @@
+import { ProdutoListaComponent } from './home/produto-lista/produto-lista.component';
 import { FiltroEspecializadoProdutosPipe } from './pipes/filtro-especializado-produtos.pipe';
 import { FiltroProdutosPipe } from './pipes/filtro-produtos.pipe';
 import { PedidosModule } from './pedidos/pedidos.module';
@@ -20,10 +21,13 @@ import { ProdutoComponent } from './home/produto/produto.component';
 import { CarrinhoComponent } from './home/carrinho/carrinho.component';
 import { CarrinhoService } from './services/carrinho.service';
 import { ReservaComponent } from './home/reserva/reserva.component';
-import { DetalhesProdutoComponent } from './home/produto/detalhes-produto/detalhes-produto.component';
+import { DetalhesProdutoComponent } from './home/detalhes-produto/detalhes-produto.component';
 import { PosLoginComponent } from './pos-login/pos-login.component';
 import { SolicitacoesComponent } from './solicitacoes/solicitacoes.component';
 import { ContasComponent } from './contas/contas.component';
+
+import { HistoricoService } from './services/historico.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import CheckLogged from './checklogged';
 
@@ -41,13 +45,14 @@ import CheckLogged from './checklogged';
     PerfilComponent,
     CarrinhoComponent,
     ReservaComponent,
-    DetalhesProdutoComponent,
     PosLoginComponent,
     SolicitacoesComponent,
     ContasComponent,
     PerfilAdminComponent,
     FiltroProdutosPipe,
-    FiltroEspecializadoProdutosPipe
+    FiltroEspecializadoProdutosPipe,
+    ProdutoListaComponent,
+    DetalhesProdutoComponent
   ],
   imports: [ 
     BrowserModule,
@@ -55,9 +60,9 @@ import CheckLogged from './checklogged';
     FormsModule,
     BrowserAnimationsModule,
     RotasModule,
-    PedidosModule
+    ReactiveFormsModule
   ],
-  providers: [CarrinhoService, ProdutosService, CheckLogged],
+  providers: [CarrinhoService, ProdutosService, CheckLogged, HistoricoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

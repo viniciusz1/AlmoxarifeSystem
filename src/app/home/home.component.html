@@ -1,12 +1,12 @@
 <div class="d-flex">
-        <div class="container">
-            <div class="row mt-5" style="display: flex; justify-content: center;">
-                <div class="topo">
-                    <div style="font-size: calc(1.3rem + .6vw);">
-                        <span (click)="checando()">Home</span>
-                        <hr style="margin: 0; width: 200%;">    
-                    </div>
-                    <div class="topo-2">
+    <div class="container">
+        <div class="row mt-5" style="display: flex; justify-content: center;">
+            <div class="topo">
+                <div style="font-size: calc(1.3rem + .6vw);">
+                    <span (click)="checando()">{{titulo}}</span>
+                    <hr style="margin: 0; width: 200%;">
+                </div>
+                <div class="topo-2">
                     <div class="pesquisa">
                         <div class="pesquisa">
                             <i class="bi bi-search"></i>
@@ -19,24 +19,54 @@
                             <i class="bi bi-sliders"></i>
                         </div>
                     </div>
-                    <i class="bi bi-cart4 carrinho" (click)="openCart()"></i>
+                    <div *ngIf="rota == 'produtos'"  class="filtrar">
+                        <div class="icone">
+                            <button class="filtross"  [routerLink]="['/home/cadastrar-produto']">Adicionar Produto</button>
+                            <i class="bi bi-plus-lg"></i>
+                        </div>
+                    </div>
+                    <div *ngIf="rota == undefined" class="d-flex position-relative">
+                        <i class="bi bi-cart4 carrinho" (click)="openCart()"></i>
+                        <div class="bola-carrinho">{{numeroCarrinho}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="div-filtros">
+                <div class="default-icones" [ngClass]="{icones: exibicao}" >
+                    <i style="margin-left: 8px;"  class="bi bi-list-ul" (click)="exibicaoLista()"></i>
+                </div>
+                <div class="default-icones" [ngClass]="{icones: !exibicao}">
+                    <i style="margin-left: 9px;" class="bi bi-grid-3x3-gap-fill" (click)="exibicaoCard()"></i>
                 </div>
             </div>
         </div>
         <div class="container-fluid">
-            <div class="row">
-                <app-produto class="col-xl-4 index col-md-6" [produto]="lista" *ngFor="let lista of (lista) | filtroEspecializadoProdutos: filtroEspecializado | filtroProdutos: pesquisaProduto ">
+            <div *ngIf="exibicao == true" class="row mt-3">
+                <b class="d-flex  mb-1" style="min-width: 10px; 
+                height: 30px; background-color: #f2f2f2;
+                box-shadow: 4px 5px 7px -5px;
+                align-items: center;">
+                            <div style="width: 10%">Código</div>    
+                            <div style="width: 30%;
+                            margin-left: 22px;">Nome</div>
+                            <div style="width: 30%">Classificação</div>
+                            <div style="width: 30%">Quantidade</div>
+                </b>
+                    <app-produto-lista [produto]="lista" *ngFor="let lista of (lista); let i = index"></app-produto-lista>
+            </div>
+            <div *ngIf="exibicao == false" class="row">
+                <app-produto class="col-xl-4 index col-md-6" [indiceProduto]="i"
+                [produto]="lista" *ngFor="let lista of (lista); let i = index">
                 </app-produto>
             </div>
         </div>
     </div>
     <app-carrinho (fechaCarrinho)="closeCart($event)" (reserva)="mudarModalReserva($event)" [state]="carState"
         class="position-fixed bg-primary carrinho-side"></app-carrinho>
-        <app-modal-filtro (fechaModal)="modalOpen($event)" 
-        (filtragem)="executarFiltroEspecializado($event)"
-        *ngIf="modal" style="z-index: 2;" class="fundo">
-        </app-modal-filtro>
-        <app-reserva (fechaReserva)="mudarModalReserva($event)" style="z-index: 2;" class="fundo" *ngIf="modalReserva">
-        </app-reserva>
+    <app-modal-filtro (fechaModal)="modalOpen($event)" (filtragem)="executarFiltroEspecializado($event)" *ngIf="modal"
+        style="z-index: 2;" class="fundo">
+    </app-modal-filtro>
+    <app-reserva (fechaReserva)="mudarModalReserva($event)" style="z-index: 2;" class="fundo" *ngIf="modalReserva">
+    </app-reserva>
 
-    </div>
+</div>

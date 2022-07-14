@@ -12,11 +12,12 @@
                     <ul class="list">
                         <li>{{produto.classificacao}}</li>
                         <li>{{produto.opcaoUso}}</li>
-                        <li>{{produto.descricao}}</li>
+                        <li>{{produto.quantidade}}</li>
                     </ul>
                 </div>
             </div>
         </div>
+
         <div class="icone1">
             <i (click)="adicionarCarrinho()" id="teste" class="bi bi-plus-square-fill 
             position-absolute" style="right: 5px; top:29px; color: #0047B5;"></i>
@@ -27,4 +28,10 @@
             position-absolute" style="right: 5px; top:29px; color: #0047B5;"></i>
         </div>
         
+
+        <i *ngIf="rota == 'produtos'" [routerLink]="['/home/detalhes-produto/', indiceProduto]" class="bi bi-pen 
+        position-absolute" style="right: 5px; top:29px;"></i>
+        <i *ngIf="rota == undefined" (click)="adicionarCarrinho()" class="bi bi-plus-square 
+        position-absolute" style="right: 5px; top:29px;"></i>
+
 </div>

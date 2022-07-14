@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { HistoricoService } from 'src/app/services/historico.service';
+import { Pedido } from 'src/app/shared/pedido.model';
 @Component({
   selector: 'app-historico',
   templateUrl: './historico.component.html',
@@ -7,59 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistoricoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private historicoService: HistoricoService) { }
 
-  lista = [
-    {
-      pedido: "001",
-      Professor: "Carlinhos",
-      Produtos: "Resistor 1k Ohms, Resistor 10k Ohms, Resistor 10k Ohms, Resistor 10kOhms, Resistor 10kOhms...",
-      Data: "02/02/2022",
-      DataDev: "23/02/2022",
-      status: "Finalizado"
-    },
-    {
-      pedido: "001",
-      Professor: "Carlinhos",
-      Produtos: "Resistor 1k Ohms, Resistor 10k Ohms, Resistor 10k Ohms, Resistor 10kOhms, Resistor 10kOhms...",
-      Data: "02/02/2022",
-      DataDev: "23/02/2022",
-      status: "Finalizado"
-    },
-    {
-      pedido: "001",
-      Professor: "Carlinhos",
-      Produtos: "Resistor 1k Ohms, Resistor 10k Ohms, Resistor 10k Ohms, Resistor 10kOhms, Resistor 10kOhms...",
-      Data: "02/02/2022",
-      DataDev: "23/02/2022",
-      status: "Finalizado"
-    },
-    {
-      pedido: "001",
-      Professor: "Carlinhos",
-      Produtos: "Resistor 1k Ohms, Resistor 10k Ohms, Resistor 10k Ohms, Resistor 10kOhms, Resistor 10kOhms...",
-      Data: "02/02/2022",
-      DataDev: "23/02/2022",
-      status: "Finalizado"
-    },
-    {
-      pedido: "001",
-      Professor: "Carlinhos",
-      Produtos: "Resistor 1k Ohms, Resistor 10k Ohms, Resistor 10k Ohms, Resistor 10kOhms, Resistor 10kOhms...",
-      Data: "02/02/2022",
-      DataDev: "23/02/2022",
-      status: "Finalizado"
-    },
-    {
-      pedido: "001",
-      Professor: "Carlinhos",
-      Produtos: "Resistor 1k Ohms, Resistor 10k Ohms, Resistor 10k Ohms, Resistor 10kOhms, Resistor 10kOhms...",
-      Data: "02/02/2022",
-      DataDev: "23/02/2022",
-      status: "Finalizado"
-    }]
+  lista:Pedido[] = [new Pedido()]
 
   ngOnInit(): void {
+    this.lista = this.historicoService.getPedido()
+    console.log(this.lista)
   }
 
 }

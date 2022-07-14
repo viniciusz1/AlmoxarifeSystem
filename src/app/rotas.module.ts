@@ -1,3 +1,4 @@
+import { ProdutoListaComponent } from './home/produto-lista/produto-lista.component';
 import { DevolucoesComponent } from './pedidos/devolucoes/devolucoes.component';
 import { ConferenciaComponent } from './pedidos/conferencia/conferencia.component';
 import { EntregasComponent } from './pedidos/entregas/entregas.component';
@@ -12,7 +13,7 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { SideBarComponent } from './pos-login/side-bar/side-bar.component';
 import { PerfilComponent } from './perfil/perfil.component';
-import { DetalhesProdutoComponent } from './home/produto/detalhes-produto/detalhes-produto.component';
+import { DetalhesProdutoComponent } from './home/detalhes-produto/detalhes-produto.component';
 import { TelefoneComponent } from './logins/telefone/telefone.component';
 import { ConfirmarComponent } from './pedidos/confirmar/confirmar.component';
 import { ModalPedidosComponent } from './pedidos/modal-pedidos/modal-pedidos.component';
@@ -42,6 +43,7 @@ import CheckLogged from './checklogged';
           component: HomeComponent,
           canActivate: []
         },
+        
         {
           path: 'pedidos',
           component: PedidosComponent,
@@ -58,7 +60,13 @@ import CheckLogged from './checklogged';
           canActivate: [CheckLogged]
         },
         {  
-          path: 'detalhes-produto',
+          path: 'detalhes-produto/:tipo',
+          component: DetalhesProdutoComponent,
+          canActivate: [CheckLogged],
+          
+        },
+        {  
+          path: 'cadastrar-produto',
           component: DetalhesProdutoComponent,
           canActivate: [CheckLogged]
         },
@@ -107,27 +115,16 @@ import CheckLogged from './checklogged';
           component: ModalFiltroComponent,
           canActivate: []
         }
-      ]
-      },
-      {
-        path: 'cadastro',
-        component: CadastroComponent
-      },
-      {
-        path: '',
-        component: LoginComponent
-      },
-      {
-        path: 'telefone',
-        component: CadastroComponent
-      },
-      {
-        path: 'verificar-tel',
-        component: VerificarTelComponent
-      },
+
+          path: ':id',
+          component: HomeComponent,
+          canActivate: [],
+          
+        }
+      ]},
       {
         path: '',
-        component: HomeComponent,
+        component: LoginComponent,
         canActivate: [],
       },
       {
@@ -163,6 +160,11 @@ import CheckLogged from './checklogged';
       {
           path: 'historico',
           component: HistoricoComponent,
+          canActivate: []
+      },
+      {
+          path: 'produto-lista',
+          component: ProdutoListaComponent,
           canActivate: []
       }
       ])
