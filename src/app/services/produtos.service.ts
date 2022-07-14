@@ -1,3 +1,4 @@
+import { FormControl } from '@angular/forms';
 import { Injectable } from '@angular/core';
 import { Produto } from '../shared/produto.model';
 
@@ -31,8 +32,14 @@ export class ProdutosService {
     if(!produto.codigo){
       produto.codigo = this.lista.length + 1
     }
+    
     this.lista.push(produto)
     console.log(this.lista)
    }
+
+   changeProduto(produto: Produto){
+    let index = this.lista.findIndex(lista => lista.codigo == produto.codigo);
+    this.lista[index] = produto;
+  }
   constructor() { }
 }

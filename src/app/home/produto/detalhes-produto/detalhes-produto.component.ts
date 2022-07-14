@@ -27,7 +27,9 @@ export class DetalhesProdutoComponent implements OnInit {
   });
   
   onSubmit() {
-    this.prod.addProduto()
+    console.log()
+    let produto = new Produto()
+    this.prod.changeProduto(produto)
   }
   rota = "";
   informacoes = new Produto()
@@ -36,10 +38,8 @@ export class DetalhesProdutoComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.rota = params['tipo']
-    })
-    
+    })    
     this.informacoes = this.prod.getIdProduto(parseInt(this.rota))
-    console.log(this.informacoes)
     this.detalhesForm.patchValue({
         nome: this.informacoes.nome,
         opcaoUso: this.informacoes.opcaoUso,
