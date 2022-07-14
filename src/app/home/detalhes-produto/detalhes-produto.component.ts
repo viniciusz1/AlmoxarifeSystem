@@ -38,13 +38,13 @@ export class DetalhesProdutoComponent implements OnInit{
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.rota = params['tipo']
-
+      if (this.rota == undefined) {
+        this.botao = "Cadastrar produto"
+      } else {
+        this.botao = "Editar produto"
+      }
     })
-    if (this.rota == undefined) {
-      this.botao = "Cadastrar produto"
-    } else {
-      this.botao = "Editar produto"
-    }
+    
     this.informacoes = this.prod.getIdProduto(parseInt(this.rota))
     this.detalhesForm.patchValue({
       nome: this.informacoes.nome,
