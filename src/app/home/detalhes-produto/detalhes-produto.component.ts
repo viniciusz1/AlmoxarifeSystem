@@ -1,5 +1,5 @@
 import { Produto } from 'src/app/shared/produto.model';
-import { ProdutosService } from '../../services/produtos.service';
+import { ProdutosService } from 'src/app/services/produtos.service';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';

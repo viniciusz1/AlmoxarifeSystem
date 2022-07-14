@@ -41,14 +41,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     PerfilComponent,
     CarrinhoComponent,
     ReservaComponent,
-    DetalhesProdutoComponent,
     PosLoginComponent,
     SolicitacoesComponent,
     ContasComponent,
     PerfilAdminComponent,
     FiltroProdutosPipe,
     FiltroEspecializadoProdutosPipe,
-    ProdutoListaComponent
+    ProdutoListaComponent,
+    DetalhesProdutoComponent
   ],
   imports: [ 
     BrowserModule,
