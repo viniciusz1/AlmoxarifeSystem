@@ -12,6 +12,20 @@
     margin-left: 5px;
 }
 
+.bola-carrinho{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: orange;
+    width: 13px;
+    height: 13px;
+    border-radius: 12px;
+    position:absolute;
+    right: 5px;
+    color: aliceblue;
+    font-size: 10px;
+}
+
 .fundo{
     position: fixed;
     opacity: 10px;
@@ -33,13 +47,42 @@
 .carrinho{
     font-size: 25px
 }
+.icones{
+    font-size: 20px;
+    background: blue !important;
+    color: white;
+    border-radius: 30px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.default-icones{
+    cursor:pointer;
+    font-size: 20px;
+    background: white;
+    border-radius: 30px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.div-filtros{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 5px;
+}
 .carrinho-side{
     right: 0;
 }
 .topo{
     display: flex;
     width: 80vw;
-    margin-bottom: 52px;
 }
 
 .duas-div{

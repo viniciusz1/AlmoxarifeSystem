@@ -6,6 +6,11 @@
     height: 90px;
     border-radius: 500px;
     border: 0.5px solid black;
+    cursor: pointer;
+}
+i:hover{
+    color: blue;
+    cursor: pointer;
 }
 .bloco{
     height: 8rem;
@@ -26,6 +31,7 @@
     right: 0; 
 
     */
+    cursor: pointer;
     height: 100px;
     width: 90%;
 }

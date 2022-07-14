@@ -9,7 +9,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class ModalFiltroComponent implements OnInit {
   @Output() fechaModal = new EventEmitter<boolean>();
-  @Output() filtragem = new EventEmitter<{}>();
+  @Output() filtragem = new EventEmitter<Produto>();
   clicouModal(){
     this.fechaModal.emit(false)
   }
@@ -21,7 +21,6 @@ export class ModalFiltroComponent implements OnInit {
   }
   
   filtrar(form: NgForm){
-  
     this.filtragem.emit(new Produto(form.value.nome, form.value.estoque, form.value.classificacao, "", form.value.opcaoUso, "", form.value.codigo))
   }
   constructor() { }

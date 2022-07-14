@@ -7,12 +7,12 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FiltroProdutosPipe implements PipeTransform {
 
   transform(listaProdutos: Produto[], search: string): any {
-    if(listaProdutos && search)
-      return listaProdutos.filter(e => e.nome.startsWith(search))
+    // if(listaProdutos && search)
+    //   return listaProdutos.filter(e => e.nome.startsWith(search))
       
         
         
-    return listaProdutos
+    // return listaProdutos
   }
 
 }

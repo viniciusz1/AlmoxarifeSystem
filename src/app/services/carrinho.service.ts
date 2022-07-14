@@ -5,10 +5,15 @@ import { Produto } from '../shared/produto.model';
 })
 export class CarrinhoService {
   
-  private lista: Produto[] = [new Produto ("vinicius", "criou", "Um", "produto", "adsçf", "fdosai", 1)]
+  private lista: Produto[] = [
+    new Produto ("vinicius", "criou", "Um", "produto", "adsçf", "fdosai", 1)
+  ]
 
   removeLista(index: number){
     this.lista.splice(index, 1)
+  }
+  getLength(){
+    return this.lista.length
   }
    getLista(){
       return this.lista
