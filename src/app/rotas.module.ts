@@ -59,6 +59,12 @@ import { ContasComponent } from './contas/contas.component';
           
         },
         {  
+          path: 'cadastrar-produto',
+          component: DetalhesProdutoComponent,
+          canActivate: [],
+          
+        },
+        {  
           path: 'sidebar',
           component: SideBarComponent,
           canActivate: []
