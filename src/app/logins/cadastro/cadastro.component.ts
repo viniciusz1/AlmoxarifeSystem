@@ -34,7 +34,7 @@ export class CadastroComponent implements OnInit {
       if(dominio == "edu.sc.senai.br"){
         this.cadastro();
       }else{
-        localStorage.setItem("TELEFONE", this.usuario);
+        localStorage.setItem("USER", this.usuario);
         this.router.navigate(['/cadastro/telefone'])
       }
     }else{
