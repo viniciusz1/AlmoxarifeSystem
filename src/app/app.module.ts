@@ -21,7 +21,7 @@ import { ProdutoComponent } from './home/produto/produto.component';
 import { CarrinhoComponent } from './home/carrinho/carrinho.component';
 import { CarrinhoService } from './services/carrinho.service';
 import { ReservaComponent } from './home/reserva/reserva.component';
-import { DetalhesProdutoComponent } from './home/produto/detalhes-produto/detalhes-produto.component';
+import { DetalhesProdutoComponent } from './home/detalhes-produto/detalhes-produto.component';
 import { PosLoginComponent } from './pos-login/pos-login.component';
 import { SolicitacoesComponent } from './solicitacoes/solicitacoes.component';
 import { ContasComponent } from './contas/contas.component';

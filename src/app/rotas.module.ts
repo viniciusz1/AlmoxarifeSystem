@@ -13,7 +13,7 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { SideBarComponent } from './pos-login/side-bar/side-bar.component';
 import { PerfilComponent } from './perfil/perfil.component';
-import { DetalhesProdutoComponent } from './home/produto/detalhes-produto/detalhes-produto.component';
+import { DetalhesProdutoComponent } from './home/detalhes-produto/detalhes-produto.component';
 import { TelefoneComponent } from './logins/telefone/telefone.component';
 import { ConfirmarComponent } from './pedidos/confirmar/confirmar.component';
 import { ModalPedidosComponent } from './pedidos/modal-pedidos/modal-pedidos.component';
