@@ -1,5 +1,5 @@
-.imagem{
-    position:absolute;
+.imagem {
+    position: absolute;
     left: 0;
     top: 0;
     width: 90px;
@@ -7,19 +7,23 @@
     border-radius: 500px;
     border: 0.5px solid black;
 }
-.bloco{
+
+.bloco {
     height: 8rem;
     /* border: 1px solid black; */
     align-items: flex-end;
     justify-content: right;
 }
-.list{
+
+.list {
     list-style: none;
 }
-.sombra{
+
+.sombra {
     box-shadow: 2px 2px 5px 1px;
 }
-.retangulo{ 
+
+.retangulo {
     padding-left: 60px;
     /* position: absolute;
     bottom: 0;
@@ -30,6 +34,29 @@
     width: 90%;
 }
 
-.caixa{
+.caixa {
     align-self: flex-end;
 }
+
+.icone1{
+    color: #fff;
+}
+
+i {
+    opacity: 1;
+}
+
+i:hover  {
+    opacity: 0;
+}
+
+i:hover #texto-inside {
+    display: block;
+    position: absolute;
+    top: 35%;
+    left: 30%;
+    font-size: 20px;
+    color: white;
+    opacity: 1;
+}
+
