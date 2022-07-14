@@ -27,6 +27,7 @@ import { SolicitacoesComponent } from './solicitacoes/solicitacoes.component';
 import { ContasComponent } from './contas/contas.component';
 import { HistoricoService } from './services/historico.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import CheckLogged from './checklogged';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     RotasModule,
     ReactiveFormsModule
   ],
-  providers: [CarrinhoService, ProdutosService, HistoricoService],
+  providers: [CarrinhoService, ProdutosService, CheckLogged, HistoricoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

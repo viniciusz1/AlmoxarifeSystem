@@ -18,7 +18,7 @@
                             <div class="ladoInput" style="height: 50px; width: 50px;">
                                 <i class="bi bi-person-fill icons" style="margin-left: 10px;"></i>
                             </div>
-                            <input class="inputs" placeholder="Usuário" type="text">
+                            <input class="inputs" placeholder="Usuário" type="text" [(ngModel)]="usuario">
                         </div>
 
                     </div>
@@ -30,15 +30,17 @@
                                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 172 172" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#0047b5"><path d="M86,7.16667c-20.58426,0 -37.84782,14.66404 -42.11816,34.30762l14.01139,3.05143c2.89632,-13.32309 14.29103,-23.02572 28.10677,-23.02572c16.3127,0 28.66667,12.35397 28.66667,28.66667v7.16667h-71.66667c-7.88333,0 -14.33333,6.45 -14.33333,14.33333v71.66667c0,7.88333 6.45,14.33333 14.33333,14.33333h86c7.88333,0 14.33333,-6.45 14.33333,-14.33333v-71.66667c0,-7.88333 -6.45,-14.33333 -14.33333,-14.33333v-7.16667c0,-23.82063 -19.17936,-43 -43,-43zM86,93.16667c7.88333,0 14.33333,6.45 14.33333,14.33333c0,7.88333 -6.45,14.33333 -14.33333,14.33333c-7.88333,0 -14.33333,-6.45 -14.33333,-14.33333c0,-7.88333 6.45,-14.33333 14.33333,-14.33333z"></path></g></g></svg>
                                 </div>
                             </div>
-                            <input class="inputs" placeholder="Senha" type="password">
+                            <input class="inputs" placeholder="Senha" type="password" [(ngModel)]="senha">
                         </div>
                     </div>
                     <div class="centralizar" style="margin-top: 50px;">
                         <button (click)="login()" class="botao" style="background-color: #0047B5; color: white;">Entrar</button>
                         <span style="margin-left: 30px;">Esqueceu a senha?</span>
                     </div>
-                    <div class="centralizar" style="margin-top: 50px;">
-                        <h6>Não tem acesso? Cadastre-se</h6>
+                    <div class="centralizar" style="margin-top: 50px;" routerLink="/cadastro">
+                        <a routerLink="/cadastro">
+                            <h6>Não tem acesso? Cadastre-se</h6>
+                        </a>
                     </div>
                 </div>
             </div>

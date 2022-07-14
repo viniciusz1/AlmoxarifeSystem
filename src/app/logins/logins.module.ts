@@ -4,6 +4,8 @@ import { LoginComponent } from './login/login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { TelefoneComponent } from './telefone/telefone.component';
 import { VerificarTelComponent } from './verificar-tel/verificar-tel.component';
+import { FormsModule } from '@angular/forms';
+import { RotasModule } from '../rotas.module';
 
 
 
@@ -15,10 +17,12 @@ import { VerificarTelComponent } from './verificar-tel/verificar-tel.component';
     VerificarTelComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    RotasModule
   ],
   exports: [
-    LoginComponent
+    LoginComponent,
   ]
 })
 export class LoginsModule { }
