@@ -25,9 +25,12 @@ import { DetalhesProdutoComponent } from './home/detalhes-produto/detalhes-produ
 import { PosLoginComponent } from './pos-login/pos-login.component';
 import { SolicitacoesComponent } from './solicitacoes/solicitacoes.component';
 import { ContasComponent } from './contas/contas.component';
+
 import { HistoricoService } from './services/historico.service';
 import { ReactiveFormsModule } from '@angular/forms';
+
 import CheckLogged from './checklogged';
+
 
 @NgModule({
   declarations: [

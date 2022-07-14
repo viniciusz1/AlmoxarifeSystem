@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
   senha = "";
 
   login(){
-    let usuarios =  this.usuariosService.getListaProdutos().find(lista => lista.usuario == this.usuario && lista.senha == this.senha);
+    let usuarios =  this.usuariosService.getListaUser().find(lista => lista.usuario == this.usuario && lista.senha == this.senha);
     if(usuarios){
       localStorage.setItem('USUARIO', this.usuario);
       localStorage.setItem('SENHA', this.senha);

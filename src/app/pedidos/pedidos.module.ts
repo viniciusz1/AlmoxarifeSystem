@@ -10,6 +10,8 @@ import { CommonModule } from '@angular/common';
 import { PedidoHistoricoComponent } from './historico/pedido-historico/pedido-historico.component';
 import { Routes } from '@angular/router';
 import { RotasModule } from '../rotas.module';
+import { FiltroHistoricoComponent } from './historico/filtro-historico/filtro-historico/filtro-historico.component';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { RotasModule } from '../rotas.module';
     PedidosComponent,
     HistoricoComponent,
     ConfirmarComponent,
-    PedidoHistoricoComponent
+    PedidoHistoricoComponent,
+    FiltroHistoricoComponent
   ],
   imports: [
     CommonModule,

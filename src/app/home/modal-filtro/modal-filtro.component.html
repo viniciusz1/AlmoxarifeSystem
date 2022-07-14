@@ -1,9 +1,64 @@
-<div class="fundo bg-dark opacity-75 position-relative">
+<div class="quadrado">
+    <div class="cargo">
+        <i (click)="clicouModal()" class="bi bi-x-circle" style="font-size: 20px; color: white;"></i>
+    </div>
+    <div>
+        <img class="logo" src="https://i.ibb.co/gdtf6MN/Logo-Branca-removebg-preview.png" style="height: 35px;">
+        <div class="centralizar" style="margin-top: 70px;">
+            <div class="textAl">
+                Almoxarife System
+            </div>
+        </div>
+        <div class="filtro">
+            <div class="central">
+                FILTRO
+            </div>
+            <div class="central">
+                <div style="font-size: 15px;">*Não é necessário preencher todos os campos</div>
+            </div>
+        </div>
+    </div>
+    <div class="inputs">
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm" action="">
+            <div class="produtos">
+                <label>Nome do produto</label>
+                <input name="nome" ngModel placeholder="Ex: Resistor">
+            </div>
+            <div class="datas">
+            <div class="atendente">
+                <label>Código do produto</label>
+                <input name="codigo" ngModel placeholder="Ex: 001">
+            </div>
+                <div class="dataRetirada">
+                    <label>Disponibilidade em estoque</label>
+                    <input name="estoque" ngModel placeholder="Ex: 12">
+                </div>
+            </div>
+            <div class="dois">
+                <div class="dataDevolucao">
+                    <label>Selecionar classificação</label>
+                    <select name="classificacao" ngModel class="igInput"></select>
+                </div>
+                <div class="status">
+                    <label>Selecionar opção de uso</label>
+                    <select name="opcaoUso" ngModel  class="igInput"></select>
+                </div>
+            </div>
+        </form>
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <button class="botaoFiltro">Filtrar</button>
+        </div>
+    </div>
+</div>
+<div class="overlay"></div>
+
+
+
+<!-- <div class="fundo bg-dark opacity-75 position-relative">
 </div>
 <div class="quadrado-modal container">
     <i (click)="clicouModal()"
      style="position: absolute; right: 7%;" class="bi bi-x-lg"></i>
-
     <h4 class="titulo d-flex align-center justify-content-center">
         Filtro de Pesquisa
     </h4>
@@ -46,4 +101,4 @@
     <div class="row">
         <button (click)="filtrar(f)" class="col-6 offset-6 btn btn-primary mt-5">filtrar</button>
     </div>
-</div>
+</div> -->
