@@ -89,24 +89,8 @@ import CheckLogged from './checklogged';
       ]
       },
       {
-        path: 'cadastro',
-        component: CadastroComponent
-      },
-      {
         path: '',
-        component: LoginComponent
-      },
-      {
-        path: 'telefone',
-        component: CadastroComponent
-      },
-      {
-        path: 'verificar-tel',
-        component: VerificarTelComponent
-      },
-      {
-        path: '',
-        component: HomeComponent,
+        component: LoginComponent,
         canActivate: [],
       },
       {

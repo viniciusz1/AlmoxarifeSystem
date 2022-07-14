@@ -15,11 +15,19 @@ export class UsuariosService {
   ]
 
 
-  getListaProdutos(){
+  getListaUser(){
     return this.lista
  }
- addProduto(usuario: Usuario){
+ addUser(usuario: Usuario){
   this.lista.push(usuario)
   console.log(this.lista)
  }
+ setUser(usuario: string, telefone: string){
+  let index =  this.lista.findIndex(listas => listas.usuario == usuario);
+  let us = this.lista[index];
+  let user = new Usuario(us.nome, us.email, us.usuario, us.senha, telefone);
+  this.lista[index] = user;
+  console.log(this.lista)
+ }
+
 }

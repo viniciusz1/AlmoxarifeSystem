@@ -2,11 +2,11 @@
 
     <div style="height: 100vh;">
         <div style="display: flex; justify-content: end; margin-right: 100px;">
-            <img src="https://i.ibb.co/sJpqLWy/zyro-image-3.png" style="height: 120px;">
+            <a routerLink="/"><img src="https://i.ibb.co/sJpqLWy/zyro-image-3.png" style="height: 120px;"></a>
         </div>
         <div class="centralizar">
             <div class="centro">
-                <i class="bi bi-arrow-left icons" style="margin-left: 20px;"></i>
+                <a routerLink="/cadastro"><i class="bi bi-arrow-left icons" style="margin-left: 20px;"></i></a>
                 <img class="logo" src="https://i.ibb.co/4mTFW0k/Logo-removebg-preview.png" style="height: 50px;">
                 <div class="centralizar" style="margin-top: 30px;">
                     <div class="textAl">
@@ -28,14 +28,14 @@
                             <div class="ladoInput" style="height: 50px; width: 50px;">
                                 <i class="bi bi-telephone-fill icons" style="margin-left: 10px;"></i>
                             </div>
-                            <input class="inputs" placeholder="Telefone" type="tel">
+                            <input class="inputs" placeholder="Telefone" type="tel" [(ngModel)]="telefone">
                         </div>
 
                     </div>
 
 
                     <div class="centralizar" style="margin-top: 50px;">
-                        <button class="botao" style="background-color: #0047B5; color: white;">Enviar</button>
+                        <button (click)="enviar()" class="botao" style="background-color: #0047B5; color: white;">Enviar</button>
                         <button class="botaoBranco botao" style="margin-left: 15px;">Pular</button>
                     </div>
 

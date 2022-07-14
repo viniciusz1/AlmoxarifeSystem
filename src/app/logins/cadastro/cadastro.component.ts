@@ -34,7 +34,8 @@ export class CadastroComponent implements OnInit {
       if(dominio == "edu.sc.senai.br"){
         this.cadastro();
       }else{
-        console.log("n foi")
+        localStorage.setItem("TELEFONE", this.usuario);
+        this.router.navigate(['/cadastro/telefone'])
       }
     }else{
       alert('Email Invalido')
@@ -45,11 +46,12 @@ export class CadastroComponent implements OnInit {
   }
 
   cadastro(){
-    let verificar =  this.usuarioService.getListaProdutos().
+    let verificar =  this.usuarioService.getListaUser().
     find(lista => lista.usuario == this.usuario || lista.email == this.email);
     if(!verificar){
-    this.usuarioService.addProduto({nome: this.nome, email: this.email, usuario: this.usuario, senha: this.senha})
-    this.router.navigate(["/"]);
+    this.usuarioService.addUser({nome: this.nome, email: this.email, usuario: this.usuario, senha: this.senha})
+    console.log("Foi cadastro")
+    this.router.navigate(['/cadastro/telefone'])
     }else{
       alert("usuario ou email em uso!")
     }
