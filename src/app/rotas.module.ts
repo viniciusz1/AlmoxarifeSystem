@@ -43,7 +43,7 @@ import CheckLogged from './checklogged';
           component: HomeComponent,
           canActivate: []
         },
-        
+
         {
           path: 'pedidos',
           component: PedidosComponent,
@@ -59,23 +59,23 @@ import CheckLogged from './checklogged';
           component: PerfilComponent,
           canActivate: [CheckLogged]
         },
-        {  
+        {
           path: 'detalhes-produto/:tipo',
           component: DetalhesProdutoComponent,
           canActivate: [CheckLogged],
-          
+
         },
-        {  
+        {
           path: 'cadastrar-produto',
           component: DetalhesProdutoComponent,
           canActivate: [CheckLogged]
         },
-        {  
+        {
           path: 'sidebar',
           component: SideBarComponent,
           canActivate: [CheckLogged]
         },
-        {  
+        {
           path: 'historico',
           component: HistoricoComponent,
           canActivate: [CheckLogged]
@@ -83,27 +83,27 @@ import CheckLogged from './checklogged';
         {
           path: 'entregas',
           component: EntregasComponent,
-          canActivate:[CheckLogged]
+          canActivate: [CheckLogged]
         },
         {
           path: 'solicitacoes',
           component: SolicitacoesComponent,
-          canActivate:[CheckLogged]
+          canActivate: [CheckLogged]
         },
         {
           path: 'contas',
           component: ContasComponent,
-          canActivate:[CheckLogged]
+          canActivate: [CheckLogged]
         },
         {
           path: 'conferencia',
           component: ConferenciaComponent,
-          canActivate:[CheckLogged]
+          canActivate: [CheckLogged]
         },
         {
           path: 'perfiladmin',
           component: PerfilAdminComponent,
-          canActivate:[]
+          canActivate: []
         },
         {
           path: 'filtro-historico',
@@ -114,12 +114,10 @@ import CheckLogged from './checklogged';
           path: 'modal-filtro',
           component: ModalFiltroComponent,
           canActivate: []
-        }
-
+        }, {
           path: ':id',
           component: HomeComponent,
           canActivate: [],
-          
         }
       ]},
       {
@@ -158,17 +156,17 @@ import CheckLogged from './checklogged';
         canActivate: []
       },
       {
-          path: 'historico',
-          component: HistoricoComponent,
-          canActivate: []
+        path: 'historico',
+        component: HistoricoComponent,
+        canActivate: []
       },
       {
-          path: 'produto-lista',
-          component: ProdutoListaComponent,
-          canActivate: []
+        path: 'produto-lista',
+        component: ProdutoListaComponent,
+        canActivate: []
       }
-      ])
+    ])
   ],
-  exports: [RouterModule]
+    exports: [RouterModule]
 })
 export class RotasModule { }
