@@ -2,8 +2,8 @@
     position: absolute;
     left: 0;
     top: 0;
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
     border-radius: 500px;
     border: 0.5px solid black;
     cursor: pointer;
@@ -25,7 +25,8 @@ i:hover{
 }
 
 .sombra {
-    box-shadow: 2px 2px 5px 1px;
+    box-shadow: 4px 3px 6px -4px;
+    background-color: #f1f1f1;
 }
 
 .retangulo {

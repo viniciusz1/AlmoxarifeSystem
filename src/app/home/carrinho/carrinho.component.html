@@ -17,7 +17,7 @@
         <div *ngIf="listaCarrinho " class="row DivWithScroll" id="style-2">
             <div *ngFor="let produto of listaCarrinho; let i = index" class="d-flex justify-content-center align-items-center">
                 <i (click)="lixo(i)" class="bi bi-trash-fill col-1" style="align-self: center;"></i>
-                <app-produto [produto]="produto" class="col-9"></app-produto>
+                <app-produto [carrinho]="carrinho" [produto]="produto" class="col-9"></app-produto>
                 <div class="div col-2 adicionar" style="align-self: center;">
                     <i class="bi bi-plus-lg"></i>
                     <input type="text" class="form-control" style="width: 40px;">

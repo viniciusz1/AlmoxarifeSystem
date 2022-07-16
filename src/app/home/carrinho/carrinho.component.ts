@@ -25,7 +25,7 @@ export class CarrinhoComponent implements OnInit {
   @Output() fechaCarrinho = new EventEmitter<boolean>();
   @Output() reserva = new EventEmitter<boolean>();
   @Input('state') state = "aberto";
-  
+  carrinho = true;
   stateTxt= "fechado";
   listaCarrinho:Produto[] = [];
 
