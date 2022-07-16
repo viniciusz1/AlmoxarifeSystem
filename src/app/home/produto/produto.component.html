@@ -1,6 +1,6 @@
 <div  class="position-relative d-flex bloco" style="max-width: 540px;">
 
-        <img (click)="abreDetalhesProduto()" class="imagem "
+        <img [ngClass]="{imagemCarrinho: carrinho == true}" (click)="abreDetalhesProduto()" class="imagem "
         src="https://brisaclimatizadores.com.br/img/p/9/3/93-home_default.jpg" alt="">
         <div (click)="abreDetalhesProduto()" class="sombra retangulo">
             <div class="itens-retangulo d-flex" >
@@ -18,10 +18,7 @@
             </div>
         </div>
 
-        <div *ngIf="carrinho == false">
-            <i (click)="adicionarCarrinho()" id="texto-inside" class="bi bi-plus-square 
-            position-absolute" style="right: 5px; top:29px; color: #0047B5;"></i>
-        </div>
+    
         
 
         <i *ngIf="rota == 'produtos'" [routerLink]="['/home/detalhes-produto/', indiceProduto]" class="bi bi-pen 

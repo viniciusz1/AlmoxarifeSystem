@@ -36,24 +36,28 @@ export class DetalhesProdutoComponent implements OnInit{
   cadastrarProduto = ""
 
   ngOnInit(): void {
-    this.route.params.subscribe(params => {
-      this.rota = params['tipo']
-      if (this.rota == undefined) {
-        this.botao = "Cadastrar produto"
-      } else {
-        this.botao = "Editar produto"
+    this.route.url.subscribe(
+      url => {
+        if(url[0].path == "cadastrar-produto"){
+          this.botao = "Cadastrar produto"
+        }else if(url[0].path == "detalhes-produto"){ 
+          this.rota = url[1].path
+          this.botao = "Editar produto"
+          this.informacoes = this.prod.getIdProduto(parseInt(this.rota))
+          this.detalhesForm.patchValue({
+            nome: this.informacoes.nome,
+            opcaoUso: this.informacoes.opcaoUso,
+            quantidade: this.informacoes.quantidade,
+            classificacao: this.informacoes.classificacao,
+            localidade: this.informacoes.localidade,
+            descricao: this.informacoes.descricao
+          })
+        }
       }
-    })
+    )
     
-    this.informacoes = this.prod.getIdProduto(parseInt(this.rota))
-    this.detalhesForm.patchValue({
-      nome: this.informacoes.nome,
-      opcaoUso: this.informacoes.opcaoUso,
-      quantidade: this.informacoes.quantidade,
-      classificacao: this.informacoes.classificacao,
-      localidade: this.informacoes.localidade,
-      descricao: this.informacoes.descricao
-    })
+    
+    
 
   }
 

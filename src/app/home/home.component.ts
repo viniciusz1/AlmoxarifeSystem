@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
      private router: ActivatedRoute) { }
 
   modal = false;
-  modalReserva: boolean = false;
+  modalReserva = false;
   state = "fechado";
   carState = "fechado";
   lista: Produto[] = [];

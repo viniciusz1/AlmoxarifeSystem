@@ -8,6 +8,10 @@
     border: 0.5px solid black;
     cursor: pointer;
 }
+.imagemCarrinho{
+    width: 70px;
+    height: 70px;
+}
 i:hover{
     color: blue;
     cursor: pointer;

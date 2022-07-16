@@ -11,6 +11,7 @@ import { PedidoHistoricoComponent } from './historico/pedido-historico/pedido-hi
 import { Routes } from '@angular/router';
 import { RotasModule } from '../rotas.module';
 import { FiltroHistoricoComponent } from './historico/filtro-historico/filtro-historico/filtro-historico.component';
+import { HistoricoService } from '../services/historico.service';
 
 
 @NgModule({
@@ -37,6 +38,9 @@ import { FiltroHistoricoComponent } from './historico/filtro-historico/filtro-hi
     ModalDevolucaoComponent,
     ModalDevolucaoComponent,
     ConfirmarComponent
+  ],
+  providers:[
+    HistoricoService
   ]
 })
 export class PedidosModule { }

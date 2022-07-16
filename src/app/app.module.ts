@@ -45,7 +45,7 @@ import { PedidosModule } from './pedidos/pedidos.module';
     HomeModule,
     PedidosModule
   ],
-  providers: [CarrinhoService, ProdutosService, CheckLogged, HistoricoService],
+  providers: [CarrinhoService, ProdutosService, CheckLogged],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

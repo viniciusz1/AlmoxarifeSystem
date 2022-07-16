@@ -9,8 +9,7 @@ import { Produto } from 'src/app/shared/produto.model';
   animations: [
     trigger('teste', [
       state('aberto', style({
-        'width': '32vw',
-        'text-align': 'left'
+        'width': '400px',
       })),
       state('fechado', style({
         'width': '60px'

@@ -1,5 +1,5 @@
-<div *ngIf="state == 'aberto'" [@teste]="state" class="index border d-flex flex-column
- flex-shrink-0 p-1 bg-light po" style="height: 91vh; width: 50vw;">
+<div *ngIf="state == 'aberto'" [@teste]="state" class="index border d-flex 
+p-1 bg-light po" style="height: 91vh; width: 400px !important;">
 
 
     <div class="container">
@@ -14,11 +14,11 @@
                 <hr>
             </div>
         </div>
-        <div *ngIf="listaCarrinho " class="row DivWithScroll" id="style-2">
-            <div *ngFor="let produto of listaCarrinho; let i = index" class="d-flex justify-content-center align-items-center">
-                <i (click)="lixo(i)" class="bi bi-trash-fill col-1" style="align-self: center;"></i>
+        <div *ngIf="listaCarrinho" class="row DivWithScroll" id="style-2">
+            <div *ngFor="let produto of listaCarrinho; let i = index" style="height: 150px;" class="d-flex justify-content-center align-items-center">
+                <i (click)="lixo(i)" class="bi bi-trash-fill col-1" ></i>
                 <app-produto [carrinho]="carrinho" [produto]="produto" class="col-9"></app-produto>
-                <div class="div col-2 adicionar" style="align-self: center;">
+                <div class="div col-2 adicionar" >
                     <i class="bi bi-plus-lg"></i>
                     <input type="text" class="form-control" style="width: 40px;">
                     <i class="bi bi-dash-lg"></i>

@@ -18,6 +18,7 @@
 }
 .index{
     z-index: 1;
+    
 }
 .cor-azul:hover{
     background-color: #0047B5;
@@ -35,7 +36,6 @@
     height:330px;
     overflow:scroll;
     overflow-x:hidden;
-    min-height: 100%;
 
 }
 
