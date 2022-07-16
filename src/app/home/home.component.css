@@ -80,13 +80,20 @@
 .carrinho-side{
     right: 0;
 }
-.topo{
-    display: flex;
-    width: 80vw;
-}
+
 
 .duas-div{
     display: grid;
+}
+.superior-direito{
+    align-items: center;
+    justify-content: center;
+    column-gap: 14px;
+}
+.alinhar-meio{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .div-cima{
@@ -144,7 +151,6 @@ i{
     display: flex;
     justify-content: end;
     align-items: center;
-    width: 100%;
     column-gap: 15px;
 }
 

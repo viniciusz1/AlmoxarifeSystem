@@ -11,6 +11,8 @@ import { DetalhesProdutoComponent } from './detalhes-produto/detalhes-produto.co
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RotasModule } from '../rotas.module';
+import { FiltroProdutosPipe } from '../pipes/filtro-produtos.pipe';
+import { FiltroEspecializadoProdutosPipe } from '../pipes/filtro-especializado-produtos.pipe';
 
 
 
@@ -23,7 +25,9 @@ import { RotasModule } from '../rotas.module';
     CarrinhoComponent,
     ReservaComponent,
     ProdutoListaComponent,
-    DetalhesProdutoComponent
+    DetalhesProdutoComponent,
+    FiltroProdutosPipe,
+    FiltroEspecializadoProdutosPipe,
 
   ],
   imports: [
@@ -31,7 +35,7 @@ import { RotasModule } from '../rotas.module';
     FormsModule,
     BrowserAnimationsModule,
     RotasModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   exports:[
     HomeComponent,

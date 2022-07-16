@@ -54,14 +54,17 @@ export class HomeComponent implements OnInit {
 
   titulo = ""
   rota = "";
+  home = true
   ngOnInit(): void {  
     this.lista = this.prod.getListaProdutos()  
     this.router.params.subscribe(params => {
     this.rota = params['id'];
     if(this.rota == 'produtos'){
       this.titulo = 'Edição'
+      this.home = false
     }else{
       this.titulo = 'Home'
+      this.home = true
     }
     })
     this.car.tamanhoCarrinho.subscribe(
