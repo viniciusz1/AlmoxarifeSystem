@@ -5,7 +5,7 @@ import {
     Router,
     RouterStateSnapshot
 } from "@angular/router";
-import { Observable } from "rxjs";
+import { Observable } from "rxjs"
 
 @Injectable()
 class CheckLogged implements CanActivate {
