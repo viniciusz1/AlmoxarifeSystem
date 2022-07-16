@@ -25,6 +25,7 @@ export class DetalhesProdutoComponent implements OnInit{
     descricao: new FormControl(''),
   });
 
+  disabled = true
   onSubmit() {
 
     let produto = new Produto()
@@ -40,9 +41,22 @@ export class DetalhesProdutoComponent implements OnInit{
       url => {
         if(url[0].path == "cadastrar-produto"){
           this.botao = "Cadastrar produto"
-        }else if(url[0].path == "detalhes-produto"){ 
+        }else if(url[0].path == "editar-produto"){ 
           this.rota = url[1].path
           this.botao = "Editar produto"
+          this.informacoes = this.prod.getIdProduto(parseInt(this.rota))
+          this.detalhesForm.patchValue({
+            nome: this.informacoes.nome,
+            opcaoUso: this.informacoes.opcaoUso,
+            quantidade: this.informacoes.quantidade,
+            classificacao: this.informacoes.classificacao,
+            localidade: this.informacoes.localidade,
+            descricao: this.informacoes.descricao
+          })
+        }else if(url[0].path == "detalhes-produto"){
+          this.rota = url[1].path
+          this.botao = "Detalhes-produto"
+          this.detalhesForm.disable();
           this.informacoes = this.prod.getIdProduto(parseInt(this.rota))
           this.detalhesForm.patchValue({
             nome: this.informacoes.nome,

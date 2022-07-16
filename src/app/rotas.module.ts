@@ -66,6 +66,12 @@ import CheckLogged from './checklogged';
           
         },
         {  
+          path: 'editar-produto/:tipo',
+          component: DetalhesProdutoComponent,
+          canActivate: [CheckLogged],
+          
+        },
+        {  
           path: 'cadastrar-produto',
           component: DetalhesProdutoComponent,
           canActivate: [CheckLogged]

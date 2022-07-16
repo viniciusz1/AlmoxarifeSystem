@@ -148,10 +148,9 @@ i{
 }
 
 .topo-2{
-    display: flex;
+    display: flex;  
     justify-content: end;
     align-items: center;
-    column-gap: 15px;
 }
 
 .pesquisa{

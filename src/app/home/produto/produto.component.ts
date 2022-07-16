@@ -12,8 +12,9 @@ export class ProdutoComponent implements OnInit {
   @Input() produto: Produto = new Produto("1", "2", "3", "4", "5", "6", 7);
   @Input() indiceProduto = 0
   @Input() carrinho = false;
+
   abreDetalhesProduto() {
-    // this.router.navigate(['/detalhes-produto'])
+    this.router.navigate(['/home/detalhes-produto/',this.indiceProduto])
     console.log(this.carrinho)
   }
   constructor(private router: Router,
