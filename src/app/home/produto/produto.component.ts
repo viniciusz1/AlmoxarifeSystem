@@ -27,7 +27,6 @@ export class ProdutoComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.rota = params['id'];
-      console.log(this.rota)
     })
   }
 

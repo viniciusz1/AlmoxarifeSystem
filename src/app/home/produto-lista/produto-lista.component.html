@@ -5,5 +5,6 @@
         <div style="width:30%">{{produto.classificacao}}</div>
         <div style="width: 30%; padding-left: 8%;">
             {{produto.quantidade}}</div>
-        <i  (click)="adicionarCarrinho()" class="bi bi-plus-square h-mais" style="right: 5px; top:29px;"></i>
+        <i *ngIf="rota == 'produtos'" [routerLink]="['/home/detalhes-produto/', indiceProduto]" class="bi bi-pen" style="right: 5px; top:29px;"></i>
+        <i *ngIf="rota == undefined" (click)="adicionarCarrinho()" class="bi bi-plus-square" style="right: 5px; top:29px;"></i>
 </div>
