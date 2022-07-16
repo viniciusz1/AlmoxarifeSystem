@@ -1,5 +1,7 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { Pedido } from 'src/app/shared/pedido.model';
+import { PedidosService } from 'src/app/services/pedidos.service';
 
 @Component({
   selector: 'app-devolucoes',
@@ -9,61 +11,16 @@ import { Component, OnInit } from '@angular/core';
 export class DevolucoesComponent implements OnInit {
 
 
-  constructor(private router: Router) {
-    console.log(this.router.url)
+  constructor(private router: Router,
+    private pedidos: PedidosService) {
   }
   gotoConferencia(){
     this.router.navigate(['/conferencia'])
   }
 
-  lista = [
-    {
-      pedido: "001",
-      Professor: "Carlinhos",
-      Produtos: "Resistor 1k Ohms, Resistor 10k Ohms, Resistor 10k Ohms, Resistor 10kOhms, Resistor 10kOhms...",
-      Data: "02/02/2022",
-    },
-    {
-      pedido: "001",
-      Professor: "Carlinhos",
-      Produtos: "Resistor 1k Ohms, Resistor 10k Ohms, Resistor 10k Ohms, Resistor 10kOhms, Resistor 10kOhms...",
-      Data: "02/02/2022",
-    },
-    {
-      pedido: "001",
-      Professor: "Carlinhos",
-      Produtos: "Resistor 1k Ohms, Resistor 10k Ohms, Resistor 10k Ohms, Resistor 10kOhms, Resistor 10kOhms...",
-      Data: "02/02/2022",
-    },
-    {
-      pedido: "001",
-      Professor: "Carlinhos",
-      Produtos: "Resistor 1k Ohms, Resistor 10k Ohms, Resistor 10k Ohms, Resistor 10kOhms, Resistor 10kOhms...",
-      Data: "02/02/2022",
-    },
-    {
-      pedido: "001",
-      Professor: "Carlinhos",
-      Produtos: "Resistor 1k Ohms, Resistor 10k Ohms, Resistor 10k Ohms, Resistor 10kOhms, Resistor 10kOhms...",
-      Data: "02/02/2022",
-    },
-    {
-      pedido: "001",
-      Professor: "Carlinhos",
-      Produtos: "Resistor 1k Ohms, Resistor 10k Ohms, Resistor 10k Ohms, Resistor 10kOhms, Resistor 10kOhms...",
-      Data: "02/02/2022",
-    },
-    {
-      pedido: "001",
-      Professor: "Carlinhos",
-      Produtos: "Resistor 1k Ohms, Resistor 10k Ohms, Resistor 10k Ohms, Resistor 10kOhms, Resistor 10kOhms...",
-      Data: "02/02/2022",
-}]
-  name = "";
+  lista: Pedido[] = []
   ngOnInit(): void { 
-    
-
-
+    this.lista = this.pedidos.getEntregas()
   }
 
 }

@@ -36,19 +36,19 @@
                 <div class="px">
                 </div>
                 <div class="pedido">
-                    <span>{{lista.pedido}}</span>
+                    <span>{{lista.codigo}}</span>
                 </div>
                 <div class="professor">
-                    <span>{{lista.Professor}}</span>
+                    <span>{{lista.nomeProfessor}}</span>
                 </div>
                 <div class="central">
                     <div class="d-inline-block text-truncate">
-                        <span>{{lista.Produtos}}</span>
+                        <span *ngFor="let l of lista.listaProdutos">{{l.nome}}, </span>
                     </div>
                 </div>
 
                 <div class="data">
-                    <span>{{lista.Data}}</span>
+                    <span>{{lista.dataDevolucao | date: 'dd/MM/yyyy'}}</span>
                 </div>
                 <div class="botao" [routerLink]="['/home/conferencia']">
                     <button (click)="gotoConferencia()" >Realizar Entrega</button>

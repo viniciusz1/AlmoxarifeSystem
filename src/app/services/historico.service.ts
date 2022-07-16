@@ -9,9 +9,6 @@ export class HistoricoService {
   pedidos: Pedido[] = []
   
   addPedido(pedido: Pedido){
-    console.log(this.pedidos)
-    console.log(pedido)
-
     this.pedidos.push(pedido)
     this.historicosChange.emit(this.pedidos.slice())
   }
