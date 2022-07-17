@@ -114,8 +114,8 @@ import CheckLogged from './checklogged';
           path: 'modal-filtro',
           component: ModalFiltroComponent,
           canActivate: []
-        }
-
+        },
+        {
           path: ':id',
           component: HomeComponent,
           canActivate: [],
