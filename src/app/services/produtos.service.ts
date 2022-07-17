@@ -37,9 +37,16 @@ export class ProdutosService {
    }
    changeQuantidadeProduto(codigo: number, quantidade:number){
     let index = this.lista.findIndex(lista => lista.codigo == codigo);
-    this.lista[index].quantidade = parseInt(this.lista[index].quantidade) + quantidade
-    console.log('oi')
+    if(this.isDefined(this.lista[index].quantidade) && !isNaN(quantidade)){
+      let a = this.lista[index].quantidade as number
+      let b = +quantidade
+      this.lista[index].quantidade = a + b
+    }
    }
+
+   isDefined<T>(val: T | undefined | null): val is T {
+    return val !== undefined && val !== null;
+  }
 
    changeProduto(index: number, produto: Produto){
     // let index = this.lista.findIndex(lista => lista.codigo == produto.codigo);

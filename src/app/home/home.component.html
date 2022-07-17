@@ -34,7 +34,13 @@
                                 <input [(ngModel)]="pesquisaProduto" placeholder="Pesquisar Pedido">
                             </div>
                         </div>
-                        <div class="filtrar col-sm-3">
+                        <div class="filtrar col-sm-2">
+                            <div class="icone" style="min-width: 122px;">
+                                <button class="filtross" routerLink="/home/entrada">Entrada</button>
+                                <i class="bi bi-plus-lg"></i>
+                            </div>
+                        </div>
+                        <div class="filtrar col-sm-2">
                             <div class="icone" style="min-width: 122px;">
                                 <button class="filtross" (click)="modalOpen(false)">Filtrar Mais</button>
                                 <i class="bi bi-sliders"></i>

@@ -78,6 +78,12 @@ import { EntradaComponent } from './home/entrada/entrada.component';
           
         },
         {  
+          path: 'entrada',
+          component: EntradaComponent,
+          canActivate: [CheckLogged],
+          
+        },
+        {  
           path: 'entrada/:id',
           component: EntradaComponent,
           canActivate: [CheckLogged],
