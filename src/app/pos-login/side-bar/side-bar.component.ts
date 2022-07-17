@@ -26,8 +26,8 @@ export class SideBarComponent implements OnInit {
   constructor() { }
 
   // user = "atendente"
-  // user = "supervisor"
-  user = "admin"
+  user = "supervisor"
+  // user = "admin"
   // user = "professor"
   state = "fechado";
   stateTxt= "fechado";
@@ -37,7 +37,7 @@ export class SideBarComponent implements OnInit {
       this.state = "aberto"
       setTimeout(() => {
         this.stateTxt= "aberto";
-      }, 85)
+      }, 50)
     }else{
       this.state = "fechado"
       this.stateTxt = "fechado"

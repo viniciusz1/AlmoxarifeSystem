@@ -4,7 +4,11 @@
     /* align-items: center; */
     width: 150vw;
 }
-
+.perfil-admin{
+    position: absolute;
+    top: 50%;
+    left: 25%;
+}
 .pg{
     font-size: calc(1.3rem + .6vw);
     margin-top: 50px;

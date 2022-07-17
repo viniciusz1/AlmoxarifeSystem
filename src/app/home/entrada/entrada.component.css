@@ -1,0 +1,24 @@
+.pg{
+    font-size: calc(1.3rem + .6vw);
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.pesquisa{
+    border-bottom: 0.5px solid black;
+    max-width: 225px;
+}
+.form-control{
+    border: 1px solid black;
+}
+input{
+    border: transparent;
+    outline: none;
+}
+.div-imagem{
+    text-align: center;
+}
+.imagem{
+    width: 200px;
+    height: 200px;
+    border-radius: 500px;
+}

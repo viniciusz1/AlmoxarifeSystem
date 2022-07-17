@@ -35,5 +35,5 @@
             </div>
         </div>
     </div>
-    <app-perfil-admin *ngIf="perfilState == true"></app-perfil-admin>
+    <app-perfil-admin (estadoPerfil)="mudarPerfilState()" class="perfil-admin" *ngIf="perfilState == true"></app-perfil-admin>
 </div>

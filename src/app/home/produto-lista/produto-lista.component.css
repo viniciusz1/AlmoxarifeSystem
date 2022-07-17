@@ -16,7 +16,7 @@
 }
 .bloco-azul{
     width: 5px; 
-    height:38px; 
+    height:100%; 
     background-color:blue; 
     padding: 5px;
     position: absolute;

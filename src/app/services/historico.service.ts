@@ -1,21 +1,23 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Pedido } from '../shared/pedido.model';
 import { Produto } from '../shared/produto.model';
 @Injectable({
   providedIn: 'root'
 })
 export class HistoricoService {
-  pedidos: Pedido[] = [new Pedido("Jubileu", [new Produto ("Resistor Elétrico1", "1", "Material Elétrico", "produto", "Descartável", "Descrição", 1),
-  new Produto ("Resistor Elétrico2", "1", "Material Elétrico", "produto", "Descartável", "Descrição", 1),
-  new Produto ("Resistor Elétrico3", "1", "Material Elétrico", "produto", "Descartável", "Descrição", 1),], new Date(), new Date(), 1, 1)]
+  historicosChange = new EventEmitter<Pedido[]>()
+  pedidos: Pedido[] = []
+  
   addPedido(pedido: Pedido){
     this.pedidos.push(pedido)
+    this.historicosChange.emit(this.pedidos.slice())
   }
   removePedido(index: number){
     this.pedidos.splice(index, 1)
+    this.historicosChange.emit(this.pedidos.slice())
   }
   getPedido(){
-    return this.pedidos;
+    return this.pedidos.slice();
   }
   constructor() { }
 }

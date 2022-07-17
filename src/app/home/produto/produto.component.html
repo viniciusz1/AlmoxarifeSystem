@@ -1,7 +1,7 @@
 <div  class="position-relative d-flex bloco" style="max-width: 540px;">
 
-        <img (click)="abreDetalhesProduto()" class="imagem "
-        src="https://brisaclimatizadores.com.br/img/p/9/3/93-home_default.jpg" alt="">
+        <img [ngClass]="{imagemCarrinho: carrinho == true}" (click)="abreDetalhesProduto()" class="imagem "
+        src="{{produto.imagem}}" alt="">
         <div (click)="abreDetalhesProduto()" class="sombra retangulo">
             <div class="itens-retangulo d-flex" >
                 <div>
@@ -18,20 +18,12 @@
             </div>
         </div>
 
-        <div class="icone1">
-            <i (click)="adicionarCarrinho()" id="teste" class="bi bi-plus-square-fill 
-            position-absolute" style="right: 5px; top:29px; color: #0047B5;"></i>
-            
-        </div>
-        <div>
-            <i (click)="adicionarCarrinho()" id="texto-inside" class="bi bi-plus-square 
-            position-absolute" style="right: 5px; top:29px; color: #0047B5;"></i>
-        </div>
+    
         
 
-        <i *ngIf="rota == 'produtos'" [routerLink]="['/home/detalhes-produto/', indiceProduto]" class="bi bi-pen 
+        <i *ngIf="rota == 'produtos'" [routerLink]="['/home/editar-produto/', produto.codigo]" class="bi bi-pen 
         position-absolute" style="right: 5px; top:29px;"></i>
-        <i *ngIf="rota == undefined" (click)="adicionarCarrinho()" class="bi bi-plus-square 
+        <i *ngIf="rota == undefined && carrinho==false" (click)="adicionarCarrinho()" class="bi bi-plus-square 
         position-absolute" style="right: 5px; top:29px;"></i>
 
 </div>
