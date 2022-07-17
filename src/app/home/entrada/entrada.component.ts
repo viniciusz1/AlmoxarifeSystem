@@ -21,6 +21,8 @@ export class EntradaComponent implements OnInit {
   novaQuantidade=0
   pesquisaProduto = ""
   codigo = 0;
+  imagem = ""
+
   ngOnInit(): void {
     this.lista = this.prod.getListaProdutos()  
     this.router.params.subscribe(e => {
@@ -31,12 +33,14 @@ export class EntradaComponent implements OnInit {
     )
   }
 
-  mostrarProduto(index: number){
-    this.route.navigate(['home/entrada/',this.lista[index].codigo])
-    let produto = this.prod.getIdProduto(index)
-    this.nomeProduto = produto.nome as string
-    this.estoqueQuantidade = produto.quantidade as number
+  mostrarProduto(codigo: number | undefined){
+    let produto = this.lista.find(e => e.codigo==codigo)
+    this.route.navigate(['home/entrada/', codigo])
+    this.imagem = produto?.imagem as string
+    this.nomeProduto = produto?.nome as string
+    this.estoqueQuantidade = produto?.quantidade as number
   }
+
   atualizarQuantidade(){
     Swal.fire({
       title: 'Confirmar entrada',

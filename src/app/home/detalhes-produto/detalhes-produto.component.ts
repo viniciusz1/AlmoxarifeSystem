@@ -81,6 +81,7 @@ export class DetalhesProdutoComponent implements OnInit{
           this.informacoes = this.prod.getIdProduto(parseInt(this.rota))
           this.codigo = this.informacoes.codigo
           this.imagem = this.informacoes.imagem
+          this.detalhesForm.controls['quantidade'].disable()
           this.detalhesForm.patchValue({
             nome: this.informacoes.nome,
             opcaoUso: this.informacoes.opcaoUso,
@@ -95,6 +96,8 @@ export class DetalhesProdutoComponent implements OnInit{
           this.botao = "Detalhes-produto"
           this.detalhesForm.disable();
           this.informacoes = this.prod.getIdProduto(parseInt(this.rota))
+          this.imagem = this.informacoes.imagem
+
           this.detalhesForm.patchValue({
             nome: this.informacoes.nome,
             opcaoUso: this.informacoes.opcaoUso,
