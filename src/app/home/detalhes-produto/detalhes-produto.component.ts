@@ -12,7 +12,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class DetalhesProdutoComponent implements OnInit{
 
 
-  rota = "";
+  codRota = "";
   informacoes = new Produto()
   botao = ""
   cadastrarProduto = ""
@@ -56,7 +56,7 @@ export class DetalhesProdutoComponent implements OnInit{
           this.detalhesForm.value.localidade as string, 
           this.detalhesForm.value.opcaoUso as string,
           this.detalhesForm.value.descricao as string,
-          this.codigo as number,
+          +this.codRota,
           this.imagem as string))
           this.router.navigate(['/home/produtos'])
     }
@@ -64,10 +64,9 @@ export class DetalhesProdutoComponent implements OnInit{
   }
 
   darEntrada(){
-    this.router.navigate(['/home/entrada/', this.codigo])
+    this.router.navigate(['/home/entrada/', this.codRota])
   }
 
-  codigo? = 0;
   imagem? = ""
   
   ngOnInit(): void {
@@ -80,10 +79,9 @@ export class DetalhesProdutoComponent implements OnInit{
 
         }else if(url[0].path == "editar-produto"){ 
           this.modo = "editar"
-          this.rota = url[1].path
+          this.codRota = url[1].path
           this.botao = "Editar produto"
-          this.informacoes = this.prod.getIdProduto(parseInt(this.rota))
-          this.codigo = this.informacoes.codigo 
+          this.informacoes = this.prod.getIdProduto(parseInt(this.codRota))
           this.imagem = this.informacoes.imagem
           this.detalhesForm.controls['quantidade'].disable()
           this.detalhesForm.patchValue({
@@ -98,12 +96,11 @@ export class DetalhesProdutoComponent implements OnInit{
 
         }else if(url[0].path == "detalhes-produto"){
           this.modo = "detalhar"
-          this.rota = url[1].path
+          this.codRota = url[1].path
           this.botao = "Detalhes-produto"
           this.detalhesForm.disable();
-          this.informacoes = this.prod.getIdProduto(parseInt(this.rota))
+          this.informacoes = this.prod.getIdProduto(parseInt(this.codRota))
           this.imagem = this.informacoes.imagem
-          this.codigo = this.informacoes.codigo
 
           this.detalhesForm.patchValue({
             nome: this.informacoes.nome,

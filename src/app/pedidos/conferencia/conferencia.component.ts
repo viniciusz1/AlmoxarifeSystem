@@ -37,21 +37,19 @@ export class ConferenciaComponent implements OnInit {
     }else if(this.entregas == 0){ 
       this.pedido = this.pedidos.getDevolucoesbyIndex(parseInt(this.id));
     }else if(this.entregas == 2){
-      this.historicoService.getPedidobyIndex(parseInt(this.id))
+      this.pedido = this.historicoService.getPedidobyIndex(parseInt(this.id))
     }
   }
   //1 = entregas
   //2 = historico
   //0 = devolucoes
   confirmarPedido(){
-    if(this.entregas == 0){
+    if(this.entregas == 1){
       this.pedidos.realizarEntrega(parseInt(this.id))
       this.router.navigate(['/home/entregas'])
-    }else if(this.entregas == 1){
+    }else if(this.entregas == 0){
       this.pedidos.realizarDevolucao(parseInt(this.id))
       this.router.navigate(['/home/devolucoes'])
-    }else if(this.entregas == 2){
-
     }
   }
 }

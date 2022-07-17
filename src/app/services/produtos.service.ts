@@ -54,14 +54,10 @@ export class ProdutosService {
 
    changeProduto(produto: Produto){
 
-    console.log(produto.codigo)
-
-
-    let index = this.lista.findIndex(e => {
-      e.codigo = produto.codigo;
-    })
+    let index = this.lista.findIndex(e => 
+      e.codigo == produto.codigo
+    )
     this.lista[index] = produto
-    console.log(this.lista[index])
   }
   constructor() { }
 }

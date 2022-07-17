@@ -20,6 +20,7 @@ export class HistoricoService {
     return this.pedidos.slice();
   }
   getPedidobyIndex(index: number){
+
     return this.pedidos[index];
   }
   constructor() { }
