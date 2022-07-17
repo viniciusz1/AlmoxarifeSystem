@@ -13,7 +13,7 @@ export class ConferenciaComponent implements OnInit {
   constructor(private route: ActivatedRoute,
     private pedidos: PedidosService,
     private router: Router) { }
-  entregas = false
+  entregas = 0
   id = ""
   pedido: Pedido = new Pedido()
 
@@ -21,9 +21,9 @@ export class ConferenciaComponent implements OnInit {
     this.route.url.subscribe(
       e => {
         if(e[0].path == "entregas"){
-          this.entregas = true;
-        }else{
-          this.entregas = false;
+          this.entregas = 1;
+        }else if(e[0].path == "devolucoes"){ 
+          this.entregas = 0;
         }
         this.id = e[1].path;
       }
@@ -34,13 +34,18 @@ export class ConferenciaComponent implements OnInit {
       this.pedido = this.pedidos.getDevolucoesbyIndex(parseInt(this.id));
     }
   }
+  //1 = entregas
+  //2 = historico
+  //0 = devolucoes
   confirmarPedido(){
-    if(this.entregas){
+    if(this.entregas == 0){
       this.pedidos.realizarEntrega(parseInt(this.id))
       this.router.navigate(['/home/entregas'])
-    }else{
+    }else if(this.entregas == 1){
       this.pedidos.realizarDevolucao(parseInt(this.id))
       this.router.navigate(['/home/devolucoes'])
+    }else if(this.entregas == 2){
+
     }
   }
 }
