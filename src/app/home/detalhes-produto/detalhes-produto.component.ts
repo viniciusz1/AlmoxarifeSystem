@@ -18,7 +18,7 @@ export class DetalhesProdutoComponent implements OnInit{
   cadastrarProduto = ""
   select = ""
   disabled = true
-  
+  modo = ""
 
   constructor(private prod: ProdutosService,
     private router: Router,
@@ -35,14 +35,27 @@ export class DetalhesProdutoComponent implements OnInit{
   });
 
   onSubmit() {
-    this.prod.addProduto(
-    new Produto(this.detalhesForm.value.nome as string, 
-      this.detalhesForm.value.quantidade as string, 
-      this.detalhesForm.value.classificacao as string,
-      this.detalhesForm.value.localidade as string, 
-      this.detalhesForm.value.opcaoUso as string,
-      this.detalhesForm.value.descricao as string,
-      123))
+    if(this.modo == "cadastrar"){
+      this.prod.addProduto(
+        new Produto(this.detalhesForm.value.nome as string, 
+          this.detalhesForm.value.quantidade as string, 
+          this.detalhesForm.value.classificacao as string,
+          this.detalhesForm.value.localidade as string, 
+          this.detalhesForm.value.opcaoUso as string,
+          this.detalhesForm.value.descricao as string,
+          123))
+          this.router.navigate(['/home/produtos'])
+    }else if(this.modo == "editar"){
+        this.prod.changeProduto(parseInt(this.rota), new Produto(this.detalhesForm.value.nome as string, 
+          this.detalhesForm.value.quantidade as string, 
+          this.detalhesForm.value.classificacao as string,
+          this.detalhesForm.value.localidade as string, 
+          this.detalhesForm.value.opcaoUso as string,
+          this.detalhesForm.value.descricao as string,
+          123))
+          this.router.navigate(['/home/produtos'])
+    }
+    
   }
 
 
@@ -51,7 +64,9 @@ export class DetalhesProdutoComponent implements OnInit{
       url => {
         if(url[0].path == "cadastrar-produto"){
           this.botao = "Cadastrar produto"
+          this.modo = "cadastrar"
         }else if(url[0].path == "editar-produto"){ 
+          this.modo = "editar"
           this.rota = url[1].path
           this.botao = "Editar produto"
           this.informacoes = this.prod.getIdProduto(parseInt(this.rota))
@@ -64,6 +79,7 @@ export class DetalhesProdutoComponent implements OnInit{
             descricao: this.informacoes.descricao
           })
         }else if(url[0].path == "detalhes-produto"){
+          this.modo = "detalhar"
           this.rota = url[1].path
           this.botao = "Detalhes-produto"
           this.detalhesForm.disable();

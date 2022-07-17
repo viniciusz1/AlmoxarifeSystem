@@ -12,6 +12,9 @@
     margin-top: 50px;
     margin-bottom: 50px;
 }
+.margem-botao{
+    padding-bottom: 50px;
+}
 label{
     padding: 0;
 }

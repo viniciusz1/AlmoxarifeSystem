@@ -3,7 +3,7 @@
         <span>{{botao}}</span>
         <hr style="margin: 0; width: 25%;">    
     </div>
-    <div class="quadrado container">
+    <div class="quadrado container ">
         <form [formGroup]="detalhesForm" action="">
             <div class="row">
                 <div class="col-6">
@@ -47,7 +47,7 @@
                         id="exampleFormControlTextarea1" formControlName="descricao" rows="3"></textarea>
                 </div>
             </div>
-            <div *ngIf="botao != 'Detalhes-produto'" class="m-5" style="display: flex; justify-content: end;">
+            <div *ngIf="botao != 'Detalhes-produto'" class="margem-botao" style="display: flex; justify-content: end;">
                 <button (click)="onSubmit()" class="btn btn-primary">{{botao}}</button>
             </div>
         </form>
