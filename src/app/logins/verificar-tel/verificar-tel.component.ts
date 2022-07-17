@@ -31,8 +31,10 @@ repeat(){
 };
 
 verificar(){
+  console.log(1)
         let user = localStorage.getItem("USER") as string;
         let telefone = localStorage.getItem("TELEFONE") as string;
+        console.log(user)
         if(user && telefone){
           this.usuarioService.setUser(user , telefone);
           localStorage.setItem("USUARIO", user)

@@ -6,7 +6,7 @@
         </div>
         <div class="centralizar">
             <div class="centro">
-                <i class="bi bi-arrow-left icons" style="margin-left: 20px;"></i>
+                <i routerLink="/cadastro/telefone" class="bi bi-arrow-left icons" style="margin-left: 20px;"></i>
                 <img class="logo" src="https://i.ibb.co/4mTFW0k/Logo-removebg-preview.png" style="height: 50px;">
                 <div class="centralizar" style="margin-top: 30px;">
                     <div class="textAl">
@@ -35,7 +35,7 @@
 
 
                     <div class="centralizar" style="margin-top: 50px;">
-                        <button class="botao" style="background-color: #0047B5; color: white;">Verificar</button>
+                        <button (click)="verificar()" class="botao" style="background-color: #0047B5; color: white;">Verificar</button>
                         <button class="botaoBranco botao" style="margin-left: 15px;">Reenviar</button>
                     </div>
 

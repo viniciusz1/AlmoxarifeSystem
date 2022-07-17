@@ -34,7 +34,7 @@ export class CadastroComponent implements OnInit {
       if(dominio == "edu.sc.senai.br"){
         this.cadastro();
       }else{
-        localStorage.setItem("USER", this.usuario);
+        
         this.router.navigate(['/cadastro/telefone'])
       }
     }else{
@@ -50,6 +50,7 @@ export class CadastroComponent implements OnInit {
     find(lista => lista.usuario == this.usuario || lista.email == this.email);
     if(!verificar){
     this.usuarioService.addUser({nome: this.nome, email: this.email, usuario: this.usuario, senha: this.senha})
+    localStorage.setItem("USER", this.usuario);
     console.log("Foi cadastro")
     this.router.navigate(['/cadastro/telefone'])
     }else{
