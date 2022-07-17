@@ -50,13 +50,14 @@ export class DetalhesProdutoComponent implements OnInit{
           123))
           this.router.navigate(['/home/produtos'])
     }else if(this.modo == "editar"){
-        this.prod.changeProduto(parseInt(this.rota), new Produto(this.detalhesForm.value.nome as string, 
+        this.prod.changeProduto(new Produto(this.detalhesForm.value.nome as string, 
           this.detalhesForm.value.quantidade as number, 
           this.detalhesForm.value.classificacao as string,
           this.detalhesForm.value.localidade as string, 
           this.detalhesForm.value.opcaoUso as string,
           this.detalhesForm.value.descricao as string,
-          123))
+          this.codigo as number,
+          this.imagem as string))
           this.router.navigate(['/home/produtos'])
     }
     
@@ -66,20 +67,23 @@ export class DetalhesProdutoComponent implements OnInit{
     this.router.navigate(['/home/entrada/', this.codigo])
   }
 
-  codigo? = 0
+  codigo? = 0;
   imagem? = ""
+  
   ngOnInit(): void {
     this.route.url.subscribe(
       url => {
         if(url[0].path == "cadastrar-produto"){
           this.botao = "Cadastrar produto"
           this.modo = "cadastrar"
+
+
         }else if(url[0].path == "editar-produto"){ 
           this.modo = "editar"
           this.rota = url[1].path
           this.botao = "Editar produto"
           this.informacoes = this.prod.getIdProduto(parseInt(this.rota))
-          this.codigo = this.informacoes.codigo
+          this.codigo = this.informacoes.codigo 
           this.imagem = this.informacoes.imagem
           this.detalhesForm.controls['quantidade'].disable()
           this.detalhesForm.patchValue({
@@ -90,6 +94,8 @@ export class DetalhesProdutoComponent implements OnInit{
             localidade: this.informacoes.localidade,
             descricao: this.informacoes.descricao
           })
+
+
         }else if(url[0].path == "detalhes-produto"){
           this.modo = "detalhar"
           this.rota = url[1].path
@@ -97,6 +103,7 @@ export class DetalhesProdutoComponent implements OnInit{
           this.detalhesForm.disable();
           this.informacoes = this.prod.getIdProduto(parseInt(this.rota))
           this.imagem = this.informacoes.imagem
+          this.codigo = this.informacoes.codigo
 
           this.detalhesForm.patchValue({
             nome: this.informacoes.nome,

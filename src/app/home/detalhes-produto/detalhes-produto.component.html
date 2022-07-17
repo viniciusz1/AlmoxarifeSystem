@@ -8,7 +8,7 @@
         justify-content: flex-end;
         display: flex;
         align-items: end;">
-            <button (click)="darEntrada()" class="btn btn-primary">
+            <button *ngIf="(modo != 'cadastrar' && user == 'supervisor')" (click)="darEntrada()" class="btn btn-primary">
                 Dar Entrada +
             </button>
         </div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PedidosService } from 'src/app/services/pedidos.service';
 import { Pedido } from 'src/app/shared/pedido.model';
+import { HistoricoService } from 'src/app/services/historico.service';
 
 @Component({
   selector: 'app-conferencia',
@@ -12,7 +13,8 @@ export class ConferenciaComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
     private pedidos: PedidosService,
-    private router: Router) { }
+    private router: Router,
+    private historicoService: HistoricoService) { }
   entregas = 0
   id = ""
   pedido: Pedido = new Pedido()
@@ -24,14 +26,18 @@ export class ConferenciaComponent implements OnInit {
           this.entregas = 1;
         }else if(e[0].path == "devolucoes"){ 
           this.entregas = 0;
+        }else if(e[0].path == "historico"){
+          this.entregas = 2;
         }
         this.id = e[1].path;
       }
     )
-    if(this.entregas){
+    if(this.entregas == 1){
       this.pedido = this.pedidos.getEntregasbyIndex(parseInt(this.id));
-    }else{
+    }else if(this.entregas == 0){ 
       this.pedido = this.pedidos.getDevolucoesbyIndex(parseInt(this.id));
+    }else if(this.entregas == 2){
+      this.historicoService.getPedidobyIndex(parseInt(this.id))
     }
   }
   //1 = entregas

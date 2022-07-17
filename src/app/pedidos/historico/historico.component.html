@@ -33,7 +33,7 @@
         </div>
     </div>
 
-    <app-pedido-historico *ngFor="let lista of lista" [lista]="lista"></app-pedido-historico>
+    <app-pedido-historico *ngFor="let lista of lista; let i = index"[index]='i' [lista]="lista"></app-pedido-historico>
 </div>
 
 

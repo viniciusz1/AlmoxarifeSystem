@@ -29,7 +29,6 @@ export class ProdutoComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.rota = params['id'];
     })
-    console.log(this.produto.imagem)
   }
 
 }

@@ -20,6 +20,7 @@ export class PedidosService {
 
 
   realizarEntrega(index: number){
+    console.log(index)
     this.devolucoes.push(this.entregas[index])
     this.entregas.splice(index, 1)
   }
