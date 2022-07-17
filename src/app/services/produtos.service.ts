@@ -26,7 +26,8 @@ export class ProdutosService {
       return this.lista
    }
    getIdProduto(id: number){
-    return this.lista[id]
+    let index = this.lista.findIndex(lista => lista.codigo == id);
+    return this.lista[index]
    }
    addProduto(produto: Produto){
     if(!produto.codigo){
@@ -35,6 +36,7 @@ export class ProdutosService {
     this.lista.push(produto)
     console.log(this.lista)
    }
+
    changeQuantidadeProduto(codigo: number, quantidade:number){
     let index = this.lista.findIndex(lista => lista.codigo == codigo);
     if(this.isDefined(this.lista[index].quantidade) && !isNaN(quantidade)){

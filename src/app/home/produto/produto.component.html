@@ -21,7 +21,7 @@
     
         
 
-        <i *ngIf="rota == 'produtos'" [routerLink]="['/home/editar-produto/', indiceProduto]" class="bi bi-pen 
+        <i *ngIf="rota == 'produtos'" [routerLink]="['/home/editar-produto/', produto.codigo]" class="bi bi-pen 
         position-absolute" style="right: 5px; top:29px;"></i>
         <i *ngIf="rota == undefined && carrinho==false" (click)="adicionarCarrinho()" class="bi bi-plus-square 
         position-absolute" style="right: 5px; top:29px;"></i>

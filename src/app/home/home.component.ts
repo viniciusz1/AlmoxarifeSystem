@@ -55,6 +55,7 @@ export class HomeComponent implements OnInit {
   titulo = ""
   rota = "";
   home = true
+  
   ngOnInit(): void {  
     this.lista = this.prod.getListaProdutos()  
     this.router.params.subscribe(params => {

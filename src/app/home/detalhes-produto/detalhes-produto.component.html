@@ -1,7 +1,18 @@
 <div class="container">
-    <div class="pg" style="font-size: calc(1.3rem + .6vw);">
-        <span>{{botao}}</span>
-        <hr style="margin: 0; width: 25%;">    
+    <div class="d-flex">
+        <div class="pg" style="min-width: 240px;font-size: calc(1.3rem + .6vw);">
+            <span>{{botao}}</span>
+            <hr style="margin: 0; width: 25%;">    
+        </div>
+        <div style="width: 63%;
+        justify-content: flex-end;
+        display: flex;
+        align-items: center;">
+            <button (click)="darEntrada()" class="btn btn-primary">
+                Dar Entrada +
+            </button>
+        </div>
+        
     </div>
     <div class="quadrado container ">
         <form [formGroup]="detalhesForm" action="">

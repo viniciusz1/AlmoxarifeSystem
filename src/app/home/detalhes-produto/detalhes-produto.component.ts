@@ -58,6 +58,11 @@ export class DetalhesProdutoComponent implements OnInit{
     
   }
 
+  darEntrada(){
+    this.router.navigate(['/home/entrada/', this.codigo])
+  }
+
+  codigo? = 0
 
   ngOnInit(): void {
     this.route.url.subscribe(
@@ -70,6 +75,7 @@ export class DetalhesProdutoComponent implements OnInit{
           this.rota = url[1].path
           this.botao = "Editar produto"
           this.informacoes = this.prod.getIdProduto(parseInt(this.rota))
+          this.codigo = this.informacoes.codigo
           this.detalhesForm.patchValue({
             nome: this.informacoes.nome,
             opcaoUso: this.informacoes.opcaoUso,
