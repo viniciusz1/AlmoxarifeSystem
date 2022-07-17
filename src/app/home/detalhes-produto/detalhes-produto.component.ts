@@ -19,6 +19,10 @@ export class DetalhesProdutoComponent implements OnInit{
   select = ""
   disabled = true
   modo = ""
+  // user = "admin"
+  // user = "atendente"
+  user = "supervisor"
+  // user = "professor"
 
   constructor(private prod: ProdutosService,
     private router: Router,
