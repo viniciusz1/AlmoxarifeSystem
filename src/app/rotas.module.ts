@@ -55,6 +55,11 @@ import CheckLogged from './checklogged';
           canActivate: [CheckLogged]
         },
         {
+          path: 'devolucoes/:id',
+          component: ConferenciaComponent,
+          canActivate: [CheckLogged]
+        },
+        {
           path: 'perfil',
           component: PerfilComponent,
           canActivate: [CheckLogged]
@@ -90,6 +95,11 @@ import CheckLogged from './checklogged';
           path: 'entregas',
           component: EntregasComponent,
           canActivate:[CheckLogged]
+        },
+        {
+          path: 'entregas/:id',
+          component: ConferenciaComponent,
+          canActivate: [CheckLogged]
         },
         {
           path: 'solicitacoes',

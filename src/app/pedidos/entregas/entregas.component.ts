@@ -16,9 +16,7 @@ export class EntregasComponent implements OnInit {
     private pedidos: PedidosService
   ) {}
 
-  gotoConferencia(){
-    this.router.navigate(['/conferencia'])
-  }
+
   lista: Pedido[] = []
   ngOnInit(): void { 
     this.lista = this.pedidos.getEntregas()

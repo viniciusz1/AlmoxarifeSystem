@@ -29,7 +29,7 @@
                     <span>Data</span>
                 </div>
             </div>
-            <div class="lista bloco" *ngFor="let lista of lista">
+            <div class="lista bloco" *ngFor="let lista of lista; let i = index">
                 <div class="px">
                 </div>
                 <div class="pedido">
@@ -47,8 +47,8 @@
                 <div class="data">
                     <span>{{lista.dataDevolucao | date: 'dd/MM/yyyy'}}</span>
                 </div>
-                <div class="botao" [routerLink]="['/home/conferencia']">
-                    <button (click)="gotoConferencia()" >Realizar Entrega</button>
+                <div class="botao" [routerLink]="['/home/devolucoes/', i]">
+                    <button>Realizar Entrega</button>
                 </div>
             </div>
 

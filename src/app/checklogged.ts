@@ -19,13 +19,10 @@ class CheckLogged implements CanActivate {
         state: RouterStateSnapshot,
 
     ): boolean | Observable<boolean> | Promise<boolean> {
-        console.log('Dentro')
-
        
         let usuario = localStorage.getItem('USUARIO');
         let senha = localStorage.getItem('SENHA');
         if (usuario != undefined && senha != undefined) {
-            console.log("entrou no if", usuario, senha)
             return true;
         } else {
             alert("É necessário realizar login!")

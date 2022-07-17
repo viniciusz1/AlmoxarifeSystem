@@ -14,13 +14,10 @@ export class DevolucoesComponent implements OnInit {
   constructor(private router: Router,
     private pedidos: PedidosService) {
   }
-  gotoConferencia(){
-    this.router.navigate(['/conferencia'])
-  }
 
   lista: Pedido[] = []
   ngOnInit(): void { 
-    this.lista = this.pedidos.getEntregas()
+    this.lista = this.pedidos.getDevolucoes()
   }
 
 }

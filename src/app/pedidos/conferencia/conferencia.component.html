@@ -10,22 +10,22 @@
                     <h5 style="margin-left: 6%;">Produtos</h5>
                     <h5 style="margin-left: 53%;">Quantidade</h5>
                 </div>
-                <div class="produto" style="display: flex;">
+                <div *ngFor="let produto of pedido.listaProdutos" class="produto" style="display: flex;">
                     <div class="centralizar" style="height: 120px; width: 25%;">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfbr9FpbwTiSsahW0jYBHKQ3W1hQJHB6BGaJwgv7G29DNJGvQkrBmYA0gWagZ00CKmXAw&usqp=CAU" alt="">
                     </div>
                     <div style="margin-top: 20px; margin-left: 20px;">
-                        <h5>Resistor 1k Ohms</h5>
+                        <h5>{{produto.nome}}</h5>
                         <div>
-                            Material Eletronico
+                            {{produto.classificacao}}
                         </div>
                         <div>
-                            Filme Carbono 1/4 w
+                            {{produto.opcaoUso}}
                         </div>
                     </div>
                     <div class="centralizar" style="justify-content: end; width: 30%;">
                         <div class="quantidade centralizar">
-                            51
+                            {{produto.quantidade}}
                         </div>
                     </div>
                 </div>
@@ -34,17 +34,15 @@
                 <div>
                     <h5>Produtos alugados:</h5>
                     <div class="valor">
-                        <div class="azul centralizar">
-                            Resistor 1k Ohms
-                            <span style="margin-left: 150px; font-size: 20px;">51</span>
-                        </div>
-                        <div class="azul centralizar" style="background-color: #8FB7F2;">
-                            Resistor 1k Ohms
-                            <span style="margin-left: 150px; font-size: 20px;">51</span>
+                        <div *ngFor="let produto of pedido.listaProdutos" class="azul centralizar">
+                            {{produto.nome}}
+                            <span style="margin-left: 150px; font-size: 20px;">
+                            {{produto.quantidade}}
+                            </span>
                         </div>
                     </div>
                     <div class="centralizar" style="margin-top: 30px;">
-                        <button class="botao" style="background-color: #0047B5; color: white;">Efetuar Entrega</button>
+                        <button (click)="confirmarPedido()" class="botao" style="background-color: #0047B5; color: white;">Efetuar Entrega</button>
                     </div>
                 </div>
             </div>
