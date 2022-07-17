@@ -28,7 +28,7 @@ export class DetalhesProdutoComponent implements OnInit{
   detalhesForm = new FormGroup({
     opcaoUso: new FormControl(''),
     nome: new FormControl(''),
-    quantidade: new FormControl(''),
+    quantidade: new FormControl(0),
     classificacao: new FormControl(''),
     localidade: new FormControl(''),
     descricao: new FormControl(''),
@@ -38,7 +38,7 @@ export class DetalhesProdutoComponent implements OnInit{
     if(this.modo == "cadastrar"){
       this.prod.addProduto(
         new Produto(this.detalhesForm.value.nome as string, 
-          this.detalhesForm.value.quantidade as string, 
+          this.detalhesForm.value.quantidade as number, 
           this.detalhesForm.value.classificacao as string,
           this.detalhesForm.value.localidade as string, 
           this.detalhesForm.value.opcaoUso as string,
@@ -47,7 +47,7 @@ export class DetalhesProdutoComponent implements OnInit{
           this.router.navigate(['/home/produtos'])
     }else if(this.modo == "editar"){
         this.prod.changeProduto(parseInt(this.rota), new Produto(this.detalhesForm.value.nome as string, 
-          this.detalhesForm.value.quantidade as string, 
+          this.detalhesForm.value.quantidade as number, 
           this.detalhesForm.value.classificacao as string,
           this.detalhesForm.value.localidade as string, 
           this.detalhesForm.value.opcaoUso as string,

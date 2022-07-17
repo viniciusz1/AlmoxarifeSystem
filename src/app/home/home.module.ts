@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RotasModule } from '../rotas.module';
 import { FiltroProdutosPipe } from '../pipes/filtro-produtos.pipe';
 import { FiltroEspecializadoProdutosPipe } from '../pipes/filtro-especializado-produtos.pipe';
+import { EntradaComponent } from './entrada/entrada.component';
 
 
 
@@ -28,6 +29,7 @@ import { FiltroEspecializadoProdutosPipe } from '../pipes/filtro-especializado-p
     DetalhesProdutoComponent,
     FiltroProdutosPipe,
     FiltroEspecializadoProdutosPipe,
+    EntradaComponent,
 
   ],
   imports: [

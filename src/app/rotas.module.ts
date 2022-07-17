@@ -27,6 +27,7 @@ import { FiltroHistoricoComponent } from './pedidos/historico/filtro-historico/f
 import { ModalFiltroComponent } from './home/modal-filtro/modal-filtro.component';
 
 import CheckLogged from './checklogged';
+import { EntradaComponent } from './home/entrada/entrada.component';
 
 
 
@@ -73,6 +74,12 @@ import CheckLogged from './checklogged';
         {  
           path: 'editar-produto/:tipo',
           component: DetalhesProdutoComponent,
+          canActivate: [CheckLogged],
+          
+        },
+        {  
+          path: 'entrada/:id',
+          component: EntradaComponent,
           canActivate: [CheckLogged],
           
         },
