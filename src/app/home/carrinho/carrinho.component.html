@@ -1,5 +1,5 @@
-<div *ngIf="state == 'aberto'" [@teste]="state" class="index border d-flex flex-column
- flex-shrink-0 p-3 bg-light po" style="height: 91vh; width: 50vw;">
+<div *ngIf="state == 'aberto'" [@teste]="state" class="index border d-flex 
+p-1 bg-light po" style="height: 91vh; width: 400px !important;">
 
 
     <div class="container">
@@ -14,16 +14,19 @@
                 <hr>
             </div>
         </div>
-        <div *ngIf="listaCarrinho " class="row DivWithScroll">
-            <div *ngFor="let produto of listaCarrinho; let i = index" class="d-flex justify-content-center align-items-center">
-                <i (click)="lixo(i)" class="bi bi-trash-fill col-1" style="align-self: center;"></i>
-                <app-produto [produto]="produto" class="col-9"></app-produto>
-                <div class="div col-2 adicionar" style="align-self: center;">
+        <div *ngIf="carrinhoVazio == false" class="row DivWithScroll" id="style-2">
+            <div *ngFor="let produto of listaCarrinho; let i = index" style="height: 150px;" class="d-flex justify-content-center align-items-center">
+                <i (click)="lixo(i)" class="bi bi-trash-fill col-1" ></i>
+                <app-produto [carrinho]="carrinho" [produto]="produto" class="col-9"></app-produto>
+                <div class="div col-2 adicionar" >
                     <i class="bi bi-plus-lg"></i>
                     <input type="text" class="form-control" style="width: 40px;">
                     <i class="bi bi-dash-lg"></i>
                 </div>
             </div>
+        </div>
+        <div *ngIf="carrinhoVazio == true" class="row DivWithScroll" style="display: flex; align-items:center; justify-content:center">
+            Adicione um item ao carrinho
         </div>
         <div class="row justify-content-center mt-5">
             <button class="btn btn-primary w-50" (click)="abreReserva()">Realizar Pedido</button>

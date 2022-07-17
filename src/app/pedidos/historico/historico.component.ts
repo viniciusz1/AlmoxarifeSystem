@@ -14,7 +14,13 @@ export class HistoricoComponent implements OnInit {
 
   ngOnInit(): void {
     this.lista = this.historicoService.getPedido()
-    console.log(this.lista)
+    this.historicoService.historicosChange.subscribe((pedidos) =>
+    this.lista = pedidos
+    )
+  }
+  filtroState = false
+  mudaFiltro(){
+    this.filtroState = !this.filtroState;
   }
 
 }

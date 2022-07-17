@@ -27,6 +27,7 @@ import { FiltroHistoricoComponent } from './pedidos/historico/filtro-historico/f
 import { ModalFiltroComponent } from './home/modal-filtro/modal-filtro.component';
 
 import CheckLogged from './checklogged';
+import { EntradaComponent } from './home/entrada/entrada.component';
 
 
 
@@ -55,6 +56,11 @@ import CheckLogged from './checklogged';
           canActivate: [CheckLogged]
         },
         {
+          path: 'devolucoes/:id',
+          component: ConferenciaComponent,
+          canActivate: [CheckLogged]
+        },
+        {
           path: 'perfil',
           component: PerfilComponent,
           canActivate: [CheckLogged]
@@ -62,6 +68,24 @@ import CheckLogged from './checklogged';
         {  
           path: 'detalhes-produto/:tipo',
           component: DetalhesProdutoComponent,
+          canActivate: [CheckLogged],
+          
+        },
+        {  
+          path: 'editar-produto/:tipo',
+          component: DetalhesProdutoComponent,
+          canActivate: [CheckLogged],
+          
+        },
+        {  
+          path: 'entrada',
+          component: EntradaComponent,
+          canActivate: [CheckLogged],
+          
+        },
+        {  
+          path: 'entrada/:id',
+          component: EntradaComponent,
           canActivate: [CheckLogged],
           
         },
@@ -84,6 +108,11 @@ import CheckLogged from './checklogged';
           path: 'entregas',
           component: EntregasComponent,
           canActivate:[CheckLogged]
+        },
+        {
+          path: 'entregas/:id',
+          component: ConferenciaComponent,
+          canActivate: [CheckLogged]
         },
         {
           path: 'solicitacoes',
@@ -114,8 +143,8 @@ import CheckLogged from './checklogged';
           path: 'modal-filtro',
           component: ModalFiltroComponent,
           canActivate: []
-        }
-
+        },
+        {
           path: ':id',
           component: HomeComponent,
           canActivate: [],

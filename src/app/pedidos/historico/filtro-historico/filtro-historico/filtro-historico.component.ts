@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-filtro-historico',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./filtro-historico.component.css']
 })
 export class FiltroHistoricoComponent implements OnInit {
-
+  @Output() mudarFiltro = new EventEmitter<boolean>();
   constructor() { }
 
   ngOnInit(): void {

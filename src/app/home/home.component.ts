@@ -16,15 +16,16 @@ export class HomeComponent implements OnInit {
      private prod: ProdutosService,
      private pedidosService: PedidosService,
      private router: ActivatedRoute) { }
+
   modal = false;
-  modalReserva: boolean = false;
+  modalReserva = false;
   state = "fechado";
   carState = "fechado";
   lista: Produto[] = [];
   pesquisaProduto = "";
   filtroEspecializado: Produto = new Produto()
   exibicao = false; // false == bloco ! == lista
-  numeroCarrinho = 1
+  numeroCarrinho = 0
 
   
 
@@ -42,8 +43,7 @@ export class HomeComponent implements OnInit {
   }
   modalOpen(arg: boolean | Event) {
     this.modal = !this.modal
-  }
-  
+  }  
   openCart(){
     this.carState = "aberto"
     console.log(this.state)
@@ -51,23 +51,26 @@ export class HomeComponent implements OnInit {
   closeCart(param: boolean | Event){
     this.carState = "fechado"
   }
-  checando(){
-    console.log(this.pedidosService.getPedido())
-  }
+
   titulo = ""
   rota = "";
+  home = true
+  
   ngOnInit(): void {  
     this.lista = this.prod.getListaProdutos()  
-    this.numeroCarrinho = this.car.getLength();
+    console.log(this.lista)
     this.router.params.subscribe(params => {
     this.rota = params['id'];
-
     if(this.rota == 'produtos'){
       this.titulo = 'Edição'
+      this.home = false
     }else{
       this.titulo = 'Home'
+      this.home = true
     }
     })
-    console.log(this.lista)
+    this.car.tamanhoCarrinho.subscribe(
+      (e) => this.numeroCarrinho = e
+    )
   }
 }

@@ -1,39 +1,54 @@
-
-<div class="d-flex bg-light container">  
-  <div class="body">
-    <div class="topo">
-        <div class="pg" style="font-size: calc(1.3rem + .6vw);">
-            <span>Histórico</span>
-            <hr style="margin: 0; width: 200%;">    
-        </div>
-        <div class="topo-2">
-            <div class="pesquisa">
-                <div class="pesquisa">
-                    <i class="bi bi-search"></i>
-                    <input placeholder="Pesquisar Pedido">
+<div class="d-flex">
+    <div class="container">
+        <div class="row mt-5" style="display: flex; justify-content: center;">
+            <div class="row">
+                <div class="col-md-2 col-sm-12" style="font-size: calc(1.3rem + .6vw);">
+                    <span>Histórico</span>
+                    <hr style="margin: 0; width: 50%;">
                 </div>
-            </div>
-            <div class="ordenar">
-                <div class="icone">
-                    <select class="filtross">
-                        <option>Ordenar</option>
-                        <option>Mais Recentes</option>
-                        <option>Mais Antigos</option>
-                        <option>Maior Quantidade</option>
-                        <option>Menor Quantidade</option>
-                    </select>
-                    <i class="bi bi-chevron-double-down"></i>
-                </div>
-            </div>
-            <div class="filtrar">
-                <div class="icone">
-                    <button class="filtross">Filtrar Mais</button>
-                    <i class="bi bi-sliders"></i>
+                <div class="topo-2 col-md-10 col-sm-12" style="margin-bottom:50px;">
+                    <div class="d-flex justify-content-end gap" style="align-items: center;">
+                    <div class="col-4 d-flex">
+                        <i class="bi bi-search"></i>
+                        <input placeholder="Pesquisar Pedido">
+                    </div>
+                    <div class="filtrar col-3 d-flex" style="width: 180px;">
+                        <select class="filtross">
+                            <option>Ordenar</option>
+                            <option>Mais Recentes</option>
+                            <option>Mais Antigos</option>
+                            <option>Maior Quantidade</option>
+                            <option>Menor Quantidade</option>
+                        </select>
+                        <i class="bi bi-chevron-double-down"></i>
+                    </div> 
+                    <div class="filtrar col-3">
+                        <div class="icone">
+                            <button class="filtross" (click)="mudaFiltro()">Filtrar Mais</button>
+                            <i class="bi bi-sliders"></i>
+                        </div>
+                    </div> 
                 </div>
             </div>
         </div>
     </div>
-    <app-pedido-historico *ngFor="let lista of lista" [lista]="lista"></app-pedido-historico>
 
+    <app-pedido-historico *ngFor="let lista of lista" [lista]="lista"></app-pedido-historico>
 </div>
-</div>
+
+
+
+
+
+
+    
+    <app-filtro-historico *ngIf="filtroState" (mudarFiltro)="mudaFiltro()" class="meu-fixed"></app-filtro-historico>
+
+
+
+
+
+
+
+
+

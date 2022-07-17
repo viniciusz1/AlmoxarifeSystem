@@ -1,15 +1,26 @@
 <div class="container">
-    <div class="pg" style="font-size: calc(1.3rem + .6vw);">
-        <span>{{botao}}</span>
-        <hr style="margin: 0; width: 25%;">    
+    <div class="d-flex">
+        <div class="pg" style="min-width: 240px;font-size: calc(1.3rem + .6vw);">
+            <span>{{botao}}</span>
+            <hr style="margin: 0; width: 25%;">    
+        </div>
+        <div *ngIf="user == 'supervisor'" style="width: 63%;
+        justify-content: flex-end;
+        display: flex;
+        align-items: end;">
+            <button (click)="darEntrada()" class="btn btn-primary">
+                Dar Entrada +
+            </button>
+        </div>
+        
     </div>
-    <div class="quadrado container">
+    <div class="quadrado container ">
         <form [formGroup]="detalhesForm" action="">
             <div class="row">
                 <div class="col-6">
                     <div class="div-imagem">
                         <img class="img-fluid imagem"
-                            src="https://cdn.domtotal.com/img/noticias/2018-05/1263018_361876.jpg" alt="">
+                            [src]="imagem" alt="">
                     </div>
                     <div class="row">
                         <div class="mt-2 padding-input">
@@ -24,7 +35,7 @@
                 <div class="col-6">
                     <div class="row input-group mb-3 padding-input">
                         <label for="">Nome do produto</label>
-                        <input  class="form-control" type="text" formControlName="nome">
+                        <input [disabled]="disabled"  class="form-control" type="text" formControlName="nome">
                     </div>
                     <div class="row input-group mb-3 padding-input">
                         <label for="">Quantide em estoque</label>
@@ -47,7 +58,7 @@
                         id="exampleFormControlTextarea1" formControlName="descricao" rows="3"></textarea>
                 </div>
             </div>
-            <div class="m-5" style="display: flex; justify-content: end;">
+            <div *ngIf="botao != 'Detalhes-produto'" class="margem-botao" style="display: flex; justify-content: end;">
                 <button (click)="onSubmit()" class="btn btn-primary">{{botao}}</button>
             </div>
         </form>
