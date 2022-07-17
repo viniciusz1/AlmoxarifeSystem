@@ -16,8 +16,8 @@ export class ReservaComponent implements OnInit {
   dataRetirada: Date = new Date();
   dataDevolucao: Date = new Date();
   professor: string = ""
-  // user= "atendente"
-  user= "professor"
+  user= "atendente"
+  // user= "professor"
 
 
   fecharReserva(){
