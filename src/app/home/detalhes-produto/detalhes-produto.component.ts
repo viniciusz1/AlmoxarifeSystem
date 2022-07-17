@@ -10,7 +10,16 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./detalhes-produto.component.css']
 })
 export class DetalhesProdutoComponent implements OnInit{
+
+
+  rota = "";
+  informacoes = new Produto()
+  botao = ""
+  cadastrarProduto = ""
   select = ""
+  disabled = true
+  
+
   constructor(private prod: ProdutosService,
     private router: Router,
     private route: ActivatedRoute) { }
@@ -25,16 +34,17 @@ export class DetalhesProdutoComponent implements OnInit{
     descricao: new FormControl(''),
   });
 
-  disabled = true
   onSubmit() {
-
-    let produto = new Produto()
-    this.prod.changeProduto(produto)
+    this.prod.addProduto(
+    new Produto(this.detalhesForm.value.nome as string, 
+      this.detalhesForm.value.quantidade as string, 
+      this.detalhesForm.value.classificacao as string,
+      this.detalhesForm.value.localidade as string, 
+      this.detalhesForm.value.opcaoUso as string,
+      this.detalhesForm.value.descricao as string,
+      123))
   }
-  rota = "";
-  informacoes = new Produto()
-  botao = ""
-  cadastrarProduto = ""
+
 
   ngOnInit(): void {
     this.route.url.subscribe(
