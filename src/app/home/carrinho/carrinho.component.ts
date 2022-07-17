@@ -31,6 +31,7 @@ export class CarrinhoComponent implements OnInit {
   clicouModal(){
     this.fechaCarrinho.emit(false)
   }
+
   changeStatus(){
     if(this.state == "fechado"){
       this.state = "aberto"
@@ -51,8 +52,22 @@ export class CarrinhoComponent implements OnInit {
   lixo(i:number){
     this.car.removeLista(i)
   }
+ 
+  mensagemPrevia = "Adicione algum Item ao carrinho!"
+  carrinhoVazio = false
+  
   ngOnInit(): void {
     this.listaCarrinho = this.car.getLista();
+    this.car.tamanhoCarrinho.subscribe(
+      e => {
+        if(e != 0){
+          this.carrinhoVazio = false
+        }
+      }
+    )
+    if(this.listaCarrinho.length == 0){
+      this.carrinhoVazio = true
+    }
   }
 
 }

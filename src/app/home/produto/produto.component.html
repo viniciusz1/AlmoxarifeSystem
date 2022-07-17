@@ -1,7 +1,7 @@
 <div  class="position-relative d-flex bloco" style="max-width: 540px;">
 
         <img [ngClass]="{imagemCarrinho: carrinho == true}" (click)="abreDetalhesProduto()" class="imagem "
-        src="https://brisaclimatizadores.com.br/img/p/9/3/93-home_default.jpg" alt="">
+        src="{{produto.imagem}}" alt="">
         <div (click)="abreDetalhesProduto()" class="sombra retangulo">
             <div class="itens-retangulo d-flex" >
                 <div>

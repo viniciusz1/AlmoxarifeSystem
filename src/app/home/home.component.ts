@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
   pesquisaProduto = "";
   filtroEspecializado: Produto = new Produto()
   exibicao = false; // false == bloco ! == lista
-  numeroCarrinho = 1
+  numeroCarrinho = 0
 
   
 
@@ -58,6 +58,7 @@ export class HomeComponent implements OnInit {
   
   ngOnInit(): void {  
     this.lista = this.prod.getListaProdutos()  
+    console.log(this.lista)
     this.router.params.subscribe(params => {
     this.rota = params['id'];
     if(this.rota == 'produtos'){

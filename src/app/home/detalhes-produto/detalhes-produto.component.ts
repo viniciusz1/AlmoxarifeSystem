@@ -67,7 +67,7 @@ export class DetalhesProdutoComponent implements OnInit{
   }
 
   codigo? = 0
-
+  imagem? = ""
   ngOnInit(): void {
     this.route.url.subscribe(
       url => {
@@ -80,6 +80,7 @@ export class DetalhesProdutoComponent implements OnInit{
           this.botao = "Editar produto"
           this.informacoes = this.prod.getIdProduto(parseInt(this.rota))
           this.codigo = this.informacoes.codigo
+          this.imagem = this.informacoes.imagem
           this.detalhesForm.patchValue({
             nome: this.informacoes.nome,
             opcaoUso: this.informacoes.opcaoUso,
