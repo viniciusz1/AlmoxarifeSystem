@@ -1,8 +1,10 @@
 <div class="container">
     <div class="d-flex">
         <div class="pg" style="min-width: 240px;font-size: calc(1.3rem + .6vw);">
-            <span>{{botao}}</span>
-            <hr style="margin: 0; width: 25%;">    
+            <b>
+                <span>{{botao | uppercase}}</span>
+            </b>
+            <hr style="margin: 0; width: 200px; opacity: 1;">  
         </div>
         <div *ngIf="user == 'supervisor'" style="width: 63%;
         justify-content: flex-end;

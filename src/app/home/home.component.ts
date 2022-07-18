@@ -4,7 +4,6 @@ import { Produto } from './../shared/produto.model';
 import { ProdutosService } from './../services/produtos.service';
 import { Component, OnInit } from '@angular/core';
 import { CarrinhoService } from '../services/carrinho.service';
-import { ElementSchemaRegistry } from '@angular/compiler';
 
 @Component({
   selector: 'app-home',

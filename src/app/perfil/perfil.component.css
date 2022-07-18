@@ -16,7 +16,6 @@ i{
 
 .perfil{
     font-size: calc(1.3rem + .6vw);
-    text-decoration: underline;
     margin-top: 50px;
     margin-bottom: 50px;
 }
@@ -52,7 +51,7 @@ body{
     display: grid;
     justify-content: center;
     /* align-items: center; */
-    width: 100vw;
+    width: 100%;
 }
 
 

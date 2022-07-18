@@ -35,14 +35,13 @@ i:hover{
 
 .retangulo {
     padding-left: 60px;
-    /* position: absolute;
-    bottom: 0;
-    right: 0; 
-
-    */
     cursor: pointer;
     height: 100px;
     width: 90%;
+    transition: 0.3s;
+}
+.retangulo:hover{
+    background-color:#dbdbdb;
 }
 
 .caixa {
