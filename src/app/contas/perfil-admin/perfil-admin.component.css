@@ -85,7 +85,7 @@ i {
 
 .historico {
     font-size: 15px;
-    background-color: #0047B5;
+    background-color: #275577;
     color: #fff;
     border-radius: 5px;
     border: none;
@@ -96,7 +96,7 @@ i {
 .divHistorico {
     display: flex;
     padding: 5px 15px;
-    background-color: #0047B5;
+    background-color: #275577;
     color: #fff;
     border-radius: 5px;
     border: none;
@@ -125,7 +125,7 @@ i {
     position: absolute;
     top: -20px;
     left: 30%;
-    background-color: #0047B5;
+    background-color: #275577;
     color: white;
     font-size: 24px;
     padding-top: 5px;
