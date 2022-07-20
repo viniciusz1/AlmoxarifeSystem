@@ -16,7 +16,7 @@ import { state, style, trigger, transition, animate} from '@angular/animations';
         'width': '60px'
       })),
       transition('aberto <=> fechado', [
-        animate('100ms')
+        animate('150ms')
       ]),
     ]),
   ]
@@ -37,18 +37,19 @@ export class SideBarComponent implements OnInit {
       this.state = "aberto"
       setTimeout(() => {
         this.stateTxt= "aberto";
-      }, 50)
+      }, 150)
     }else{
       this.state = "fechado"
-      this.stateTxt = "fechado"
+      setTimeout(() => {
+        this.stateTxt = "fechado"
+      }, 50)
     }
     console.log(this.state)
+    console.log(this.stateTxt)
   }
   
   ngOnInit(): void {
-    if(this.state == "fechado"){
-      
-    }
+    
   }
 
 }
