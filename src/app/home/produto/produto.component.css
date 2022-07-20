@@ -27,6 +27,17 @@ i:hover{
 .list {
     list-style: none;
 }
+.circle{
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    left: 4em; 
+    bottom: 1rem; 
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background-color: #275577;
+}
 
 .sombra {
     box-shadow: 4px 3px 6px -4px;

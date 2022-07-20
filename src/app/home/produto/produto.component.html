@@ -21,8 +21,9 @@
         </div>
 
     
-        
-        <b class="position-absolute" style="left: 4.5rem; bottom: 1rem;">{{produto.codigo}}</b>
+        <div class="position-absolute circle d-flex text-center">
+            {{produto.codigo}}
+        </div>
         <i *ngIf="rota == 'produtos'" [routerLink]="['/home/editar-produto/', produto.codigo]" class="bi bi-pen 
         position-absolute" style="right: 5px; top:29px;"></i>
         <i *ngIf="rota == undefined && carrinho==false" (click)="adicionarCarrinho()" class="bi bi-plus-square 
