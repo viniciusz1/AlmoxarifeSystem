@@ -30,6 +30,7 @@ export class ConferenciaComponent implements OnInit {
           this.botao = 'Relizar devolução'
           this.entregas = 0;
         }else if(e[0].path == "historico"){
+          this.botao='Histórico'
           this.entregas = 2;
         }
         this.id = e[1].path;
