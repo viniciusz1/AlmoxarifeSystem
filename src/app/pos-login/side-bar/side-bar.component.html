@@ -1,6 +1,15 @@
 <div [@teste]="state" class="index border d-flex flex-column
- flex-shrink-0 bg-light position-relative" style="height: 91vh;padding: 6px;" 
- (mouseenter)="changeStatus()" (mouseleave)="changeStatus()">
+ flex-shrink-0 bg-light position-relative" style="height: 91vh;padding: 6px;">
+  
+ <!-- (mouseenter)="changeStatus()" (mouseleave)="changeStatus()"> -->
+
+ <div (click)="changeStatus()" class="index center cor-azul cursor d-flex text-center">
+    <i class="bi bi-list icons-size"></i>
+    <span *ngIf="stateTxt == 'aberto'" class="margin-icons">
+        Fechar Menu
+    </span>
+</div>
+
     <div [routerLinkActiveOptions]="{exact: true}" 
     routerLinkActive="bg-blue text-light" routerLink="/home" 
     class="center cor-azul cursor d-flex text-center"
