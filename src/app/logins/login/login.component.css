@@ -4,8 +4,8 @@ body {
 }
 
 .centro {
-    height: 550px;
-    width: 500px;
+    height: 500px;
+    width: 450px;
     background-color: white;
 }
 
@@ -22,7 +22,7 @@ body {
 
 .logo {
     position: absolute;
-    margin: 42px 10px 10px 92px;
+    margin: 42px 10px 10px 69px;
 }
 
 .ladoInput {

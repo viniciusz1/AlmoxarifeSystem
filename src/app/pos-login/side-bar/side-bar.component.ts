@@ -27,10 +27,11 @@ export class SideBarComponent implements OnInit {
 
   // user = "atendente"
   // user = "supervisor"
-  user = "admin"
-  // user = "professor"
+  // user = "admin"
+  user = "professor"
   state = "fechado";
   stateTxt= "fechado";
+  usuario = localStorage.getItem("USUARIO");
 
   changeStatus(){
     if(this.state == "fechado"){
@@ -49,7 +50,17 @@ export class SideBarComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    
-  }
 
+    if(this.state == "fechado"){
+      
+    }
+    if(this.usuario == "otavio"){
+      this.user = "admin";
+    }else if(this.usuario == "vinicius"){
+      this.user = "supervisor"
+    } else if(this.usuario == "camilly"){
+      this.user = "atendente"
+    }
+
+  }
 }
