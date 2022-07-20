@@ -10,7 +10,7 @@ export class FiltroProdutosPipe implements PipeTransform {
     console.log(listaProdutos)
     if(listaProdutos != undefined){
       if(listaProdutos && search)
-      return listaProdutos.filter(e => e.nome?.startsWith(search))
+      return listaProdutos.filter(e => e.nome?.toUpperCase().startsWith(search.toUpperCase()))
       
     }
       
