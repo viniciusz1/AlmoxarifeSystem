@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-center retangulo position-relative">
-    <div class="bloco-azul"></div>
+    <div [ngStyle]="{'background-color': corCodigo}" class="bloco-azul"></div>
     <div class="ms-4" style="width:10%">{{produto.codigo}}</div>
         <div style="width:30%">{{produto.nome}}</div>
         <div style="width:30%">{{produto.classificacao}}</div>

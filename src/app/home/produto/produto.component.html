@@ -21,7 +21,7 @@
         </div>
 
     
-        <div class="position-absolute circle d-flex text-center">
+        <div [ngStyle]="{backgroundColor: corCodigo}" class="position-absolute circle d-flex text-center">
             {{produto.codigo}}
         </div>
         <i *ngIf="rota == 'produtos'" [routerLink]="['/home/editar-produto/', produto.codigo]" class="bi bi-pen 

@@ -17,14 +17,20 @@ export class ProdutoComponent implements OnInit {
 
   abreDetalhesProduto() {
     this.router.navigate(['/home/detalhes-produto/',this.produto.codigo])
-    console.log(this.carrinho)
   }
   constructor(private router: Router,
     private carrinhoService: CarrinhoService,
     private route: ActivatedRoute
     ) { }
+  corCodigo = '#275577'
+  mudarCor(){
+    if(this.corCodigo == '#275577'){
+      this.corCodigo = '#000'
+    }
+  }
   adicionarCarrinho() {
     if(!this.carrinhoService.verificaSeJaTem(this.produto.codigo)){
+      this.mudarCor();
       this.carrinhoService.addProduto(this.produto)
       Swal.fire({
         position: 'bottom-end',
