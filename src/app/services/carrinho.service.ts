@@ -11,6 +11,9 @@ export class CarrinhoService {
     this.lista.splice(index, 1)
     this.tamanhoCarrinho.emit(this.lista.length)
   }
+  verificaSeJaTem(codigo: number | undefined){
+    return this.lista.some(e => e.codigo == codigo)
+  }
   getLength(){
     return this.lista.length
   }

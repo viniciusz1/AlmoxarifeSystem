@@ -42,7 +42,7 @@ import { PedidosModule } from './pedidos/pedidos.module';
     HomeModule,
     PedidosModule
   ],
-  providers: [CarrinhoService, ProdutosService, CheckLogged],
+  providers: [CarrinhoService, ProdutosService, CheckLogged, HistoricoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

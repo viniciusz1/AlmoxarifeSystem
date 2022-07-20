@@ -52,9 +52,11 @@ export class ProdutosService {
     return val !== undefined && val !== null;
   }
 
-   changeProduto(index: number, produto: Produto){
-    // let index = this.lista.findIndex(lista => lista.codigo == produto.codigo);
-    // this.lista[index] = produto;
+   changeProduto(produto: Produto){
+
+    let index = this.lista.findIndex(e => 
+      e.codigo == produto.codigo
+    )
     this.lista[index] = produto
   }
   constructor() { }

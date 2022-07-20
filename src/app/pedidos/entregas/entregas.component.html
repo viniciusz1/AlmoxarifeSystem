@@ -3,15 +3,17 @@
     <div class="body">
         <div class="topo">
             <div class="pg" style="font-size: calc(1.3rem + .6vw);">
-                <span>Entregas</span>
-                <hr style="margin: 0; width: 200%;">    
+                <b>
+                    <span>ENTREGAS</span>
+                </b>
+                <hr style="margin: 0; width: 200px; opacity: 1;"> 
             </div>
         </div>
 
         <div class="pesquisa-total">
             <div class="pesquisa">
                 <i class="bi bi-search"></i>
-                <input placeholder="Pesquisar por solicitante">
+                <input [(ngModel)]="pesquisaProduto" placeholder="Pesquisar por solicitante">
             </div>
         </div>
 

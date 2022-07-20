@@ -3,8 +3,10 @@
         <div class="row mt-5" style="display: flex; justify-content: center;">
             <div class="row">
                 <div class="col-md-2 col-sm-12" style="font-size: calc(1.3rem + .6vw);">
-                    <span>{{titulo}}</span>
-                    <hr style="margin: 0; width: 50%;">
+                    <b>
+                        <span>{{titulo | uppercase}}</span>
+                    </b>
+                    <hr style="margin: 0; width: 200px; opacity: 1;">
                 </div>
                 <div *ngIf="home" class="topo-2 col-md-10 col-sm-12">
                     <div class="row superior-direito">

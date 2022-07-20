@@ -19,5 +19,9 @@ export class HistoricoService {
   getPedido(){
     return this.pedidos.slice();
   }
+  getPedidobyIndex(index: number){
+
+    return this.pedidos[index];
+  }
   constructor() { }
 }

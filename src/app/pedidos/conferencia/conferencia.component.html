@@ -41,7 +41,7 @@
                             </span>
                         </div>
                     </div>
-                    <div class="centralizar" style="margin-top: 30px;">
+                    <div *ngIf="entregas != 2" class="centralizar" style="margin-top: 30px;">
                         <button (click)="confirmarPedido()" class="botao" style="background-color: #0047B5; color: white;">Efetuar Entrega</button>
                     </div>
                 </div>

@@ -70,6 +70,10 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    transition: 0.3s;
+}
+.default-icones:hover{
+    background-color:#dbdbdb;
 }
 .div-filtros{
     display: flex;
