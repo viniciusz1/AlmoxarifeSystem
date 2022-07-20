@@ -34,9 +34,9 @@ export class ProdutoComponent implements OnInit {
         timerProgressBar: true,
         html:
         'Produto <b>'+ this.produto.nome+'</b> adicionado ao carrinho!',
-        color: 'black',
+        color: 'white',
         showConfirmButton: false,
-        background: '#dbdbdb',
+        background: '#1f394f',
         backdrop: `
         transparent
         `,
@@ -54,9 +54,9 @@ export class ProdutoComponent implements OnInit {
         timerProgressBar: true,
         html:
         'Produto <b>'+ this.produto.nome+'</b> já está em seu carrinho!',
-        color: 'black',
+        color: 'white',
         showConfirmButton: false,
-        background: '#dbdbdb',
+        background: '#1f394f',
         backdrop: `
         transparent
         `,

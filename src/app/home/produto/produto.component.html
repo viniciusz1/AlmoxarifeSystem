@@ -14,7 +14,7 @@
                     <ul class="list">
                         <li>{{produto.classificacao}}</li>
                         <li>{{produto.opcaoUso}}</li>
-                        <li>{{produto.quantidade}}</li>
+                        <li> <small><b>QTD: </b></small> {{produto.quantidade}}</li>
                     </ul>
                 </div>
             </div>
@@ -22,7 +22,7 @@
 
     
         
-
+        <b class="position-absolute" style="left: 4.5rem; bottom: 1rem;">{{produto.codigo}}</b>
         <i *ngIf="rota == 'produtos'" [routerLink]="['/home/editar-produto/', produto.codigo]" class="bi bi-pen 
         position-absolute" style="right: 5px; top:29px;"></i>
         <i *ngIf="rota == undefined && carrinho==false" (click)="adicionarCarrinho()" class="bi bi-plus-square 
