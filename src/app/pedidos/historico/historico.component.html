@@ -34,8 +34,16 @@
             </div>
         </div>
     </div>
+    <button (click)="mudarParaEntradas()" class="btn btn-primary">Entradas</button>
+    <button (click)="mudarParaPedidos()" class="btn btn-primary">Pedidos</button>
+    <div class="container">
+        <app-entrada-historico *ngIf="!exibicao"></app-entrada-historico>
+        <!-- *ngFor="let eh of eh" -->
+        <div *ngIf="exibicao" >
+            <app-pedido-historico *ngFor="let lista of lista; let i = index"[index]='i' [lista]="lista"></app-pedido-historico>
+        </div>
 
-    <app-pedido-historico *ngFor="let lista of lista; let i = index"[index]='i' [lista]="lista"></app-pedido-historico>
+    </div>
 </div>
 
 

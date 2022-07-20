@@ -15,6 +15,8 @@ import { HistoricoService } from '../services/historico.service';
 import { FiltroProdutosPipe } from '../pipes/filtro-produtos.pipe';
 import { FormsModule } from '@angular/forms';
 import { ExportsModule } from '../shared/exports/exports.module';
+import { EntradaHistoricoComponent } from './historico/entrada-historico/entrada-historico.component';
+import { EntradasService } from '../services/entradas.service';
 
 
 @NgModule({
@@ -29,6 +31,7 @@ import { ExportsModule } from '../shared/exports/exports.module';
     ConfirmarComponent,
     PedidoHistoricoComponent,
     FiltroHistoricoComponent,
+    EntradaHistoricoComponent,
 
   ],
   imports: [
@@ -46,7 +49,8 @@ import { ExportsModule } from '../shared/exports/exports.module';
     ConfirmarComponent,
   ],
   providers:[
-    HistoricoService
+    HistoricoService,
+    EntradasService
   ]
 })
 export class PedidosModule { }

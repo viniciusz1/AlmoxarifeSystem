@@ -7,12 +7,12 @@ export const navbarData = [
     {
         routeLink: '/home/historico',
         icon: 'bi bi-alarm',
-        label: 'Entregas'
+        label: 'Histórico'
     },
     {
         routeLink: '/home/entregas',
         icon: 'bi bi-journal-text',
-        label: 'Statistics'
+        label: 'Entregas'
     },
     {
         routeLink: '/home/pedidos',
