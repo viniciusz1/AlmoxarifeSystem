@@ -18,16 +18,14 @@ export class TelefoneComponent implements OnInit {
   }
 
   telefone = "";
-  ver = 1;
 
   enviar(){
     let telefone2: number = +this.telefone;
     console.log("telefone", typeof(telefone2), telefone2);
-    console.log("ver", typeof(this.ver))
     if(!isNaN(telefone2)){
       if(this.telefone.length == 11){
-        let user = localStorage.getItem("TELEFONE") as string;
-        this.usuarioService.setUser(user , this.telefone);
+        localStorage.setItem("TELEFONE", this.telefone);
+        this.router.navigate(['/cadastro/telefone/verificar'])
       }
     }else{
       alert('É necessario usar apenas numeros!')

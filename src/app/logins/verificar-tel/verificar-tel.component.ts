@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
+import { UsuariosService } from 'src/app/services/usuarios.service';
 
 @Component({
   selector: 'app-verificar-tel',
@@ -8,15 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VerificarTelComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private usuarioService: UsuariosService
+  ) { }
 
   ngOnInit(): void {
     this.repeat();
   }
-  
-//  setTimeout(()=>{                           //<<<---using ()=> syntax
-    // this.messageSuccess = false;
-// }, 3000);
   
 fim = 30;
 repeat(){
@@ -29,6 +29,20 @@ repeat(){
   }, 1000);
   
 };
+
+verificar(){
+  console.log(1)
+        let user = localStorage.getItem("USER") as string;
+        let telefone = localStorage.getItem("TELEFONE") as string;
+        console.log(user)
+        if(user && telefone){
+          this.usuarioService.setUser(user , telefone);
+          localStorage.setItem("USUARIO", user)
+          let senha = this.usuarioService.getListaUser().find(lista => lista.usuario == user)?.senha as string;
+          localStorage.setItem("SENHA", senha)
+          this.router.navigate(['/home']);
+        }
+}
 
 
 
