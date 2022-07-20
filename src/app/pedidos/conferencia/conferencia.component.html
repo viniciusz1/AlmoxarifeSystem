@@ -1,6 +1,6 @@
 <div class="container" style="width: 80vw;margin-left: 125px;">
     <div style="margin-bottom: 80px;">
-        <div class="topo">Realizar Entrega</div>
+        <div class="topo">{{botao}}</div>
         <div style="border: 1px solid black; width: 220px;"></div>
     </div>
     <div>
@@ -12,7 +12,7 @@
                 </div>
                 <div *ngFor="let produto of pedido.listaProdutos" class="produto" style="display: flex;">
                     <div class="centralizar" style="height: 120px; width: 25%;">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfbr9FpbwTiSsahW0jYBHKQ3W1hQJHB6BGaJwgv7G29DNJGvQkrBmYA0gWagZ00CKmXAw&usqp=CAU" alt="">
+                        <img [src]="produto.imagem" alt="">
                     </div>
                     <div style="margin-top: 20px; margin-left: 20px;">
                         <h5>{{produto.nome}}</h5>
@@ -42,7 +42,7 @@
                         </div>
                     </div>
                     <div *ngIf="entregas != 2" class="centralizar" style="margin-top: 30px;">
-                        <button (click)="confirmarPedido()" class="botao" style="background-color: #0047B5; color: white;">Efetuar Entrega</button>
+                        <button (click)="confirmarPedido()" class="botao" style="background-color: #0047B5; color: white;">{{botao}}</button>
                     </div>
                 </div>
             </div>

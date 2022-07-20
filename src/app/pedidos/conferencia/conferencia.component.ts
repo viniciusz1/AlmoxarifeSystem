@@ -18,13 +18,16 @@ export class ConferenciaComponent implements OnInit {
   entregas = 0
   id = ""
   pedido: Pedido = new Pedido()
+  botao = ''
 
   ngOnInit(): void {
     this.route.url.subscribe(
       e => {
         if(e[0].path == "entregas"){
+          this.botao = 'Relizar entrega'
           this.entregas = 1;
         }else if(e[0].path == "devolucoes"){ 
+          this.botao = 'Relizar devolução'
           this.entregas = 0;
         }else if(e[0].path == "historico"){
           this.entregas = 2;

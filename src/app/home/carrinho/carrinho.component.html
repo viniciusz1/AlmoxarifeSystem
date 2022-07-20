@@ -20,7 +20,7 @@ p-1 bg-light po" style="height: 91vh; width: 400px !important;">
                 <app-produto [carrinho]="carrinho" [produto]="produto" class="col-9"></app-produto>
                 <div class="div col-2 adicionar" >
                     <i class="bi bi-plus-lg"></i>
-                    <input type="text" class="form-control" style="width: 40px;">
+                    <input [(ngModel)]="produto.quantidade" type="text" class="form-control" style="width: 40px;">
                     <i class="bi bi-dash-lg"></i>
                 </div>
             </div>
@@ -28,7 +28,7 @@ p-1 bg-light po" style="height: 91vh; width: 400px !important;">
         <div *ngIf="carrinhoVazio == true" class="row DivWithScroll" style="display: flex; align-items:center; justify-content:center">
             Adicione um item ao carrinho
         </div>
-        <div class="row justify-content-center mt-5">
+        <div  *ngIf="carrinhoVazio == false" class="row justify-content-center mt-5">
             <button class="btn btn-primary w-50" (click)="abreReserva()">Realizar Pedido</button>
         </div>
     </div>
