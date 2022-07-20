@@ -20,6 +20,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import CheckLogged from './checklogged';
 import { HomeModule } from './home/home.module';
 import { PedidosModule } from './pedidos/pedidos.module';
+import { SidenavComponent } from './pos-login/sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { PedidosModule } from './pedidos/pedidos.module';
     SolicitacoesComponent,
     ContasComponent,
     PerfilAdminComponent,
+    SidenavComponent
   ],
   imports: [ 
     BrowserModule,

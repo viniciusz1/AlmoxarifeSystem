@@ -14,7 +14,7 @@
     routerLinkActive="bg-blue text-light" routerLink="/home" 
     class="center cor-azul cursor d-flex text-center"
     style="margin-top: 40px;">
-        <i class="bi bi-house-door icons-size"></i>
+        <i class=" icons-size"></i>
         <span *ngIf="stateTxt == 'aberto'" class="margin-icons">
             Home
         </span>
@@ -46,7 +46,7 @@
     <div routerLinkActive="bg-blue text-light" *ngIf="(user == 'admin' || user == 'supervisor')" routerLink="/home/produtos" class="center cor-azul cursor d-flex text-center">
         <i class="bi bi-bag icons-size"></i>
         <span  *ngIf="stateTxt == 'aberto'" class="margin-icons">
-            Produtos
+            
         </span>
     </div>
     <div routerLinkActive="bg-blue text-light" *ngIf="user == 'admin'" routerLink="/home/contas" class="center cor-azul cursor d-flex text-center">
