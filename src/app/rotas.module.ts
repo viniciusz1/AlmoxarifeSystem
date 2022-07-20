@@ -26,6 +26,7 @@ import { FiltroHistoricoComponent } from './pedidos/historico/filtro-historico/f
 import { ModalFiltroComponent } from './home/modal-filtro/modal-filtro.component';
 import CheckLogged from './checklogged';
 import { EntradaComponent } from './home/entrada/entrada.component';
+import { EntradaHistoricoComponent } from './pedidos/historico/entrada-historico/entrada-historico.component';
 
 
 
@@ -148,11 +149,17 @@ import { EntradaComponent } from './home/entrada/entrada.component';
           canActivate: []
         },
         {
+          path: 'rt',
+          component: EntradaHistoricoComponent,
+          canActivate: [],
+          
+        },
+        {
           path: ':id',
           component: HomeComponent,
           canActivate: [],
           
-        }
+        },
       ]},
       {
         path: '',
