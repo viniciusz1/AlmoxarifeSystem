@@ -10,7 +10,20 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./detalhes-produto.component.css']
 })
 export class DetalhesProdutoComponent implements OnInit{
+
+
+  codRota = "";
+  informacoes = new Produto()
+  botao = ""
+  cadastrarProduto = ""
   select = ""
+  disabled = true
+  modo = ""
+  // user = "admin"
+  // user = "atendente"
+  user = "supervisor"
+  // user = "professor"
+
   constructor(private prod: ProdutosService,
     private router: Router,
     private route: ActivatedRoute) { }
@@ -19,41 +32,90 @@ export class DetalhesProdutoComponent implements OnInit{
   detalhesForm = new FormGroup({
     opcaoUso: new FormControl(''),
     nome: new FormControl(''),
-    quantidade: new FormControl(''),
+    quantidade: new FormControl(0),
     classificacao: new FormControl(''),
     localidade: new FormControl(''),
     descricao: new FormControl(''),
   });
 
   onSubmit() {
-
-    let produto = new Produto()
-    this.prod.changeProduto(produto)
-  }
-  rota = "";
-  informacoes = new Produto()
-  botao = ""
-  cadastrarProduto = ""
-
-  ngOnInit(): void {
-    this.route.params.subscribe(params => {
-      this.rota = params['tipo']
-
-    })
-    if (this.rota == undefined) {
-      this.botao = "Cadastrar produto"
-    } else {
-      this.botao = "Editar produto"
+    if(this.modo == "cadastrar"){
+      this.prod.addProduto(
+        new Produto(this.detalhesForm.value.nome as string, 
+          this.detalhesForm.value.quantidade as number, 
+          this.detalhesForm.value.classificacao as string,
+          this.detalhesForm.value.localidade as string, 
+          this.detalhesForm.value.opcaoUso as string,
+          this.detalhesForm.value.descricao as string,
+          123))
+          this.router.navigate(['/home/produtos'])
+    }else if(this.modo == "editar"){
+        this.prod.changeProduto(new Produto(this.detalhesForm.value.nome as string, 
+          this.detalhesForm.value.quantidade as number, 
+          this.detalhesForm.value.classificacao as string,
+          this.detalhesForm.value.localidade as string, 
+          this.detalhesForm.value.opcaoUso as string,
+          this.detalhesForm.value.descricao as string,
+          +this.codRota,
+          this.imagem as string))
+          this.router.navigate(['/home/produtos'])
     }
-    this.informacoes = this.prod.getIdProduto(parseInt(this.rota))
-    this.detalhesForm.patchValue({
-      nome: this.informacoes.nome,
-      opcaoUso: this.informacoes.opcaoUso,
-      quantidade: this.informacoes.quantidade,
-      classificacao: this.informacoes.classificacao,
-      localidade: this.informacoes.localidade,
-      descricao: this.informacoes.descricao
-    })
+    
+  }
+
+  darEntrada(){
+    this.router.navigate(['/home/entrada/', this.codRota])
+  }
+
+  imagem? = ""
+  
+  ngOnInit(): void {
+    this.route.url.subscribe(
+      url => {
+        if(url[0].path == "cadastrar-produto"){
+          this.botao = "Cadastrar produto"
+          this.modo = "cadastrar"
+
+
+        }else if(url[0].path == "editar-produto"){ 
+          this.modo = "editar"
+          this.codRota = url[1].path
+          this.botao = "Editar produto"
+          this.informacoes = this.prod.getIdProduto(parseInt(this.codRota))
+          this.imagem = this.informacoes.imagem
+          this.detalhesForm.controls['quantidade'].disable()
+          this.detalhesForm.patchValue({
+            nome: this.informacoes.nome,
+            opcaoUso: this.informacoes.opcaoUso,
+            quantidade: this.informacoes.quantidade,
+            classificacao: this.informacoes.classificacao,
+            localidade: this.informacoes.localidade,
+            descricao: this.informacoes.descricao
+          })
+
+
+        }else if(url[0].path == "detalhes-produto"){
+          this.modo = "detalhar"
+          this.codRota = url[1].path
+          this.botao = "Detalhes-produto"
+          this.detalhesForm.disable();
+          this.informacoes = this.prod.getIdProduto(parseInt(this.codRota))
+          this.imagem = this.informacoes.imagem
+
+          this.detalhesForm.patchValue({
+            nome: this.informacoes.nome,
+            opcaoUso: this.informacoes.opcaoUso,
+            quantidade: this.informacoes.quantidade,
+            classificacao: this.informacoes.classificacao,
+            localidade: this.informacoes.localidade,
+            descricao: this.informacoes.descricao
+          })
+        }
+      }
+    )
+    
+    
+    
 
   }
 

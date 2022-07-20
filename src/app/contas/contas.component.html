@@ -2,8 +2,10 @@
     <div class="body">
         <div class="topo">
             <div class="pg" style="font-size: calc(1.3rem + .6vw);">
-                        <span>Contas</span>
-                        <hr style="margin: 0; width: 200%;">    
+                <b>
+                    <span>CONTAS</span>
+                </b>
+                <hr style="margin: 0; width: 200px; opacity: 1;"> 
                     </div>
             <div class="pesquisa-total">
                 <div class="pesquisa">
@@ -35,5 +37,5 @@
             </div>
         </div>
     </div>
-    <app-perfil-admin *ngIf="perfilState == true"></app-perfil-admin>
+    <app-perfil-admin (estadoPerfil)="mudarPerfilState()" class="perfil-admin" *ngIf="perfilState == true"></app-perfil-admin>
 </div>

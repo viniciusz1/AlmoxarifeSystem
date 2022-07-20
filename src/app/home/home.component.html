@@ -1,33 +1,59 @@
 <div class="d-flex">
     <div class="container">
         <div class="row mt-5" style="display: flex; justify-content: center;">
-            <div class="topo">
-                <div style="font-size: calc(1.3rem + .6vw);">
-                    <span (click)="checando()">{{titulo}}</span>
-                    <hr style="margin: 0; width: 200%;">
+            <div class="row">
+                <div class="col-md-2 col-sm-12" style="font-size: calc(1.3rem + .6vw);">
+                    <b>
+                        <span>{{titulo | uppercase}}</span>
+                    </b>
+                    <hr style="margin: 0; width: 200px; opacity: 1;">
                 </div>
-                <div class="topo-2">
-                    <div class="pesquisa">
-                        <div class="pesquisa">
-                            <i class="bi bi-search"></i>
-                            <input [(ngModel)]="pesquisaProduto" placeholder="Pesquisar Pedido">
+                <div *ngIf="home" class="topo-2 col-md-10 col-sm-12">
+                    <div style="cursor:pointer" class="row superior-direito">
+                        <div class="col-sm-4">
+                            <div class="pesquisa d-flex">
+                                <i class="bi bi-search"></i>
+                                <input [(ngModel)]="pesquisaProduto" placeholder="Pesquisar Pedido">
+                            </div>
+                        </div>
+                        <div style="cursor:pointer" class="filtrar col-sm-4">
+                            <div class="icone">
+                                <button class="filtross" (click)="modalOpen(false)">Filtrar Mais</button>
+                                <i class="bi bi-sliders"></i>
+                            </div>
+                        </div>
+                        <div style="cursor:pointer" class="d-flex position-relative col-sm-1">
+                            <i class="bi bi-cart4 carrinho" (click)="openCart()"></i>
+                            <div class="bola-carrinho">{{numeroCarrinho}}</div>
                         </div>
                     </div>
-                    <div class="filtrar">
-                        <div class="icone">
-                            <button class="filtross" (click)="modalOpen(false)">Filtrar Mais</button>
-                            <i class="bi bi-sliders"></i>
+                </div>
+                <div *ngIf="!home" class="topo-2 col-md-10 col-sm-12">
+                    <div class="row superior-direito">
+                        <div style="cursor:pointer" class="col-sm-4">
+                            <div class="pesquisa d-flex">
+                                <i class="bi bi-search"></i>
+                                <input [(ngModel)]="pesquisaProduto" placeholder="Pesquisar Pedido">
+                            </div>
                         </div>
-                    </div>
-                    <div *ngIf="rota == 'produtos'"  class="filtrar">
-                        <div class="icone">
-                            <button class="filtross"  [routerLink]="['/home/cadastrar-produto']">Adicionar Produto</button>
-                            <i class="bi bi-plus-lg"></i>
+                        <div class="filtrar col-sm-2">
+                            <div class="icone" style="min-width: 122px; cursor:pointer">
+                                <button class="filtross" routerLink="/home/entrada">Entrada</button>
+                                <i class="bi bi-plus-lg"></i>
+                            </div>
                         </div>
-                    </div>
-                    <div *ngIf="rota == undefined" class="d-flex position-relative">
-                        <i class="bi bi-cart4 carrinho" (click)="openCart()"></i>
-                        <div class="bola-carrinho">{{numeroCarrinho}}</div>
+                        <div class="filtrar col-sm-2">
+                            <div class="icone" style="min-width: 122px; cursor:pointer">
+                                <button class="filtross" (click)="modalOpen(false)">Filtrar Mais</button>
+                                <i class="bi bi-sliders"></i>
+                            </div>
+                        </div>
+                        <div class="filtrar col-sm-1" style="min-width: 196px; cursor:pointer">
+                            <div class="icone">
+                                <button class="filtross"  [routerLink]="['/home/cadastrar-produto']">Adicionar Produto</button>
+                                <i class="bi bi-plus-lg"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -40,6 +66,7 @@
                 </div>
             </div>
         </div>
+
         <div class="container-fluid">
             <div *ngIf="exibicao == true" class="row mt-3">
                 <b class="d-flex  mb-1" style="min-width: 10px; 
@@ -52,11 +79,13 @@
                             <div style="width: 30%">Classificação</div>
                             <div style="width: 30%">Quantidade</div>
                 </b>
-                    <app-produto-lista [produto]="lista" *ngFor="let lista of (lista); let i = index"></app-produto-lista>
+                    <app-produto-lista  [indiceProduto]="i" [produto]="lista" 
+                    *ngFor="let lista of (lista); let i = index">
+                </app-produto-lista>
             </div>
             <div *ngIf="exibicao == false" class="row">
                 <app-produto class="col-xl-4 index col-md-6" [indiceProduto]="i"
-                [produto]="lista" *ngFor="let lista of (lista); let i = index">
+                [produto]="lista" *ngFor="let lista of (lista ) | filtroProdutos:pesquisaProduto; let i = index" >
                 </app-produto>
             </div>
         </div>

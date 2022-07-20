@@ -1,0 +1,102 @@
+.overlay {
+    background: #000;
+    height: 100vh;
+    left: 0;
+    opacity: 0.5;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 10;
+}
+
+.quadrado {
+    background-color: #275577;
+    box-shadow: inset 4px 4px 250px 10px #000;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #333;
+    min-width: 320px;
+    position: relative;
+    left: 0%;
+    top: 55%;
+    padding: 24px;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+    display: grid;
+    height: 500px;
+}
+
+.cargo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: black;
+    font-weight: bold;
+    margin-right: 10px;
+    margin-top: 5px;
+    padding: 5px;
+}
+
+.centralizar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px !important;
+}
+
+.central {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    position: absolute;
+    margin: 0px 10px 10px 85px;
+}
+
+.textAl {
+    color: #fff;
+    font-size: 30px;
+}
+
+.produtos, .atendente, .dataRetirada, .dataDevolucao, .status, .codigoPedido{
+    display: grid;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.datas, .dois{
+    display: flex;
+    justify-content: space-between !important;
+}
+
+input{
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.dataRetirada, .dataDevolucao, .status, .codigoPedido{
+    width: 47%;
+}
+
+.filtro{
+    color: #fff;
+    font-size: 25px;
+    font-family: 'bootstrap-icons';
+    
+    outline: none;
+}
+
+.botaoFiltro{
+    background-color: #fff;
+    color: #0047B5;
+    border: none;
+    width: 30%;
+    height: 20%;
+    padding: 5px;
+    margin-top: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}

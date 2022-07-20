@@ -3,15 +3,17 @@
     <div class="body">
         <div class="topo">
             <div class="pg" style="font-size: calc(1.3rem + .6vw);">
-                <span>Entregas</span>
-                <hr style="margin: 0; width: 200%;">    
+                <b>
+                    <span>ENTREGAS</span>
+                </b>
+                <hr style="margin: 0; width: 200px; opacity: 1;"> 
             </div>
         </div>
 
         <div class="pesquisa-total">
             <div class="pesquisa">
                 <i class="bi bi-search"></i>
-                <input placeholder="Pesquisar por solicitante">
+                <input [(ngModel)]="pesquisaProduto" placeholder="Pesquisar por solicitante">
             </div>
         </div>
 
@@ -32,26 +34,26 @@
             </div>
 
             
-            <div class="lista bloco" *ngFor="let lista of lista">
+            <div class="lista bloco" *ngFor="let lista of lista; let i = index">
                 <div class="px">
                 </div>
                 <div class="pedido">
-                    <span>{{lista.pedido}}</span>
+                    <span>{{lista.codigo}}</span>
                 </div>
                 <div class="professor">
-                    <span>{{lista.Professor}}</span>
+                    <span>{{lista.nomeProfessor}}</span>
                 </div>
                 <div class="central">
                     <div class="d-inline-block text-truncate">
-                        <span>{{lista.Produtos}}</span>
+                        <span *ngFor="let l of lista.listaProdutos">{{l.nome}}, </span>
                     </div>
                 </div>
 
                 <div class="data">
-                    <span>{{lista.Data}}</span>
+                    <span>{{lista.dataDevolucao | date: 'dd/MM/yyyy'}}</span>
                 </div>
-                <div class="botao" >
-                    <button (click)="gotoConferencia()" >Realizar Entrega</button>
+                <div class="botao" [routerLink]="['/home/entregas/', i]">
+                    <button>Realizar Entrega</button>
                 </div>
             </div>
 

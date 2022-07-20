@@ -1,41 +1,83 @@
-.imagem{
-    position:absolute;
+.imagem {
+    position: absolute;
     left: 0;
     top: 0;
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
     border-radius: 500px;
     border: 0.5px solid black;
     cursor: pointer;
+}
+.imagemCarrinho{
+    width: 70px;
+    height: 70px;
 }
 i:hover{
     color: blue;
     cursor: pointer;
 }
-.bloco{
+
+.bloco {
     height: 8rem;
     /* border: 1px solid black; */
     align-items: flex-end;
     justify-content: right;
 }
-.list{
+
+.list {
     list-style: none;
 }
-.sombra{
-    box-shadow: 2px 2px 5px 1px;
+.circle{
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    left: 4em; 
+    bottom: 1rem; 
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background-color: #275577;
 }
-.retangulo{ 
-    padding-left: 60px;
-    /* position: absolute;
-    bottom: 0;
-    right: 0; 
 
-    */
+.sombra {
+    box-shadow: 4px 3px 6px -4px;
+    background-color: #f1f1f1;
+}
+
+.retangulo {
+    padding-left: 60px;
     cursor: pointer;
     height: 100px;
     width: 90%;
+    transition: 0.3s;
+}
+.retangulo:hover{
+    background-color:#dbdbdb;
 }
 
-.caixa{
+.caixa {
     align-self: flex-end;
 }
+
+.icone1{
+    color: #fff;
+}
+
+i {
+    opacity: 1;
+}
+
+i:hover  {
+    opacity: 0;
+}
+
+i:hover #texto-inside {
+    display: block;
+    position: absolute;
+    top: 35%;
+    left: 30%;
+    font-size: 20px;
+    color: white;
+    opacity: 1;
+}
+

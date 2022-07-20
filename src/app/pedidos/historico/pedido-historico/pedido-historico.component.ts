@@ -8,6 +8,8 @@ import { Produto } from 'src/app/shared/produto.model';
 })
 export class PedidoHistoricoComponent implements OnInit {
   @Input() lista: Pedido = new Pedido()
+  @Input() index: number = 9
+
   constructor() { }
 
   ngOnInit(): void {

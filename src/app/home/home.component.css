@@ -35,7 +35,7 @@
     top: 0;
 }
 .filtrar-mais{
-    background-color: #0047B5;
+    background-color: #275577;
     margin-left: 50px;
     margin-right: 50px;
 }
@@ -49,7 +49,7 @@
 }
 .icones{
     font-size: 20px;
-    background: blue !important;
+    background: #275577 !important;
     color: white;
     border-radius: 30px;
     width: 40px;
@@ -70,6 +70,10 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    transition: 0.3s;
+}
+.default-icones:hover{
+    background-color:#dbdbdb;
 }
 .div-filtros{
     display: flex;
@@ -80,17 +84,24 @@
 .carrinho-side{
     right: 0;
 }
-.topo{
-    display: flex;
-    width: 80vw;
-}
+
 
 .duas-div{
     display: grid;
 }
+.superior-direito{
+    align-items: center;
+    justify-content: center;
+    column-gap: 14px;
+}
+.alinhar-meio{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .div-cima{
-    background-color: #0047B5;
+    background-color: #275577;
     color: white;
     font-weight: bold;
     font-size: 18px;
@@ -141,11 +152,9 @@ i{
 }
 
 .topo-2{
-    display: flex;
+    display: flex;  
     justify-content: end;
     align-items: center;
-    width: 100%;
-    column-gap: 15px;
 }
 
 .pesquisa{
@@ -166,7 +175,7 @@ input{
 }
 
 .ordenar, .filtrar{
-    background-color: #0047B5;
+    background-color: #275577;
     border: 1px solid black;
     padding: 5px 10px;
 }

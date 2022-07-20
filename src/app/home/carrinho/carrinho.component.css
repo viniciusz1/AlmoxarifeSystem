@@ -18,6 +18,7 @@
 }
 .index{
     z-index: 1;
+    
 }
 .cor-azul:hover{
     background-color: #0047B5;
@@ -35,4 +36,25 @@
     height:330px;
     overflow:scroll;
     overflow-x:hidden;
+
+}
+
+#style-2::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 0px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+#style-2::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+#style-2::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 0px rgba(0,0,0,.3);
+	background-color: #000000;
 }

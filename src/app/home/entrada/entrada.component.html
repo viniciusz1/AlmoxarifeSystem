@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row">
+        <div class="pg" style="font-size: calc(1.3rem + .6vw);">
+            <b>
+                <span>ENTRADA</span>
+            </b>
+            <hr style="margin: 0; width: 200px; opacity: 1;">  
+        </div>
+        <div class="row">
+            <div class="pesquisa d-flex">
+                <i class="bi bi-search" style="cursor:pointer"></i>
+                <input [(ngModel)]="pesquisaProduto" placeholder="Pesquisar Produto">
+            </div>
+        </div>
+        <div class="col-6">
+            
+            <div class="row mt-3">
+                <app-produto-lista style="cursor:pointer" (click)="mostrarProduto(lista.codigo)" [indiceProduto]="i" [produto]="lista" 
+                    *ngFor="let lista of (lista) | filtroProdutos:pesquisaProduto; let i = index">
+                </app-produto-lista>
+            </div>
+        </div>
+
+        <div class="col-6 p-4 align-items-center position-relative">
+            <i [routerLink]="['/home/editar-produto/',codigo]" class="bi bi-pen" style="position: absolute;
+            right: 66px;"></i>
+            <div class="div-imagem">
+                        <img class="img-fluid imagem"
+                            [src]="imagem" alt="">
+                        </div>
+            <div>
+                <label for="">Nome Produto</label>
+                <input [(ngModel)]="nomeProduto" disabled="true" type="text" class="form-control">
+            </div>
+            <div>
+                <label for="">Quantidade em estoque</label>
+                <input [(ngModel)]="estoqueQuantidade" disabled="true" type="text" class="form-control">
+            </div>
+            <hr>
+            <div>
+                <label for="">Adicionar quantidade</label>
+                <input [(ngModel)]="novaQuantidade" type="text" class="form-control">
+            </div>
+            <div class="text-center mt-4">
+                <button (click)="atualizarQuantidade()" class="btn btn-primary">Confirmar entrada</button>
+            </div>
+        </div>
+    </div>
+</div>

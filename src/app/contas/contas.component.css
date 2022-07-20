@@ -4,7 +4,11 @@
     /* align-items: center; */
     width: 150vw;
 }
-
+.perfil-admin{
+    position: absolute;
+    top: 50%;
+    left: 25%;
+}
 .pg{
     font-size: calc(1.3rem + .6vw);
     margin-top: 50px;
@@ -82,7 +86,7 @@ input{
 }
 
 button{
-    background-color: #0047B5;
+    background-color: #275577;
     border: none;
     color: white;
     border-radius: 5px;
@@ -115,7 +119,7 @@ button{
 }
 
 .px{
-    background-color: #0047B5;
+    background-color: #275577;
     width: 5px;
 }
 

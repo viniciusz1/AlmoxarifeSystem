@@ -20,7 +20,7 @@
                     <app-produto [produto]="listaCarrinho" class="col-9"></app-produto>
                     <div class="div col-2 adicionar" style="align-self: center;">
                         <i class="bi bi-plus-lg"></i>
-                        <input type="text" class="form-control" style="width: 40px;">
+                        <input [(ngModel)]="listaCarrinho.quantidade" type="text" class="form-control" style="width: 40px;">
                         <i class="bi bi-dash-lg"></i>
                     </div>
                 </div>
@@ -35,7 +35,11 @@
                 <input [(ngModel)]="dataRetirada" type="date" class="m-4 p-1" style="width:215px" placeholder="datas de retirada">
                 <input [(ngModel)]="dataDevolucao" type="date" class="mb-4 p-1" style="width:215px">
             </div>
-            <hr class="m-5">
+            <div *ngIf="user == 'atendente'"  class="d-flex flex-column align-items-center">
+                <label for="">Nome Professor:</label>
+                <input [(ngModel)]="professor" type="text" class="m-4 p-1" style="width:215px" placeholder="Professor">
+            </div>
+            <hr *ngIf="user == 'professor'" class="m-5">
             <div class="row justify-content-center">
                 <button (click)="addPedido()" class="btn btn-primary w-50 mt-5">
                     Finalizar

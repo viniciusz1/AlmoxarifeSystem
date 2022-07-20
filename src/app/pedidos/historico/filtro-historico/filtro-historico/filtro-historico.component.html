@@ -1,0 +1,55 @@
+<div class="quadrado">
+    <div class="cargo">
+        <i class="bi bi-x-circle" style="font-size: 20px; color: white;" (click)="mudarFiltro.emit()"></i>
+    </div>
+    <div>
+        <img class="logo" src="https://i.ibb.co/gdtf6MN/Logo-Branca-removebg-preview.png" style="height: 35px;">
+        <div class="centralizar" style="margin-top: 70px;">
+            <div class="textAl">
+                Almoxarife System
+            </div>
+        </div>
+        <div class="filtro">
+            <div class="central">
+                FILTRO
+            </div>
+            <div class="central">
+                <div style="font-size: 15px;">*Não é necessário preencher todos os campos</div>
+            </div>
+        </div>
+    </div>
+    <div class="inputs">
+        <div class="produtos">
+            <label>Produtos</label>
+            <input placeholder="Ex: Resistor">
+        </div>
+        <div class="atendente">
+            <label>Atendente</label>
+            <input placeholder="Ex: Carlinhos">
+        </div>
+        <div class="datas">
+            <div class="dataRetirada">
+                <label>Data Retirada:</label>
+                <input placeholder="Ex: DD/MM/AAAA" type="date">
+            </div>
+            <div class="dataDevolucao">
+                <label>Data Devolução:</label>
+                <input placeholder="Ex: DD/MM/AAAA" type="date">
+            </div>
+        </div>
+        <div class="dois">
+            <div class="status">
+                <label>Status</label>
+                <input placeholder="Ex: Finalizado">
+            </div>
+            <div class="codigoPedido">
+                <label>Codigo Pedido</label>
+                <input placeholder="Ex: 001">
+            </div>
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <button class="botaoFiltro">Filtrar</button>
+        </div>
+    </div>
+</div>
+<div class="overlay"></div>

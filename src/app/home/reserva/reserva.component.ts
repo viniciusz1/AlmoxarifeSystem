@@ -15,14 +15,16 @@ export class ReservaComponent implements OnInit {
   listaCarrinho: Produto[] = [];
   dataRetirada: Date = new Date();
   dataDevolucao: Date = new Date();
+  professor: string = ""
+  user= "atendente"
+  // user= "professor"
 
 
   fecharReserva(){
     this.fechaReserva.emit(false)
   }
   addPedido(){
-    this.pedidoService.addPedido(new Pedido("Jubileu", this.listaCarrinho, this.dataRetirada, this.dataDevolucao, 1, 1))
-    this.historicoService.addPedido(new Pedido("Jubileu", this.listaCarrinho, this.dataRetirada, this.dataDevolucao, 1, 1))
+    this.pedidoService.addEntrega(new Pedido(this.professor, this.listaCarrinho, this.dataRetirada, this.dataDevolucao, 5, 1))
     this.fecharReserva()
   }
   constructor(private car: CarrinhoService,

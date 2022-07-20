@@ -16,7 +16,6 @@ i{
 
 .perfil{
     font-size: calc(1.3rem + .6vw);
-    text-decoration: underline;
     margin-top: 50px;
     margin-bottom: 50px;
 }
@@ -52,12 +51,12 @@ body{
     display: grid;
     justify-content: center;
     /* align-items: center; */
-    width: 100vw;
+    width: 100%;
 }
 
 
 button{
-    background-color: #0047B5;
+    background-color: #275577;
     border: transparent;
     color: white; 
     margin: 10px;
@@ -105,11 +104,19 @@ button{
  position: absolute;
  top: 0;
  right: 0;
- background-color: #0047B5;
+ color: black;
+}
+
+.prof{
+position: absolute;
+ top: 0;
+ right: 0;
+ background-color: #275577 ;
  color: white;
  font-size: 24px;
  padding-top: 5px ;
  padding-bottom: 5px;
  padding-left: 7vw;
  padding-right: 7vw;
+ justify-content: center;
 }
