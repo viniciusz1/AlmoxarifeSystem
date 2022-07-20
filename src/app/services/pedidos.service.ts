@@ -33,11 +33,18 @@ export class PedidosService {
   realizarDevolucao(index: number){
     this.devolucoes.splice(index, 1)
   }
-
+  addEntrega(pedido: Pedido){
+    this.entregas.push(pedido)
+    this.addPedido(pedido)
+  }
+  
   addPedido(pedido: Pedido){
     this.historicoService.addPedido(pedido)
     this.pedidos.push(pedido)
+    console.log(this.pedidos)
   }
+
+
   removePedido(index: number){
     this.pedidos.splice(index, 1)
   }
