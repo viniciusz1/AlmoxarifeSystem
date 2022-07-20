@@ -10,8 +10,8 @@
         <li class="sidenav-nav-item" *ngFor="let data of navData">
             <a class="sidenav-nav-link" [routerLink]="[data.routeLink]" routerLinkActive="active"
                 [routerLinkActiveOptions]="{exact: true}">
-                <i class="sidenav-link-icon" [class]="data.icon"></i>
-                <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+                <i class="sidenav-link-icon" [class]="data.icon" routerLinkActive="active-icon" [routerLinkActiveOptions]="{exact: true}"></i>
+                <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed"  routerLinkActive="active-icon" [routerLinkActiveOptions]="{exact: true}">
                     {{data.label}}
                 </span>
             </a>
