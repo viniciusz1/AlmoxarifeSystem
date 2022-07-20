@@ -3,6 +3,7 @@
 }
 .bg-blue{
     background-color: #0047B5;
+    transition: 0.3s;
 }
 .cursor{
     cursor: pointer;

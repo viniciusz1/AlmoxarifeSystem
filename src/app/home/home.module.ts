@@ -11,9 +11,8 @@ import { DetalhesProdutoComponent } from './detalhes-produto/detalhes-produto.co
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RotasModule } from '../rotas.module';
-import { FiltroProdutosPipe } from '../pipes/filtro-produtos.pipe';
-import { FiltroEspecializadoProdutosPipe } from '../pipes/filtro-especializado-produtos.pipe';
 import { EntradaComponent } from './entrada/entrada.component';
+import { ExportsModule } from '../shared/exports/exports.module';
 
 
 
@@ -27,17 +26,15 @@ import { EntradaComponent } from './entrada/entrada.component';
     ReservaComponent,
     ProdutoListaComponent,
     DetalhesProdutoComponent,
-    FiltroProdutosPipe,
-    FiltroEspecializadoProdutosPipe,
     EntradaComponent,
-
   ],
   imports: [
     CommonModule,
     FormsModule,
     BrowserAnimationsModule,
     RotasModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ExportsModule
   ],
   exports:[
     HomeComponent,
@@ -47,7 +44,7 @@ import { EntradaComponent } from './entrada/entrada.component';
     CarrinhoComponent,
     ReservaComponent,
     ProdutoListaComponent,
-    DetalhesProdutoComponent
+    DetalhesProdutoComponent,
   ]
 })
 export class HomeModule { }

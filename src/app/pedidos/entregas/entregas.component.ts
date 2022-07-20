@@ -16,7 +16,7 @@ export class EntregasComponent implements OnInit {
     private pedidos: PedidosService
   ) {}
 
-
+  pesquisaProduto=""
   lista: Pedido[] = []
   ngOnInit(): void { 
     this.lista = this.pedidos.getEntregas()

@@ -12,6 +12,9 @@ import { Routes } from '@angular/router';
 import { RotasModule } from '../rotas.module';
 import { FiltroHistoricoComponent } from './historico/filtro-historico/filtro-historico/filtro-historico.component';
 import { HistoricoService } from '../services/historico.service';
+import { FiltroProdutosPipe } from '../pipes/filtro-produtos.pipe';
+import { FormsModule } from '@angular/forms';
+import { ExportsModule } from '../shared/exports/exports.module';
 
 
 @NgModule({
@@ -25,11 +28,14 @@ import { HistoricoService } from '../services/historico.service';
     HistoricoComponent,
     ConfirmarComponent,
     PedidoHistoricoComponent,
-    FiltroHistoricoComponent
+    FiltroHistoricoComponent,
+
   ],
   imports: [
     CommonModule,
-    RotasModule
+    RotasModule,
+    FormsModule,
+    ExportsModule
   ],
   exports:[
     ConferenciaComponent,
@@ -37,7 +43,7 @@ import { HistoricoService } from '../services/historico.service';
     EntregasComponent,
     ModalDevolucaoComponent,
     ModalDevolucaoComponent,
-    ConfirmarComponent
+    ConfirmarComponent,
   ],
   providers:[
     HistoricoService
