@@ -152,7 +152,8 @@ import { EntradaComponent } from './home/entrada/entrada.component';
           component: HomeComponent,
           canActivate: [],
           
-        }
+        },
+        
       ]},
       {
         path: '',
