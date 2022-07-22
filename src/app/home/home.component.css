@@ -78,8 +78,8 @@
 .div-filtros{
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    margin-top: 5px;
+    justify-content: space-between;
+    margin:25px
 }
 .carrinho-side{
     right: 0;
@@ -119,9 +119,6 @@ p{
     font-weight: 700;
 }
 
-i{
-    margin: 10px 10px 10px 0px;
-}
 
 .baixo{
     display: flex;
@@ -158,7 +155,10 @@ i{
 }
 
 .pesquisa{
-    border-bottom: 0.5px solid black;
+    border: 0.5px solid black;
+    border-radius: 5px;
+
+    z-index: 1;
 }
 
 input{
@@ -169,17 +169,42 @@ input{
 ::-webkit-input-placeholder {
     color: black;
  }
-
+.lupa{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px 0 10px;
+}
 .icone{
     color: white;
+    display: flex;
 }
 
-.ordenar, .filtrar{
+.filtrar{
     background-color: #275577;
-    border: 1px solid black;
     padding: 5px 10px;
+    color:white;
+    border-radius: 0px 3px 3px 0px;
 }
-
+.botoes{
+    background-color: #275577;
+        padding: 5px 10px;
+        color:white;
+        border-radius: 3px;
+}
+.ordenar{
+    /* outline: none;
+    width:120px;
+    color: white;
+    background-color: #275577;
+    border: 1px solid #333;
+    font-size: 15px;
+    padding-right: 20px;
+    border-radius: 3px; */
+}
+.input-pedido{
+    max-width: 180px;
+}
 .filtross{
     border: none;
     background-color: transparent;
