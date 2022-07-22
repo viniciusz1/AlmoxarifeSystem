@@ -23,12 +23,12 @@
                                     <i class="bi bi-sliders" (click)="modalOpen(false)"></i>
                             </div>
                         </div>
-                        <select class="ordenar" style="min-width: 150px;">
-                            <option selected>Ordenar</option>
+                        <select class="ordenar botoes" style="min-width:150px">
+                            <option value="5">Ordenar</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
-                          </select>
+                            </select>
                         
 
                         <div class="botoes" style="cursor:pointer">
@@ -82,10 +82,10 @@
                 
                   <div class="d-flex">                    
                       <div class="default-icones" [ngClass]="{icones: exibicao}" >
-                          <i style="margin-left: 8px;"  class="bi bi-list-ul" (click)="exibicaoLista()"></i>
+                          <i class="bi bi-list-ul" (click)="exibicaoLista()"></i>
                       </div>
                       <div class="default-icones" [ngClass]="{icones: !exibicao}">
-                          <i style="margin-left: 9px;" class="bi bi-grid-3x3-gap-fill" (click)="exibicaoCard()"></i>
+                          <i class="bi bi-grid-3x3-gap-fill" (click)="exibicaoCard()"></i>
                       </div>
                   </div>
             </div>
