@@ -38,6 +38,23 @@ i:hover{
     color: #fff;
     background-color: #275577;
 }
+input{
+    width: 2.3rem;
+    outline: none;
+    border: none;
+}
+.div-adicionar-carrinho{
+    width: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: blue;
+    color:white;
+}
+.div-group{
+    border-radius: 5px;
+    border: 0.5px solid black; position:absolute; right: 5px; bottom:0;
+}
 
 .sombra {
     box-shadow: 4px 3px 6px -4px;
