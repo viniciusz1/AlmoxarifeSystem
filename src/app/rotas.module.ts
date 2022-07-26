@@ -27,6 +27,7 @@ import { ModalFiltroComponent } from './home/modal-filtro/modal-filtro.component
 import CheckLogged from './checklogged';
 import { EntradaComponent } from './home/entrada/entrada.component';
 import { EntradaHistoricoComponent } from './pedidos/historico/entrada-historico/entrada-historico.component';
+import { DashboardComponent } from './pedidos/dashboard/dashboard.component';
 
 
 
@@ -91,6 +92,11 @@ import { EntradaHistoricoComponent } from './pedidos/historico/entrada-historico
         {  
           path: 'cadastrar-produto',
           component: DetalhesProdutoComponent,
+          canActivate: [CheckLogged]
+        },
+        {  
+          path: 'dashboard',
+          component: DashboardComponent,
           canActivate: [CheckLogged]
         },
         {  

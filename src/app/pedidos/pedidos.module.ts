@@ -17,7 +17,10 @@ import { FormsModule } from '@angular/forms';
 import { ExportsModule } from '../shared/exports/exports.module';
 import { EntradaHistoricoComponent } from './historico/entrada-historico/entrada-historico.component';
 import { EntradasService } from '../services/entradas.service';
-
+import { DashboardComponent } from '../pedidos/dashboard/dashboard.component';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -32,13 +35,16 @@ import { EntradasService } from '../services/entradas.service';
     PedidoHistoricoComponent,
     FiltroHistoricoComponent,
     EntradaHistoricoComponent,
-
+    DashboardComponent
   ],
   imports: [
     CommonModule,
     RotasModule,
     FormsModule,
-    ExportsModule
+    ExportsModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatCardModule
   ],
   exports:[
     ConferenciaComponent,
