@@ -10,13 +10,13 @@
     <div class="row" style="height: 50%;">
         <div class="col-8">
             Produtos do dia
-            <div class="row">
+            <div class="row" *ngFor="let entrega of entregas">
                 Entrega 001
-                <app-produto-lista></app-produto-lista>
+                <app-produto-lista [produto]="produto" *ngFor="let produto of entrega.listaProdutos"></app-produto-lista>
 
             </div>
         </div>
-        <div class="col-4">
+        <div class="col-4 d-flex justify-content-center">
             <mat-card class="demo-inline-calendar-card">
                 <mat-calendar [(selected)]="selected"></mat-calendar>
             </mat-card>

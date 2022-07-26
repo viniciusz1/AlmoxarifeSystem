@@ -11,7 +11,7 @@
     <tr class="linha-tabela" *ngFor="let pedido of pedidos">
         
         <td style="position:relative;
-         padding-left: 20   px;"><div class="bloco-azul"></div>{{pedido.codigo}}</td>
+         padding-left: 20px;">{{pedido.codigo}}<div class="bloco-azul"></div></td>
         <td>{{pedido.nomeProfessor}}</td>
         <td class="text-truncate" style="max-width:249px;"><span *ngFor="let produto of pedido.listaProdutos">{{produto.nome}}, </span></td>
         <td><button class="btn btn-primary">Entregar</button></td>
