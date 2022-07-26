@@ -1,0 +1,35 @@
+
+<div class="container">
+    <div class="row mt-5" style="display: flex; justify-content: center;">
+    <div class="" style="font-size: calc(1.3rem + .6vw);">
+        <b>
+            <span>Dashboard</span>
+        </b>
+        <hr style="margin: 0; width: 200px; opacity: 1;">
+    </div>
+    <div class="row" style="height: 50%;">
+        <div class="col-8">
+            Produtos do dia
+            <div class="row">
+                Entrega 001
+                <app-produto-lista></app-produto-lista>
+
+            </div>
+        </div>
+        <div class="col-4">
+            <mat-card class="demo-inline-calendar-card">
+                <mat-calendar [(selected)]="selected"></mat-calendar>
+            </mat-card>
+        </div>
+    </div>
+    <div class="row" style="height: 50%;">
+        <div class="col-6">
+            Entregas do dia
+            <app-pedidos-table></app-pedidos-table>
+        </div>
+        <div class="col-6">
+            Devoluções do dia
+            <app-pedidos-table></app-pedidos-table>
+        </div>
+    </div>
+</div>

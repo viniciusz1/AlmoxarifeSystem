@@ -24,9 +24,13 @@
         <div [ngStyle]="{backgroundColor: corCodigo}" class="position-absolute circle d-flex text-center">
             {{produto.codigo}}
         </div>
-        <i *ngIf="rota == 'produtos'" [routerLink]="['/home/editar-produto/', produto.codigo]" class="bi bi-pen 
+        <i [routerLink]="['/home/editar-produto/', produto.codigo]" class="bi bi-pen 
         position-absolute" style="right: 5px; top:29px;"></i>
-        <i *ngIf="rota == undefined && carrinho==false" (click)="adicionarCarrinho()" class="bi bi-plus-square 
-        position-absolute" style="right: 5px; top:29px;"></i>
-
+       
+        <div style="" class="d-flex div-group">
+            <input type="text" class="">
+            <div class="div-adicionar-carrinho">
+              <span (click)="adicionarCarrinho()"><i class="bi bi-plus-lg"></i></span>
+            </div>
+        </div>
 </div>
