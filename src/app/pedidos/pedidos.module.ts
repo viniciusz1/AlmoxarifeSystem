@@ -21,6 +21,8 @@ import { DashboardComponent } from '../pedidos/dashboard/dashboard.component';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatCardModule} from '@angular/material/card';
+import { HomeModule } from '../home/home.module';
+import { PedidosTableComponent } from './pedidos-table/pedidos-table.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import {MatCardModule} from '@angular/material/card';
     PedidoHistoricoComponent,
     FiltroHistoricoComponent,
     EntradaHistoricoComponent,
-    DashboardComponent
+    DashboardComponent,
+    PedidosTableComponent
   ],
   imports: [
     CommonModule,
@@ -44,7 +47,8 @@ import {MatCardModule} from '@angular/material/card';
     ExportsModule,
     MatNativeDateModule,
     MatDatepickerModule,
-    MatCardModule
+    MatCardModule,
+    HomeModule
   ],
   exports:[
     ConferenciaComponent,
