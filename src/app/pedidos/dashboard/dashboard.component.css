@@ -4,3 +4,8 @@
 .demo-inline-calendar-card {
     width: 300px;
 }
+.fundo{
+    background-color: #f1f1f1;
+    box-shadow: 4px 5px 7px -5px;
+    padding: 1.5rem;
+}

@@ -7,13 +7,16 @@
         </b>
         <hr style="margin: 0; width: 200px; opacity: 1;">
     </div>
-    <div class="row" style="height: 50%;">
+    <div class="fundo row mt-4" style="height: 50%;">
         <div class="col-8">
-            Produtos do dia
+            <h5>
+                PRODUTOS DO DIA
+            </h5>
             <div class="row" *ngFor="let entrega of entregas">
-                Entrega 001
+                <label>
+                    Entrega 001
+                </label>                
                 <app-produto-lista [produto]="produto" *ngFor="let produto of entrega.listaProdutos"></app-produto-lista>
-
             </div>
         </div>
         <div class="col-4 d-flex justify-content-center">
@@ -22,13 +25,17 @@
             </mat-card>
         </div>
     </div>
-    <div class="row" style="height: 50%;">
-        <div class="col-6">
-            Entregas do dia
+    <div class="row my-3" style="height: 50%;">
+        <div class="fundo col-xl-6">
+            <h5>
+                ENTREGAS DO DIA
+            </h5>
             <app-pedidos-table></app-pedidos-table>
         </div>
-        <div class="col-6">
-            Devoluções do dia
+        <div class="fundo col-xl-6">
+            <h5>
+                DEVOLUÇÕES DO DIA
+            </h5>
             <app-pedidos-table></app-pedidos-table>
         </div>
     </div>
