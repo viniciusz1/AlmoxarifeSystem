@@ -8,15 +8,7 @@
                 <div class="pg" style="font-size: calc(1.3rem + .6vw);">
                     <b>
                         <span>SEUS PEDIDOS</span>
-                        <button mat-raised-button
-                        matTooltip="Info about the action"
-                        aria-label="Button that displays a tooltip when focused or hovered over">
-                  Action
-                </button>
-
-
-
-
+    
                     </b>
                     <hr style="margin: 0; width: 200px; opacity: 1;">  
                 </div>
@@ -37,7 +29,8 @@
                         <div class="div-baixo">
                             <div class="Cima">
                                 <div class="d-inline-block text-truncate" style="max-width: 30vw;">
-                                    <i style="font-size: 30px;" (click)="tooltip(i)" matTooltip="{{lista.listaProdutos}}"
+                                    <i style="font-size: 30px;" (mouseover)="tooltip(i)" 
+                                    matTooltip="{{produtosString}}"
                                     aria-label="Button that displays a tooltip when focused or hovered over"
                                     class="bi bi-box2-fill"></i>
                                     <span class="bold" 

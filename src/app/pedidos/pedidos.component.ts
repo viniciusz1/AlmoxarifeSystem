@@ -15,18 +15,22 @@ export class PedidosComponent implements OnInit {
   lista: Pedido[] =  [new Pedido("Jubileu", [new Produto ("Resistor Elétrico1", 1, "Material Elétrico", "produto", "Descartável", "Descrição", 1),
   new Produto ("Resistor Elétrico2", 1, "Material Elétrico", "produto", "Descartável", "Descrição", 1),
   new Produto ("Resistor Elétrico3", 1, "Material Elétrico", "produto", "Descartável", "Descrição", 1),], new Date(), new Date(), 1, 1)]
+
   produtosDaLista: Produto[] = []
+  produtosString = ""
   tooltip(index: number){
-    // this.produtosDaLista.push(this.lista[index].listaProdutos)
+    this.produtosString=""
+    this.produtosDaLista = this.lista[index].listaProdutos as Produto[]
+    for(let i of this.produtosDaLista){
+      this.produtosString += i.nome + ", "
+    }
+    console.log(this.produtosString)
   }
   removerPedido(index: number){
     this.pedidosService.removePedido(index)
   }
   ngOnInit(): void {
     this.lista=this.pedidosService.getPedido()
-    for(let i of this.lista){
-      i.listaProdutos
-    }
   }
 
 }
