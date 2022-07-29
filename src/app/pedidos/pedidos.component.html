@@ -8,6 +8,15 @@
                 <div class="pg" style="font-size: calc(1.3rem + .6vw);">
                     <b>
                         <span>SEUS PEDIDOS</span>
+                        <button mat-raised-button
+                        matTooltip="Info about the action"
+                        aria-label="Button that displays a tooltip when focused or hovered over">
+                  Action
+                </button>
+
+
+
+
                     </b>
                     <hr style="margin: 0; width: 200px; opacity: 1;">  
                 </div>
@@ -29,7 +38,9 @@
                             <div class="Cima">
                                 <div class="d-inline-block text-truncate" style="max-width: 30vw;">
                                     <i style="font-size: 30px;" class="bi bi-box2-fill"></i>
-                                    <span class="bold" *ngFor="let produto of lista.listaProdutos">{{produto.nome}}, </span>
+                                    <span class="bold" matTooltip=""
+                                    aria-label="Button that displays a tooltip when focused or hovered over"
+                                    *ngFor="let produto of lista.listaProdutos">{{produto.nome}}, </span>
                                 </div>
                             </div>
                             <div class="baixo">

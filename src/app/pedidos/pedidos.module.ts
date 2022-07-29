@@ -23,7 +23,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatCardModule} from '@angular/material/card';
 import { HomeModule } from '../home/home.module';
 import { PedidosTableComponent } from './pedidos-table/pedidos-table.component';
-
+import {MatTooltipModule} from '@angular/material/tooltip';
 @NgModule({
   declarations: [
     ConferenciaComponent,
@@ -48,7 +48,8 @@ import { PedidosTableComponent } from './pedidos-table/pedidos-table.component';
     MatNativeDateModule,
     MatDatepickerModule,
     MatCardModule,
-    HomeModule
+    HomeModule,
+    MatTooltipModule
   ],
   exports:[
     ConferenciaComponent,
