@@ -1,16 +1,12 @@
-
-
 <div class="d-flex bg-light">
-
     <div class="container body">
         <div class="principais">
             <div class="topo">
                 <div class="pg" style="font-size: calc(1.3rem + .6vw);">
                     <b>
                         <span>SEUS PEDIDOS</span>
-    
                     </b>
-                    <hr style="margin: 0; width: 200px; opacity: 1;">  
+                    <hr style="margin: 0; width: 200px; opacity: 1;">
                 </div>
             </div>
             <div class="row">
@@ -20,8 +16,8 @@
                             <div>
                                 <p>Código Pedido: {{lista.codigo}}</p>
                             </div>
-                            <div>
-                                <div class="info">
+                            <div> 
+                            <div class="info">
                                     <i style="font-size: 20px;" class="bi bi-info-circle"></i>
                                 </div>
                             </div>
@@ -29,23 +25,22 @@
                         <div class="div-baixo">
                             <div class="Cima">
                                 <div class="d-inline-block text-truncate" style="max-width: 30vw;">
-                                    <i style="font-size: 30px;" (mouseover)="tooltip(i)" 
-                                    matTooltip="{{produtosString}}"
-                                    aria-label="Button that displays a tooltip when focused or hovered over"
-                                    class="bi bi-box2-fill"></i>
-                                    <span class="bold" 
-                                    *ngFor="let produto of lista.listaProdutos">{{produto.nome}}, </span>
+                                    <i style="font-size: 30px;" (mouseover)="tooltip(i)" matTooltip="{{produtosString}}"
+                                        aria-label="Button that displays a tooltip when focused or hovered over"
+                                        class="bi bi-box2-fill"></i>
+                                    <span class="bold" *ngFor="let produto of lista.listaProdutos">{{produto.nome}},
+                                    </span>
                                 </div>
                             </div>
                             <div class="baixo">
-                                    <div class="dataRetirada">
-                                        <i style="font-size: 30px;" class="bi bi-calendar2-plus"></i>
-                                        <span class="bold">{{lista.dataReserva | date: 'dd/MM/yyyy'}}</span>
-                                    </div>
-                                    <div class="dataDevolucao">
-                                        <i style="font-size: 30px;" class="bi bi-calendar2-check"></i>
-                                        <span class="bold">{{lista.dataDevolucao | date: 'dd/MM/yyyy'}}</span>
-                                    </div>
+                                <div class="dataRetirada">
+                                    <i style="font-size: 30px;" class="bi bi-calendar2-plus"></i>
+                                    <span class="bold">{{lista.dataReserva | date: 'dd/MM/yyyy'}}</span>
+                                </div>
+                                <div class="dataDevolucao">
+                                    <i style="font-size: 30px;" class="bi bi-calendar2-check"></i>
+                                    <span class="bold">{{lista.dataDevolucao | date: 'dd/MM/yyyy'}}</span>
+                                </div>
                             </div>
                         </div>
                         <div class="footer">
