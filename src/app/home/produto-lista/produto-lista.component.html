@@ -6,12 +6,12 @@
         <div style="width: 30%; padding-left: 8%;">
             {{produto.quantidade}}
         </div>
-            <div class="d-flex div-group">
+            <div style="right: 30px;" *ngIf="tiraQuantidade == false" class="d-flex div-group">
                 <input type="text" class="">
                 <div class="div-adicionar-carrinho">
                   <span (click)="adicionarCarrinho()"><i class="bi bi-plus-lg"></i></span>
                 </div>
             </div>
             <i [routerLink]="['/home/editar-produto/', produto.codigo]" class="bi bi-pen 
-        position-absolute" style="right: 5px; top:29px;"></i>
+        position-absolute" style="position:absolute;right: 5px;bottom: 5px;"></i>
 </div>

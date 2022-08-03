@@ -12,6 +12,7 @@ import Swal from 'sweetalert2';
 export class ProdutoListaComponent implements OnInit {
   @Input() produto: Produto = new Produto();
   @Input() indiceProduto: number = 0;
+  @Input() tiraQuantidade = false
   rota = ""
   abreDetalhesProduto(){
     this.router.navigate(['/detalhes-produto'])
@@ -76,6 +77,7 @@ export class ProdutoListaComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.rota = params['id'];
     })
+    console.log(this.tiraQuantidade)
   }
 
 }
