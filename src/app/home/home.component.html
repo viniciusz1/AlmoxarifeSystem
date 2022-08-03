@@ -4,13 +4,20 @@
 
 
 
-            <div class="d-flex" style="justify-content: space-between;">
-                <div class="" style="font-size: calc(1.3rem + .6vw);">
-                    <b>
-                        <span>{{titulo | uppercase}}</span>
-                    </b>
-                    <hr style="margin: 0; width: 200px; opacity: 1;">
-                </div>
+            <div class="d-flex" style="position:relative ;justify-content: space-between;">
+                    <nav aria-label="breadcrumb" style="position: absolute;top: -30px;">
+                        <ol class="breadcrumb">
+                          <li class="breadcrumb-item"><a href="#">Home</a></li>
+                          <li class="breadcrumb-item"><a href="#">Library</a></li>
+                          <li class="breadcrumb-item active" aria-current="page">Data</li>
+                        </ol>
+                      </nav>
+                    <div class="" style="font-size: calc(1.3rem + .6vw);">
+                        <b>
+                            <span>{{titulo | uppercase}}</span>
+                        </b>
+                        <hr style="margin: 0; width: 200px; opacity: 1;">
+                    </div>            
                 <div *ngIf="home" class="topo-2">
                     <div style="cursor:pointer" class="d-flex superior-direito">
 
