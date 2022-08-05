@@ -25,7 +25,7 @@ export const navbarData = [
         label: 'Devoluções'
     },
     {
-        routeLink: '/home/entrada/0',
+        routeLink: '/home/entrada/',
         icon: 'bi bi-chevron-double-up',
         label: 'Dar entrada'
     },
@@ -44,9 +44,4 @@ export const navbarData = [
         icon: 'bi bi-list-task',
         label: 'Dashboard',
     },
-    {
-        routeLink: '/home/dashboard',
-        icon: 'bi bi-list-task',
-        label: 'Dashboard',
-    }
 ];
