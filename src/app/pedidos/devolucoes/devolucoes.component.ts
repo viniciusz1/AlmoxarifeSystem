@@ -10,7 +10,7 @@ import { PedidosService } from 'src/app/services/pedidos.service';
 })
 export class DevolucoesComponent implements OnInit {
 
-
+  pesquisaDevolucao=""
   constructor(private router: Router,
     private pedidos: PedidosService) {
   }

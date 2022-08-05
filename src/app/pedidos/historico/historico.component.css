@@ -15,6 +15,44 @@
     display: grid;
 }
 
+.filtrar{
+    background-color: #275577;
+    padding: 5px 10px;
+    color:white;
+    border-radius: 0px 3px 3px 0px;
+}
+.input-pedido{
+    max-width: 180px;
+}
+.lupa{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px 0 10px;
+}
+.pesquisa{
+    border: 0.5px solid black;
+    border-radius: 5px;
+
+    z-index: 1;
+}
+.botoes{
+    background-color: #275577;
+        padding: 5px 10px;
+        color:white;
+        border-radius: 3px;
+}
+.ordenar{
+    outline: none;
+    width:120px;
+    color: white;
+    background-color: #275577;
+    border: 1px solid #333;
+    padding-right: 20px;
+    border-radius: 3px;
+    outline:none
+}
+
 .div-cima{
     background-color: #275577;
     color: white;
@@ -89,7 +127,7 @@ input{
     color: white;
 }
 
-.ordenar, .filtrar{
+.ordenar{
     background-color: #275577;
     border: 1px solid black;
     padding: 5px 10px;
