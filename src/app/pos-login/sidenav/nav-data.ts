@@ -25,7 +25,7 @@ export const navbarData = [
         label: 'Devoluções'
     },
     {
-        routeLink: '/home/entrada/',
+        routeLink: '/home/entrada/0',
         icon: 'bi bi-chevron-double-up',
         label: 'Dar entrada'
     },

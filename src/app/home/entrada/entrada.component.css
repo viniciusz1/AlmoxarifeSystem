@@ -7,6 +7,11 @@
     overflow: auto;
     max-height: 76vh;
 }
+.quadrado{
+    background: #275577;
+    padding: 20px;
+    color:white;
+}
 .pesquisa{
     border-bottom: 0.5px solid black;
     max-width: 225px;

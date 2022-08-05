@@ -23,6 +23,7 @@ export class EntradaComponent implements OnInit {
   codigo = 0;
   imagem = ""
   tiraQuantidade = true
+
   ngOnInit(): void {
     this.lista = this.prod.getListaProdutos()  
     this.router.params.subscribe(e => {
