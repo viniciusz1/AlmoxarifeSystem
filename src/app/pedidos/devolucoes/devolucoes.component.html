@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-md-2 col-sm-12" style="font-size: calc(1.3rem + .6vw);">
                     <b>
-                        <span>DEVOLUÇÕES</span>
+                        <span>{{titulo}}</span>
                     </b>
                     <hr style="margin: 0; width: 200px; opacity: 1;">
                 </div>
@@ -63,8 +63,8 @@
                 <div class="data">
                     <span>{{lista.dataDevolucao | date: 'dd/MM/yyyy'}}</span>
                 </div>
-                <div class="botao" [routerLink]="['/home/devolucoes/', i]">
-                    <button>Realizar Devolução</button>
+                <div class="botao" [routerLink]="[url, i]">
+                    <button>{{textoBotao}}</button>
                 </div>
             </div>
 

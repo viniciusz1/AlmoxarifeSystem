@@ -116,7 +116,7 @@ import { DashboardComponent } from './pedidos/dashboard/dashboard.component';
         },
         {
           path: 'entregas',
-          component: EntregasComponent,
+          component: DevolucoesComponent,
           canActivate:[CheckLogged]
         },
         {

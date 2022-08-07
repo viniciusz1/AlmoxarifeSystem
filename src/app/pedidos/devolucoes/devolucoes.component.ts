@@ -14,10 +14,25 @@ export class DevolucoesComponent implements OnInit {
   constructor(private router: Router,
     private pedidos: PedidosService) {
   }
-
+  url = ""
   lista: Pedido[] = []
+  modo = 'devolucoes'
+  textoBotao=""
+  titulo=""
+
   ngOnInit(): void { 
     this.lista = this.pedidos.getDevolucoes()
+    this.url = this.router.url
+    if(this.url == "/home/devolucoes"){
+      this.modo = 'devolucoes'
+      this.titulo = "DEVOLUÇÕES"
+      this.textoBotao = "Devolver"
+    }else{
+      this.modo = 'entregas'
+      this.titulo = "ENTREGAS"
+      this.textoBotao = "Entregar"
+    }
+
   }
 
 }
