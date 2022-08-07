@@ -1,6 +1,5 @@
 import { HistoricoComponent } from './historico/historico.component';
 import { ModalDevolucaoComponent } from './modal-devolucao/modal-devolucao.component'
-import { EntregasComponent } from './entregas/entregas.component'
 import { DevolucoesComponent } from './devolucoes/devolucoes.component'
 import { ConferenciaComponent } from './conferencia/conferencia.component'
 import { PedidosComponent } from './pedidos.component'
@@ -29,7 +28,6 @@ import {MatFormFieldModule} from '@angular/material/form-field'
   declarations: [
     ConferenciaComponent,
     DevolucoesComponent,
-    EntregasComponent,
     ModalDevolucaoComponent,
     ModalDevolucaoComponent,
     PedidosComponent,
@@ -56,7 +54,6 @@ import {MatFormFieldModule} from '@angular/material/form-field'
   exports:[
     ConferenciaComponent,
     DevolucoesComponent,
-    EntregasComponent,
     ModalDevolucaoComponent,
     ModalDevolucaoComponent,
     ConfirmarComponent,
