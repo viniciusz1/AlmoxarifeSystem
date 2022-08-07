@@ -18,14 +18,17 @@ export class DashboardComponent implements OnInit {
     ) { }
   selected: Date = new Date()
   entregas: Pedido[] = []
-
+  devolucoes: Pedido[] = []
   mudou(){
-  this.entregas = this.pedidosService.getByDate(this.selected)
+  this.entregas = this.pedidosService.getEntregasByDate(this.selected)
+  this.devolucoes = this.pedidosService.getDevolucoesByDate(this.selected)
+
   }
   ngOnInit(): void {
     this._locale = 'pt-br';
     this._adapter.setLocale(this._locale);
-    this.entregas = this.pedidosService.getByDate(this.selected)
+    this.entregas = this.pedidosService.getEntregasByDate(this.selected)
+    this.devolucoes = this.pedidosService.getDevolucoesByDate(this.selected)
   }
 
 }
