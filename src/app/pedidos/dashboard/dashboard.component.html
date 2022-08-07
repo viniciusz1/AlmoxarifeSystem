@@ -16,7 +16,7 @@
                 <label>
                     Entrega 001
                 </label>                
-                <app-produto-lista [produto]="produto" *ngFor="let produto of entrega.listaProdutos"></app-produto-lista>
+                <app-produto-lista [tiraQuantidade]="true" [produto]="produto" *ngFor="let produto of entrega.listaProdutos"></app-produto-lista>
             </div>
         </div>
         <div class="col-4 d-flex justify-content-center">

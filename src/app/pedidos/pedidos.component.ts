@@ -24,6 +24,7 @@ export class PedidosComponent implements OnInit {
     for(let i of this.produtosDaLista){
       this.produtosString += i.nome + ", "
     }
+    this.produtosString = this.produtosString.substring(0,this.produtosString.length-2)
     console.log(this.produtosString)
   }
   removerPedido(index: number){

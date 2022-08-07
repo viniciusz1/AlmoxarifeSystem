@@ -25,10 +25,9 @@
                         <div class="div-baixo">
                             <div class="Cima">
                                 <div class="d-inline-block text-truncate" style="max-width: 30vw;">
-                                    <i style="font-size: 30px;" (mouseover)="tooltip(i)" matTooltip="{{produtosString}}"
-                                        aria-label="Button that displays a tooltip when focused or hovered over"
+                                    <i style="font-size: 30px;" (mouseover)="tooltip(i)" title="{{produtosString}}"
                                         class="bi bi-box2-fill"></i>
-                                    <span class="bold" *ngFor="let produto of lista.listaProdutos">{{produto.nome}},
+                                    <span title="{{produtosString}}" class="bold" *ngFor="let produto of lista.listaProdutos">{{produto.nome}},
                                     </span>
                                 </div>
                             </div>
