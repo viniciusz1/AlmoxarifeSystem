@@ -9,3 +9,7 @@
     box-shadow: 4px 5px 7px -5px;
     padding: 1.5rem;
 }
+.scroll{
+    overflow: auto;
+    max-height: 47vh;
+}

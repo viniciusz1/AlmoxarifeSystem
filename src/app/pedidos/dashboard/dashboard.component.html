@@ -12,7 +12,7 @@
             <h5>
                 PRODUTOS DO DIA
             </h5>
-            <div class="row" *ngFor="let entrega of entregas">
+            <div class="row scroll" *ngFor="let entrega of entregas">
                 <label>
                     Entrega 001
                 </label>                
@@ -21,18 +21,19 @@
         </div>
         <div class="col-4 d-flex justify-content-center">
             <mat-card class="demo-inline-calendar-card">
-                <mat-calendar [(selected)]="selected"></mat-calendar>
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-calendar (click)="mudou()" [(selected)]="selected"></mat-calendar>
             </mat-card>
         </div>
     </div>
     <div class="row my-3" style="height: 50%;">
-        <div class="fundo col-xl-6">
+        <div class="fundo scroll col-xl-6">
             <h5>
                 ENTREGAS DO DIA
             </h5>
             <app-pedidos-table></app-pedidos-table>
         </div>
-        <div class="fundo col-xl-6">
+        <div class="fundo scroll col-xl-6">
             <h5>
                 DEVOLUÇÕES DO DIA
             </h5>
