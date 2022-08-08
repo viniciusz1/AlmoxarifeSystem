@@ -19,7 +19,7 @@ export class HistoricoComponent implements OnInit {
 
   constructor(private historicoService: HistoricoService,
     private entradasService: EntradasService) { }
-
+    pesquisaPedido = ""
   lista:Pedido[] = [new Pedido()]
   // eh:Entrada[] = []
   ngOnInit(): void {

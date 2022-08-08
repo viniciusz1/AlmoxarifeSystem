@@ -153,12 +153,6 @@ p{
     align-items: center;
 }
 
-.pesquisa{
-    border: 0.5px solid black;
-    border-radius: 5px;
-
-    z-index: 1;
-}
 
 input{
     border: transparent;
@@ -168,22 +162,34 @@ input{
 ::-webkit-input-placeholder {
     color: black;
  }
-.lupa{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 10px 0 10px;
-}
+
 .icone{
     color: white;
     display: flex;
 }
+
+
 
 .filtrar{
     background-color: #275577;
     padding: 5px 10px;
     color:white;
     border-radius: 0px 3px 3px 0px;
+}
+.input-pedido{
+    max-width: 180px;
+}
+.lupa{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px 0 10px;
+}
+.pesquisa{
+    border: 0.5px solid black;
+    border-radius: 5px;
+
+    z-index: 1;
 }
 .botoes{
     background-color: #275577;
@@ -210,9 +216,9 @@ input{
     background: #000;
 }
 
-.input-pedido{
-    max-width: 180px;
-}
+
+
+
 .filtross{
     border: none;
     background-color: transparent;

@@ -11,7 +11,7 @@ import { FiltroProdutosPipe } from 'src/app/pipes/filtro-produtos.pipe';
     CommonModule,
   ],
   exports: [
-    FiltroProdutosPipe
+    FiltroProdutosPipe,
   ]
 })
 export class ExportsModule { }

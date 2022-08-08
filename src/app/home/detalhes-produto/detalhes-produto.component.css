@@ -1,7 +1,9 @@
 .quadrado{
-    width: 900px;
-    height: 500px;
     padding: 2%;
+    border-left: 10px solid #1f394f;
+    box-shadow: 4px 5px 7px -5px;
+    margin: 25px 0px;
+    background-color: #f1f1f1;
 }
 .margin-fixed{
     width: 60px;
@@ -12,9 +14,7 @@
     margin-top: 50px;
     margin-bottom: 5px;
 }
-.margem-botao{
-    padding-bottom: 50px;
-}
+
 label{
     padding: 0;
 }

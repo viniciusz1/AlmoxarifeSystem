@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { PedidosService } from 'src/app/services/pedidos.service';
 import { Pedido } from 'src/app/shared/pedido.model';
 
@@ -8,11 +8,10 @@ import { Pedido } from 'src/app/shared/pedido.model';
   styleUrls: ['./pedidos-table.component.css']
 })
 export class PedidosTableComponent implements OnInit {
-
+  @Input() pedidos:Pedido[] = []
+  @Input() botao: string = ""
   constructor(private pedidosService: PedidosService) { }
-  pedidos: Pedido[] = []
   ngOnInit(): void {
-    this.pedidos = this.pedidosService.getEntregas();
   }
 
 }

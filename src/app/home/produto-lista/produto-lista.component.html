@@ -3,8 +3,21 @@
     <div class="ms-4" style="width:10%">{{produto.codigo}}</div>
         <div style="width:30%">{{produto.nome}}</div>
         <div style="width:30%">{{produto.classificacao}}</div>
-        <div style="width: 30%; padding-left: 8%;">
-            {{produto.quantidade}}</div>
-        <i *ngIf="rota == 'produtos'" [routerLink]="['/home/detalhes-produto/', indiceProduto]" class="bi bi-pen" style="right: 5px; top:29px;"></i>
-        <i *ngIf="rota == undefined" (click)="adicionarCarrinho()" class="bi bi-plus-square" style="right: 5px; top:29px;"></i>
+        <div style="width: 30%">
+            {{produto.quantidade}}
+        </div>
+            <div style="position:absolute; right: 30px;" *ngIf="tiraQuantidade == false" class="d-flex div-group">
+                <input type="text" class="">
+                <div class="div-adicionar-carrinho">
+                  <span (click)="adicionarCarrinho()"><i class="bi bi-plus-lg"></i></span>
+                </div>
+            </div>
+            <input *ngIf="dashboard" type="checkbox" name="" id="" 
+            style="position: absolute;
+            right: -4px;
+            bottom: 10px;
+            /* padding: 30px; */
+            height: 17px;">
+            <i *ngIf="!dashboard" [routerLink]="['/home/editar-produto/', produto.codigo]" class="bi bi-pen" 
+            style="position:absolute;right: 5px;bottom: 5px;"></i>
 </div>

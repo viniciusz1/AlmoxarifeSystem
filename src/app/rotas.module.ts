@@ -1,7 +1,6 @@
 import { ProdutoListaComponent } from './home/produto-lista/produto-lista.component';
 import { DevolucoesComponent } from './pedidos/devolucoes/devolucoes.component';
 import { ConferenciaComponent } from './pedidos/conferencia/conferencia.component';
-import { EntregasComponent } from './pedidos/entregas/entregas.component';
 import { HistoricoComponent } from './pedidos/historico/historico.component';
 import { VerificarTelComponent } from './logins/verificar-tel/verificar-tel.component';
 import { LoginComponent } from './logins/login/login.component';
@@ -116,7 +115,7 @@ import { DashboardComponent } from './pedidos/dashboard/dashboard.component';
         },
         {
           path: 'entregas',
-          component: EntregasComponent,
+          component: DevolucoesComponent,
           canActivate:[CheckLogged]
         },
         {

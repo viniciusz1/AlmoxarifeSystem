@@ -1,6 +1,5 @@
 import { HistoricoComponent } from './historico/historico.component';
 import { ModalDevolucaoComponent } from './modal-devolucao/modal-devolucao.component'
-import { EntregasComponent } from './entregas/entregas.component'
 import { DevolucoesComponent } from './devolucoes/devolucoes.component'
 import { ConferenciaComponent } from './conferencia/conferencia.component'
 import { PedidosComponent } from './pedidos.component'
@@ -23,12 +22,12 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatCardModule} from '@angular/material/card';
 import { HomeModule } from '../home/home.module';
 import { PedidosTableComponent } from './pedidos-table/pedidos-table.component';
-
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatFormFieldModule} from '@angular/material/form-field'
 @NgModule({
   declarations: [
     ConferenciaComponent,
     DevolucoesComponent,
-    EntregasComponent,
     ModalDevolucaoComponent,
     ModalDevolucaoComponent,
     PedidosComponent,
@@ -48,12 +47,13 @@ import { PedidosTableComponent } from './pedidos-table/pedidos-table.component';
     MatNativeDateModule,
     MatDatepickerModule,
     MatCardModule,
-    HomeModule
+    HomeModule,
+    MatTooltipModule,
+    MatFormFieldModule
   ],
   exports:[
     ConferenciaComponent,
     DevolucoesComponent,
-    EntregasComponent,
     ModalDevolucaoComponent,
     ModalDevolucaoComponent,
     ConfirmarComponent,

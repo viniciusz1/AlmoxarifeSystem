@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="d-flex">
+    <div class="d-flex" style="justify-content: space-between;">
         <div class="pg" style="min-width: 240px;font-size: calc(1.3rem + .6vw);">
             <b>
                 <span>{{botao | uppercase}}</span>
@@ -53,16 +53,18 @@
                     </div>
                 </div>
             </div>
-            <div class="row mb-5">
+            <div class="row mb-3">
                 <div class="padding-select">
                     <label for="exampleFormControlTextarea1" class="">Descrição</label>
                     <textarea class="form-control"
                         id="exampleFormControlTextarea1" formControlName="descricao" rows="3"></textarea>
                 </div>
+                
             </div>
-            <div *ngIf="botao != 'Detalhes-produto'" class="margem-botao" style="display: flex; justify-content: end;">
-                <button (click)="onSubmit()" class="btn btn-primary">{{botao}}</button>
-            </div>
+            
         </form>
+        <div *ngIf="botao != 'Detalhes-produto'" class="margem-botao" style="display: flex; justify-content: end;">
+            <button (click)="onSubmit()" class="btn btn-primary">{{botao}}</button>
+        </div>
     </div>
 </div>
