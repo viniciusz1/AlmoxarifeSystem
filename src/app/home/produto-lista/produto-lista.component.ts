@@ -13,6 +13,8 @@ export class ProdutoListaComponent implements OnInit {
   @Input() produto: Produto = new Produto();
   @Input() indiceProduto: number = 0;
   @Input() tiraQuantidade = false
+  @Input() dashboard: boolean = false
+
   rota = ""
   abreDetalhesProduto(){
     this.router.navigate(['/detalhes-produto'])

@@ -14,7 +14,9 @@
                             <span>{{titulo | uppercase}}</span>
                         </b>
                         <hr style="margin: 0; width: 200px; opacity: 1;">
-                    </div>            
+                    </div>       
+                    
+                    
                 <div *ngIf="home" class="topo-2">
                     <div style="cursor:pointer" class="d-flex superior-direito">
 
@@ -53,30 +55,6 @@
                         </div>
                     </div>
                 </div>
-
-
-
-
-
-                <div *ngIf="!home" class="topo-2 col-md-10 col-sm-12">
-                    <div class="row superior-direito">
-                        <div style="cursor:pointer" class="col-sm-4">
-                            <div class="pesquisa d-flex">
-                                <i class="bi bi-search"></i>
-                                <input [(ngModel)]="pesquisaProduto" placeholder="Pesquisar Pedido">
-                            </div>
-                        </div>
-                        
-                        <div class="filtrar col-sm-2">
-                            <div class="icone" style="min-width: 122px; cursor:pointer">
-                                <button class="filtross" (click)="modalOpen(false)">Filtrar Mais</button>
-                                <i class="bi bi-sliders"></i>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-
 
 
 
@@ -120,6 +98,7 @@
             </div>
         </div>
     </div>
+
     
     <app-carrinho (fechaCarrinho)="closeCart($event)" (reserva)="mudarModalReserva($event)" [state]="carState"
         class="position-fixed bg-primary carrinho-side"></app-carrinho>

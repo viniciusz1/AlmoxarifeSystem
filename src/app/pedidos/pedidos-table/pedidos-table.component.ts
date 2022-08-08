@@ -9,6 +9,7 @@ import { Pedido } from 'src/app/shared/pedido.model';
 })
 export class PedidosTableComponent implements OnInit {
   @Input() pedidos:Pedido[] = []
+  @Input() botao: string = ""
   constructor(private pedidosService: PedidosService) { }
   ngOnInit(): void {
   }

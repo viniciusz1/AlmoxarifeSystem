@@ -18,7 +18,7 @@
                         <label>
                             Entrega 001
                         </label>                
-                        <app-produto-lista [tiraQuantidade]="true" [produto]="produto" *ngFor="let produto of entrega.listaProdutos"></app-produto-lista>
+                        <app-produto-lista [dashboard]="true" [tiraQuantidade]="true" [produto]="produto" *ngFor="let produto of entrega.listaProdutos"></app-produto-lista>
                     </div>
                 </div>
                 
@@ -35,13 +35,13 @@
                 <h5>
                     ENTREGAS DO DIA
                 </h5>
-                <app-pedidos-table [pedidos]="entregas"></app-pedidos-table>
+                <app-pedidos-table [botao]="'Entregar'" [pedidos]="entregas"></app-pedidos-table>
             </div>
             <div class="scroll col-xl-6" style="min-height: 30vh;">
                 <h5>
                     DEVOLUÇÕES DO DIA
                 </h5>
-                <app-pedidos-table [pedidos]="devolucoes"></app-pedidos-table>
+                <app-pedidos-table [botao]="'Devolver'" [pedidos]="devolucoes"></app-pedidos-table>
             </div>
         </div>
     </div>
