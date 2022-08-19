@@ -33,13 +33,14 @@ export class ProdutoComponent implements OnInit {
     // if(!this.carrinhoService.verificaSeJaTem(this.produto.codigo)){
       this.mudarCor();
       this.carrinhoService.addProduto(new Produto(this.produto.nome as string, 
-        this.quantidadeCarrinho as number, 
+        this.produto.quantidade as number, 
         this.produto.classificacao as string,
         this.produto.localidade as string, 
         this.produto.opcaoUso as string, 
         this.produto.descricao as string, 
         this.produto.codigo as number,
-        this.produto.imagem as string))
+        this.produto.imagem as string,
+        this.quantidadeCarrinho as number))
       Swal.fire({
         position: 'bottom-end',
         imageUrl: this.produto.imagem,
