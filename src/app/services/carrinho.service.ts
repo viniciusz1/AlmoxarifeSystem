@@ -23,12 +23,10 @@ export class CarrinhoService {
    addProduto(produto: Produto){
     if(this.lista.some(e => e.codigo == produto.codigo)){ //Se já existir esse produto no carrinho..
       this.lista.find(e => {
-        let a = e.quantidade as number
-        let b = produto.quantidade as number
-        console.log(a)
-        console.log(b)
+        let a = +e.quantidade!
+        let b = +produto.quantidade!
         if(e.codigo == produto.codigo){
-          e.quantidade = a + b
+          e.quantidade = a+b
         }
       })
     }else{
