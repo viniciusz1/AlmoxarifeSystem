@@ -7,6 +7,7 @@ export class Produto {
     public descricao?: string;
     public codigo?: number;
     public imagem?: string;
+    
 
     constructor()
     constructor(nome: string, quantidade: number, classificacao: string, localidade: string, opcaoUso: string,descricao: string, codigo: number)

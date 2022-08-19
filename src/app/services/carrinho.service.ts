@@ -21,7 +21,20 @@ export class CarrinhoService {
       return this.lista
    }
    addProduto(produto: Produto){
-    this.lista.push(produto)
+    if(this.lista.some(e => e.codigo == produto.codigo)){ //Se já existir esse produto no carrinho..
+      this.lista.find(e => {
+        let a = e.quantidade as number
+        let b = produto.quantidade as number
+        console.log(a)
+        console.log(b)
+        if(e.codigo == produto.codigo){
+          e.quantidade = a + b
+        }
+      })
+    }else{
+
+      this.lista.push(produto)
+    }
     this.tamanhoCarrinho.emit(this.lista.length)
    }
   constructor() { }
