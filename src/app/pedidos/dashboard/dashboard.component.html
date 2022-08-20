@@ -19,19 +19,13 @@
                                              (closed)="panelOpenState = false">
                           <mat-expansion-panel-header>
                             <mat-panel-title>
-                              Entrega 001
+                              Entrega: {{entrega.codigo}}
                             </mat-panel-title>
                           </mat-expansion-panel-header>
                           <app-produto-lista [dashboard]="true" [tiraQuantidade]="true" 
                         [produto]="produto" *ngFor="let produto of entrega.listaProdutos"></app-produto-lista>
                         </mat-expansion-panel>
                       </mat-accordion>
-                    <div class="row" >
-                        <label>
-                            Entrega 001
-                        </label>                
-                        
-                    </div>
                 </div>
                 
             </div>
