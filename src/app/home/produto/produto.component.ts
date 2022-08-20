@@ -32,34 +32,40 @@ export class ProdutoComponent implements OnInit {
   adicionarCarrinho() {
     // if(!this.carrinhoService.verificaSeJaTem(this.produto.codigo)){
       this.mudarCor();
-      this.carrinhoService.addProduto(new Produto(this.produto.nome as string, 
-        this.produto.quantidade as number, 
-        this.produto.classificacao as string,
-        this.produto.localidade as string, 
-        this.produto.opcaoUso as string, 
-        this.produto.descricao as string, 
-        this.produto.codigo as number,
-        this.produto.imagem as string,
-        this.quantidadeCarrinho as number))
-      Swal.fire({
-        position: 'bottom-end',
-        imageUrl: this.produto.imagem,
-        imageHeight: '100px',
-        imageWidth:'100px',
-        timerProgressBar: true,
-        html:
-        'Produto <b>'+ this.produto.nome+'</b> adicionado ao carrinho!',
-        color: 'white',
-        showConfirmButton: false,
-        background: '#1f394f',
-        backdrop: `
-        transparent
-        `,
-        
-        width:'200px',
-        heightAuto: false,
-        timer: 1500
-      })
+      try{
+        this.carrinhoService.addProduto(new Produto(this.produto.nome as string, 
+          this.produto.quantidade as number, 
+          this.produto.classificacao as string,
+          this.produto.localidade as string, 
+          this.produto.opcaoUso as string, 
+          this.produto.descricao as string, 
+          this.produto.codigo as number,
+          this.produto.imagem as string,
+          this.quantidadeCarrinho as number))
+          Swal.fire({
+            position: 'bottom-end',
+            imageUrl: this.produto.imagem,
+            imageHeight: '100px',
+            imageWidth:'100px',
+            timerProgressBar: true,
+            html:
+            'Produto <b>'+ this.produto.nome+'</b> adicionado ao carrinho!',
+            color: 'white',
+            showConfirmButton: false,
+            background: '#1f394f',
+            backdrop: `
+            transparent
+            `,
+            
+            width:'200px',
+            heightAuto: false,
+            timer: 1500
+          })
+      }catch(err){
+        alert(err)
+      }
+      
+      
     // }
     // else{
     //   Swal.fire({
