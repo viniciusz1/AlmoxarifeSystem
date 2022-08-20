@@ -25,7 +25,9 @@ export class HomeComponent implements OnInit {
   filtroEspecializado: Produto = new Produto()
   exibicao = false; // false == bloco ! == lista
   numeroCarrinho = 0
-
+  titulo = ""
+  rota = "";
+  home = true
   
 
   exibicaoLista(){
@@ -51,9 +53,7 @@ export class HomeComponent implements OnInit {
     this.carState = "fechado"
   }
 
-  titulo = ""
-  rota = "";
-  home = true
+  
   
   ngOnInit(): void {  
     this.lista = this.prod.getListaProdutos()  

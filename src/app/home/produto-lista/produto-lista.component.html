@@ -7,7 +7,7 @@
             {{produto.quantidade}}
         </div>
             <div style="position:absolute; right: 30px;" *ngIf="tiraQuantidade == false" class="d-flex div-group">
-                <input type="text" class="">
+                <input [(ngModel)]="quantidadeCarrinho" type="text" class="">
                 <div class="div-adicionar-carrinho">
                   <span (click)="adicionarCarrinho()"><i class="bi bi-plus-lg"></i></span>
                 </div>

@@ -23,55 +23,71 @@ export class ProdutoComponent implements OnInit {
     private route: ActivatedRoute
     ) { }
   corCodigo = '#275577'
+  quantidadeCarrinho = 0
   mudarCor(){
     if(this.corCodigo == '#275577'){
       this.corCodigo = '#000'
     }
   }
   adicionarCarrinho() {
-    if(!this.carrinhoService.verificaSeJaTem(this.produto.codigo)){
+    // if(!this.carrinhoService.verificaSeJaTem(this.produto.codigo)){
       this.mudarCor();
-      this.carrinhoService.addProduto(this.produto)
-      Swal.fire({
-        position: 'bottom-end',
-        imageUrl: this.produto.imagem,
-        imageHeight: '100px',
-        imageWidth:'100px',
-        timerProgressBar: true,
-        html:
-        'Produto <b>'+ this.produto.nome+'</b> adicionado ao carrinho!',
-        color: 'white',
-        showConfirmButton: false,
-        background: '#1f394f',
-        backdrop: `
-        transparent
-        `,
+      try{
+        this.carrinhoService.addProduto(new Produto(this.produto.nome as string, 
+          this.produto.quantidade as number, 
+          this.produto.classificacao as string,
+          this.produto.localidade as string, 
+          this.produto.opcaoUso as string, 
+          this.produto.descricao as string, 
+          this.produto.codigo as number,
+          this.produto.imagem as string,
+          this.quantidadeCarrinho as number))
+          Swal.fire({
+            position: 'bottom-end',
+            imageUrl: this.produto.imagem,
+            imageHeight: '100px',
+            imageWidth:'100px',
+            timerProgressBar: true,
+            html:
+            'Produto <b>'+ this.produto.nome+'</b> adicionado ao carrinho!',
+            color: 'white',
+            showConfirmButton: false,
+            background: '#1f394f',
+            backdrop: `
+            transparent
+            `,
+            
+            width:'200px',
+            heightAuto: false,
+            timer: 1500
+          })
+      }catch(err){
+        alert(err)
+      }
+      
+      
+    // }
+    // else{
+    //   Swal.fire({
+    //     position: 'bottom-end',
+    //     icon: 'error',
+    //     imageHeight: '100px',
+    //     imageWidth:'100px',
+    //     timerProgressBar: true,
+    //     html:
+    //     'Produto <b>'+ this.produto.nome+'</b> já está em seu carrinho!',
+    //     color: 'white',
+    //     showConfirmButton: false,
+    //     background: '#1f394f',
+    //     backdrop: `
+    //     transparent
+    //     `,
         
-        width:'200px',
-        heightAuto: false,
-        timer: 1500
-      })
-    }else{
-      Swal.fire({
-        position: 'bottom-end',
-        icon: 'error',
-        imageHeight: '100px',
-        imageWidth:'100px',
-        timerProgressBar: true,
-        html:
-        'Produto <b>'+ this.produto.nome+'</b> já está em seu carrinho!',
-        color: 'white',
-        showConfirmButton: false,
-        background: '#1f394f',
-        backdrop: `
-        transparent
-        `,
-        
-        width:'200px',
-        heightAuto: false,
-        timer: 1500
-      })
-    }
+    //     width:'200px',
+    //     heightAuto: false,
+    //     timer: 1500
+    //   })
+    // }
     
   }
   rota = ""
