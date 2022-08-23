@@ -7,12 +7,12 @@ export const navbarData = [
     {
         routeLink: '/home/historico',
         icon: 'bi bi-alarm',
-        label: 'Entregas'
+        label: 'Histórico'
     },
     {
         routeLink: '/home/entregas',
         icon: 'bi bi-journal-text',
-        label: 'Statistics'
+        label: 'Entregas'
     },
     {
         routeLink: '/home/pedidos',
@@ -25,9 +25,9 @@ export const navbarData = [
         label: 'Devoluções'
     },
     {
-        routeLink: '/home/produtos',
-        icon: 'bi bi-bag',
-        label: 'Produtos'
+        routeLink: '/home/entrada/0',
+        icon: 'bi bi-chevron-double-up',
+        label: 'Dar entrada'
     },
     {
         routeLink: '/home/contas',
@@ -39,5 +39,9 @@ export const navbarData = [
         icon: 'bi bi-person-circle',
         label: 'Seu perfil',
     },
-
+    {
+        routeLink: '/home/dashboard',
+        icon: 'bi bi-list-task',
+        label: 'Dashboard',
+    },
 ];

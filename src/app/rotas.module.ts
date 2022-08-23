@@ -1,7 +1,6 @@
 import { ProdutoListaComponent } from './home/produto-lista/produto-lista.component';
 import { DevolucoesComponent } from './pedidos/devolucoes/devolucoes.component';
 import { ConferenciaComponent } from './pedidos/conferencia/conferencia.component';
-import { EntregasComponent } from './pedidos/entregas/entregas.component';
 import { HistoricoComponent } from './pedidos/historico/historico.component';
 import { VerificarTelComponent } from './logins/verificar-tel/verificar-tel.component';
 import { LoginComponent } from './logins/login/login.component';
@@ -26,6 +25,8 @@ import { FiltroHistoricoComponent } from './pedidos/historico/filtro-historico/f
 import { ModalFiltroComponent } from './home/modal-filtro/modal-filtro.component';
 import CheckLogged from './checklogged';
 import { EntradaComponent } from './home/entrada/entrada.component';
+import { EntradaHistoricoComponent } from './pedidos/historico/entrada-historico/entrada-historico.component';
+import { DashboardComponent } from './pedidos/dashboard/dashboard.component';
 
 
 
@@ -42,7 +43,6 @@ import { EntradaComponent } from './home/entrada/entrada.component';
           component: HomeComponent,
           canActivate: []
         },
-        
         {
           path: 'pedidos',
           component: PedidosComponent,
@@ -93,6 +93,11 @@ import { EntradaComponent } from './home/entrada/entrada.component';
           canActivate: [CheckLogged]
         },
         {  
+          path: 'dashboard',
+          component: DashboardComponent,
+          canActivate: [CheckLogged]
+        },
+        {  
           path: 'sidebar',
           component: SideBarComponent,
           canActivate: [CheckLogged]
@@ -109,7 +114,7 @@ import { EntradaComponent } from './home/entrada/entrada.component';
         },
         {
           path: 'entregas',
-          component: EntregasComponent,
+          component: DevolucoesComponent,
           canActivate:[CheckLogged]
         },
         {
@@ -148,12 +153,16 @@ import { EntradaComponent } from './home/entrada/entrada.component';
           canActivate: []
         },
         {
-          path: ':id',
-          component: HomeComponent,
+          path: 'rt',
+          component: EntradaHistoricoComponent,
           canActivate: [],
           
         },
-        
+        {
+          path: ':id',
+          component: HomeComponent,
+          canActivate: [],
+        },
       ]},
       {
         path: '',
@@ -163,42 +172,42 @@ import { EntradaComponent } from './home/entrada/entrada.component';
       {
         path: 'cadastro',
         component: CadastroComponent,
-        canActivate: []
+        canActivate: [],
       },
       {
         path: 'cadastro/telefone',
         component: TelefoneComponent,
-        canActivate: []
+        canActivate: [],
       },
       {
         path: 'cadastro/telefone/verificar',
         component: VerificarTelComponent,
-        canActivate: []
+        canActivate: [],
       },
       {
         path: 'confirmar',
         component: ConfirmarComponent,
-        canActivate: []
+        canActivate: [],
       },
       {
         path: 'modalPedidos',
         component: ModalPedidosComponent,
-        canActivate: []
+        canActivate: [],
       },
       {
         path: 'modalDevolucao',
         component: ModalDevolucaoComponent,
-        canActivate: []
+        canActivate: [],
       },
       {
           path: 'historico',
           component: HistoricoComponent,
-          canActivate: []
+          canActivate: [],
       },
       {
           path: 'produto-lista',
           component: ProdutoListaComponent,
-          canActivate: []
+          canActivate: [],
       }
       ])
   ],

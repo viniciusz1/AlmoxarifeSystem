@@ -9,7 +9,26 @@
 .retangulo:hover{
     background-color:#dbdbdb;
 }
-
+.div-adicionar-carrinho{
+    width: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #275577;
+    color:white;
+    border-radius: 0px 3px 3px 0px;
+}
+.div-group{
+    border-radius: 5px;
+    border: 0.5px solid black; 
+    
+}
+input{
+    width: 2.3rem;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+}
 .bi-plus-square{
     /* background-color: blue; */
     /* color: blue;

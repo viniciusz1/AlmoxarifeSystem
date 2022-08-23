@@ -27,6 +27,8 @@ export class CarrinhoComponent implements OnInit {
   carrinho = true;
   stateTxt= "fechado";
   listaCarrinho:Produto[] = [];
+  mensagemPrevia = "Adicione algum Item ao carrinho!"
+  carrinhoVazio = false
 
   clicouModal(){
     this.fechaCarrinho.emit(false)
@@ -52,16 +54,24 @@ export class CarrinhoComponent implements OnInit {
   lixo(i:number){
     this.car.removeLista(i)
   }
- 
-  mensagemPrevia = "Adicione algum Item ao carrinho!"
-  carrinhoVazio = false
-  
+  // pressionou(){
+  //   for(let i in this.listaCarrinho){
+  //     if(this.listaQtd[i] > this.listaCarrinho[i].quantidade!){
+  //       this.listaQtd[i] = this.listaCarrinho[i].qtdCart as number
+  //     }
+  //   }
+  // }
+  listaQtd: number[]  = []
   ngOnInit(): void {
     this.listaCarrinho = this.car.getLista();
+    
     this.car.tamanhoCarrinho.subscribe(
       e => {
         if(e != 0){
           this.carrinhoVazio = false
+          for(let i in this.listaCarrinho){
+            this.listaQtd[i] = this.listaCarrinho[i].qtdCart as number
+          }
         }
       }
     )

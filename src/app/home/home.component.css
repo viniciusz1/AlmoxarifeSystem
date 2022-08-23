@@ -78,8 +78,7 @@
 .div-filtros{
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    margin-top: 5px;
+    justify-content: end
 }
 .carrinho-side{
     right: 0;
@@ -119,9 +118,6 @@ p{
     font-weight: 700;
 }
 
-i{
-    margin: 10px 10px 10px 0px;
-}
 
 .baixo{
     display: flex;
@@ -157,9 +153,6 @@ i{
     align-items: center;
 }
 
-.pesquisa{
-    border-bottom: 0.5px solid black;
-}
 
 input{
     border: transparent;
@@ -172,13 +165,59 @@ input{
 
 .icone{
     color: white;
+    display: flex;
 }
 
-.ordenar, .filtrar{
+
+
+.filtrar{
     background-color: #275577;
-    border: 1px solid black;
     padding: 5px 10px;
+    color:white;
+    border-radius: 0px 3px 3px 0px;
 }
+.input-pedido{
+    max-width: 180px;
+}
+.lupa{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px 0 10px;
+}
+.pesquisa{
+    border: 0.5px solid black;
+    border-radius: 5px;
+
+    z-index: 1;
+}
+.botoes{
+    background-color: #275577;
+        padding: 5px 10px;
+        color:white;
+        border-radius: 3px;
+}
+.ordenar{
+    outline: none;
+    width:120px;
+    color: white;
+    background-color: #275577;
+    border: 1px solid #333;
+    padding-right: 20px;
+    border-radius: 3px;
+    outline:none
+}
+.select::after{
+    content: '\25BC';
+    position: absolute;
+    top: 0%;
+    right: 0;
+    padding: 0 1em;
+    background: #000;
+}
+
+
+
 
 .filtross{
     border: none;
@@ -186,12 +225,6 @@ input{
     color: white;
 }
 
-select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    text-indent: 1px;
-    text-overflow: '';
-  }
 
   .body{
     display: flex;

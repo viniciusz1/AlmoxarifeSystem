@@ -1,6 +1,5 @@
 import { HistoricoComponent } from './historico/historico.component';
 import { ModalDevolucaoComponent } from './modal-devolucao/modal-devolucao.component'
-import { EntregasComponent } from './entregas/entregas.component'
 import { DevolucoesComponent } from './devolucoes/devolucoes.component'
 import { ConferenciaComponent } from './conferencia/conferencia.component'
 import { PedidosComponent } from './pedidos.component'
@@ -15,13 +14,20 @@ import { HistoricoService } from '../services/historico.service';
 import { FiltroProdutosPipe } from '../pipes/filtro-produtos.pipe';
 import { FormsModule } from '@angular/forms';
 import { ExportsModule } from '../shared/exports/exports.module';
-
-
+import { EntradaHistoricoComponent } from './historico/entrada-historico/entrada-historico.component';
+import { EntradasService } from '../services/entradas.service';
+import { DashboardComponent } from '../pedidos/dashboard/dashboard.component';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatCardModule} from '@angular/material/card';
+import { HomeModule } from '../home/home.module';
+import { PedidosTableComponent } from './pedidos-table/pedidos-table.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatFormFieldModule} from '@angular/material/form-field'
 @NgModule({
   declarations: [
     ConferenciaComponent,
     DevolucoesComponent,
-    EntregasComponent,
     ModalDevolucaoComponent,
     ModalDevolucaoComponent,
     PedidosComponent,
@@ -29,24 +35,32 @@ import { ExportsModule } from '../shared/exports/exports.module';
     ConfirmarComponent,
     PedidoHistoricoComponent,
     FiltroHistoricoComponent,
-
+    EntradaHistoricoComponent,
+    DashboardComponent,
+    PedidosTableComponent
   ],
   imports: [
     CommonModule,
     RotasModule,
     FormsModule,
-    ExportsModule
+    ExportsModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatCardModule,
+    HomeModule,
+    MatTooltipModule,
+    MatFormFieldModule
   ],
   exports:[
     ConferenciaComponent,
     DevolucoesComponent,
-    EntregasComponent,
     ModalDevolucaoComponent,
     ModalDevolucaoComponent,
     ConfirmarComponent,
   ],
   providers:[
-    HistoricoService
+    HistoricoService,
+    EntradasService
   ]
 })
 export class PedidosModule { }

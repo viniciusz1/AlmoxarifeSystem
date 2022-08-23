@@ -22,6 +22,7 @@ export class EntradaComponent implements OnInit {
   pesquisaProduto = ""
   codigo = 0;
   imagem = ""
+  tiraQuantidade = true
 
   ngOnInit(): void {
     this.lista = this.prod.getListaProdutos()  
