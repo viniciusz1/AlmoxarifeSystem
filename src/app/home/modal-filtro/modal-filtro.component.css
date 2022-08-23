@@ -1,3 +1,5 @@
+
+
 .overlay {
     background: #000;
     height: 100vh;
@@ -21,9 +23,8 @@
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 11;
-    display: grid;
-    width: 610px;
-    height: 450px;
+    display: grid;    
+    width: 450px;
 }
 
 .cargo {
@@ -65,17 +66,26 @@
     color: #fff;
     margin-bottom: 5px;
 }
-
-.datas, .dois{
+.range-div{
+    align-items: center;
+    justify-content: center;
+    column-gap: 6%;
+}
+.datas{
     display: flex;
     justify-content: space-between !important;
 }
-
+.custom-slider .ngx-slider .ngx-slider-limit {
+    font-weight: bold;
+    color: orange;
+  }
 input{
     padding: 8px;
     border-radius: 5px;
     border: none;
     outline: none;
+    height: 42px;
+    width: 42px;
 }
 
 .dataRetirada, .dataDevolucao, .status, .codigoPedido{

@@ -13,8 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RotasModule } from '../rotas.module';
 import { EntradaComponent } from './entrada/entrada.component';
 import { ExportsModule } from '../shared/exports/exports.module';
-
-
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
 
 @NgModule({
   declarations: [
@@ -27,6 +26,7 @@ import { ExportsModule } from '../shared/exports/exports.module';
     ProdutoListaComponent,
     DetalhesProdutoComponent,
     EntradaComponent,
+    
   ],
   imports: [
     CommonModule,
@@ -34,7 +34,8 @@ import { ExportsModule } from '../shared/exports/exports.module';
     BrowserAnimationsModule,
     RotasModule,
     ReactiveFormsModule,
-    ExportsModule
+    ExportsModule,
+    NgxSliderModule
   ],
   exports:[
     HomeComponent,
