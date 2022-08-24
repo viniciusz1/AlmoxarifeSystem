@@ -19,7 +19,11 @@ export class ModalFiltroComponent implements OnInit {
   highValue: number = 500;
   options: Options = {
     floor: 0,
-    ceil: 500
+    ceil: 500,
+    showSelectionBar: true,
+    getSelectionBarColor: (value: number): string => {
+      return '#fff';
+    }
   };
   onSubmit(form: NgForm){
     console.log("OI")

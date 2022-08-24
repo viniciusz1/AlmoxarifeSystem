@@ -1,4 +1,11 @@
 
+.ngx-slider .ngx-slider-bubble {
+    cursor: default;
+    bottom: 16px;
+    padding: 1px 3px;
+    color: #55637d;
+    font-size: 16px;
+}
 
 .overlay {
     background: #000;
