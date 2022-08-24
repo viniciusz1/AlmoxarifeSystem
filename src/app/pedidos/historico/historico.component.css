@@ -9,6 +9,23 @@
     left: 50%;
 }
 
+button{
+    width: 10vw;
+    background-color: #f1f1f1 !IMPORTANT;
+    color: #1f394f;
+    align-items: baseline;
+    box-shadow: 1px 0px 5px 1px #1f394f4d;
+}
+
+.buttons{
+    margin-left: 20px;
+    top: 1vh;
+    padding: 5px;
+    padding-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
 
 
 .duas-div{

@@ -2,6 +2,13 @@
     <div class="container body">
         <div class="principais">
             <div class="topo">
+                <nav aria-label="breadcrumb" style="position: absolute;
+        top: 81px;">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/home">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Pedidos</li>
+                    </ol>
+                </nav>
                 <div class="pg" style="font-size: calc(1.3rem + .6vw);">
                     <b>
                         <span>SEUS PEDIDOS</span>
@@ -16,8 +23,8 @@
                             <div>
                                 <p>Código Pedido: {{lista.codigo}}</p>
                             </div>
-                            <div> 
-                            <div class="info">
+                            <div>
+                                <div class="info">
                                     <i style="font-size: 20px;" class="bi bi-info-circle"></i>
                                 </div>
                             </div>
@@ -27,7 +34,8 @@
                                 <div class="d-inline-block text-truncate" style="max-width: 30vw;">
                                     <i style="font-size: 30px;" (mouseover)="tooltip(i)" title="{{produtosString}}"
                                         class="bi bi-box2-fill"></i>
-                                    <span title="{{produtosString}}" class="bold" *ngFor="let produto of lista.listaProdutos">{{produto.nome}},
+                                    <span title="{{produtosString}}" class="bold"
+                                        *ngFor="let produto of lista.listaProdutos">{{produto.nome}},
                                     </span>
                                 </div>
                             </div>

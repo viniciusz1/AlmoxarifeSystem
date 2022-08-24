@@ -95,7 +95,7 @@ input{
     width: 42px;
 }
 
-.dataRetirada, .dataDevolucao, .status, .codigoPedido{
+.dataRetirada,  .codigoPedido{
     width: 47%;
 }
 

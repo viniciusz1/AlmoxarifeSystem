@@ -1,4 +1,170 @@
-.retangulo{
+/* margin-left: 20px;
+    position: absolute;
+    top: 220px;
+    color: d9;
+    background-color: #D9D9D9 !IMPORTANT;
+    color: blue;
+    padding-bottom: 10px; */
+
+
+.body{
+    display: grid;
+    justify-content: center;
+    /* align-items: center; */
+    width: 150vw;
+}
+.quadrado{
+    border-left: 10px solid #1f394f;
+    box-shadow: 4px 5px 7px -5px;
+    background-color: #f1f1f1;
+    min-height: 66vh;
+}
+.pg{
+    font-size: calc(1.3rem + .6vw);
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.filtrar{
+    background-color: #275577;
+    padding: 5px 10px;
+    color:white;
+    border-radius: 0px 3px 3px 0px;
+}
+.input-pedido{
+    max-width: 180px;
+}
+.lupa{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px 0 10px;
+}
+.pesquisa{
+    border: 0.5px solid black;
+    border-radius: 5px;
+
+    z-index: 1;
+}
+.botoes{
+    background-color: #275577;
+        padding: 5px 10px;
+        color:white;
+        border-radius: 3px;
+}
+.ordenar{
+    outline: none;
+    width:120px;
+    color: white;
+    background-color: #275577;
+    border: 1px solid #333;
+    padding-right: 20px;
+    border-radius: 3px;
+    outline:none
+}
+
+.topo{
+    display: flex;
+    width: 80vw;
+    column-gap: 20%;
+}
+.bloco{
+    background-color: #e5e5e5;
+    box-shadow: 4px 5px 7px -5px;
+    border-left: 10px solid #275577;
+    height: 7vh;
+}
+.pesquisa{
+    border-bottom: 0.5px solid black;
+}
+
+input{
+    border: transparent;
+    outline: none;
+}
+
+::-webkit-input-placeholder {
+    color: black;
+ }
+
+
+
+.pesquisa-total{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.indice, .lista{
+    margin-top: 8px;
+    display: flex;
+    column-gap: 15px;
+}
+
+.professor{
+    width: 9vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.data{
+    width: 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pedido{
+    width: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.produtos{
+    width: 40vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button{
+    background-color: #275577;
+    border: none;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 5px;
+    width: 12vw;
+    padding: 10px 15px;
+    margin: 10px;
+}
+
+.divprodutos{
+    width: 40vw;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+}
+
+.central{
+    width: 35vw;
+    margin-right: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+/* .retangulo{
     background-color: #f2f2f2;
     margin-bottom: 5px;
     padding: 7px;
@@ -10,11 +176,11 @@
     background-color:#dbdbdb;
 }
 
-.bi-plus-square{
+.bi-plus-square{ */
     /* background-color: blue; */
     /* color: blue;
     background-color: red; */
-}
+/* }
 .h-mais:hover{
     color:blue;
     cursor: pointer;
@@ -27,4 +193,4 @@
     position: absolute;
     left: 0px;
     top: 0;
-}
+} */

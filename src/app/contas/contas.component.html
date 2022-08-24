@@ -1,12 +1,19 @@
 <div class="d-flex bg-light container">
     <div class="body">
         <div class="topo">
+            <nav aria-label="breadcrumb" style="position: absolute;
+        top: 81px;">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/home">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Contas</li>
+                </ol>
+            </nav>
             <div class="pg" style="font-size: calc(1.3rem + .6vw);">
                 <b>
                     <span>CONTAS</span>
                 </b>
-                <hr style="margin: 0; width: 200px; opacity: 1;"> 
-                    </div>
+                <hr style="margin: 0; width: 200px; opacity: 1;">
+            </div>
             <div class="pesquisa-total">
                 <div class="pesquisa">
                     <i class="bi bi-search"></i>
@@ -37,5 +44,6 @@
             </div>
         </div>
     </div>
-    <app-perfil-admin (estadoPerfil)="mudarPerfilState()" class="perfil-admin" *ngIf="perfilState == true"></app-perfil-admin>
+    <app-perfil-admin (estadoPerfil)="mudarPerfilState()" class="perfil-admin" *ngIf="perfilState == true">
+    </app-perfil-admin>
 </div>
