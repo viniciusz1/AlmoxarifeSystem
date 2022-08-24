@@ -1,13 +1,41 @@
-<div class="retangulo row">
-    <div class="col-3">Professor</div>
-    <div class="col-3">Quando</div>
-    <div class="col-3">Produto</div>
-    <div class="col-3">QTD Entrada</div>
-</div>
+<div class="container bu" style="position: relative; padding-top: 5px;">
+    <div class="indice" style="justify-content: space-between;">
+        <div class="pedido" style="margin-left: 5vw; width: 5vw;">
+            <span>Pedidos</span>
+        </div>
+        <div class="professor" style="margin-left: 3vw; width: 8vw;">
+            <span>Professor</span>
+        </div>
+        <div class="produtos">
+            <span>Produtos</span>
+        </div>
+        <div class="data" style="width: 11vw;">
+            <span>Data</span>
+        </div>
+    </div>
+    <div class="lista bloco" style="justify-content: space-between;" *ngFor="let lista of listaEntradas; let i = index">
+        <div class="px">
+        </div>
+        <div class="pedido" style="width: 5vw;">
+            <span>{{lista.codigo}}</span>
+        </div>
+        <div class="professor" style="margin-left: 3vw; width: 8vw;">
+            <span>{{lista.professor}}</span>
+        </div>
+        <div class="produtos">
+            <!-- <div class="d-inline-block text-truncate">
+                <span *ngFor="let l of lista.listaProduto">{{l.nome}}, </span>
+                <span>{{lista.produto}}</span>
+            </div> -->
+            <span>{{lista.produto}}</span>
+        </div>
 
-<div class="d-flex justify-content-center retangulo position-relative">
-    <div class="ms-4" style="width:10%">1</div>
-        <div style="width:30%">Carlinhos</div>
-        <div style="width:30%">Parafuso</div>
-        <div style="width: 30%; padding-left: 8%;">2</div>
+        <div class="data" style="width: 11vw;">
+            <span>{{lista.data | date: 'dd/MM/yyyy'}}</span>
+        </div>
+        <!-- <div class="botao" [routerLink]="[url, i]">
+            <button>{{textoBotao}}</button>
+        </div> -->
+    </div>
+
 </div>

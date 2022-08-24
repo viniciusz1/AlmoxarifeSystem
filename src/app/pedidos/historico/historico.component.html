@@ -29,8 +29,8 @@
             </div>
         </div>
     </div>
-    <button (click)="mudarParaEntradas()" class="btn btn-primary">Entradas</button>
-    <button (click)="mudarParaPedidos()" class="btn btn-primary">Pedidos</button>
+    <button (click)="mudarParaEntradas()" class="buttons" style="position: absolute;">Entradas</button>
+    <button (click)="mudarParaPedidos()" class="buttons" style="position: absolute; margin-left: 12vw;">Pedidos</button>
     <div class="container">
         <app-entrada-historico *ngIf="!exibicao"></app-entrada-historico>
         <!-- *ngFor="let eh of eh" -->
@@ -40,14 +40,7 @@
 
     </div>
 </div>
-
-
-
-
-
-
-    
-    <app-filtro-historico *ngIf="filtroState" (mudarFiltro)="mudaFiltro()" class="meu-fixed"></app-filtro-historico>
+<app-filtro-historico *ngIf="filtroState" (mudarFiltro)="mudaFiltro()" class="meu-fixed"></app-filtro-historico>
 
 
 
