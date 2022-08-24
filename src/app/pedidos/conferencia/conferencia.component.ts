@@ -19,7 +19,7 @@ export class ConferenciaComponent implements OnInit {
   id = ""
   pedido: Pedido = new Pedido()
   botao = ''
-
+  quantidadeDevolvida=0
   ngOnInit(): void {
     this.route.url.subscribe(
       e => {
