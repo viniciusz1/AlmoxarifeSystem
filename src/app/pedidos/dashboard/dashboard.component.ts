@@ -10,7 +10,7 @@ import { Pedido } from 'src/app/shared/pedido.model';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
+  panelOpenState =false
   constructor(
     private pedidosService: PedidosService,
     private _adapter: DateAdapter<any>,

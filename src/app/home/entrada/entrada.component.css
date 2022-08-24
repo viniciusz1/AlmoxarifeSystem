@@ -7,6 +7,11 @@
     overflow: auto;
     max-height: 76vh;
 }
+.bloco-produto{
+    border-left: 10px solid #1f394f;
+    box-shadow: 4px 5px 7px -5px;
+    background-color: #f1f1f1;
+}
 .quadrado{
     background: #275577;
     padding: 20px;

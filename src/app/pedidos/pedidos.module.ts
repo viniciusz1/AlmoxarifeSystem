@@ -24,6 +24,7 @@ import { HomeModule } from '../home/home.module';
 import { PedidosTableComponent } from './pedidos-table/pedidos-table.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatFormFieldModule} from '@angular/material/form-field'
+import {MatExpansionModule} from '@angular/material/expansion';
 @NgModule({
   declarations: [
     ConferenciaComponent,
@@ -49,7 +50,8 @@ import {MatFormFieldModule} from '@angular/material/form-field'
     MatCardModule,
     HomeModule,
     MatTooltipModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatExpansionModule
   ],
   exports:[
     ConferenciaComponent,
