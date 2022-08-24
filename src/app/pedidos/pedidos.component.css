@@ -1,3 +1,14 @@
+.pg{
+    font-size: calc(1.3rem + .6vw);
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.meu-absolute{
+    position:fixed;
+    top: 0;
+    left: 50%;
+}
+
 .pg {
     font-size: calc(1.3rem + .6vw);
     margin-top: 50px;
