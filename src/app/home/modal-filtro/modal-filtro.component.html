@@ -2,38 +2,21 @@
     <div class="cargo">
         <i (click)="clicouModal()" class="bi bi-x-circle" style="font-size: 20px; color: white;"></i>
     </div>
-    <div>
-        <img class="logo" src="https://i.ibb.co/gdtf6MN/Logo-Branca-removebg-preview.png" style="height: 35px;">
-        <div class="centralizar" style="margin-top: 70px;">
-            <div class="textAl">
-                Almoxarife System
-            </div>
-        </div>
-        <div class="filtro">
-            <div class="central">
-                FILTRO
-            </div>
-            <div class="central">
-                <div style="font-size: 15px;">*Não é necessário preencher todos os campos</div>
-            </div>
-        </div>
-    </div>
+
     <div class="inputs">
+        <h3 class="text-light"><i style="width: 450px;" class="bi bi-funnel-fill"></i>Filtrar Por:</h3>
+        <div>
+            <label class=" text-light">Disponibilidade em estoque</label>
+            <div class="d-flex range-div">
+                <input [(ngModel)]="value" type="text">
+                <ngx-slider [(value)]="value" [(highValue)]="highValue" [options]="options"></ngx-slider>
+                <input [(ngModel)]="highValue" type="text">
+            </div>
+        </div>
+
         <form (ngSubmit)="onSubmit(f)" #f="ngForm" action="">
-            <div class="produtos">
-                <label>Nome do produto</label>
-                <input name="nome" ngModel placeholder="Ex: Resistor">
-            </div>
-            <div class="datas">
-            <div class="atendente">
-                <label>Código do produto</label>
-                <input name="codigo" ngModel placeholder="Ex: 001">
-            </div>
-                <div class="dataRetirada">
-                    <label>Disponibilidade em estoque</label>
-                    <input name="estoque" ngModel placeholder="Ex: 12">
-                </div>
-            </div>
+
+
             <div class="dois">
                 <div class="dataDevolucao">
                     <label>Selecionar classificação</label>
@@ -41,7 +24,7 @@
                 </div>
                 <div class="status">
                     <label>Selecionar opção de uso</label>
-                    <select name="opcaoUso" ngModel  class="igInput"></select>
+                    <select name="opcaoUso" ngModel class="igInput"></select>
                 </div>
             </div>
         </form>
