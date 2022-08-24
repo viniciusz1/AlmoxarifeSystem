@@ -15,34 +15,34 @@ export class VerificarTelComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.repeat();
+    // this.repeat();
   }
   
-fim = 30;
-repeat(){
-  if (this.fim < 0) return
-  var meuInterval = setInterval(() => {
-    this.fim --;
-    if(this.fim <= 0){
-      clearInterval(meuInterval);
-    }
-  }, 1000);
+// fim = 30;
+// repeat(){
+//   if (this.fim < 0) return
+//   var meuInterval = setInterval(() => {
+//     this.fim --;
+//     if(this.fim <= 0){
+//       clearInterval(meuInterval);
+//     }
+//   }, 1000);
   
-};
+// };
 
-verificar(){
-  console.log(1)
-        let user = localStorage.getItem("USER") as string;
-        let telefone = localStorage.getItem("TELEFONE") as string;
-        console.log(user)
-        if(user && telefone){
-          this.usuarioService.setUser(user , telefone);
-          localStorage.setItem("USUARIO", user)
-          let senha = this.usuarioService.getListaUser().find(lista => lista.usuario == user)?.senha as string;
-          localStorage.setItem("SENHA", senha)
-          this.router.navigate(['/home']);
-        }
-}
+// verificar(){
+//   console.log(1)
+//         let user = localStorage.getItem("USER") as string;
+//         let telefone = localStorage.getItem("TELEFONE") as string;
+//         console.log(user)
+//         if(user && telefone){
+//           this.usuarioService.setUser(user , telefone);
+//           localStorage.setItem("USUARIO", user)
+//           let senha = this.usuarioService.getListaUser().find(lista => lista.usuario == user)?.senha as string;
+//           localStorage.setItem("SENHA", senha)
+//           this.router.navigate(['/home']);
+//         }
+// }
 
 
 
