@@ -2,21 +2,21 @@
     <div class="container">
         <div class="row mt-5" style="display: flex; justify-content: center;">
             <div class="d-flex" style="position:relative ;justify-content: space-between;">
-                    <nav aria-label="breadcrumb" style="position: absolute;top: -30px;">
-                        <ol class="breadcrumb">
-                          <!-- <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <nav aria-label="breadcrumb" style="position: absolute;top: -30px;">
+                    <ol class="breadcrumb">
+                        <!-- <li class="breadcrumb-item"><a href="#">Home</a></li>
                           <li class="breadcrumb-item"><a href="#">Library</a></li> -->
-                          <li class="breadcrumb-item active" aria-current="page">Home</li>
-                        </ol>
-                      </nav>
-                    <div class="" style="font-size: calc(1.3rem + .6vw);">
-                        <b>
-                            <span>{{titulo | uppercase}}</span>
-                        </b>
-                        <hr style="margin: 0; width: 200px; opacity: 1;">
-                    </div>       
-                    
-                    
+                        <li class="breadcrumb-item active" aria-current="page">Home</li>
+                    </ol>
+                </nav>
+                <div class="" style="font-size: calc(1.3rem + .6vw);">
+                    <b>
+                        <span>{{titulo | uppercase}}</span>
+                    </b>
+                    <hr style="margin: 0; width: 200px; opacity: 1;">
+                </div>
+
+
                 <div *ngIf="home" class="topo-2">
                     <div style="cursor:pointer" class="d-flex superior-direito">
 
@@ -26,7 +26,7 @@
                             </div>
                             <input class="input-pedido" [(ngModel)]="pesquisaProduto" placeholder="Pesquisar Produto">
                             <div style="cursor:pointer" class="filtrar">
-                                    <i class="bi bi-sliders" (click)="modalOpen(false)"></i>
+                                <i class="bi bi-sliders" (click)="modalOpen(false)"></i>
                             </div>
                         </div>
                         <select class="ordenar botoes" style="cursor:pointer; min-width:150px">
@@ -34,12 +34,10 @@
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
-                            </select>
-                        
-
+                        </select>
                         <div class="botoes" style="cursor:pointer">
                             <div class="icone">
-                                <button class="filtross"  [routerLink]="['/home/cadastrar-produto']">Adicionar</button>
+                                <button class="filtross" [routerLink]="['/home/cadastrar-produto']">Adicionar</button>
                                 <i class="bi bi-plus-lg"></i>
                             </div>
                         </div>
@@ -55,21 +53,16 @@
                         </div>
                     </div>
                 </div>
-
-
-
             </div>
-
             <div class="div-filtros">
-                
-                  <div class="d-flex">                    
-                      <div class="default-icones" [ngClass]="{icones: exibicao}" >
-                          <i class="bi bi-list-ul" (click)="exibicaoLista()"></i>
-                      </div>
-                      <div class="default-icones" [ngClass]="{icones: !exibicao}">
-                          <i class="bi bi-grid-3x3-gap-fill" (click)="exibicaoCard()"></i>
-                      </div>
-                  </div>
+                <div class="d-flex">
+                    <div class="default-icones" [ngClass]="{icones: exibicao}">
+                        <i class="bi bi-list-ul" (click)="exibicaoLista()"></i>
+                    </div>
+                    <div class="default-icones" [ngClass]="{icones: !exibicao}">
+                        <i class="bi bi-grid-3x3-gap-fill" (click)="exibicaoCard()"></i>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -81,25 +74,24 @@
                 height: 30px; background-color: #f2f2f2;
                 box-shadow: 4px 5px 7px -5px;
                 align-items: center;">
-                            <div style="width: 10%">Código</div>    
-                            <div style="width: 30%;
+                    <div style="width: 10%">Código</div>
+                    <div style="width: 30%;
                             margin-left: 22px;">Nome</div>
-                            <div style="width: 30%">Classificação</div>
-                            <div style="width: 30%">Quantidade</div>
+                    <div style="width: 30%">Classificação</div>
+                    <div style="width: 30%">Quantidade</div>
                 </b>
-                    <app-produto-lista  [indiceProduto]="i" [produto]="lista" 
-                    *ngFor="let lista of (lista); let i = index">
+                <app-produto-lista [indiceProduto]="i" [produto]="lista" *ngFor="let lista of (lista); let i = index">
                 </app-produto-lista>
             </div>
             <div *ngIf="exibicao == false" class="row">
-                <app-produto class="col-xl-4 index col-md-6" [indiceProduto]="i"
-                [produto]="lista" *ngFor="let lista of (lista ) | filtroProdutos:pesquisaProduto; let i = index" >
+                <app-produto class="col-xl-4 index col-md-6" [indiceProduto]="i" [produto]="lista"
+                    *ngFor="let lista of (lista ) | filtroProdutos:pesquisaProduto; let i = index">
                 </app-produto>
             </div>
         </div>
     </div>
 
-    
+
     <app-carrinho (fechaCarrinho)="closeCart($event)" (reserva)="mudarModalReserva($event)" [state]="carState"
         class="position-fixed bg-primary carrinho-side"></app-carrinho>
     <app-modal-filtro (fechaModal)="modalOpen($event)" (filtragem)="executarFiltroEspecializado($event)" *ngIf="modal"
