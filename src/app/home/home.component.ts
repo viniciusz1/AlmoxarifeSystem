@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
      private pedidosService: PedidosService,
      private router: ActivatedRoute) { }
 
-  modal = true;
+  modal = false;
   modalReserva = false;
   state = "fechado";
   carState = "fechado";
