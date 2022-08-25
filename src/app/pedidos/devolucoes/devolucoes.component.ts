@@ -20,7 +20,8 @@ export class DevolucoesComponent implements OnInit {
   textoBotao=""
   titulo=""
   pesquisaPedido = ""
-
+  page = 1
+  //1 - entrada, 2 - devulucao, 3 - histórico
   ngOnInit(): void { 
     this.lista = this.pedidos.getDevolucoes()
     this.url = this.router.url

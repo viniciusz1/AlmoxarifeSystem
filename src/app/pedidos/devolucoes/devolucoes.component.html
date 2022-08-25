@@ -37,59 +37,11 @@
             </div>
         </div>
         <button (click)="mudarParaEntregas()" class="buttons" style="position: relative;">Entregas</button>
-        <button (click)="mudarParaDevolucoes()" class="buttons"
-            style="position: relative;">Devoluções</button>
+        <button (click)="mudarParaDevolucoes()" class="buttons" style="position: relative;">Devoluções</button>
         <div class="container">
-            <!-- <app-entrada-historico *ngIf="!exibicao"></app-entrada-historico> -->
-            <!-- *ngFor="let eh of eh" -->
-            <!-- <div *ngIf="exibicao">
-                <app-pedido-historico *ngFor="let lista of lista; let i = index" [index]='i' [lista]="lista">
-                </app-pedido-historico>
-            </div> -->
-        </div>
+            <app-entrada-historico [paginas]="page"></app-entrada-historico>
     </div>
-    <!-- <app-filtro-historico *ngIf="filtroState" (mudarFiltro)="mudaFiltro()" class="meu-fixed"></app-filtro-historico> -->
-
 
 
 
     <!-- <app-filtro-historico *ngIf="filtroState" (mudarFiltro)="mudaFiltro()" class="meu-fixed"></app-filtro-historico> -->
-    <!-- <div class="container bu">
-            <div class="indice">
-                <div class="pedido">
-                    <span>Pedidos</span>
-                </div>
-                <div class="professor">
-                    <span>Professor</span>
-                </div>
-                <div class="produtos">
-                    <span>Produtos</span>
-                </div>
-                <div class="data">
-                    <span>Data</span>
-                </div>
-            </div>
-            <div class="lista bloco" *ngFor="let lista of lista; let i = index">
-                <div class="px">
-                </div>
-                <div class="pedido">
-                    <span>{{lista.codigo}}</span>
-                </div>
-                <div class="professor">
-                    <span>{{lista.nomeProfessor}}</span>
-                </div>
-                <div class="central">
-                    <div class="d-inline-block text-truncate">
-                        <span *ngFor="let l of lista.listaProdutos">{{l.nome}}, </span>
-                    </div>
-                </div>
-
-                <div class="data">
-                    <span>{{lista.dataDevolucao | date: 'dd/MM/yyyy'}}</span>
-                </div>
-                <div class="botao" [routerLink]="[url, i]">
-                    <button>{{textoBotao}}</button>
-                </div>
-            </div>
-
-        </div> -->

@@ -1,4 +1,175 @@
-.pg{
+/* .pg{
+    font-size: calc(1.3rem + .6vw);
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.meu-absolute{
+    position:fixed;
+    top: 0;
+    left: 50%;
+}
+
+button{
+    width: 10vw;
+    background-color: #f1f1f1 !IMPORTANT;
+    color: #1f394f;
+    align-items: baseline;
+    box-shadow: 1px 0px 5px 1px #1f394f4d;
+}
+
+.buttons{
+    margin-left: 20px;
+    top: 1vh;
+    padding: 5px;
+    padding-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+
+.duas-div{
+    display: grid;
+}
+
+.filtrar{
+    background-color: #275577;
+    padding: 5px 10px;
+    color:white;
+    border-radius: 0px 3px 3px 0px;
+}
+.input-pedido{
+    max-width: 180px;
+}
+.lupa{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px 0 10px;
+}
+.pesquisa{
+    border: 0.5px solid black;
+    border-radius: 5px;
+
+    z-index: 1;
+}
+.botoes{
+    background-color: #275577;
+        padding: 5px 10px;
+        color:white;
+        border-radius: 3px;
+}
+.ordenar{
+    outline: none;
+    width:120px;
+    color: white;
+    background-color: #275577;
+    border: 1px solid #333;
+    padding-right: 20px;
+    border-radius: 3px;
+    outline:none
+}
+
+.div-cima{
+    background-color: #275577;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    padding: 10px 0px 10px 20px;
+    border-bottom: 1px solid black;
+}
+
+
+p{
+    margin: 0px;
+}
+
+.bold{
+    font-weight: 700;
+}
+
+
+.baixo{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.footer{
+    display: flex;    
+    justify-content: space-between;
+    padding: 10px;
+    font-weight: 500;
+}
+
+.datas{
+    display: flex;
+    column-gap: 10px;
+}
+
+.dataRetirada, .dataDevolucao, .nome{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nome, .produtos{
+    margin-left: 10px;
+}
+.gap{
+    column-gap: 10px;
+}
+.topo-2{
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 10px;
+}
+
+.pesquisa{
+    border-bottom: 0.5px solid black;
+}
+
+input{
+    border: transparent;
+    outline: none;
+}
+
+::-webkit-input-placeholder {
+    color: black;
+ }
+
+.icone{
+    color: white;
+}
+
+.ordenar{
+    background-color: #275577;
+    border: 1px solid black;
+    padding: 5px 10px;
+}
+
+.filtross{
+    border: none;
+    background-color: transparent;
+    color: white;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+  }
+
+  .body{
+    display: grid;
+    justify-content: center;
+    /* align-items: center; */
+    /* width: 150vw; */
+  /* } */
+  .pg{
     font-size: calc(1.3rem + .6vw);
     margin-top: 50px;
     margin-bottom: 50px;
@@ -170,178 +341,3 @@ select {
     width: 150vw;
   }
 
-
-
-/* .pg{
-    font-size: calc(1.3rem + .6vw);
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-.meu-absolute{
-    position:fixed;
-    top: 0;
-    left: 50%;
-}
-
-button{
-    width: 10vw;
-    background-color: #f1f1f1 !IMPORTANT;
-    color: #1f394f;
-    align-items: baseline;
-    box-shadow: 1px 0px 5px 1px #1f394f4d;
-}
-
-.buttons{
-    margin-left: 20px;
-    top: 1vh;
-    padding: 5px;
-    padding-bottom: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 14px;
-}
-
-
-.duas-div{
-    display: grid;
-}
-
-.filtrar{
-    background-color: #275577;
-    padding: 5px 10px;
-    color:white;
-    border-radius: 0px 3px 3px 0px;
-}
-.input-pedido{
-    max-width: 180px;
-}
-.lupa{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 10px 0 10px;
-}
-.pesquisa{
-    border: 0.5px solid black;
-    border-radius: 5px;
-
-    z-index: 1;
-}
-.botoes{
-    background-color: #275577;
-        padding: 5px 10px;
-        color:white;
-        border-radius: 3px;
-}
-.ordenar{
-    outline: none;
-    width:120px;
-    color: white;
-    background-color: #275577;
-    border: 1px solid #333;
-    padding-right: 20px;
-    border-radius: 3px;
-    outline:none
-}
-
-.div-cima{
-    background-color: #275577;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    padding: 10px 0px 10px 20px;
-    border-bottom: 1px solid black;
-}
-
-
-p{
-    margin: 0px;
-}
-
-.bold{
-    font-weight: 700;
-}
-
-
-.baixo{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.footer{
-    display: flex;    
-    justify-content: space-between;
-    padding: 10px;
-    font-weight: 500;
-}
-
-.datas{
-    display: flex;
-    column-gap: 10px;
-}
-
-.dataRetirada, .dataDevolucao, .nome{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.nome, .produtos{
-    margin-left: 10px;
-}
-.gap{
-    column-gap: 10px;
-}
-.topo-2{
-    display: flex;
-    justify-content: flex-end;
-    column-gap: 10px;
-}
-
-.pesquisa{
-    border-bottom: 0.5px solid black;
-}
-
-input{
-    border: transparent;
-    outline: none;
-}
-
-::-webkit-input-placeholder {
-    color: black;
- }
-
-.icone{
-    color: white;
-}
-
-.ordenar{
-    background-color: #275577;
-    border: 1px solid black;
-    padding: 5px 10px;
-}
-
-.filtross{
-    border: none;
-    background-color: transparent;
-    color: white;
-}
-
-select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    text-indent: 1px;
-    text-overflow: '';
-  }
-
-  .body{
-    display: grid;
-    justify-content: center;
-    /* align-items: center; */
-    /* width: 150vw;
-  }
-
- */ 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { EntradasService } from 'src/app/services/entradas.service';
 import { Produto } from 'src/app/shared/produto.model';
 interface Entrada{
@@ -14,10 +14,27 @@ interface Entrada{
   styleUrls: ['./entrada-historico.component.css']
 })
 export class EntradaHistoricoComponent implements OnInit {
+  @Input() paginas = 3
   constructor(private entradaService: EntradasService) { }
   listaEntradas: Entrada[] = []
+
+  url = ""
+  modo = ""
+  titulo = ""
+  textoBotao = ""
+  cs(){
+    console.log('oi')
+  }
   ngOnInit(): void {
-   
+    if(this.url == "/home/devolucoes"){
+      this.modo = 'devolucoes'
+      this.titulo = "DEVOLUÇÕES"
+      this.textoBotao = "Devolver"
+    }else{
+      this.modo = 'entregas'
+      this.titulo = "ENTREGAS"
+      this.textoBotao = "Entregar"
+    }
   this.listaEntradas = this.entradaService.getEntrada()
     
   }

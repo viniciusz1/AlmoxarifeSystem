@@ -135,9 +135,8 @@ button{
     padding: 5px 10px;
     color: white;
     border-radius: 5px;
-    width: 12vw;
-    padding: 10px 15px;
-    margin: 10px;
+    align-items: center;
+    display: flex;
 }
 
 .divprodutos{

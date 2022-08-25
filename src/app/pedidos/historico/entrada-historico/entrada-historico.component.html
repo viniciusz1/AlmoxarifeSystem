@@ -33,9 +33,9 @@
         <div class="data" style="width: 11vw;">
             <span>{{lista.data | date: 'dd/MM/yyyy'}}</span>
         </div>
-        <!-- <div class="botao" [routerLink]="[url, i]">
+        <div (click)="cs()" *ngIf="paginas == 1 || paginas == 2" class="botao" [routerLink]="[url, i]">
             <button>{{textoBotao}}</button>
-        </div> -->
+        </div>
     </div>
 
 </div>
