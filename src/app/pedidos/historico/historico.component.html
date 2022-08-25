@@ -36,15 +36,14 @@
                 </div>
             </div>
         </div>
-        <button (click)="mudarParaEntradas()" class="buttons" style="position: relative;">Entradas</button>
-        <button (click)="mudarParaPedidos()" class="buttons"
+        <button [ngClass]="{'reverse': !exibicao}" (click)="mudarParaEntradas()" class="buttons" style="position: relative;">Entradas</button>
+        <button [ngClass]="{'reverse': exibicao}" (click)="mudarParaPedidos()" class="buttons"
             style="position: relative;">Pedidos</button>
-        <div class="container">
+        <div style="position: absolute;" class="container bu">
             <app-entrada-historico *ngIf="!exibicao"></app-entrada-historico>
-            <!-- *ngFor="let eh of eh" -->
             <div *ngIf="exibicao">
-                <app-pedido-historico *ngFor="let lista of lista; let i = index" [index]='i' [lista]="lista">
-                </app-pedido-historico>
+                <app-pedidos-table  [pedidos]="listaPedidos">
+                </app-pedidos-table>
             </div>
 
         </div>

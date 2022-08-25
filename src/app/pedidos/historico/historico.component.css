@@ -11,12 +11,15 @@
 
 button{
     width: 10vw;
-    background-color: #f1f1f1 !IMPORTANT;
-    color: #1f394f;
+    background: #275577;
+    color: white;
     align-items: baseline;
     box-shadow: 1px 0px 5px 1px #1f394f4d;
 }
-
+.reverse{
+    background-color: #f1f1f1 !IMPORTANT;
+    color: #1f394f;
+}
 .buttons{
     margin-left: 20px;
     top: 1vh;

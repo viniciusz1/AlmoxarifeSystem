@@ -20,14 +20,15 @@ export class HistoricoComponent implements OnInit {
   constructor(private historicoService: HistoricoService,
     private entradasService: EntradasService) { }
     pesquisaPedido = ""
-  lista:Pedido[] = [new Pedido()]
-  // eh:Entrada[] = []
+  listaEntradas:Pedido[] = [new Pedido()]
+  listaPedidos: Pedido[] = []
   ngOnInit(): void {
-    this.lista = this.historicoService.getPedido()
+    this.listaEntradas = this.historicoService.getPedido()
     this.historicoService.historicosChange.subscribe((pedidos) =>
-    this.lista = pedidos
+    this.listaEntradas = pedidos
     )
-    // this.eh = this.entradasService.getEntrada()
+    this.listaPedidos = this.historicoService.getPedido();
+    console.log(this.listaEntradas)
   }
   exibicao = true
   mudarParaEntradas(){
