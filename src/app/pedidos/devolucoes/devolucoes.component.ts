@@ -38,9 +38,13 @@ export class DevolucoesComponent implements OnInit {
 
   exibicao = true
   mudarParaEntregas(){
+    this.router.navigate(['/home/entregas'])
+    this.url = '/home/entregas'
     this.exibicao = false
   }
   mudarParaDevolucoes(){
+    this.router.navigate(['/home/devolucoes'])
+    this.url = '/home/devolucoes'
     this.exibicao=true
   }
   filtroState = false
