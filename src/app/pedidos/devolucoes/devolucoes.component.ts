@@ -19,6 +19,7 @@ export class DevolucoesComponent implements OnInit {
   modo = 'devolucoes'
   textoBotao=""
   titulo=""
+  pesquisaPedido = ""
 
   ngOnInit(): void { 
     this.lista = this.pedidos.getDevolucoes()
@@ -32,7 +33,19 @@ export class DevolucoesComponent implements OnInit {
       this.titulo = "ENTREGAS"
       this.textoBotao = "Entregar"
     }
-
   }
+
+  exibicao = true
+  mudarParaEntregas(){
+    this.exibicao = false
+  }
+  mudarParaDevolucoes(){
+    this.exibicao=true
+  }
+  filtroState = false
+  mudaFiltro(){
+    this.filtroState = !this.filtroState;
+  }
+
 
 }

@@ -12,17 +12,12 @@ export const navbarData = [
     {
         routeLink: '/home/entregas',
         icon: 'bi bi-journal-text',
-        label: 'Entregas'
+        label: 'Pedidos'
     },
     {
         routeLink: '/home/pedidos',
         icon: 'bi bi-journal-text',
         label: 'Seus Pedidos'
-    },
-    {
-        routeLink: '/home/devolucoes',
-        icon: 'bi bi-cart',
-        label: 'Devoluções'
     },
     {
         routeLink: '/home/entrada/0',

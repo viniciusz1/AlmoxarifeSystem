@@ -1,22 +1,29 @@
-<div class="d-flex bg-light container">
-    <div class="body">
+<div class="d-flex">
+    <div class="container">
+        <nav aria-label="breadcrumb" style="position: absolute;
+        top: 81px;">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/home">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Pedidos</li>
+            </ol>
+        </nav>
         <div class="row mt-5" style="display: flex; justify-content: center;">
             <div class="row">
                 <div class="col-md-2 col-sm-12" style="font-size: calc(1.3rem + .6vw);">
                     <b>
-                        <span>{{titulo}}</span>
+                        <span>PEDIDOS</span>
                     </b>
                     <hr style="margin: 0; width: 200px; opacity: 1;">
                 </div>
-                <div class="topo-2 col-md-10 col-sm-12" style="margin-bottom:50px;">
+                <div class="topo-2 col-md-10 col-sm-12" style="margin-bottom:30px;">
                     <div class="d-flex justify-content-end gap" style="align-items: center;">
-                    <div class="pesquisa d-flex">
+                        <div class="pesquisa d-flex">
                             <div class="lupa">
                                 <i class="bi bi-search"></i>
                             </div>
-                            <input class="input-pedido"  placeholder="Pesquisar Produto">
+                            <input class="input-pedido" [(ngModel)]="pesquisaPedido" placeholder="Pesquisar Produto">
                             <div style="cursor:pointer" class="filtrar">
-                                    <i class="bi bi-sliders"></i>
+                                <i class="bi bi-sliders" (click)="mudaFiltro()"></i>
                             </div>
                         </div>
                         <select class="ordenar botoes" style="cursor:pointer; min-width:150px">
@@ -25,12 +32,29 @@
                             <option value="2">Two</option>
                             <option value="3">Three</option>
                         </select>
+                    </div>
                 </div>
             </div>
         </div>
+        <button (click)="mudarParaEntregas()" class="buttons" style="position: relative;">Entregas</button>
+        <button (click)="mudarParaDevolucoes()" class="buttons"
+            style="position: relative;">Devoluções</button>
+        <div class="container">
+            <!-- <app-entrada-historico *ngIf="!exibicao"></app-entrada-historico> -->
+            <!-- *ngFor="let eh of eh" -->
+            <!-- <div *ngIf="exibicao">
+                <app-pedido-historico *ngFor="let lista of lista; let i = index" [index]='i' [lista]="lista">
+                </app-pedido-historico>
+            </div> -->
+        </div>
     </div>
+    <!-- <app-filtro-historico *ngIf="filtroState" (mudarFiltro)="mudaFiltro()" class="meu-fixed"></app-filtro-historico> -->
 
-        <div class="container bu">
+
+
+
+    <!-- <app-filtro-historico *ngIf="filtroState" (mudarFiltro)="mudaFiltro()" class="meu-fixed"></app-filtro-historico> -->
+    <!-- <div class="container bu">
             <div class="indice">
                 <div class="pedido">
                     <span>Pedidos</span>
@@ -68,5 +92,4 @@
                 </div>
             </div>
 
-        </div>
-    </div>
+        </div> -->

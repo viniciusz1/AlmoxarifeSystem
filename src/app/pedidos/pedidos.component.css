@@ -1,3 +1,34 @@
+th{
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+td{
+    text-align: center;
+    padding: 10px;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+}
+
+.bu {
+    border-left: 5px solid #1f394f;
+    box-shadow: 4px 5px 7px -5px;
+    background-color: #f1f1f1;
+    min-height: 66vh;
+}
+
+.pg{
+    font-size: calc(1.3rem + .6vw);
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.meu-absolute{
+    position:fixed;
+    top: 0;
+    left: 50%;
+}
+
 .pg {
     font-size: calc(1.3rem + .6vw);
     margin-top: 50px;

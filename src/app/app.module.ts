@@ -42,7 +42,8 @@ import { SidenavComponent } from './pos-login/sidenav/sidenav.component';
     RotasModule,
     ReactiveFormsModule,
     HomeModule,
-    PedidosModule
+    PedidosModule,
+    
   ],
   providers: [CarrinhoService, ProdutosService, CheckLogged, HistoricoService],
   bootstrap: [AppComponent]

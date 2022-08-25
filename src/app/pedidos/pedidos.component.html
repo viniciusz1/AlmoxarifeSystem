@@ -1,23 +1,130 @@
-<div class="d-flex bg-light">
-    <div class="container body">
-        <div class="principais">
-            <div class="topo">
-                <div class="pg" style="font-size: calc(1.3rem + .6vw);">
+<div class="d-flex">
+    <div class="container">
+        <nav aria-label="breadcrumb" style="position: absolute;
+        top: 81px;">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/home">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Pedidos</li>
+            </ol>
+        </nav>
+        <div class="row mt-5" style="display: flex; justify-content: center;">
+            <div class="row">
+                <div class="col-md-2 col-sm-12" style="font-size: calc(1.3rem + .6vw); margin-bottom: 30px;">
                     <b>
-                        <span>SEUS PEDIDOS</span>
+                        <span>PEDIDOS</span>
                     </b>
                     <hr style="margin: 0; width: 200px; opacity: 1;">
                 </div>
-            </div>
-            <div class="row bu">
-                <div class="col-6" *ngFor="let lista of lista; let i = index">
+
+
+                <div class="container bu" style="position: relative; padding-top: 5px;">
+                    <div class="table-responsive">
+                        <table style="border-collapse:separate; width: 100%;">
+                            <tr class="table-responsive">
+                                <th>Código</th>
+                                <th>Professor</th>
+                                <th>Produtos</th>
+                                <th>Data Reserva</th>
+                                <th>Data Devolucao</th>
+                            </tr>
+                            <tr class="linha-tabela" style="box-shadow: 1px 2px 5px #1f394f;" *ngFor="let pedido of lista">
+                                <td style="position:relative; padding-left: 20px;">{{pedido.codigo}}<div class="bloco-azul"></div></td>
+                                <td>{{pedido.nomeProfessor}}</td>
+                                <td class="text-truncate" style="max-width:249px;"><span
+                                        *ngFor="let produto of pedido.listaProdutos">{{produto.nome}}, </span></td>
+                                <td>{{pedido.dataReserva  | date: 'dd/MM/yyyy'}}</td>
+                                <td>{{pedido.dataDevolucao  | date: 'dd/MM/yyyy'}}</td>
+                                <td><button class="btn btn-primary">Cancelar Pedido</button></td>
+                            </tr>
+                        </table>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <!-- <div class="indice" style="justify-content: space-between; display: flex;">
+                        <div class="pedido" style="margin-left: 5vw; width: 5vw;">
+                            <span>Pedidos</span>
+                        </div>
+                        <div class="professor" style="margin-left: 3vw; width: 8vw;">
+                            <span>Professor</span>
+                        </div>
+                        <div class="produtos">
+                            <span>Produtos</span>
+                        </div>
+                        <div class="data" style="width: 11vw;">
+                            <span>Data Reserva</span>
+                        </div>
+                        <div class="data" style="width: 11vw;">
+                            <span>Data Devolucao</span>
+                        </div>
+                    </div>
+                    <div class="lista bloco" style="justify-content: space-between;"
+                        *ngFor="let lista of lista; let i = index">
+                        <div class="px">
+                        </div>
+                        <div class="pedido" style="width: 5vw;">
+                            <span>{{lista.codigo}}</span>
+                        </div>
+                        <div class="professor" style="margin-left: 3vw; width: 8vw;">
+                            <span>{{lista.nomeProfessor}}</span>
+                        </div>
+                        <div class="produtos"> -->
+                    <!-- <div class="d-inline-block text-truncate">
+                                    <span *ngFor="let l of lista.listaProduto">{{l.nome}}, </span>
+                                    <span>{{lista.produto}}</span>
+                                </div> -->
+                    <!-- <span>{{lista.listaProdutos}}</span>
+                        </div>
+
+                        <div class="data" style="width: 11vw;">
+                            <span>{{lista.dataReserva | date: 'dd/MM/yyyy'}}</span>
+                        </div>
+
+                        <div class="data" style="width: 11vw;">
+                            <span>{{lista.dataDevolucao| date: 'dd/MM/yyyy'}}</span>
+                        </div> -->
+                    <!-- <div class="botao" [routerLink]="[url, i]">
+                                <button>{{textoBotao}}</button>
+                            </div> -->
+                    <!-- 
+                        <div class="footer">
+                            <div class="status">
+                                <span>Status: {{lista.status}}</span>
+                            </div>
+                            <div class="cancelar">
+                                <button (click)="removerPedido(i)">Cancelar Pedido</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> -->
+
+
+                    <!-- <div class="col-6" *ngFor="let lista of lista; let i = index">
                     <div class="duas-div col-5">
                         <div class="div-cima">
                             <div>
                                 <p>Código Pedido: {{lista.codigo}}</p>
                             </div>
-                            <div> 
-                            <div class="info">
+                            <div>
+                                <div class="info">
                                     <i style="font-size: 20px;" class="bi bi-info-circle"></i>
                                 </div>
                             </div>
@@ -27,7 +134,8 @@
                                 <div class="d-inline-block text-truncate" style="max-width: 30vw;">
                                     <i style="font-size: 30px;" (mouseover)="tooltip(i)" title="{{produtosString}}"
                                         class="bi bi-box2-fill"></i>
-                                    <span title="{{produtosString}}" class="bold" *ngFor="let produto of lista.listaProdutos">{{produto.nome}},
+                                    <span title="{{produtosString}}" class="bold"
+                                        *ngFor="let produto of lista.listaProdutos">{{produto.nome}},
                                     </span>
                                 </div>
                             </div>
@@ -51,9 +159,10 @@
                             </div>
                         </div>
                     </div>
+                </div> -->
+
                 </div>
+
             </div>
         </div>
-
     </div>
-</div>
