@@ -17,7 +17,26 @@ export class VerificarTelComponent implements OnInit {
   ngOnInit(): void {
     // this.repeat();
   }
+
+  sout = 0;
+  modal = false;
+
+  mask(){
+    console.log(1)
+    // if(!isNaN(this.sout)){
+    //   // let teste = this.sout + "";
+    //   this.sout = this.sout/10;
+    // }
+  }
   
+  verificar(){
+    this.modal = true;
+  }
+
+  modalOpen() {
+    this.modal = !this.modal
+  }  
+
 // fim = 30;
 // repeat(){
 //   if (this.fim < 0) return

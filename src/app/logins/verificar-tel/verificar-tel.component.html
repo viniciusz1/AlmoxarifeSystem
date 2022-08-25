@@ -1,8 +1,8 @@
 <body style="height: 100vh; width: 100vw;">
     <div style="height: 100vh;">
-        <div class="centralizar">
+        <div class="centralizar" style="height: 100vh;">
             <div class="centro">
-                <a routerLink="/"><i  class="bi bi-arrow-left icons" style="margin-left: 20px;"></i></a>
+                <a routerLink="/"><i class="bi bi-arrow-left icons" style="margin-left: 20px;"></i></a>
                 <img class="logo" src="../../../assets/loginho.png" style="height: 50px;">
                 <div class="centralizar" style="margin-top: 20px;">
                     <div class="textAl">
@@ -10,36 +10,41 @@
                     </div>
                 </div>
                 <div style="margin-top: 10px;">
-                    <div>
-                        <h6>Foi enviado um código de verificação para seu email: </h6>
-                        <h6>************08@gmail.com. Por gentileza, preencha o campo abaixo:</h6>
-                    </div>
                     <div class="centralizar">
+                        <div>
+                            <h6>Código de verificação enviado para seu email.</h6>
+                            <div class="centralizar">
+                                <h6>Por gentileza, preencha o campo abaixo:</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="centralizar" style="margin-top: 10px;">
                         <i class="bi bi-upc-scan icons" style="font-size: 80px;"></i>
                     </div>
 
                     <div class="centralizar" style="margin-top: 20px;">
-                        <div class="botoes centralizar">
+                        <!-- <div class="botoes centralizar">
                             <div class="ladoInput" style="height: 50px; width: 50px;">
                                 <div style="margin-left: 10px;">
                                     <i class="bi bi-key-fill icons"></i>
                                 </div>
                             </div>
                             <input class="inputs" placeholder="Senha" type="password">
-                        </div>
+                        </div> -->
+                        <input class="inputs" (onkeyup)="mask()" [(ngModel)]="sout">
+                        <input class="inputs" onkeyup="mask()">
+                        <input class="inputs" onkeyup="mask()">
+                        <input class="inputs" onkeyup="mask()">
+                        <input class="inputs" onkeyup="mask()">
                     </div>
-                    <div class="centralizar" style="margin-top: 50px;">
-                        <button  class="botao"
-                            style="background-color: #1f394f; color: white;">Entrar</button>
-                        <span style="margin-left: 30px;">Esqueceu a senha?</span>
+                    <div class="centralizar" style="margin-top: 45px;">
+                        <button (click)="verificar()" class="botao" style="background-color: #1f394f; color: white;">Verificar</button>
+                        <button class="botaoBranco botao" style="margin-left: 15px;">Reenviar</button>
                     </div>
-                    <div class="centralizar" style="margin-top: 50px;">
-                        <a routerLink="/cadastro" style="color: #1f394f;">
-                            <h6>Não tem acesso? Cadastre-se</h6>
-                        </a>
-                    </div>
+
                 </div>
             </div>
         </div>
     </div>
+    <app-telefone *ngIf="modal" class="fundoModal" (fechaModal)="modalOpen()"></app-telefone>
 </body>

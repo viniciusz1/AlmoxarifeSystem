@@ -9,8 +9,8 @@ body {
     height: 500px;
     width: 500px;
     background-color: white;
-    margin-top: 120px;
-    margin-right: 500px;
+    /* margin-top: 120px; */
+    margin-right: 35%;
     border-radius: 20px;
     box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.548);
 }
@@ -38,12 +38,10 @@ body {
 }
 
 .inputs {
-    box-shadow: 6px 1px 7px 1px rgba(0, 0, 0, 0.329);
-    border-radius: 0px 5px 5px 0px;
-    border: none;
-    outline: none;
-    width: 280px;
-    height: 50px;
+    width: 40px;
+    border: 0px black solid;
+    border-bottom: 1px black solid;
+    margin-right: 10px;
 }
 
 .icons {
@@ -60,4 +58,19 @@ input {
     height: 40px;
     border-radius: 2px;
     border-color: transparent;
+}
+
+.botaoBranco {
+    background-color: white;
+    color: #1f394f;
+    border: 1px solid #1f394f;
+}
+
+.fundoModal{
+    position: fixed;
+    opacity: 10px;
+    width: 100vw;
+    height: 100vh;
+    right: 0;
+    top: 0;
 }

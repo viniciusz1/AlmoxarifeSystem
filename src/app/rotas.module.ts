@@ -175,12 +175,12 @@ import { DashboardComponent } from './pedidos/dashboard/dashboard.component';
         canActivate: [],
       },
       {
-        path: 'cadastro/telefone',
+        path: 'modalSenha',
         component: TelefoneComponent,
         canActivate: [],
       },
       {
-        path: 'cadastro/telefone/verificar',
+        path: 'verificar',
         component: VerificarTelComponent,
         canActivate: [],
       },

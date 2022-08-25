@@ -65,3 +65,12 @@ input {
     color: #1f394f;
     border: 1px solid #1f394f;
 }
+
+.fundoModal{
+    position: fixed;
+    opacity: 10px;
+    width: 100vw;
+    height: 100vh;
+    right: 0;
+    top: 0;
+}

@@ -6,6 +6,7 @@ import { TelefoneComponent } from './telefone/telefone.component';
 import { VerificarTelComponent } from './verificar-tel/verificar-tel.component';
 import { FormsModule } from '@angular/forms';
 import { RotasModule } from '../rotas.module';
+import { PedidosModule } from '../pedidos/pedidos.module';
 
 
 
@@ -19,7 +20,8 @@ import { RotasModule } from '../rotas.module';
   imports: [
     CommonModule,
     FormsModule,
-    RotasModule
+    RotasModule,
+    PedidosModule
   ],
   exports: [
     LoginComponent,

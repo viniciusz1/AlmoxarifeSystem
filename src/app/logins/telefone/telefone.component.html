@@ -1,42 +1,42 @@
 <body style="height: 100vh; width: 100vw;">
-
     <div style="height: 100vh;">
-        <div style="display: flex; justify-content: end; margin-right: 100px;">
-            <a routerLink="/"><img src="https://i.ibb.co/sJpqLWy/zyro-image-3.png" style="height: 120px;"></a>
-        </div>
-        <div class="centralizar">
+        <div class="centralizar" style="height: 100vh;">
             <div class="centro">
-                <a routerLink="/cadastro"><i class="bi bi-arrow-left icons" style="margin-left: 20px;"></i></a>
-                <img class="logo" src="https://i.ibb.co/4mTFW0k/Logo-removebg-preview.png" style="height: 50px;">
-                <div class="centralizar" style="margin-top: 30px;">
+                <div style="display: flex; justify-content: end; margin-right: 10px;">
+                   <i (click)="FecharModal()" class="bi bi-x-circle icons"></i>
+                </div>
+                <img class="logo" src="../../../assets/loginho.png" style="height: 50px;">
+                <div class="centralizar" style="margin-top: 35px;">
                     <div class="textAl">
                         Almoxarife System
                     </div>
                 </div>
-                <div class="centralizar" style="margin-top: 40px;">
-                    <h5>Adicione um Número de Telefone</h5>
-                </div>
-                <div class="centralizar" style="margin-top: 40px; margin-right: 230px;">
-                    <img style="height: 30px;" src="https://cdn.icon-icons.com/icons2/1694/PNG/512/brbrazilflag_111698.png">
-                    <div class="centralizar numTel">
-                        +55
+                <div style="margin-top: 30px;">
+                    <div class="centralizar" style="margin-bottom: 25px;">
+                        <h6>Sua senha está pronta para ser alterada!</h6>
                     </div>
-                </div>
-                <div style="margin-top: 20px;">
                     <div class="centralizar">
                         <div class="botoes centralizar">
                             <div class="ladoInput" style="height: 50px; width: 50px;">
-                                <i class="bi bi-telephone-fill icons" style="margin-left: 10px;"></i>
+                                <i class="bi bi-key icons" style="margin-left: 10px;"></i>
                             </div>
-                            <input class="inputs" placeholder="Telefone" type="tel" [(ngModel)]="telefone">
+                            <input class="inputs" placeholder="Nova Senha" type="password">
                         </div>
 
                     </div>
 
-
+                    <div class="centralizar" style="margin-top: 40px;">
+                        <div class="botoes centralizar">
+                            <div class="ladoInput" style="height: 50px; width: 50px;">
+                                <div style="margin-left: 10px;">
+                                    <i class="bi bi-key-fill icons"></i>
+                                </div>
+                            </div>
+                            <input class="inputs" placeholder="Confirmar Senha" type="password">
+                        </div>
+                    </div>
                     <div class="centralizar" style="margin-top: 50px;">
-                        <button (click)="enviar()" class="botao" style="background-color: #0047B5; color: white;">Enviar</button>
-                        <button class="botaoBranco botao" style="margin-left: 15px;">Pular</button>
+                        <button routerLink="/" class="botao" style="background-color: #1f394f; color: white;">Enviar</button>
                     </div>
 
                 </div>
