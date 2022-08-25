@@ -19,9 +19,7 @@
 
                 <div class="container bu" style="position: relative; padding-top: 5px;">
                     <div class="table-responsive">
-
-
-                        <table style="border-collapse:separate">
+                        <table style="border-collapse:separate; width: 100%;">
                             <tr class="table-responsive">
                                 <th>Código</th>
                                 <th>Professor</th>
@@ -29,15 +27,13 @@
                                 <th>Data Reserva</th>
                                 <th>Data Devolucao</th>
                             </tr>
-
-                            <tr class="linha-tabela" *ngFor="let pedido of lista">
-
-                                <td style="position:relative;
-                             padding-left: 20px;">{{pedido.codigo}}<div class="bloco-azul"></div>
-                                </td>
+                            <tr class="linha-tabela" style="box-shadow: 1px 2px 5px #1f394f;" *ngFor="let pedido of lista">
+                                <td style="position:relative; padding-left: 20px;">{{pedido.codigo}}<div class="bloco-azul"></div></td>
                                 <td>{{pedido.nomeProfessor}}</td>
                                 <td class="text-truncate" style="max-width:249px;"><span
                                         *ngFor="let produto of pedido.listaProdutos">{{produto.nome}}, </span></td>
+                                <td>{{pedido.dataReserva  | date: 'dd/MM/yyyy'}}</td>
+                                <td>{{pedido.dataDevolucao  | date: 'dd/MM/yyyy'}}</td>
                                 <td><button class="btn btn-primary">Cancelar Pedido</button></td>
                             </tr>
                         </table>
