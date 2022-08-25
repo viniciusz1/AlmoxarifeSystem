@@ -42,7 +42,7 @@
         <div style="position: absolute;" class="container bu">
             <app-entrada-historico *ngIf="!exibicao"></app-entrada-historico>
             <div *ngIf="exibicao">
-                <app-pedidos-table  [pedidos]="listaPedidos">
+                <app-pedidos-table [botao]="'Ver'"  [pedidos]="listaPedidos">
                 </app-pedidos-table>
             </div>
 
