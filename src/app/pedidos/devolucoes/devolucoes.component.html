@@ -58,22 +58,24 @@
             <div class="lista bloco" *ngFor="let lista of lista; let i = index">
                 <div class="px">
                 </div>
-                <div class="pedido">
+                <div class="pedido" style="width: 5%;">
                     <span>{{lista.codigo}}</span>
                 </div>
-                <div class="professor">
+                <div class="professor" style="width: 15%;">
                     <span>{{lista.nomeProfessor}}</span>
                 </div>
-                <div class="central">
+                <div class="central" style="width: 55%;">
                     <div class="d-inline-block text-truncate">
                         <span *ngFor="let l of lista.listaProdutos">{{l.nome}}, </span>
                     </div>
                 </div>
 
-                <div class="data">
+                <div class="data" style="width: 10%;">
                     <span>{{lista.dataDevolucao | date: 'dd/MM/yyyy'}}</span>
                 </div>
-                <div class="botao" [routerLink]="[url, i]">
+                <div class="botao" [routerLink]="[url, i]" style="width: 15%;
+                display: flex;
+                justify-content: flex-end;">
                     <button class="m-2 btn btn-primary">{{textoBotao}}</button>
                 </div>
             </div>

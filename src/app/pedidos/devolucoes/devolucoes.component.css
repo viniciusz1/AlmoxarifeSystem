@@ -259,7 +259,6 @@ input{
 .indice, .lista{
     margin-top: 8px;
     display: flex;
-    column-gap: 15px;
 }
 
 .professor{
@@ -301,8 +300,6 @@ input{
 }
 
 .central{
-    width: 35vw;
-    margin-right: 5vw;
     display: flex;
     justify-content: center;
     align-items: center;
