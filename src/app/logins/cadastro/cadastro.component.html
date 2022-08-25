@@ -1,13 +1,9 @@
 <body style="height: 100vh; width: 100vw;">
-
     <div style="height: 100vh;">
-        <div style="display: flex; justify-content: end; margin-right: 100px;">
-            <a routerLink="/"><img src="https://i.ibb.co/sJpqLWy/zyro-image-3.png" style="height: 120px;"></a>
-        </div>
         <div class="centralizar">
             <div class="centro">
                 <a routerLink="/"><i  class="bi bi-arrow-left icons" style="margin-left: 20px;"></i></a>
-                <img class="logo" src="https://i.ibb.co/4mTFW0k/Logo-removebg-preview.png" style="height: 50px;">
+                <img class="logo" src="../../../assets/loginho.png" style="height: 50px;">
                 <div class="centralizar" style="margin-top: 5px;">
                     <div class="textAl">
                         Almoxarife System
@@ -45,8 +41,8 @@
                     <div class="centralizar" style="margin-top: 10px;">
                         <div class="botoes centralizar">
                             <div class="ladoInput" style="height: 50px; width: 50px;">
-                                <div style="margin-left: 10px; margin-top: 10px;">
-                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 172 172" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#0047b5"><path d="M86,7.16667c-20.58426,0 -37.84782,14.66404 -42.11816,34.30762l14.01139,3.05143c2.89632,-13.32309 14.29103,-23.02572 28.10677,-23.02572c16.3127,0 28.66667,12.35397 28.66667,28.66667v7.16667h-71.66667c-7.88333,0 -14.33333,6.45 -14.33333,14.33333v71.66667c0,7.88333 6.45,14.33333 14.33333,14.33333h86c7.88333,0 14.33333,-6.45 14.33333,-14.33333v-71.66667c0,-7.88333 -6.45,-14.33333 -14.33333,-14.33333v-7.16667c0,-23.82063 -19.17936,-43 -43,-43zM86,93.16667c7.88333,0 14.33333,6.45 14.33333,14.33333c0,7.88333 -6.45,14.33333 -14.33333,14.33333c-7.88333,0 -14.33333,-6.45 -14.33333,-14.33333c0,-7.88333 6.45,-14.33333 14.33333,-14.33333z"></path></g></g></svg>
+                                <div style="margin-left: 10px;">
+                                    <i class="bi bi-key icons"></i>    
                                 </div>
                             </div>
                             <input class="inputs" placeholder="Senha" type="password" [(ngModel)]="senha">
@@ -56,8 +52,8 @@
                     <div class="centralizar" style="margin-top: 10px;">
                         <div class="botoes centralizar">
                             <div class="ladoInput" style="height: 50px; width: 50px;">
-                                <div style="margin-left: 10px; margin-top: 10px;">
-                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 172 172" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#0047b5"><path d="M86,7.16667c-20.58426,0 -37.84782,14.66404 -42.11816,34.30762l14.01139,3.05143c2.89632,-13.32309 14.29103,-23.02572 28.10677,-23.02572c16.3127,0 28.66667,12.35397 28.66667,28.66667v7.16667h-71.66667c-7.88333,0 -14.33333,6.45 -14.33333,14.33333v71.66667c0,7.88333 6.45,14.33333 14.33333,14.33333h86c7.88333,0 14.33333,-6.45 14.33333,-14.33333v-71.66667c0,-7.88333 -6.45,-14.33333 -14.33333,-14.33333v-7.16667c0,-23.82063 -19.17936,-43 -43,-43zM86,93.16667c7.88333,0 14.33333,6.45 14.33333,14.33333c0,7.88333 -6.45,14.33333 -14.33333,14.33333c-7.88333,0 -14.33333,-6.45 -14.33333,-14.33333c0,-7.88333 6.45,-14.33333 14.33333,-14.33333z"></path></g></g></svg>
+                                <div style="margin-left: 10px;">
+                                    <i class="bi bi-key-fill icons"></i>    
                                 </div>
                             </div>
                             <input class="inputs" placeholder="Confirmar Senha" type="password" [(ngModel)]="confirmar">
@@ -66,7 +62,7 @@
 
 
                     <div class="centralizar" style="margin-top: 25px;">
-                        <button (click)="cadastrar()" class="botao" style="background-color: #0047B5; color: white;">Cadastrar</button>
+                        <button (click)="cadastrar()" class="botao" style="background-color: #1f394f; color: white;">Cadastrar</button>
                         <button (click)="limpar()" class="botaoBranco botao" style="margin-left: 15px;">Limpar</button>
                     </div>
 
@@ -74,4 +70,6 @@
             </div>
         </div>
     </div>
+
+    <app-confirmar *ngIf="modal" class="fundoModal" (fechaConfirmar)="modalOpen()"></app-confirmar>
 </body>

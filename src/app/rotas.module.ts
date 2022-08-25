@@ -43,7 +43,6 @@ import { DashboardComponent } from './pedidos/dashboard/dashboard.component';
           component: HomeComponent,
           canActivate: []
         },
-        
         {
           path: 'pedidos',
           component: PedidosComponent,
@@ -163,7 +162,6 @@ import { DashboardComponent } from './pedidos/dashboard/dashboard.component';
           path: ':id',
           component: HomeComponent,
           canActivate: [],
-          
         },
       ]},
       {
@@ -174,42 +172,42 @@ import { DashboardComponent } from './pedidos/dashboard/dashboard.component';
       {
         path: 'cadastro',
         component: CadastroComponent,
-        canActivate: []
+        canActivate: [],
       },
       {
-        path: 'cadastro/telefone',
+        path: 'modalSenha',
         component: TelefoneComponent,
-        canActivate: []
+        canActivate: [],
       },
       {
-        path: 'cadastro/telefone/verificar',
+        path: 'verificar',
         component: VerificarTelComponent,
-        canActivate: []
+        canActivate: [],
       },
       {
         path: 'confirmar',
         component: ConfirmarComponent,
-        canActivate: []
+        canActivate: [],
       },
       {
         path: 'modalPedidos',
         component: ModalPedidosComponent,
-        canActivate: []
+        canActivate: [],
       },
       {
         path: 'modalDevolucao',
         component: ModalDevolucaoComponent,
-        canActivate: []
+        canActivate: [],
       },
       {
           path: 'historico',
           component: HistoricoComponent,
-          canActivate: []
+          canActivate: [],
       },
       {
           path: 'produto-lista',
           component: ProdutoListaComponent,
-          canActivate: []
+          canActivate: [],
       }
       ])
   ],

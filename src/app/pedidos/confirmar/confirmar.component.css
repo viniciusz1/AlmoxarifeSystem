@@ -1,14 +1,13 @@
 body {
-    background-color: #cacaca;
+    background-color: rgba(0, 0, 0, 0.55);
 }
 
 .centro {
-    height: 550px;
+    height: 500px;
     width: 500px;
     background-color: white;
-}
-.fundo{
-    background-color: black;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.548);
 }
 
 .centralizar {
@@ -18,13 +17,13 @@ body {
 }
 
 .certo {
-    height: 280px;
-    width: 280px;
+    height: 220px;
+    width: 220px;
     border-radius: 1000px;
-    background-color: #1F8D0E;
+    background-color: #1F394F;
 }
 
 .icons {
     font-size: 30px;
-    color: #0047B5;
+    color: #1F394F;
 }
