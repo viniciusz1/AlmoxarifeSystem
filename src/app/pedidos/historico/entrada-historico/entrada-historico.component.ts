@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, Input, OnInit } from '@angular/core';
 import { EntradasService } from 'src/app/services/entradas.service';
 import { Produto } from 'src/app/shared/produto.model';
@@ -15,7 +16,8 @@ interface Entrada{
 })
 export class EntradaHistoricoComponent implements OnInit {
   @Input() paginas = 3
-  constructor(private entradaService: EntradasService) { }
+  constructor(private router: Router,
+    private entradaService: EntradasService) { }
   listaEntradas: Entrada[] = []
 
   url = ""
@@ -23,9 +25,10 @@ export class EntradaHistoricoComponent implements OnInit {
   titulo = ""
   textoBotao = ""
   cs(){
-    console.log('oi')
+    console.log(this.url)
   }
   ngOnInit(): void {
+    this.url = this.router.url
     if(this.url == "/home/devolucoes"){
       this.modo = 'devolucoes'
       this.titulo = "DEVOLUÇÕES"
