@@ -1,4 +1,4 @@
-<div class="container bu" style="position: relative; padding-top: 5px;">
+<div class="container" style="position: relative; padding-top: 5px;">
     <div class="indice" style="justify-content: space-between;">
         <div class="pedido" style="margin-left: 5vw; width: 5vw;">
             <span>Pedidos</span>
@@ -33,9 +33,9 @@
         <div class="data" style="width: 11vw;">
             <span>{{lista.data | date: 'dd/MM/yyyy'}}</span>
         </div>
-        <!-- <div class="botao" [routerLink]="[url, i]">
+        <div (click)="cs()" *ngIf="paginas == 1 || paginas == 2" class="botao" [routerLink]="[url, i]">
             <button>{{textoBotao}}</button>
-        </div> -->
+        </div>
     </div>
 
 </div>

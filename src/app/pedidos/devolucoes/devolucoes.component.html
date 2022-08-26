@@ -36,25 +36,11 @@
                 </div>
             </div>
         </div>
-        <button (click)="mudarParaEntregas()" class="buttons" style="position: relative;">Entregas</button>
-        <button (click)="mudarParaDevolucoes()" class="buttons"
-            style="position: relative;">Devoluções</button>
-        <div class="container">
-            <!-- <app-entrada-historico *ngIf="!exibicao"></app-entrada-historico> -->
-            <!-- *ngFor="let eh of eh" -->
-            <!-- <div *ngIf="exibicao">
-                <app-pedido-historico *ngFor="let lista of lista; let i = index" [index]='i' [lista]="lista">
-                </app-pedido-historico>
-            </div> -->
+        <div>
+            <button [ngClass]="{'reverse': modo == 'entregas'}" (click)="mudarParaEntregas()" class="buttons button" style="position: relative;">Entregas</button>
+            <button [ngClass]="{'reverse': modo == 'devolucoes'}" (click)="mudarParaDevolucoes()" class="buttons button" style="position: relative;">Devoluções</button>
         </div>
-    </div>
-    <!-- <app-filtro-historico *ngIf="filtroState" (mudarFiltro)="mudaFiltro()" class="meu-fixed"></app-filtro-historico> -->
-
-
-
-
-    <!-- <app-filtro-historico *ngIf="filtroState" (mudarFiltro)="mudaFiltro()" class="meu-fixed"></app-filtro-historico> -->
-    <!-- <div class="container bu">
+        <div style="position: absolute;" class="container bu">
             <div class="indice">
                 <div class="pedido">
                     <span>Pedidos</span>
@@ -72,24 +58,30 @@
             <div class="lista bloco" *ngFor="let lista of lista; let i = index">
                 <div class="px">
                 </div>
-                <div class="pedido">
+                <div class="pedido" style="width: 5%;">
                     <span>{{lista.codigo}}</span>
                 </div>
-                <div class="professor">
+                <div class="professor" style="width: 15%;">
                     <span>{{lista.nomeProfessor}}</span>
                 </div>
-                <div class="central">
+                <div class="central" style="width: 55%;">
                     <div class="d-inline-block text-truncate">
                         <span *ngFor="let l of lista.listaProdutos">{{l.nome}}, </span>
                     </div>
                 </div>
 
-                <div class="data">
+                <div class="data" style="width: 10%;">
                     <span>{{lista.dataDevolucao | date: 'dd/MM/yyyy'}}</span>
                 </div>
-                <div class="botao" [routerLink]="[url, i]">
-                    <button>{{textoBotao}}</button>
+                <div class="botao" [routerLink]="[url, i]" style="width: 15%;
+                display: flex;
+                justify-content: flex-end;">
+                    <button class="m-2 btn btn-primary">{{textoBotao}}</button>
                 </div>
             </div>
 
-        </div> -->
+        </div>
+    </div>
+
+
+
