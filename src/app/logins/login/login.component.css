@@ -1,12 +1,18 @@
 body {
-    background-color: #0047B5;
-    box-shadow: inset 4px 4px 250px 10px #000;
+    /* box-shadow: inset 4px 4px 250px 10px #000; */
+    background-image: url("../../../assets/capa.png");
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
 }
 
 .centro {
     height: 500px;
-    width: 450px;
+    width: 500px;
     background-color: white;
+    margin-top: 120px;
+    margin-right: 500px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.548);
 }
 
 .centralizar {
@@ -16,30 +22,33 @@ body {
 }
 
 .textAl {
-    color: #0047B5;
+    color: #1f394f;
     font-size: 30px;
 }
 
 .logo {
     position: absolute;
-    margin: 42px 10px 10px 69px;
+    margin: 42px 10px 10px 90px;
 }
 
 .ladoInput {
-    border: 1px solid black;
-    border-right: 0px;
+    box-shadow: 3px 1px 7px 1px rgba(0, 0, 0, 0.329);
+    border-radius: 5px 0px 0px 5px;
+
 }
 
 .inputs {
-    border: 1px solid black;
-    border-left: 0px;
+    box-shadow: 6px 1px 7px 1px rgba(0, 0, 0, 0.329);
+    border-radius: 0px 5px 5px 0px;
+    border: none;
+    outline: none;
     width: 280px;
     height: 50px;
 }
 
 .icons {
     font-size: 30px;
-    color: #0047B5;
+    color: #1f394f;
 }
 
 input {

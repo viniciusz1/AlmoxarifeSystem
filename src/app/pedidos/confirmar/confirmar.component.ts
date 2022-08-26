@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-confirmar',
@@ -6,6 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./confirmar.component.css']
 })
 export class ConfirmarComponent implements OnInit {
+
+  @Output() fechaConfirmar = new EventEmitter<boolean>();
+
+  FecharModal(){
+    this.fechaConfirmar.emit(false)
+  }
 
   constructor() { }
 

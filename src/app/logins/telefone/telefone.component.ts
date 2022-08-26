@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 
@@ -8,6 +8,12 @@ import { UsuariosService } from 'src/app/services/usuarios.service';
   styleUrls: ['./telefone.component.css']
 })
 export class TelefoneComponent implements OnInit {
+  
+  @Output() fechaModal = new EventEmitter<boolean>();
+
+  FecharModal(){
+    this.fechaModal.emit(false)
+  }
 
   constructor(
     private router: Router,
@@ -16,6 +22,8 @@ export class TelefoneComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  
 
   telefone = "";
 
