@@ -30,7 +30,7 @@ export class HistoricoComponent implements OnInit {
     this.listaPedidos = this.historicoService.getPedido();
     console.log(this.listaEntradas)
   }
-  exibicao = true
+  exibicao = false
   mudarParaEntradas(){
     this.exibicao = false
   }

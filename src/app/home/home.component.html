@@ -4,8 +4,6 @@
             <div class="d-flex" style="position:relative ;justify-content: space-between;">
                 <nav aria-label="breadcrumb" style="position: absolute;top: -30px;">
                     <ol class="breadcrumb">
-                        <!-- <li class="breadcrumb-item"><a href="#">Home</a></li>
-                          <li class="breadcrumb-item"><a href="#">Library</a></li> -->
                         <li class="breadcrumb-item active" aria-current="page">Home</li>
                     </ol>
                 </nav>
@@ -30,9 +28,10 @@
                         </div>
                         <select class="ordenar botoes" style="cursor:pointer; min-width:150px">
                             <option value="5">Ordenar</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option value="5">A - Z</option>
+                            <option value="1">Z - A</option>
+                            <option value="2">Maior Quantidade</option>
+                            <option value="3">Menor Quantidade</option>
                         </select>
                         <div class="botoes" style="cursor:pointer">
                             <div class="icone">
@@ -86,6 +85,25 @@
                 <app-produto class="col-xl-4 index col-md-6" [indiceProduto]="i" [produto]="lista"
                     *ngFor="let lista of (lista ) | filtroProdutos:pesquisaProduto; let i = index">
                 </app-produto>
+            </div>
+            <div class="paginacao-div">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>
