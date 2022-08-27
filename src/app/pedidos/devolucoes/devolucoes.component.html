@@ -45,45 +45,25 @@
             <button [ngClass]="{'reverse': modo == 'devolucoes'}" (click)="mudarParaDevolucoes()" class="buttons button" style="position: relative;">Devoluções</button>
         </div>
         <div style="position: absolute;" class="container bu">
-            <div class="indice">
-                <div class="pedido">
-                    <span>Pedidos</span>
-                </div>
-                <div class="professor">
-                    <span>Professor</span>
-                </div>
-                <div class="produtos">
-                    <span>Produtos</span>
-                </div>
-                <div class="data">
-                    <span>Data</span>
-                </div>
-            </div>
-            <div class="lista bloco" *ngFor="let lista of lista; let i = index">
-                <div class="px">
-                </div>
-                <div class="pedido" style="width: 5%;">
-                    <span>{{lista.codigo}}</span>
-                </div>
-                <div class="professor" style="width: 15%;">
-                    <span>{{lista.nomeProfessor}}</span>
-                </div>
-                <div class="central" style="width: 55%;">
-                    <div class="d-inline-block text-truncate">
-                        <span *ngFor="let l of lista.listaProdutos">{{l.nome}}, </span>
-                    </div>
-                </div>
-
-                <div class="data" style="width: 10%;">
-                    <span>{{lista.dataDevolucao | date: 'dd/MM/yyyy'}}</span>
-                </div>
-                <div class="botao" [routerLink]="[url, i]" style="width: 15%;
-                display: flex;
-                justify-content: flex-end;">
-                    <button class="m-2 btn btn-primary">{{textoBotao}}</button>
-                </div>
-            </div>
-
+            <table class="table table-hover table-responsive">
+                <thead class="">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Professor</th>
+                        <th scope="col">Produtos</th>
+                        <th scope="col">Data</th>
+                      </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let lista of lista; let i = index">
+                        <th scope="row">1</th>
+                        <td>{{lista.nomeProfessor}}</td>
+                        <td class="text-truncate" style="max-width: 30%;"><span *ngFor="let l of lista.listaProdutos">{{l.nome}}, </span></td>
+                        <td>{{lista.dataDevolucao | date: 'dd/MM/yyyy'}}</td>
+                        <td><button [routerLink]="[url, i]" class="btn-primary" style="border-radius: 5px;">{{textoBotao}}</button></td>
+                      </tr>
+                </tbody>
+              </table>
         </div>
     </div>
 

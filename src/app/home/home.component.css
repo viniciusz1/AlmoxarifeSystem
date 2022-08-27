@@ -6,8 +6,13 @@
 .linha {
     width: 20%;
 }
+.paginacao-div{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
 
-.input-input {
+}
+.input-input{
     box-shadow: 0 0 0 0;
     border: 0 none;
     outline: 0;
