@@ -1,5 +1,25 @@
 <div class="container" style="position: relative; padding-top: 5px;">
-    <div class="indice" style="justify-content: space-between;">
+    <table class="table table-hover table-responsive">
+        <thead class="">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Quantidade</th>
+                <th scope="col">Data</th>
+              </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let lista of listaEntradas; let i = index">
+                <th scope="row">{{lista.codigo}}</th>
+                <td>{{lista.produto.nome}}</td>
+                <td class="text-truncate" style="max-width: 30%;">{{lista.quantidade}}</td>
+                <td>{{lista.data | date: 'dd/MM/yyyy'}}</td>
+              </tr>
+        </tbody>
+      </table>
+
+
+    <!-- <div class="indice" style="justify-content: space-between;">
         <div class="pedido" style="width: 5%;">
             <span>Código</span>
         </div>
@@ -33,6 +53,6 @@
         <div (click)="cs()" *ngIf="paginas == 1 || paginas == 2" class="botao" [routerLink]="[url, i]">
             <button>{{textoBotao}}</button>
         </div>
-    </div>
+    </div> -->
 
 </div>

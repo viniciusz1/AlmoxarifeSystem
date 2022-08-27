@@ -18,7 +18,30 @@
 
 
                 <div class="container bu" style="position: relative; padding-top: 5px;">
-                    <div class="table-responsive">
+                    <table class="table table-hover table-responsive">
+                        <thead class="">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Professor</th>
+                                <th scope="col">Produtos</th>
+                                <th scope="col">Data Reserva</th>
+                                <th scope="col">Data Devolucao</th>
+                              </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let pedido of lista; let i = index">
+                                <th scope="row">{{pedido.codigo}}</th>
+                                <td>{{pedido.nomeProfessor}}</td>
+                                <td class="text-truncate" style="max-width: 30%;"><span *ngFor="let l of pedido.listaProdutos">{{l.nome}}, </span></td>
+                                <td>{{pedido.dataDevolucao | date: 'dd/MM/yyyy'}}</td>
+                                <td>{{pedido.dataReserva | date: 'dd/MM/yyyy'}}</td>
+                                <td><button class="btn-primary" style="border-radius: 5px;">Cancelar</button></td>
+                              </tr>
+                        </tbody>
+                      </table>
+
+                    <!-- TABELA CAMILLY -->
+                    <!-- <div class="table-responsive">
                         <table style="border-collapse:separate; width: 100%;">
                             <tr class="table-responsive">
                                 <th>Código</th>
@@ -37,7 +60,7 @@
                                 <td><button class="btn btn-primary">Cancelar Pedido</button></td>
                             </tr>
                         </table>
-                    </div>
+                    </div> -->
 
 
 
