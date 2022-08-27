@@ -35,7 +35,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr (click)="mandaProdutoClicado(i)" *ngFor="let produto of listaProdutos; let i = index">
+        <tr style="cursor:pointer" (click)="mandaProdutoClicado(i)" *ngFor="let produto of listaProdutos; let i = index">
             <th scope="row">{{produto.codigo}}</th>
             <td>{{produto.nome}}</td>
             <td class="text-truncate" style="max-width: 30%;">{{produto.quantidade}}</td>

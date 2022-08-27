@@ -1,4 +1,4 @@
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PedidosService } from './../services/pedidos.service';
 import { Produto } from './../shared/produto.model';
 import { ProdutosService } from './../services/produtos.service';
@@ -14,7 +14,8 @@ export class HomeComponent implements OnInit {
   constructor(private car: CarrinhoService,
      private prod: ProdutosService,
      private pedidosService: PedidosService,
-     private router: ActivatedRoute) { }
+     private router: ActivatedRoute,
+     private route: Router) { }
 
   modal = false;
   modalReserva = false;
@@ -53,7 +54,9 @@ export class HomeComponent implements OnInit {
     this.carState = "fechado"
   }
 
-  
+  abreDetalhesProduto(codigo: number) {
+    this.route.navigate(['/home/detalhes-produto/',codigo])
+  }
   
   ngOnInit(): void {  
     this.lista = this.prod.getListaProdutos()  

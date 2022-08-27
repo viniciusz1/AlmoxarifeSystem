@@ -34,6 +34,7 @@ export class ProdutoListaComponent implements OnInit {
     this.produtoSelecionado.emit(this.listaProdutos[index].codigo)
   }
 
+
   constructor(private router: Router,
     private carrinhoService: CarrinhoService,
     private route: ActivatedRoute) { }
