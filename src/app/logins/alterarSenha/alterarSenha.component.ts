@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 
 @Component({
-  selector: 'app-telefone',
-  templateUrl: './telefone.component.html',
-  styleUrls: ['./telefone.component.css']
+  selector: 'app-alterarSenha',
+  templateUrl: './alterarSenha.component.html',
+  styleUrls: ['./alterarSenha.component.css']
 })
-export class TelefoneComponent implements OnInit {
+export class alterarSenhaComponent implements OnInit {
   
   @Output() fechaModal = new EventEmitter<boolean>();
 

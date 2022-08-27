@@ -22,6 +22,16 @@ export class LoginComponent implements OnInit {
 
   usuario = "";
   senha = "";
+  modal = false;
+
+  verificar(){
+    this.modal = true;
+  }
+
+  modalOpen() {
+    this.modal = !this.modal
+  }
+
 
   login(){
     let usuarios =  this.usuariosService.getListaUser().find(lista => lista.usuario == this.usuario && lista.senha == this.senha);

@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 
 @Component({
-  selector: 'app-verificar-tel',
-  templateUrl: './verificar-tel.component.html',
-  styleUrls: ['./verificar-tel.component.css']
+  selector: 'app-verificar-email',
+  templateUrl: './verificar-email.component.html',
+  styleUrls: ['./verificar-email.component.css']
 })
-export class VerificarTelComponent implements OnInit {
+export class VerificarEmailComponent implements OnInit {
 
   constructor(
     private router: Router,

@@ -1,0 +1,36 @@
+<body style="height: 100vh; width: 100vw;">
+    <div style="height: 100vh;">
+        <div class="centralizar" style="height: 100vh;">
+            <div class="centro">
+                <div style="display: flex; justify-content: end; margin-right: 10px;">
+                   <i (click)="FecharModal()" class="bi bi-x-circle icons"></i>
+                </div>
+                <img class="logo" src="../../../assets/loginho.png" style="height: 50px;">
+                <div class="centralizar" style="margin-top: 35px;">
+                    <div class="textAl">
+                        Almoxarife System
+                    </div>
+                </div>
+                <div style="margin-top: 30px;">
+                    <div class="centralizar" style="margin-bottom: 25px;">
+                        <h5>Informe seu nome de Usuário!</h5>
+                    </div>
+                    
+
+                    <div class="centralizar" style="margin-top: 40px;">
+                        <div class="botoes centralizar">
+                            <div class="ladoInput" style="height: 50px; width: 50px;">
+                                <i class="bi bi-person-fill icons" style="margin-left: 10px;"></i>
+                            </div>
+                            <input class="inputs" placeholder="Usuário" type="text" [(ngModel)]="usuario">
+                        </div>
+                    </div>
+                    <div class="centralizar" style="margin-top: 50px;">
+                        <button  (click)="Enviar()" class="botao" style="background-color: #1f394f; color: white;">Enviar</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

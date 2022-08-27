@@ -2,7 +2,7 @@ import { ProdutoListaComponent } from './home/produto-lista/produto-lista.compon
 import { DevolucoesComponent } from './pedidos/devolucoes/devolucoes.component';
 import { ConferenciaComponent } from './pedidos/conferencia/conferencia.component';
 import { HistoricoComponent } from './pedidos/historico/historico.component';
-import { VerificarTelComponent } from './logins/verificar-tel/verificar-tel.component';
+import { VerificarEmailComponent } from './logins/verificar-email/verificar-email.component';
 import { LoginComponent } from './logins/login/login.component';
 import { CadastroComponent } from './logins/cadastro/cadastro.component';
 import { PosLoginComponent } from './pos-login/pos-login.component';
@@ -13,7 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { SideBarComponent } from './pos-login/side-bar/side-bar.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { DetalhesProdutoComponent } from './home/detalhes-produto/detalhes-produto.component';
-import { TelefoneComponent } from './logins/telefone/telefone.component';
+import { alterarSenhaComponent } from './logins/alterarSenha/alterarSenha.component';
 import { ConfirmarComponent } from './pedidos/confirmar/confirmar.component';
 import { ModalPedidosComponent } from './pedidos/modal-pedidos/modal-pedidos.component';
 import { ModalDevolucaoComponent } from './pedidos/modal-devolucao/modal-devolucao.component';
@@ -27,6 +27,7 @@ import CheckLogged from './checklogged';
 import { EntradaComponent } from './home/entrada/entrada.component';
 import { EntradaHistoricoComponent } from './pedidos/historico/entrada-historico/entrada-historico.component';
 import { DashboardComponent } from './pedidos/dashboard/dashboard.component';
+import { userEmailComponent } from './logins/userEmail/userEmail.component';
 
 
 
@@ -176,12 +177,12 @@ import { DashboardComponent } from './pedidos/dashboard/dashboard.component';
       },
       {
         path: 'modalSenha',
-        component: TelefoneComponent,
+        component: alterarSenhaComponent,
         canActivate: [],
       },
       {
         path: 'verificar',
-        component: VerificarTelComponent,
+        component: VerificarEmailComponent,
         canActivate: [],
       },
       {
@@ -208,7 +209,12 @@ import { DashboardComponent } from './pedidos/dashboard/dashboard.component';
           path: 'produto-lista',
           component: ProdutoListaComponent,
           canActivate: [],
-      }
+      },
+      {
+        path: 'userEmail',
+        component: userEmailComponent,
+        canActivate: [],
+      },
       ])
   ],
   exports: [RouterModule]
