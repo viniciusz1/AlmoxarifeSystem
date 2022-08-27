@@ -78,8 +78,9 @@
                     <div style="width: 30%">Classificação</div>
                     <div style="width: 30%">Quantidade</div>
                 </b>
-                <app-produto-lista [indiceProduto]="i" [produto]="lista" *ngFor="let lista of (lista); let i = index">
-                </app-produto-lista>
+                <!-- <app-produto-lista [indiceProduto]="i" [produto]="lista" *ngFor="let lista of (lista); let i = index">
+                </app-produto-lista> -->
+                <app-produto-lista></app-produto-lista>
             </div>
             <div *ngIf="exibicao == false" class="row">
                 <app-produto class="col-xl-4 index col-md-6" [indiceProduto]="i" [produto]="lista"
