@@ -35,21 +35,22 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let produto of listaProdutos">
+        <tr (click)="mandaProdutoClicado(i)" *ngFor="let produto of listaProdutos; let i = index">
             <th scope="row">{{produto.codigo}}</th>
             <td>{{produto.nome}}</td>
             <td class="text-truncate" style="max-width: 30%;">{{produto.quantidade}}</td>
             <td>{{produto.classificacao}}</td>
-            <td *ngIf="tiraQuantidade == false">
-                <div   class="d-flex div-group">
+            <td *ngIf="tiraQuantidade == false" style="justify-content: space-around;display: flex;">
+                <div   class=" div-group">
                     <input [(ngModel)]="quantidadeCarrinho" type="text" class="">
                     <div class="div-adicionar-carrinho">
-                        <span (click)="adicionarCarrinho()"><i class="bi bi-plus-lg"></i></span>
+                        <span (click)="adicionarCarrinho(i)"><i class="bi bi-plus-lg"></i></span>
                     </div>
                 </div>
+                <i [routerLink]="['/home/editar-produto/', produto.codigo]" class="bi bi-pen" 
+                style=""></i>
             </td>
-            <td><i *ngIf="!dashboard" [routerLink]="['/home/editar-produto/', produto.codigo]" class="bi bi-pen" 
-                style="position:absolute;right: 5px;bottom: 5px;"></i></td>
+            <td><input *ngIf="dashboard" type="checkbox" name="" id="" ></td>
         </tr>
     </tbody>
 </table>

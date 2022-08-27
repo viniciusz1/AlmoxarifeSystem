@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
   lista: Produto[] = [];
   pesquisaProduto = "";
   filtroEspecializado: Produto = new Produto()
-  exibicao = false; // false == bloco ! == lista
+  exibicao = true; // false == bloco ! == lista
   numeroCarrinho = 0
   titulo = ""
   rota = "";
