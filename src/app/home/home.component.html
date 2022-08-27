@@ -73,28 +73,17 @@
                 <app-produto-lista (produtoSelecionado)="abreDetalhesProduto($event)" [listaProdutos]="lista"></app-produto-lista>
             </div>
             <div *ngIf="exibicao == false" class="row">
-                <app-produto class="col-xl-4 index col-md-6" [indiceProduto]="i" [produto]="lista"
-                    *ngFor="let lista of (lista ) | filtroProdutos:pesquisaProduto; let i = index">
+                <app-produto 
+                class="col-xl-4 index col-md-6" [indiceProduto]="i" [produto]="lista"
+                *ngFor="let lista of (lista ) | filtroProdutos:pesquisaProduto | paginate:{
+                    itemsPerPage: tableSize,
+                    currentPage: page,
+                    totalItems: count
+                }; let i = index">
                 </app-produto>
             </div>
             <div class="paginacao-div">
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination">
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+                <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onDataTableChange($event)"></pagination-controls>
             </div>
         </div>
     </div>

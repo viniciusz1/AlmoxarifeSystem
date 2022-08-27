@@ -30,6 +30,17 @@ export class HomeComponent implements OnInit {
   rota = "";
   home = true
   
+  page: number = 1;
+  count: number = 0;
+  tableSize: number = 21;
+
+  onDataTableChange(event: any){
+    this.page = event;
+  }
+  onTableSizeChange(event: any){
+    this.tableSize = event.target.value;
+    this.page = 1;
+  }
 
   exibicaoLista(){
     this.exibicao = true;

@@ -14,6 +14,8 @@ import { RotasModule } from '../rotas.module';
 import { EntradaComponent } from './entrada/entrada.component';
 import { ExportsModule } from '../shared/exports/exports.module';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
+import { NgxPaginationModule } from 'ngx-pagination';
+
 
 @NgModule({
   declarations: [
@@ -25,8 +27,7 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
     ReservaComponent,
     ProdutoListaComponent,
     DetalhesProdutoComponent,
-    EntradaComponent,
-    
+    EntradaComponent
   ],
   imports: [
     CommonModule,
@@ -35,7 +36,8 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
     RotasModule,
     ReactiveFormsModule,
     ExportsModule,
-    NgxSliderModule
+    NgxSliderModule,
+    NgxPaginationModule
   ],
   exports:[
     HomeComponent,
