@@ -1,36 +1,33 @@
 <div class="container" style="position: relative; padding-top: 5px;">
     <div class="indice" style="justify-content: space-between;">
-        <div class="pedido" style="margin-left: 5vw; width: 5vw;">
-            <span>Pedidos</span>
+        <div class="pedido" style="width: 5%;">
+            <span>Código</span>
         </div>
-        <div class="professor" style="margin-left: 3vw; width: 8vw;">
-            <span>Professor</span>
+        <div class="professor" style="width: 20%;">
+            <span>Nome</span>
         </div>
-        <div class="produtos">
-            <span>Produtos</span>
+        <div class="produtos"style="width: 30%;">
+            <span>Quantidade</span>
         </div>
-        <div class="data" style="width: 11vw;">
+        <div class="data" style="width: 30%;">
             <span>Data</span>
         </div>
     </div>
     <div class="lista bloco" style="justify-content: space-between;" *ngFor="let lista of listaEntradas; let i = index">
         <div class="px">
         </div>
-        <div class="pedido" style="width: 5vw;">
+        <div class="pedido" style="width: 5%;">
             <span>{{lista.codigo}}</span>
         </div>
-        <div class="professor" style="margin-left: 3vw; width: 8vw;">
-            <span>{{lista.professor}}</span>
+        <div class="produtos" style="width: 20%;">
+           
+            <span>{{lista.produto.nome}}</span>
         </div>
-        <div class="produtos">
-            <!-- <div class="d-inline-block text-truncate">
-                <span *ngFor="let l of lista.listaProduto">{{l.nome}}, </span>
-                <span>{{lista.produto}}</span>
-            </div> -->
-            <span>{{lista.produto}}</span>
+        <div class="produtos" style="width: 30%;">
+           
+            <span>{{lista.produto.quantidade}}</span>
         </div>
-
-        <div class="data" style="width: 11vw;">
+        <div class="data" style="width: 30%;">
             <span>{{lista.data | date: 'dd/MM/yyyy'}}</span>
         </div>
         <div (click)="cs()" *ngIf="paginas == 1 || paginas == 2" class="botao" [routerLink]="[url, i]">
