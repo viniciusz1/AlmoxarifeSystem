@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./produto-lista.component.css']
 })
 export class ProdutoListaComponent implements OnInit {
-  @Input() produto: Produto = new Produto();
+  @Input() listaProdutos: Produto[] = []
   @Input() indiceProduto: number = 0;
   @Input() tiraQuantidade = false
   @Input() dashboard: boolean = false
@@ -34,35 +34,35 @@ export class ProdutoListaComponent implements OnInit {
 
   adicionarCarrinho() {
     console.log(this.quantidadeCarrinho)
-    this.carrinhoService.addProduto(new Produto(this.produto.nome as string,
-      this.produto.quantidade as number,
-      this.produto.classificacao as string,
-      this.produto.localidade as string,
-      this.produto.opcaoUso as string,
-      this.produto.descricao as string,
-      this.produto.codigo as number,
-      this.produto.imagem as string,
-      this.quantidadeCarrinho as number))
-    this.mudarCor()
-    Swal.fire({
-      position: 'bottom-end',
-      imageUrl: this.produto.imagem,
-      imageHeight: '100px',
-      imageWidth: '100px',
-      timerProgressBar: true,
-      html:
-        'Produto <b>' + this.produto.nome + '</b> adicionado ao carrinho!',
-      color: 'black',
-      showConfirmButton: false,
-      background: '#dbdbdb',
-      backdrop: `
-          transparent
-          `,
+    // this.carrinhoService.addProduto(new Produto(this.produto.nome as string,
+    //   this.produto.quantidade as number,
+    //   this.produto.classificacao as string,
+    //   this.produto.localidade as string,
+    //   this.produto.opcaoUso as string,
+    //   this.produto.descricao as string,
+    //   this.produto.codigo as number,
+    //   this.produto.imagem as string,
+    //   this.quantidadeCarrinho as number))
+    // this.mudarCor()
+    // Swal.fire({
+    //   position: 'bottom-end',
+    //   imageUrl: this.produto.imagem,
+    //   imageHeight: '100px',
+    //   imageWidth: '100px',
+    //   timerProgressBar: true,
+    //   html:
+    //     'Produto <b>' + this.produto.nome + '</b> adicionado ao carrinho!',
+    //   color: 'black',
+    //   showConfirmButton: false,
+    //   background: '#dbdbdb',
+    //   backdrop: `
+    //       transparent
+    //       `,
 
-      width: '200px',
-      heightAuto: false,
-      timer: 1500
-    })
+    //   width: '200px',
+    //   heightAuto: false,
+    //   timer: 1500
+    // })
 
   }
 

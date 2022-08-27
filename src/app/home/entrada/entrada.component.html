@@ -35,9 +35,8 @@
                 <div class="row" style="justify-content: space-around;">
                     <div class="col-6">
                         <div class="row mt-3 produtos">
-                            <app-produto-lista style="cursor:pointer" (click)="mostrarProduto(lista.codigo)"
-                                [tiraQuantidade]="tiraQuantidade" [indiceProduto]="i" [produto]="lista"
-                                *ngFor="let lista of (lista) | filtroProdutos:pesquisaProduto; let i = index">
+                            <app-produto-lista style="cursor:pointer"
+                                [tiraQuantidade]="tiraQuantidade" [listaProdutos]="lista">
                             </app-produto-lista>
                         </div>
                     </div>

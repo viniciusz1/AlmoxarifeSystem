@@ -31,15 +31,15 @@
             <th scope="col">#</th>
             <th scope="col">Nome</th>
             <th scope="col">Quantidade</th>
-            <th scope="col">Data</th>
+            <th scope="col">Classificação</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>RESISTOR ELÉTRICO</td>
-            <td class="text-truncate" style="max-width: 30%;">50</td>
-            <td>20/07/2020</td>
+        <tr *ngFor="let produto of listaProdutos">
+            <th scope="row">{{produto.codigo}}</th>
+            <td>{{produto.nome}}</td>
+            <td class="text-truncate" style="max-width: 30%;">{{produto.quantidade}}</td>
+            <td>{{produto.classificacao}}</td>
             <td *ngIf="tiraQuantidade == false">
                 <div   class="d-flex div-group">
                     <input [(ngModel)]="quantidadeCarrinho" type="text" class="">
