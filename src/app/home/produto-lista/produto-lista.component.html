@@ -35,7 +35,6 @@
         </tr>
     </thead>
     <tbody>
-        <!-- <tr *ngFor="let lista of listaEntradas; let i = index"> -->
         <tr>
             <th scope="row">1</th>
             <td>RESISTOR ELÉTRICO</td>
@@ -49,6 +48,8 @@
                     </div>
                 </div>
             </td>
+            <td><i *ngIf="!dashboard" [routerLink]="['/home/editar-produto/', produto.codigo]" class="bi bi-pen" 
+                style="position:absolute;right: 5px;bottom: 5px;"></i></td>
         </tr>
     </tbody>
 </table>
