@@ -35,11 +35,11 @@
         </tr>
     </thead>
     <tbody>
-        <tr style="cursor:pointer" (click)="mandaProdutoClicado(i)" *ngFor="let produto of listaProdutos; let i = index">
-            <th scope="row">{{produto.codigo}}</th>
-            <td>{{produto.nome}}</td>
-            <td class="text-truncate" style="max-width: 30%;">{{produto.quantidade}}</td>
-            <td>{{produto.classificacao}}</td>
+        <tr style="cursor:pointer" *ngFor="let produto of listaProdutos; let i = index">
+            <th (click)="mandaProdutoClicado(i)" scope="row">{{produto.codigo}}</th>
+            <td (click)="mandaProdutoClicado(i)">{{produto.nome}}</td>
+            <td (click)="mandaProdutoClicado(i)" class="text-truncate" style="max-width: 30%;">{{produto.quantidade}}</td>
+            <td (click)="mandaProdutoClicado(i)">{{produto.classificacao}}</td>
             <td *ngIf="tiraQuantidade == false" style="justify-content: space-around;display: flex;">
                 <div   class=" div-group">
                     <input [(ngModel)]="quantidadeCarrinho" type="text" class="">
