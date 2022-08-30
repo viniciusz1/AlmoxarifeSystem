@@ -11,7 +11,7 @@ export class ContasComponent implements OnInit {
   mudarPerfilState(){
     this.perfilState = !this.perfilState
   }
-
+  pesquisaConta = ""
   lista = [
     {
       nome: "Carlinhos Rech",

@@ -9,6 +9,46 @@
     top: 50%;
     left: 25%;
 }
+.filtrar {
+    background-color: #275577;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 0px 3px 3px 0px;
+}
+
+.input-pedido {
+    max-width: 180px;
+}
+
+.lupa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px 0 10px;
+}
+
+.pesquisa {
+    border: 0.5px solid black;
+    border-radius: 5px;
+
+    z-index: 1;
+}
+.botoes {
+    background-color: #275577;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 3px;
+}
+
+.ordenar {
+    outline: none;
+    min-width: 11vw;
+    color: white;
+    background-color: #275577;
+    border: transparent;
+    padding-right: 20px;
+    outline: none
+}
 .pg{
     font-size: calc(1.3rem + .6vw);
     margin-top: 50px;
@@ -39,9 +79,7 @@ input{
     color: black;
  }
 
- i{
-    margin: 10px 10px 10px 0px;
-}
+
 
 .pesquisa-total{
     display: flex;
