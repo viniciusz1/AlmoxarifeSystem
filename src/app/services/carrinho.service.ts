@@ -21,6 +21,9 @@ export class CarrinhoService {
     return this.lista
   }
   addProduto(produto: Produto) {
+    if(produto.qtdCart as number <= 0){
+      throw new Error("Adicione uma quantidade ao produto")
+    }
     if (produto.quantidade! >= produto.qtdCart!) {
       if (this.lista.some(e => e.codigo == produto.codigo)) { //Se já existir esse produto no carrinho..
         this.lista.find(e => {
