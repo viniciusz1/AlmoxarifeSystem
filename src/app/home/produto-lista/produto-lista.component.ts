@@ -15,6 +15,9 @@ export class ProdutoListaComponent implements OnInit {
   @Input() tiraQuantidade = false
   @Input() dashboard: boolean = false
   @Output() produtoSelecionado: EventEmitter<number> = new EventEmitter()
+  @Input() tableSize = 0
+  @Input() page = 0
+  @Input() count = 0
   rota = ""
   quantidadeCarrinho = 0
   corCodigo = "275577"

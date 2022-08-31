@@ -70,7 +70,7 @@
 
         <div class="container-fluid">
             <div *ngIf="exibicao == true" class="row mt-3">
-                <app-produto-lista (produtoSelecionado)="abreDetalhesProduto($event)" [listaProdutos]="lista"></app-produto-lista>
+                <app-produto-lista [tableSize]="tableSize" [page]="page" [count]="count" (produtoSelecionado)="abreDetalhesProduto($event)" [listaProdutos]="lista"></app-produto-lista>
             </div>
             <div *ngIf="exibicao == false" class="row">
                 <app-produto 
@@ -83,7 +83,7 @@
                 </app-produto>
             </div>
             <div class="paginacao-div">
-                <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onDataTableChange($event)"></pagination-controls>
+                <pagination-controls class="my-pagination" previousLabel="Prev" nextLabel="Next" (pageChange)="onDataTableChange($event)"></pagination-controls>
             </div>
         </div>
     </div>
