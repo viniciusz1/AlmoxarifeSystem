@@ -44,6 +44,10 @@ export class ConferenciaComponent implements OnInit {
       this.pedido = this.historicoService.getPedidobyIndex(parseInt(this.id))
     }
   }
+  exibicaoModal = false
+  changeModal(){
+    this.exibicaoModal = !this.exibicaoModal
+  }
   //1 = entregas
   //2 = historico
   //0 = devolucoes
