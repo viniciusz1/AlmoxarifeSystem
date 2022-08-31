@@ -25,6 +25,8 @@ import { PedidosTableComponent } from './pedidos-table/pedidos-table.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatFormFieldModule} from '@angular/material/form-field'
 import {MatExpansionModule} from '@angular/material/expansion';
+import { ModalPedidosComponent } from './modal-pedidos/modal-pedidos.component';
+
 @NgModule({
   declarations: [
     ConferenciaComponent,
@@ -38,7 +40,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     FiltroHistoricoComponent,
     EntradaHistoricoComponent,
     DashboardComponent,
-    PedidosTableComponent
+    PedidosTableComponent,
+    ModalPedidosComponent
   ],
   imports: [
     CommonModule,
