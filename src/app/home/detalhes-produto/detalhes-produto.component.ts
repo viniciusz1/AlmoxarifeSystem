@@ -69,12 +69,14 @@ export class DetalhesProdutoComponent implements OnInit {
   }
 
   imagem?= ""
-  teste: any
   ngOnInit(): void {
     this.prod.getIdProduto()
-      .subscribe(e => {
-        console.log(e)
+      .subscribe((e: Produto) => {
+        
+        this.informacoes = {...e} 
       })
+      console.log(this.informacoes)
+      // console.log(this.teste)
     this.route.url.subscribe(
       url => {
         if (url[0].path == "cadastrar-produto") {
@@ -94,17 +96,14 @@ export class DetalhesProdutoComponent implements OnInit {
             localidade: this.informacoes.localidade,
             descricao: this.informacoes.descricao
           })
-
-
         } else if (url[0].path == "detalhes-produto") {
           this.modo = "detalhar"
           this.codRota = url[1].path
           this.botao = "Detalhes-produto"
           this.detalhesForm.disable();
-          this.teste = this.prod.getIdProduto()
-          console.log(this.teste)
+          // this.teste = this.prod.getIdProduto()
+          // console.log(this.teste)
           this.imagem = this.informacoes.imagem
-
           this.detalhesForm.patchValue({
             nome: this.informacoes.nome,
             opcaoUso: this.informacoes.opcaoUso,

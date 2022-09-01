@@ -43,7 +43,7 @@ export class ProdutosService {
       return this.http.get<Produto[]>('http://127.0.0.1:5000/produtos')
    }
    getIdProduto(){
-    return this.http.get<Produto>('http://127.0.0.1:5000/produtos/1')
+    return this.http.get('http://127.0.0.1:5000/produtos/1')
    }
    addProduto(produto: Produto){
       this.http.post('http://127.0.0.1:5000/produtos', produto).subscribe(e => {
