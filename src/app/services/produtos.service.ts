@@ -40,7 +40,7 @@ export class ProdutosService {
   constructor(private http: HttpClient) { }
 
    getListaProdutos(){
-      return this.http.get('http://127.0.0.1:5000/produtos')
+      return this.http.get<Produto[]>('http://127.0.0.1:5000/produtos')
    }
    getIdProduto(id: number){
     let index = this.lista.findIndex(lista => lista.codigo == id);
