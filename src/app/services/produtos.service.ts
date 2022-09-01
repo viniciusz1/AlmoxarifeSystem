@@ -42,12 +42,8 @@ export class ProdutosService {
    getListaProdutos(){
       return this.http.get<Produto[]>('http://127.0.0.1:5000/produtos')
    }
-   getIdProduto(codigo: number){
-    // this.http.get<Produto>('http://127.0.0.1:5000/produtos/'+codigo)
-    // .subscribe(e => {
-    //   return new Produto(e.nome, e.quantidade, e.classificacao, e.localidade, e.opcaoUso, e.descricao, e.codigo)
-    // })
-    return "poha"
+   getIdProduto(){
+    return this.http.get<Produto>('http://127.0.0.1:5000/produtos/1')
    }
    addProduto(produto: Produto){
       this.http.post('http://127.0.0.1:5000/produtos', produto).subscribe(e => {
