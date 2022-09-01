@@ -70,7 +70,10 @@ export class HomeComponent implements OnInit {
   }
   
   ngOnInit(): void {  
-    this.lista = this.prod.getListaProdutos()  
+    this.prod.getListaProdutos()
+    .subscribe(e => {
+      console.log(e)
+    })
     console.log(this.lista)
     this.router.params.subscribe(params => {
     this.rota = params['id'];

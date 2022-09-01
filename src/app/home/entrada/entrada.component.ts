@@ -25,7 +25,7 @@ export class EntradaComponent implements OnInit {
   tiraQuantidade = true
 
   ngOnInit(): void {
-    this.lista = this.prod.getListaProdutos()  
+    // this.lista = this.prod.getListaProdutos()  
     this.router.params.subscribe(e => {
       this.codigo = parseInt(e['id'])
       this.mostrarProduto(parseInt(e['id']))
