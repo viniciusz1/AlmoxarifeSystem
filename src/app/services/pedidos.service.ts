@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { filter } from 'rxjs';
 import { Pedido } from '../shared/pedido.model';
@@ -108,11 +109,14 @@ export class PedidosService {
   ], new Date(), new Date(), 1, 1)]
 
 
+  constructor(private historicoService: HistoricoService,
+    private http: HttpClient) { }
 
-  realizarEntrega(index: number){
-    console.log(index)
-    this.devolucoes.push(this.entregas[index])
-    this.entregas.splice(index, 1)
+  realizarEntrega(pedido: Pedido){
+    this.http.post('http://127.0.0.1:5000/reservas', pedido)
+    .subscribe((e)=>{
+      console.log(e)
+    })
   }
   realizarDevolucao(index: number){
     this.devolucoes.splice(index, 1)
@@ -133,7 +137,10 @@ export class PedidosService {
     this.pedidos.splice(index, 1)
   }
   getPedido(){
-    return this.pedidos.slice();
+    this.http.get<Pedido[]>('http://127.0.0.1:5000/reservas')
+    .subscribe((e)=>{
+      return e
+    })
   }
   getPedidobyCode(codigo: number){
     return this.pedidos.filter(e => e.codigo == codigo)
@@ -172,5 +179,4 @@ export class PedidosService {
   getDevolucoesbyIndex(index: number){
     return this.devolucoes[index]
   }
-  constructor(private historicoService: HistoricoService) { }
 }

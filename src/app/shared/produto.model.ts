@@ -8,12 +8,14 @@ export class Produto {
     public codigo?: number;
     public imagem?: string;
     public qtdCart?: number;
+    public quantidadeReservada?: number;
 
     constructor()
     constructor(nome: string, quantidade: number, classificacao: string, localidade: string, opcaoUso: string,descricao: string, codigo: number)
     constructor(nome: string, quantidade: number, classificacao: string, localidade: string, opcaoUso: string,descricao: string, codigo: number, imagem: string)
     constructor(nome: string, quantidade: number, classificacao: string, localidade: string, opcaoUso: string,descricao: string, codigo: number, imagem: string, qtdCart: number)
-    constructor(nome?: string, quantidade?: number, classificacao?: string, localidade?: string, opcaoUso?: string,descricao?: string, codigo?: number, imagem?: string, qtdCart?: number) {
+    constructor(nome?: string, quantidade?: number, classificacao?: string, localidade?: string, opcaoUso?: string,descricao?: string, codigo?: number, imagem?: string, qtdCart?: number)
+    constructor(nome?: string, quantidade?: number, classificacao?: string, localidade?: string, opcaoUso?: string,descricao?: string, codigo?: number, imagem?: string, qtdCart?: number, quantidadeReservada?: number) {
     this.nome = nome;
     this.quantidade = quantidade;
     this.classificacao = classificacao;

@@ -53,8 +53,8 @@ export class ConferenciaComponent implements OnInit {
   //0 = devolucoes
   confirmarPedido(){
     if(this.entregas == 1){
-      this.pedidos.realizarEntrega(parseInt(this.id))
-      this.router.navigate(['/home/entregas'])
+      this.pedidos.realizarEntrega(this.pedido)
+      // this.router.navigate(['/home/entregas'])
     }else if(this.entregas == 0){
       this.pedidos.realizarDevolucao(parseInt(this.id))
       this.router.navigate(['/home/devolucoes'])

@@ -36,7 +36,7 @@ export class PedidosComponent implements OnInit {
     this.pedidosService.removePedido(index)
   }
   ngOnInit(): void {
-    this.lista=this.pedidosService.getPedido()
+    console.log(this.pedidosService.getPedido())
   }
 
 }

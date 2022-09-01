@@ -21,6 +21,7 @@ import CheckLogged from './checklogged';
 import { HomeModule } from './home/home.module';
 import { PedidosModule } from './pedidos/pedidos.module';
 import { SidenavComponent } from './pos-login/sidenav/sidenav.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,7 @@ import { SidenavComponent } from './pos-login/sidenav/sidenav.component';
     ReactiveFormsModule,
     HomeModule,
     PedidosModule,
-    
+    HttpClientModule
   ],
   providers: [CarrinhoService, ProdutosService, CheckLogged, HistoricoService],
   bootstrap: [AppComponent]
