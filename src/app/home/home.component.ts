@@ -34,6 +34,8 @@ export class HomeComponent implements OnInit {
   count: number = 0;
   tableSize: number = 21;
 
+  
+
   onDataTableChange(event: any){
     this.page = event;
   }

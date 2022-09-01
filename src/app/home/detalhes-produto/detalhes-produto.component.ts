@@ -40,15 +40,15 @@ export class DetalhesProdutoComponent implements OnInit{
 
   onSubmit() {
     if(this.modo == "cadastrar"){
-      this.prod.addProduto(
+      console.log(this.prod.addProduto(
         new Produto(this.detalhesForm.value.nome as string, 
           this.detalhesForm.value.quantidade as number, 
           this.detalhesForm.value.classificacao as string,
-          this.detalhesForm.value.localidade as string, 
+          // this.detalhesForm.value.localidade as string, 
           this.detalhesForm.value.opcaoUso as string,
           this.detalhesForm.value.descricao as string,
-          123))
-          this.router.navigate(['/home/produtos'])
+          "sdfasdfsdafsdfafa")))
+          // this.router.navigate(['/home/produtos'])
     }else if(this.modo == "editar"){
         this.prod.changeProduto(new Produto(this.detalhesForm.value.nome as string, 
           this.detalhesForm.value.quantidade as number, 
@@ -68,20 +68,20 @@ export class DetalhesProdutoComponent implements OnInit{
   }
 
   imagem? = ""
-  
+  teste: any
   ngOnInit(): void {
     this.route.url.subscribe(
       url => {
         if(url[0].path == "cadastrar-produto"){
           this.botao = "Cadastrar produto"
           this.modo = "cadastrar"
-
-
         }else if(url[0].path == "editar-produto"){ 
           this.modo = "editar"
           this.codRota = url[1].path
           this.botao = "Editar produto"
-          this.informacoes = this.prod.getIdProduto(parseInt(this.codRota))
+          // this.prod.getIdProduto(parseInt(this.codRota))
+          // this.informacoes = 
+          // .subscribe(e => this.informacoes = e)
           this.imagem = this.informacoes.imagem
           this.detalhesForm.controls['quantidade'].disable()
           this.detalhesForm.patchValue({
@@ -99,7 +99,8 @@ export class DetalhesProdutoComponent implements OnInit{
           this.codRota = url[1].path
           this.botao = "Detalhes-produto"
           this.detalhesForm.disable();
-          this.informacoes = this.prod.getIdProduto(parseInt(this.codRota))
+          this.teste = this.prod.getIdProduto(1)
+          console.log(this.teste)
           this.imagem = this.informacoes.imagem
 
           this.detalhesForm.patchValue({
