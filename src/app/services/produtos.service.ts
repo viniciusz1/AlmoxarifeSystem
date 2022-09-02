@@ -42,8 +42,12 @@ export class ProdutosService {
    getListaProdutos(){
       return this.http.get<Produto[]>('http://127.0.0.1:5000/produtos')
    }
-   getIdProduto(){
-    return this.http.get('http://127.0.0.1:5000/produtos/1')
+   getIdProduto(codigo: string){
+    let url = "http://127.0.0.1:5000/produtos/" + codigo
+
+    // console.log(url)
+    // console.log(codigo)
+    return this.http.get<Produto>(url)
    }
    addProduto(produto: Produto){
       this.http.post('http://127.0.0.1:5000/produtos', produto).subscribe(e => {
@@ -53,10 +57,10 @@ export class ProdutosService {
 
    changeQuantidadeProduto(codigo: number, quantidade:number){
     let index = this.lista.findIndex(lista => lista.codigo == codigo);
-    if(this.isDefined(this.lista[index].quantidade) && !isNaN(quantidade)){
-      let a = this.lista[index].quantidade as number
+    if(this.isDefined(this.lista[index].quantidadeTotal) && !isNaN(quantidade)){
+      let a = this.lista[index].quantidadeTotal as number
       let b = +quantidade
-      this.lista[index].quantidade = a + b
+      this.lista[index].quantidadeTotal = a + b
     }
    }
 

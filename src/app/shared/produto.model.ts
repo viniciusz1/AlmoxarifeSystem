@@ -1,6 +1,6 @@
 export class Produto {
     public nome?: string;
-    public quantidade?: number;
+    public quantidadeTotal?: number;
     public classificacao?: string;
     public localidade?: string;
     public opcaoUso?: string;
@@ -8,16 +8,16 @@ export class Produto {
     public codigo?: number;
     public imagem?: string;
     public qtdCart?: number;
-    public quantidadeReservada?: number;
+    public quantidadeTotalReservada?: number;
 
     constructor()
-    constructor(nome: string, quantidade: number, classificacao: string, localidade: string, opcaoUso: string,descricao: string, codigo: number)
-    constructor(nome: string, quantidade: number, classificacao: string, localidade: string, opcaoUso: string,descricao: string, codigo: number, imagem: string)
-    constructor(nome: string, quantidade: number, classificacao: string, localidade: string, opcaoUso: string,descricao: string, codigo: number, imagem: string, qtdCart: number)
-    constructor(nome?: string, quantidade?: number, classificacao?: string, localidade?: string, opcaoUso?: string,descricao?: string, codigo?: number, imagem?: string, qtdCart?: number)
-    constructor(nome?: string, quantidade?: number, classificacao?: string, localidade?: string, opcaoUso?: string,descricao?: string, codigo?: number, imagem?: string, qtdCart?: number, quantidadeReservada?: number) {
+    constructor(nome: string, quantidadeTotal: number, classificacao: string, localidade: string, opcaoUso: string,descricao: string, codigo: number)
+    constructor(nome: string, quantidadeTotal: number, classificacao: string, localidade: string, opcaoUso: string,descricao: string, codigo: number, imagem: string)
+    constructor(nome: string, quantidadeTotal: number, classificacao: string, localidade: string, opcaoUso: string,descricao: string, codigo: number, imagem: string, qtdCart: number)
+    constructor(nome?: string, quantidadeTotal?: number, classificacao?: string, localidade?: string, opcaoUso?: string,descricao?: string, codigo?: number, imagem?: string, qtdCart?: number)
+    constructor(nome?: string, quantidadeTotal?: number, classificacao?: string, localidade?: string, opcaoUso?: string,descricao?: string, codigo?: number, imagem?: string, qtdCart?: number, quantidadeTotalReservada?: number) {
     this.nome = nome;
-    this.quantidade = quantidade;
+    this.quantidadeTotal = quantidadeTotal;
     this.classificacao = classificacao;
     this.localidade = localidade;
     this.opcaoUso = opcaoUso;

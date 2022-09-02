@@ -33,7 +33,7 @@ export class ProdutoComponent implements OnInit {
       this.mudarCor();
       try{
         this.carrinhoService.addProduto(new Produto(this.produto.nome as string, 
-          this.produto.quantidade as number, 
+          this.produto.quantidadeTotal as number, 
           this.produto.classificacao as string,
           this.produto.localidade as string, 
           this.produto.opcaoUso as string, 

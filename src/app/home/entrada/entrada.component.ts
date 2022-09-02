@@ -39,7 +39,7 @@ export class EntradaComponent implements OnInit {
     this.route.navigate(['home/entrada/', codigo])
     this.imagem = produto?.imagem as string
     this.nomeProduto = produto?.nome as string
-    this.estoqueQuantidade = produto?.quantidade as number
+    this.estoqueQuantidade = produto?.quantidadeTotal as number
   }
 
   atualizarQuantidade(){

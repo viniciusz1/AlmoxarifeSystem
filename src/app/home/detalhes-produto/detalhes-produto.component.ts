@@ -49,7 +49,6 @@ export class DetalhesProdutoComponent implements OnInit {
           this.detalhesForm.value.opcaoUso as string,
           this.detalhesForm.value.descricao as string,
           "sdfasdfsdafsdfafa")))
-      // this.router.navigate(['/home/produtos'])
     } else if (this.modo == "editar") {
       this.prod.changeProduto(new Produto(this.detalhesForm.value.nome as string,
         this.detalhesForm.value.quantidade as number,
@@ -67,16 +66,29 @@ export class DetalhesProdutoComponent implements OnInit {
   darEntrada() {
     this.router.navigate(['/home/entrada/', this.codRota])
   }
-
+  list:Produto = new Produto
   imagem?= ""
+
+  teste(){
+    console.log(this.list)
+    console.log(this.informacoes)
+  }
+
+
+  mostrarDados(){
+    this.imagem = this.informacoes.imagem
+    this.detalhesForm.controls['quantidade'].disable()
+    this.detalhesForm.patchValue({
+      nome: this.informacoes.nome,
+      opcaoUso: this.informacoes.opcaoUso,
+      quantidade: this.informacoes.quantidadeTotal,
+      classificacao: this.informacoes.classificacao,
+      localidade: this.informacoes.localidade,
+      descricao: this.informacoes.descricao
+    })
+  }
+
   ngOnInit(): void {
-    this.prod.getIdProduto()
-      .subscribe((e: Produto) => {
-        
-        this.informacoes = {...e} 
-      })
-      console.log(this.informacoes)
-      // console.log(this.teste)
     this.route.url.subscribe(
       url => {
         if (url[0].path == "cadastrar-produto") {
@@ -85,40 +97,24 @@ export class DetalhesProdutoComponent implements OnInit {
         } else if (url[0].path == "editar-produto") {
           this.modo = "editar"
           this.codRota = url[1].path
-          this.botao = "Editar produto"
-          this.imagem = this.informacoes.imagem
-          this.detalhesForm.controls['quantidade'].disable()
-          this.detalhesForm.patchValue({
-            nome: this.informacoes.nome,
-            opcaoUso: this.informacoes.opcaoUso,
-            quantidade: this.informacoes.quantidade,
-            classificacao: this.informacoes.classificacao,
-            localidade: this.informacoes.localidade,
-            descricao: this.informacoes.descricao
-          })
+          this.botao = "Editar produto"  
+          this.mostrarDados()        
         } else if (url[0].path == "detalhes-produto") {
           this.modo = "detalhar"
           this.codRota = url[1].path
           this.botao = "Detalhes-produto"
-          this.detalhesForm.disable();
-          // this.teste = this.prod.getIdProduto()
-          // console.log(this.teste)
-          this.imagem = this.informacoes.imagem
-          this.detalhesForm.patchValue({
-            nome: this.informacoes.nome,
-            opcaoUso: this.informacoes.opcaoUso,
-            quantidade: this.informacoes.quantidade,
-            classificacao: this.informacoes.classificacao,
-            localidade: this.informacoes.localidade,
-            descricao: this.informacoes.descricao
-          })
+          this.mostrarDados()
         }
+         this.codRota = url[1].toString()
       }
     )
-
-
-
-
+    this.prod.getIdProduto(this.codRota)
+    .subscribe(
+      (res) => {
+          this.informacoes = res
+          this.mostrarDados()
+          console.log(this.informacoes)
+      }
+    )   
   }
-
 }

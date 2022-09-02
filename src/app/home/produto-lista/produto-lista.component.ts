@@ -45,7 +45,7 @@ export class ProdutoListaComponent implements OnInit {
   adicionarCarrinho(index: number) {
     console.log(this.quantidadeCarrinho)
     this.carrinhoService.addProduto(new Produto(this.listaProdutos[index].nome as string,
-      this.listaProdutos[index].quantidade as number,
+      this.listaProdutos[index].quantidadeTotal as number,
       this.listaProdutos[index].classificacao as string,
       this.listaProdutos[index].localidade as string,
       this.listaProdutos[index].opcaoUso as string,

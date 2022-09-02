@@ -24,12 +24,12 @@ export class CarrinhoService {
     if(produto.qtdCart as number <= 0){
       throw new Error("Adicione uma quantidade ao produto")
     }
-    if (produto.quantidade! >= produto.qtdCart!) {
+    if (produto.quantidadeTotal! >= produto.qtdCart!) {
       if (this.lista.some(e => e.codigo == produto.codigo)) { //Se já existir esse produto no carrinho..
         this.lista.find(e => {
           let a = +e.qtdCart!
           let b = +produto.qtdCart!
-          let qtd = +e.quantidade!
+          let qtd = +e.quantidadeTotal!
           if (e.codigo == produto.codigo) {
             if ((a + b) <= qtd) {
               e.qtdCart = a + b
