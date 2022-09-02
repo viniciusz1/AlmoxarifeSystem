@@ -1,6 +1,6 @@
 <div  class="position-relative d-flex bloco" style="max-width: 540px;">
 
-        <img [ngClass]="{imagemCarrinho: carrinho == true}" (click)="abreDetalhesProduto()" class="imagem "
+        <img *ngIf="produto.imagem != null" [ngClass]="{imagemCarrinho: carrinho == true}" (click)="abreDetalhesProduto()" class="imagem "
         src="{{produto.imagem}}" alt="">
         <div (click)="abreDetalhesProduto()" class="sombra retangulo">
             <div class="itens-retangulo d-flex" >

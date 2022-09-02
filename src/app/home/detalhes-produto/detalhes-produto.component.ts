@@ -108,13 +108,15 @@ export class DetalhesProdutoComponent implements OnInit {
          this.codRota = url[1].toString()
       }
     )
-    this.prod.getIdProduto(this.codRota)
-    .subscribe(
-      (res) => {
-          this.informacoes = res
-          this.mostrarDados()
-          console.log(this.informacoes)
-      }
-    )   
+    if(this.modo != "cadastrar"){
+      this.prod.getIdProduto(this.codRota)
+      .subscribe(
+        (res) => {
+            this.informacoes = res
+            this.mostrarDados()
+            console.log(this.informacoes)
+        }
+      ) 
+    }      
   }
 }
