@@ -1,29 +1,33 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Produto } from '../shared/produto.model';
-interface Entrada {
+interface Entrada{
   codigo: number,
-  produto: Produto,
-  quantidade: number,
   data: Date
+  nomeProduto: string,
+  produtoCodigo: number,
+  quantidade: number,
 }
 @Injectable({
   providedIn: 'root'
 })
 
 export class EntradasService {
-  listaEntradas: Entrada[] = [{
-    codigo: 1, produto: new Produto("Resistor Elétrico", 1, "Material Elétrico", "produto", "Descartável", "Descrição", 1, "https://s4.static.brasilescola.uol.com.br/img/2017/01/resistor.jpg"),
-    quantidade: 1, data: new Date()
-  },
-  {
-    codigo: 1, produto: new Produto("Resistor Elétrico", 1, "Material Elétrico", "produto", "Descartável", "Descrição", 1, "https://s4.static.brasilescola.uol.com.br/img/2017/01/resistor.jpg"),
-    quantidade: 1, data: new Date()
-  }]
+  listaEntradas: Entrada[] = []
+
+  darEntradaDeQuantidadeProduto(codigo: number, quantidade:number){
+    if(!isNaN(quantidade)){
+      let data = new Date()
+      return this.http.post('http://127.0.0.1:5000/entradas', {codigo, quantidade, data})
+    }
+    return
+   }
+
   addEntrada(entrada: Entrada) {
     this.listaEntradas.push(entrada)
   }
   getEntrada() {
-    return this.listaEntradas
+    return this.http.get<Entrada[]>('http://127.0.0.1:5000/entradas')
   }
-  constructor() { }
+  constructor(private http: HttpClient) { }
 }

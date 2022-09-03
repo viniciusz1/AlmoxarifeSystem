@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { EntradasService } from 'src/app/services/entradas.service';
 import { ProdutosService } from 'src/app/services/produtos.service';
 import { Produto } from 'src/app/shared/produto.model';
 import Swal from 'sweetalert2';
@@ -12,6 +13,7 @@ import Swal from 'sweetalert2';
 export class EntradaComponent implements OnInit {
 
   constructor(private prod: ProdutosService,
+    private entradaService: EntradasService,
     private router: ActivatedRoute,
     private route: Router) { }
 
@@ -25,7 +27,12 @@ export class EntradaComponent implements OnInit {
   tiraQuantidade = true
 
   ngOnInit(): void {
-    // this.lista = this.prod.getListaProdutos()  
+    this.prod.getListaProdutos()
+    .subscribe({
+      next: (e) => this.lista = e,
+      error: (err) => console.log(err)
+    }
+    )
     this.router.params.subscribe(e => {
       this.codigo = parseInt(e['id'])
       this.mostrarProduto(parseInt(e['id']))
@@ -54,7 +61,11 @@ export class EntradaComponent implements OnInit {
       confirmButtonText: 'Confirmar'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.prod.changeQuantidadeProduto(this.codigo, this.novaQuantidade)
+        this.entradaService.darEntradaDeQuantidadeProduto(this.codigo, this.novaQuantidade)
+        ?.subscribe(
+          {next: e => console.log(e)}
+        )
+
       }
     })
   }

@@ -50,19 +50,10 @@ export class ProdutosService {
     return this.http.get<Produto>(url)
    }
    addProduto(produto: Produto){
-      this.http.post('http://127.0.0.1:5000/produtos', produto).subscribe(e => {
-        return e
-      })
+      return this.http.post('http://127.0.0.1:5000/produtos', produto)
    }
 
-   changeQuantidadeProduto(codigo: number, quantidade:number){
-    let index = this.lista.findIndex(lista => lista.codigo == codigo);
-    if(this.isDefined(this.lista[index].quantidadeTotal) && !isNaN(quantidade)){
-      let a = this.lista[index].quantidadeTotal as number
-      let b = +quantidade
-      this.lista[index].quantidadeTotal = a + b
-    }
-   }
+   
 
    isDefined<T>(val: T | undefined | null): val is T {
     return val !== undefined && val !== null;
