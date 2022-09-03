@@ -30,7 +30,6 @@ export class ProdutoComponent implements OnInit {
     }
   }
   adicionarCarrinho() {
-      this.mudarCor();
       try{
         this.carrinhoService.addProduto(new Produto(this.produto.nome as string, 
           this.produto.quantidadeTotal as number, 
@@ -41,6 +40,7 @@ export class ProdutoComponent implements OnInit {
           this.produto.codigo as number,
           this.produto.imagem as string,
           this.quantidadeCarrinho as number))
+          this.mudarCor();
           Swal.fire({
             position: 'bottom-end',
             imageUrl: this.produto.imagem,

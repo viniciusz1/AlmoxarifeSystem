@@ -15,12 +15,12 @@
                 <hr>
             </div>
             <div class="row DivWithScroll">
-                <div *ngFor="let listaCarrinho of listaCarrinho" class="d-flex justify-content-center align-items-center">
+                <div *ngFor="let listaCarrinho of listaCarrinho; let i = index" class="d-flex justify-content-center align-items-center">
                     <i class="bi bi-trash-fill col-1" style="align-self: center;"></i>
                     <app-produto [produto]="listaCarrinho" class="col-9"></app-produto>
                     <div class="div col-2 adicionar" style="align-self: center;">
                         <i class="bi bi-plus-lg"></i>
-                        <input [(ngModel)]="listaCarrinho.quantidadeTotal" type="text" class="form-control" style="width: 40px;">
+                        <input [(ngModel)]="listaQtd[i]" type="text" class="form-control" style="width: 40px;">
                         <i class="bi bi-dash-lg"></i>
                     </div>
                 </div>

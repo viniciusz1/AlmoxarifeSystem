@@ -31,8 +31,22 @@ export class ReservaComponent implements OnInit {
     private pedidoService: PedidosService,
     private historicoService: HistoricoService) { }
 
+  listaQtd: number[] = []
+  
   ngOnInit(): void {
     this.listaCarrinho = this.car.getLista();
+    this.car.tamanhoCarrinho.subscribe(
+      e => {
+        if(e != 0){
+          for(let i in this.listaCarrinho){
+            console.log(this.listaCarrinho[i].qtdCart)
+            this.listaQtd[i] = this.listaCarrinho[i].qtdCart as number
+          }
+        }
+      }
+    )
+    console.log(this.listaCarrinho)
+    console.log(this.listaQtd)
   }
 
 }

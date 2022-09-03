@@ -54,29 +54,22 @@ export class CarrinhoComponent implements OnInit {
   lixo(i:number){
     this.car.removeLista(i)
   }
-  // pressionou(){
-  //   for(let i in this.listaCarrinho){
-  //     if(this.listaQtd[i] > this.listaCarrinho[i].quantidade!){
-  //       this.listaQtd[i] = this.listaCarrinho[i].qtdCart as number
-  //     }
-  //   }
-  // }
+
   listaQtd: number[]  = []
   ngOnInit(): void {
     this.listaCarrinho = this.car.getLista();
-    
     this.car.tamanhoCarrinho.subscribe(
       e => {
         if(e != 0){
           this.carrinhoVazio = false
-          for(let i in this.listaCarrinho){
-            this.listaQtd[i] = this.listaCarrinho[i].qtdCart as number
-          }
         }
       }
     )
     if(this.listaCarrinho.length == 0){
-      this.carrinhoVazio = true
+      this.listaCarrinho = this.car.getLista();
+      if(this.listaCarrinho.length == 0){
+        this.carrinhoVazio = true
+      }
     }
   }
 
