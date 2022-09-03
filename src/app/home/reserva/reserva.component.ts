@@ -24,29 +24,31 @@ export class ReservaComponent implements OnInit {
     this.fechaReserva.emit(false)
   }
   addPedido(){
-    this.pedidoService.addEntrega(new Pedido(this.professor, this.listaCarrinho, this.dataRetirada, this.dataDevolucao, 5, 1))
-    this.fecharReserva()
+    let newList = []
+    for(let i of this.listaCarrinho){
+      newList.push({
+        codigoProduto: i.codigo,
+        quantidade: i.qtdCart 
+      })      
+    }
+    this.pedidoService.addEntrega({pedido: [this.professor,  newList, this.dataRetirada, this.dataDevolucao]})
+    .subscribe({next: e => console.log(e),
+    error: x => console.log(x)})
+    // this.fecharReserva()
   }
   constructor(private car: CarrinhoService,
     private pedidoService: PedidosService,
     private historicoService: HistoricoService) { }
 
-  listaQtd: number[] = []
   
   ngOnInit(): void {
     this.listaCarrinho = this.car.getLista();
     this.car.tamanhoCarrinho.subscribe(
       e => {
         if(e != 0){
-          for(let i in this.listaCarrinho){
-            console.log(this.listaCarrinho[i].qtdCart)
-            this.listaQtd[i] = this.listaCarrinho[i].qtdCart as number
-          }
         }
       }
     )
-    console.log(this.listaCarrinho)
-    console.log(this.listaQtd)
   }
 
 }

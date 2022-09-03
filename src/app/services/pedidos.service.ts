@@ -22,9 +22,8 @@ export class PedidosService {
   realizarDevolucao(index: number){
     this.devolucoes.splice(index, 1)
   }
-  addEntrega(pedido: Pedido){
-    this.entregas.push(pedido)
-    this.addPedido(pedido)
+  addEntrega(pedido: any){    
+    return this.http.post('http://127.0.0.1:5000/reservas',pedido)
   }
   
   addPedido(pedido: Pedido){
