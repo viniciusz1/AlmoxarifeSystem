@@ -22,8 +22,9 @@ export class PedidosService {
   realizarDevolucao(index: number){
     this.devolucoes.splice(index, 1)
   }
-  addEntrega(pedido: any){    
-    return this.http.post('http://127.0.0.1:5000/reservas',pedido)
+  addEntrega(professor: string, lista: {codigoProduto: number | undefined; quantidade: number | undefined; }[], dataEntrega: Date, dataDevolucao: Date){    
+
+    return this.http.post('http://127.0.0.1:5000/reservas',{professor, lista, dataEntrega, dataDevolucao})
   }
   
   addPedido(pedido: Pedido){
@@ -37,10 +38,7 @@ export class PedidosService {
     this.pedidos.splice(index, 1)
   }
   getPedido(){
-    this.http.get<Pedido[]>('http://127.0.0.1:5000/reservas')
-    .subscribe((e)=>{
-      return e
-    })
+    return this.http.get<Pedido[]>('http://127.0.0.1:5000/reservas')
   }
   getPedidobyCode(codigo: number){
     return this.pedidos.filter(e => e.codigo == codigo)
@@ -54,7 +52,7 @@ export class PedidosService {
   getDevolucoesByDate(dataBuscada: Date){
     let listaRetornada: Pedido[] = []
     this.devolucoes.forEach((e)=>{
-      if((e.dataReserva?.getDate() == dataBuscada.getDate())){
+      if((e.dataEntrega?.getDate() == dataBuscada.getDate())){
         listaRetornada.push(e)
       }
     })
@@ -63,7 +61,7 @@ export class PedidosService {
   getEntregasByDate(dataBuscada: Date){
     let listaRetornada: Pedido[] = []
     this.entregas.forEach((e)=>{
-      if((e.dataReserva?.getDate() == dataBuscada.getDate())){
+      if((e.dataEntrega?.getDate() == dataBuscada.getDate())){
         listaRetornada.push(e)
       }
     })

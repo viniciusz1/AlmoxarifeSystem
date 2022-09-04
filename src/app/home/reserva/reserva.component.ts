@@ -31,7 +31,7 @@ export class ReservaComponent implements OnInit {
         quantidade: i.qtdCart 
       })      
     }
-    this.pedidoService.addEntrega({pedido: [this.professor,  newList, this.dataRetirada, this.dataDevolucao]})
+    this.pedidoService.addEntrega(this.professor, newList, this.dataRetirada, this.dataDevolucao)
     .subscribe({next: e => console.log(e),
     error: x => console.log(x)})
     // this.fecharReserva()
