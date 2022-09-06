@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit {
     if(usuarios){
       localStorage.setItem('USUARIO', this.usuario);
       localStorage.setItem('SENHA', this.senha);
+      localStorage.removeItem('lista');
       this.router.navigate(['/home'])
     }else{
       alert('Usuário não cadastrado!');
