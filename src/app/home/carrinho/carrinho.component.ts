@@ -14,8 +14,8 @@ import { Produto } from 'src/app/shared/produto.model';
       state('fechado', style({
         'width': '60px'
       })),
-      transition('aberto <=> fechado', [
-        animate('100ms')
+      transition('aberto => fechado', [
+        animate('3s')
       ]),
     ]),
   ]
@@ -37,12 +37,8 @@ export class CarrinhoComponent implements OnInit {
   changeStatus(){
     if(this.state == "fechado"){
       this.state = "aberto"
-      setTimeout(() => {
-        this.stateTxt= "aberto";
-      }, 85)
     }else{
       this.state = "fechado"
-      this.stateTxt = "fechado"
     }
   }  
   abreReserva(){

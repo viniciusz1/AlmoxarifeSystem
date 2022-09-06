@@ -82,7 +82,7 @@
                 }; let i = index">
                 </app-produto>
             </div>
-            <div class="paginacao-div">
+            <div [ngClass]="{pagInf: lista.length < 10}" class="paginacao-div">
                 <pagination-controls class="my-pagination" previousLabel="Prev" nextLabel="Next" (pageChange)="onDataTableChange($event)"></pagination-controls>
             </div>
         </div>

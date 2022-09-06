@@ -6,13 +6,24 @@
 .linha {
     width: 20%;
 }
-.paginacao-div{
+
+.paginacao-div {
     margin-top: 20px;
     display: flex;
     justify-content: center;
-    
+
 }
-.input-input{
+
+.pagInf {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.input-input {
     box-shadow: 0 0 0 0;
     border: 0 none;
     outline: 0;
@@ -231,6 +242,7 @@ input {
     padding-right: 20px;
     outline: none
 }
+
 /* 
 .select::after {
     content: '\25BC';
@@ -252,7 +264,7 @@ select {
     -moz-appearance: none;
     text-indent: 1px;
     text-overflow: '';
-  }
+}
 
 .filtross {
     border: none;
