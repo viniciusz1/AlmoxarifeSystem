@@ -46,8 +46,8 @@ export class PedidosService {
   getPedidobyIndex(index: number){
     return this.pedidos[index]
   }
-  getEntregasbyIndex(index: number){
-    return this.entregas[index]
+  getEntregasbyCodigo(codigo: number){
+    return this.http.get<Pedido[]>('http://127.0.0.1:5000/entrega/'+codigo)
   }
   getDevolucoesByDate(dataBuscada: Date){
     let listaRetornada: Pedido[] = []
@@ -69,12 +69,12 @@ export class PedidosService {
   }
 
   getEntregas(){
-    return this.entregas.slice();
+    return this.http.get<Pedido[]>('http://127.0.0.1:5000/reservas/1')
   }
   getDevolucoes(){
-    return this.devolucoes.slice();
+    return this.http.get<Pedido[]>('http://127.0.0.1:5000/reservas/2')
   }
-  getDevolucoesbyIndex(index: number){
-    return this.devolucoes[index]
+  getDevolucoesbyCodigo(codigo: number){
+    return this.http.get<Pedido[]>('http://127.0.0.1:5000/devolucao/'+codigo)
   }
 }

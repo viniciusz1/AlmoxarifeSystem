@@ -56,11 +56,12 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let lista of lista; let i = index">
-                        <th scope="row">1</th>
+                        <th scope="row">{{lista.codigo}}</th>
                         <td>{{lista.nomeProfessor}}</td>
                         <td class="text-truncate" style="max-width: 30%;"><span *ngFor="let l of lista.listaProdutos">{{l.nome}}, </span></td>
-                        <td>{{lista.dataDevolucao | date: 'dd/MM/yyyy'}}</td>
-                        <td><button [routerLink]="[url, i]" class="btn-primary" style="border-radius: 5px;">{{textoBotao}}</button></td>
+                        <td *ngIf="modo == 'devolucoes'">{{lista.dataDevolucao | date: 'dd/MM/yyyy'}}</td>
+                        <td *ngIf="modo == 'entregas'">{{lista.dataEntrega | date: 'dd/MM/yyyy'}}</td>
+                        <td><button [routerLink]="[url, lista.codigo]" class="btn-primary" style="border-radius: 5px;">{{textoBotao}}</button></td>
                       </tr>
                 </tbody>
               </table>

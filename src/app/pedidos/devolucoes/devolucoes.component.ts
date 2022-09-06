@@ -23,13 +23,19 @@ export class DevolucoesComponent implements OnInit {
   page = 1
   //1 - entrada, 2 - devulucao, 3 - histórico
   ngOnInit(): void { 
-    this.lista = this.pedidos.getDevolucoes()
     this.url = this.router.url
     if(this.url == "/home/devolucoes"){
       this.modo = 'devolucoes'
       this.titulo = "DEVOLUÇÕES"
       this.textoBotao = "Devolver"
-    }else{
+      this.pedidos.getDevolucoes()
+      .subscribe({next: e => this.lista = e})
+    }else{      
+    this.pedidos.getEntregas()
+    .subscribe({next: e =>{
+      this.lista = e
+      console.log(e)
+    }})
       this.modo = 'entregas'
       this.titulo = "ENTREGAS"
       this.textoBotao = "Entregar"

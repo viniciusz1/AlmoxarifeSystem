@@ -37,9 +37,15 @@ export class ConferenciaComponent implements OnInit {
       }
     )
     if(this.entregas == 1){
-      this.pedido = this.pedidos.getEntregasbyIndex(parseInt(this.id));
+     this.pedidos.getEntregasbyCodigo(parseInt(this.id))
+      .subscribe({next: (e) => {
+        this.pedido = e[0]
+      }})    
     }else if(this.entregas == 0){ 
-      this.pedido = this.pedidos.getDevolucoesbyIndex(parseInt(this.id));
+      this.pedidos.getDevolucoesbyCodigo(parseInt(this.id))
+      .subscribe({next: (e) => {
+        this.pedido = e[0]
+      }})     
     }else if(this.entregas == 2){
       this.pedido = this.historicoService.getPedidobyIndex(parseInt(this.id))
     }
