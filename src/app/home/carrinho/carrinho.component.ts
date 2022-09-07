@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { state, style, trigger, transition, animate} from '@angular/animations';
+import { state, style, trigger, transition, animate } from '@angular/animations';
 import { CarrinhoService } from 'src/app/services/carrinho.service';
 import { Produto } from 'src/app/shared/produto.model';
 @Component({
@@ -25,48 +25,40 @@ export class CarrinhoComponent implements OnInit {
   @Output() reserva = new EventEmitter<boolean>();
   @Input('state') state = "aberto";
   carrinho = true;
-  stateTxt= "fechado";
-  listaCarrinho:Produto[] = [];
+  stateTxt = "fechado";
+  listaCarrinho: Produto[] = [];
   mensagemPrevia = "Adicione algum Item ao carrinho!"
   carrinhoVazio = false
 
-  clicouModal(){
+  clicouModal() {
     this.fechaCarrinho.emit(false)
   }
 
-  changeStatus(){
-    if(this.state == "fechado"){
+  changeStatus() {
+    if (this.state == "fechado") {
       this.state = "aberto"
-    }else{
+    } else {
       this.state = "fechado"
     }
-  }  
-  abreReserva(){
+  }
+  abreReserva() {
     this.reserva.emit(false)
   }
-  constructor(private car: CarrinhoService) { 
+  constructor(private car: CarrinhoService) {
   }
 
-  lixo(i:number){
+  lixo(i: number) {
     this.car.removeLista(i)
   }
 
-  listaQtd: number[]  = []
+  listaQtd: number[] = []
   ngOnInit(): void {
-    this.listaCarrinho = this.car.getLista();
-    this.car.tamanhoCarrinho.subscribe(
-      e => {
-        if(e != 0){
-          this.carrinhoVazio = false
-        }
+    this.car.changeList.subscribe({
+      next: (e: Produto[]) => {
+        this.listaCarrinho = e
       }
-    )
-    if(this.listaCarrinho.length == 0){
-      this.listaCarrinho = this.car.getLista();
-      if(this.listaCarrinho.length == 0){
-        this.carrinhoVazio = true
-      }
-    }
+    })
+
   }
 
 }

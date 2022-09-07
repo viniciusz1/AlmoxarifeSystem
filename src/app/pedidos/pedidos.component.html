@@ -16,27 +16,7 @@
                     <hr style="margin: 0; width: 200px; opacity: 1;">
                 </div>
                 <div class="container bu" style="position: relative; padding-top: 5px;">
-                    <table class="table table-hover table-responsive">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Professor</th>
-                                <th scope="col">Produtos</th>
-                                <th scope="col">Data Reserva</th>
-                                <th scope="col">Data Devolucao</th>
-                              </tr>
-                        </thead>
-                        <tbody>
-                            <tr (click)="changeModal()" *ngFor="let pedido of lista; let i = index">
-                                <th scope="row">{{pedido.codigo}}</th>
-                                <td>{{pedido.nomeProfessor}}</td>
-                                <td class="text-truncate" style="max-width: 30%;"><span *ngFor="let l of pedido.listaProdutos | slice: 0:8">{{l.nome}}, </span></td>
-                                <td>{{pedido.dataDevolucao | date: 'dd/MM/yyyy'}}</td>
-                                <td>{{pedido.dataEntrega | date: 'dd/MM/yyyy'}}</td>
-                                <td><button class="btn-primary" style="border-radius: 5px;">Cancelar</button></td>
-                              </tr>
-                        </tbody>
-                      </table>
+                    <app-pedidos-table-professor (modal)="changeModal()" [lista]="lista"></app-pedidos-table-professor>                    
                 </div>
             </div>
         </div>

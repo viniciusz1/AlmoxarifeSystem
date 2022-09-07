@@ -61,7 +61,6 @@ export class HomeComponent implements OnInit {
   }  
   openCart(){
     this.carState = "aberto"
-    console.log(this.state)
   }
   closeCart(param: boolean | Event){
     this.carState = "fechado"
@@ -76,7 +75,6 @@ export class HomeComponent implements OnInit {
     .subscribe(e => {
       this.lista = e
     })
-    console.log(this.lista)
     this.router.params.subscribe(params => {
     this.rota = params['id'];
     if(this.rota == 'produtos'){

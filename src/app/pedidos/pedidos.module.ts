@@ -26,6 +26,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatFormFieldModule} from '@angular/material/form-field'
 import {MatExpansionModule} from '@angular/material/expansion';
 import { ModalPedidosComponent } from './modal-pedidos/modal-pedidos.component';
+import { DevolucoesTableComponent } from './devolucoes/devolucoes-table/devolucoes-table.component';
+import { PedidosTableProfessorComponent } from './pedidos-table-professor/pedidos-table-professor.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { ModalPedidosComponent } from './modal-pedidos/modal-pedidos.component';
     EntradaHistoricoComponent,
     DashboardComponent,
     PedidosTableComponent,
-    ModalPedidosComponent
+    ModalPedidosComponent,
+    DevolucoesTableComponent,
+    PedidosTableProfessorComponent,
   ],
   imports: [
     CommonModule,

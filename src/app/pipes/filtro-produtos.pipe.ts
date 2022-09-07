@@ -7,7 +7,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FiltroProdutosPipe implements PipeTransform {
 
   transform(listaProdutos: Produto[], search: string): any {
-    console.log(listaProdutos)
     if(listaProdutos != undefined){
       if(listaProdutos && search)
       return listaProdutos.filter(e => e.nome?.toUpperCase().startsWith(search.toUpperCase()))
