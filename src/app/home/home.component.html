@@ -1,7 +1,7 @@
 <div class="d-flex">
     <div class="container">
         <div class="row mt-5" style="display: flex; justify-content: center;">
-            <div class="d-flex" style="position:relative ;justify-content: space-between;">
+            <nav class="d-flex" style="position:relative ;justify-content: space-between;">
                 <nav aria-label="breadcrumb" style="position: absolute;top: -30px;">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item active" aria-current="page">Home</li>
@@ -15,9 +15,9 @@
                 </div>
 
 
-                <div class="topo-2 col-md-10">
+                <nav class="topo-2 nav">
                     <div style="cursor:pointer" class="d-flex superior-direito">
-                        <div class="pesquisa d-flex">
+                        <li class="nav-item pesquisa d-flex">
                             <div class="lupa">
                                 <i class="bi bi-search"></i>
                             </div>
@@ -25,8 +25,8 @@
                             <div style="cursor:pointer" class="filtrar">
                                 <i class="bi bi-sliders" (click)="modalOpen(false)"></i>
                             </div>
-                        </div>
-                        <div class="selecionar">
+                        </li>
+                        <li class="nav-item selecionar">
                             <select class="ordenar botoes" style="cursor:pointer; min-width:12vw">
                                 <option selected>Ordenar</option>
                                 <option value="1">One</option>
@@ -34,27 +34,27 @@
                                 <option value="3">Three</option>
                             </select>
                             <i class="bi bi-caret-down" style="color: white; padding-right: 4px;"></i>
-                        </div>
-                        <div class="botoes" style="cursor:pointer">
+                        </li>
+                        <li class="nav-item botoes" style="cursor:pointer">
                             <div class="icone">
                                 <button class="filtross" [routerLink]="['/home/cadastrar-produto']">Adicionar</button>
                                 <i class="bi bi-plus-lg"></i>
                             </div>
-                        </div>
-                        <div class="botoes">
+                        </li>
+                        <li class="nav-item botoes">
                             <div class="icone" style="cursor:pointer">
                                 <button class="filtross" routerLink="/home/entrada/0">Entrada</button>
                                 <i class="bi bi-chevron-double-up"></i>
                             </div>
-                        </div>
-                        <div style="cursor:pointer" class="d-flex position-relative">
+                        </li>
+                        <li style="cursor:pointer" class="nav-item d-flex position-relative">
                             <i class="bi bi-cart4 carrinho" (click)="openCart()"></i>
                             <div class="bola-carrinho">{{numeroCarrinho}}</div>
-                        </div>
+                        </li>
                     </div>
-                </div>
-            </div>
-            <div class="div-filtros">
+                </nav>
+            </nav>
+            <div class="nav-item div-filtros">
                 <div class="d-flex">
                     <div class="default-icones" [ngClass]="{icones: exibicao}">
                         <i class="bi bi-list-ul" (click)="exibicaoLista()"></i>
