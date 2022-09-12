@@ -1,9 +1,11 @@
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Produto } from 'src/app/shared/produto.model';
 import { ProdutosService } from 'src/app/services/produtos.service';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
 import { VirtualTimeScheduler } from 'rxjs';
+import { SafeSubscriber } from 'rxjs/internal/Subscriber';
 
 @Component({
   selector: 'app-detalhes-produto',
@@ -25,9 +27,7 @@ export class DetalhesProdutoComponent implements OnInit {
   user = "supervisor"
   // user = "professor"
 
-  constructor(private prod: ProdutosService,
-    private router: Router,
-    private route: ActivatedRoute) { }
+ 
 
 
   detalhesForm = new FormGroup({
@@ -74,11 +74,23 @@ export class DetalhesProdutoComponent implements OnInit {
 
   }
 
+  constructor(private prod: ProdutosService,
+    private router: Router,
+    private route: ActivatedRoute,
+    private sanitizer: DomSanitizer) { 
+    }
+
+public upload(event: Event): void {
+  let list = (event.target as HTMLInputElement).files?.item(0)
+  const urlToBlob = window.URL.createObjectURL(list as Blob) 
+  this.imagem = this.sanitizer.bypassSecurityTrustResourceUrl(urlToBlob); 
+}
+
   darEntrada() {
     this.router.navigate(['/home/entrada/', this.codRota])
   }
   list: Produto = new Produto
-  imagem?= ""
+  imagem?: SafeResourceUrl= ""
 
   teste() {
     console.log(this.list)
