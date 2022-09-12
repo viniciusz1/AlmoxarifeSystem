@@ -1,22 +1,21 @@
 <div class="d-flex">
     <div class="container">
         <div class="row mt-5" style="display: flex; justify-content: center;">
-            <nav class="d-flex" style="position:relative ;justify-content: space-between;">
+            <nav class="" style="position:relative ;justify-content: space-between;">
                 <nav aria-label="breadcrumb" style="position: absolute;top: -30px;">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item active" aria-current="page">Home</li>
                     </ol>
                 </nav>
-                <div class="col-md-2" style="font-size: calc(1.3rem + .6vw);">
-                    <b>
-                        <span>{{titulo | uppercase}}</span>
-                    </b>
-                    <hr style="margin: 0; width: 200px; opacity: 1;">
-                </div>
 
-
-                <nav class="topo-2 nav">
-                    <div style="cursor:pointer" class="d-flex superior-direito">
+                <nav class="topo-2 nav d-flex justify-content-between">
+                    <div class="" style="font-size: calc(1.3rem + .6vw);">
+                        <b>
+                            <span>{{titulo | uppercase}}</span>
+                        </b>
+                        <hr style="margin: 0; width: 200px; opacity: 1;">
+                    </div>
+                    <nav class="nav">
                         <li class="nav-item pesquisa d-flex">
                             <div class="lupa">
                                 <i class="bi bi-search"></i>
@@ -51,31 +50,30 @@
                             <i class="bi bi-cart4 carrinho" (click)="openCart()"></i>
                             <div class="bola-carrinho">{{numeroCarrinho}}</div>
                         </li>
-                    </div>
+                    </nav>
                 </nav>
-            </nav>
-            <div class="nav-item div-filtros">
-                <div class="d-flex">
-                    <div class="default-icones" [ngClass]="{icones: exibicao}">
-                        <i class="bi bi-list-ul" (click)="exibicaoLista()"></i>
-                    </div>
-                    <div class="default-icones" [ngClass]="{icones: !exibicao}">
-                        <i class="bi bi-grid-3x3-gap-fill" (click)="exibicaoCard()"></i>
+                </nav>
+                <div class="nav-item div-filtros">
+                    <div class="d-flex">
+                        <div class="default-icones" [ngClass]="{icones: exibicao}">
+                            <i class="bi bi-list-ul" (click)="exibicaoLista()"></i>
+                        </div>
+                        <div class="default-icones" [ngClass]="{icones: !exibicao}">
+                            <i class="bi bi-grid-3x3-gap-fill" (click)="exibicaoCard()"></i>
+                        </div>
                     </div>
                 </div>
-            </div>
         </div>
 
 
 
         <div class="container-fluid">
             <div *ngIf="exibicao == true" class="row mt-3">
-                <app-produto-lista [tableSize]="tableSize" [page]="page" [count]="count" (produtoSelecionado)="abreDetalhesProduto($event)" [listaProdutos]="lista"></app-produto-lista>
+                <app-produto-lista [tableSize]="tableSize" [page]="page" [count]="count"
+                    (produtoSelecionado)="abreDetalhesProduto($event)" [listaProdutos]="lista"></app-produto-lista>
             </div>
             <div *ngIf="exibicao == false" class="row">
-                <app-produto 
-                class="col-xl-4 index col-md-6" [indiceProduto]="i" [produto]="lista"
-                *ngFor="let lista of (lista ) | filtroProdutos:pesquisaProduto | paginate:{
+                <app-produto class="col-xl-4 index col-md-6" [indiceProduto]="i" [produto]="lista" *ngFor="let lista of (lista ) | filtroProdutos:pesquisaProduto | paginate:{
                     itemsPerPage: tableSize,
                     currentPage: page,
                     totalItems: count
@@ -83,7 +81,8 @@
                 </app-produto>
             </div>
             <div [ngClass]="{pagInf: lista.length < 10}" class="paginacao-div">
-                <pagination-controls class="my-pagination" previousLabel="Prev" nextLabel="Next" (pageChange)="onDataTableChange($event)"></pagination-controls>
+                <pagination-controls class="my-pagination" previousLabel="Prev" nextLabel="Next"
+                    (pageChange)="onDataTableChange($event)"></pagination-controls>
             </div>
         </div>
     </div>
