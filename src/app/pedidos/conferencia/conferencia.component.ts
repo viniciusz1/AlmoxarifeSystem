@@ -60,6 +60,10 @@ export class ConferenciaComponent implements OnInit {
   confirmarPedido(){
     if(this.entregas == 1){
       this.pedidos.realizarEntrega(this.pedido)
+      .subscribe({next: (e) => {
+        console.log(e)
+      }}
+      )
       // this.router.navigate(['/home/entregas'])
     }else if(this.entregas == 0){
       this.pedidos.realizarDevolucao(parseInt(this.id))

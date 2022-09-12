@@ -27,7 +27,7 @@ export class CarrinhoService {
     return this.lista;
   }
 
-  
+  public changeList: EventEmitter<Produto[]> = new EventEmitter();
 
   clear(): boolean {
     if (this.storage) {
@@ -43,6 +43,7 @@ export class CarrinhoService {
 
   removeLista(index: number) {
     this.lista.splice(index, 1)
+    this.changeList.emit(this.lista.slice())
     this.tamanhoCarrinho.emit(this.lista.length)
     this.set('lista', this.lista)
   }
@@ -69,7 +70,6 @@ export class CarrinhoService {
       this.lista = []
     }
     if (produto.quantidadeTotal! >= produto.qtdCart!) {
-      console.log(produto)
       if (this.lista.some(e => e.codigo == produto.codigo)) { //Se já existir esse produto no carrinho..
         this.lista.find(e => {
           let a = +e.qtdCart!
@@ -86,6 +86,7 @@ export class CarrinhoService {
         })
       } else {
         this.lista.push(produto)
+        this.changeList.emit(this.lista.slice())
         this.set('lista', this.lista)
       }
     } else {
