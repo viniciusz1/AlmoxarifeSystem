@@ -24,7 +24,7 @@ export class PedidosService {
   }
   addEntrega(professor: string, lista: {codigoProduto: number | undefined; quantidade: number | undefined; }[], dataEntrega: Date, dataDevolucao: Date){    
 
-    return this.http.post('http://127.0.0.1:5000/reservas',{professor, lista, dataEntrega, dataDevolucao})
+    return this.http.post('http://127.0.0.1:5000/pedidos',{professor, lista, dataEntrega, dataDevolucao})
   }
   
   addPedido(pedido: Pedido){
@@ -38,7 +38,7 @@ export class PedidosService {
     this.pedidos.splice(index, 1)
   }
   getPedido(){
-    return this.http.get<Pedido[]>('http://127.0.0.1:5000/reservas')
+    return this.http.get<Pedido[]>('http://127.0.0.1:5000/pedidos')
   }
   getPedidobyCode(codigo: number){
     return this.pedidos.filter(e => e.codigo == codigo)

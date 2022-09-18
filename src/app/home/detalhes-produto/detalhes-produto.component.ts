@@ -27,27 +27,21 @@ export class DetalhesProdutoComponent implements OnInit {
   user = "supervisor"
   // user = "professor"
 
+ 
 
 
-
-  detalhesForm = new FormGroup({
-    opcaoUso: new FormControl(''),
-    nome: new FormControl(''),
-    quantidade: new FormControl(0),
-    classificacao: new FormControl(''),
-    localidade: new FormControl(''),
-    descricao: new FormControl(''),
-  });
+    
 
   onSubmit() {
     if (this.modo == "cadastrar") {
       console.log(this.prod.addProduto(
-        new Produto(this.detalhesForm.value.nome as string,
-          this.detalhesForm.value.quantidade as number,
-          this.detalhesForm.value.classificacao as string,
-          this.detalhesForm.value.localidade as string,
-          this.detalhesForm.value.opcaoUso as string,
-          this.detalhesForm.value.descricao as string))
+        new Produto(this.nome as string,
+          this.quantidade as number,
+          this.classificacao as string,
+          this.localidade as string,
+          this.opcaoUso as string,
+          this.descricao as string,
+          0))
         .subscribe({
           next(e) {
             console.log(e)
@@ -61,23 +55,18 @@ export class DetalhesProdutoComponent implements OnInit {
       )
 
     } else if (this.modo == "editar") {
-      this.prod.changeProduto(
-        new Produto(this.detalhesForm.value.nome as string,
-          this.detalhesForm.value.quantidade as number,
-          this.detalhesForm.value.classificacao as string,
-          this.detalhesForm.value.localidade as string,
-          this.detalhesForm.value.opcaoUso as string,
-          this.detalhesForm.value.descricao as string,
-          +this.codRota,
-          this.imagem as string))
-        .subscribe({
-          next(value) {
-            console.log(value)
-          },
-          error(err) {
-            console.log(err)
-          }
-        })
+      this.prod.changeProduto(new Produto(this.nome as string,
+        this.quantidade as number,
+        this.classificacao as string,
+        this.localidade as string,
+        this.opcaoUso as string,
+        this.descricao as string,
+        +this.codRota,
+        this.imagem as string,
+        0,
+        this.informacoes.quantidadeReservada as number
+        ))
+        .subscribe(e => console.log(e))
       // this.router.navigate(['/home/produtos'])
     }
 
@@ -86,38 +75,39 @@ export class DetalhesProdutoComponent implements OnInit {
   constructor(private prod: ProdutosService,
     private router: Router,
     private route: ActivatedRoute,
-    private sanitizer: DomSanitizer) {
-  }
+    private sanitizer: DomSanitizer) { 
+    }
 
-  public upload(event: Event): void {
-    let list = (event.target as HTMLInputElement).files?.item(0)
-    const urlToBlob = window.URL.createObjectURL(list as Blob)
-    this.imagem = this.sanitizer.bypassSecurityTrustResourceUrl(urlToBlob);
-  }
+public upload(event: Event): void {
+  let list = (event.target as HTMLInputElement).files?.item(0)
+  const urlToBlob = window.URL.createObjectURL(list as Blob) 
+  this.imagem = this.sanitizer.bypassSecurityTrustResourceUrl(urlToBlob); 
+}
+  teste(){
 
+  }
   darEntrada() {
     this.router.navigate(['/home/entrada/', this.codRota])
   }
   list: Produto = new Produto
-  imagem?: SafeResourceUrl = ""
+  imagem?: SafeResourceUrl= ""
 
-  teste() {
-    console.log(this.list)
-    console.log(this.informacoes)
-  }
 
+  opcaoUso?=''
+  nome?=''
+  quantidade?=0
+  classificacao?=''
+  localidade?=''
+  descricao?=''
 
   mostrarDados() {
     this.imagem = this.informacoes.imagem
-    this.detalhesForm.controls['quantidade'].disable()
-    this.detalhesForm.patchValue({
-      nome: this.informacoes.nome,
-      opcaoUso: this.informacoes.opcaoUso,
-      quantidade: this.informacoes.quantidadeTotal,
-      classificacao: this.informacoes.classificacao,
-      localidade: this.informacoes.localidade,
-      descricao: this.informacoes.descricao
-    })
+    this.nome = this.informacoes.nome
+    this.quantidade = this.informacoes.quantidadeTotal
+    this.classificacao = this.informacoes.classificacao
+    this.localidade = this.informacoes.localidade
+    this.opcaoUso = this.informacoes.opcaoUso
+    this.descricao = this.informacoes.descricao
   }
 
   ngOnInit(): void {
