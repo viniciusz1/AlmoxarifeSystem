@@ -73,6 +73,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {  
     this.prod.getListaProdutos()
     .subscribe(e => {
+      console.log(e)
       this.lista = e
     })
     this.router.params.subscribe(params => {

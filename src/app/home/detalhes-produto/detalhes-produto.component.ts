@@ -27,7 +27,7 @@ export class DetalhesProdutoComponent implements OnInit {
   user = "supervisor"
   // user = "professor"
 
- 
+
 
 
   detalhesForm = new FormGroup({
@@ -61,15 +61,24 @@ export class DetalhesProdutoComponent implements OnInit {
       )
 
     } else if (this.modo == "editar") {
-      this.prod.changeProduto(new Produto(this.detalhesForm.value.nome as string,
-        this.detalhesForm.value.quantidade as number,
-        this.detalhesForm.value.classificacao as string,
-        this.detalhesForm.value.localidade as string,
-        this.detalhesForm.value.opcaoUso as string,
-        this.detalhesForm.value.descricao as string,
-        +this.codRota,
-        this.imagem as string))
-      this.router.navigate(['/home/produtos'])
+      this.prod.changeProduto(
+        new Produto(this.detalhesForm.value.nome as string,
+          this.detalhesForm.value.quantidade as number,
+          this.detalhesForm.value.classificacao as string,
+          this.detalhesForm.value.localidade as string,
+          this.detalhesForm.value.opcaoUso as string,
+          this.detalhesForm.value.descricao as string,
+          +this.codRota,
+          this.imagem as string))
+        .subscribe({
+          next(value) {
+            console.log(value)
+          },
+          error(err) {
+            console.log(err)
+          }
+        })
+      // this.router.navigate(['/home/produtos'])
     }
 
   }
@@ -77,20 +86,20 @@ export class DetalhesProdutoComponent implements OnInit {
   constructor(private prod: ProdutosService,
     private router: Router,
     private route: ActivatedRoute,
-    private sanitizer: DomSanitizer) { 
-    }
+    private sanitizer: DomSanitizer) {
+  }
 
-public upload(event: Event): void {
-  let list = (event.target as HTMLInputElement).files?.item(0)
-  const urlToBlob = window.URL.createObjectURL(list as Blob) 
-  this.imagem = this.sanitizer.bypassSecurityTrustResourceUrl(urlToBlob); 
-}
+  public upload(event: Event): void {
+    let list = (event.target as HTMLInputElement).files?.item(0)
+    const urlToBlob = window.URL.createObjectURL(list as Blob)
+    this.imagem = this.sanitizer.bypassSecurityTrustResourceUrl(urlToBlob);
+  }
 
   darEntrada() {
     this.router.navigate(['/home/entrada/', this.codRota])
   }
   list: Produto = new Produto
-  imagem?: SafeResourceUrl= ""
+  imagem?: SafeResourceUrl = ""
 
   teste() {
     console.log(this.list)

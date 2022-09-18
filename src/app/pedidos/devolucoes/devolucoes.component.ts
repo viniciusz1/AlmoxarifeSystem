@@ -34,7 +34,6 @@ export class DevolucoesComponent implements OnInit {
     this.pedidos.getEntregas()
     .subscribe({next: e =>{
       this.lista = e
-      console.log(e)
     }})
       this.modo = 'entregas'
       this.titulo = "ENTREGAS"

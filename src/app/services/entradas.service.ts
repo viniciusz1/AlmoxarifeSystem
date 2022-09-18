@@ -15,10 +15,10 @@ interface Entrada{
 export class EntradasService {
   listaEntradas: Entrada[] = []
 
-  darEntradaDeQuantidadeProduto(codigo: number, quantidade:number){
+  darEntradaDeQuantidadeProduto(codigoProduto: number, quantidade:number){
     if(!isNaN(quantidade)){
       let data = new Date()
-      return this.http.post('http://127.0.0.1:5000/entradas', {codigo, quantidade, data})
+      return this.http.post('http://127.0.0.1:5000/entradas', {codigoProduto, quantidade, data})
     }
     return
    }

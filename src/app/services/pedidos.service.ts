@@ -17,7 +17,7 @@ export class PedidosService {
     private http: HttpClient) { }
 
   realizarEntrega(pedido: Pedido){
-    return this.http.post('http://127.0.0.1:5000/reservas', pedido)
+    return this.http.put(`http://127.0.0.1:5000/entregas/${pedido.codigo}`, null)
   }
   realizarDevolucao(index: number){
     this.devolucoes.splice(index, 1)
@@ -47,7 +47,7 @@ export class PedidosService {
     return this.pedidos[index]
   }
   getEntregasbyCodigo(codigo: number){
-    return this.http.get<Pedido[]>('http://127.0.0.1:5000/entrega/'+codigo)
+    return this.http.get<Pedido[]>('http://127.0.0.1:5000/entregas/'+codigo)
   }
   getDevolucoesByDate(dataBuscada: Date){
     let listaRetornada: Pedido[] = []
@@ -69,12 +69,12 @@ export class PedidosService {
   }
 
   getEntregas(){
-    return this.http.get<Pedido[]>('http://127.0.0.1:5000/reservas/1')
+    return this.http.get<Pedido[]>('http://127.0.0.1:5000/entregas/q')
   }
   getDevolucoes(){
-    return this.http.get<Pedido[]>('http://127.0.0.1:5000/reservas/2')
+    return this.http.get<Pedido[]>('http://127.0.0.1:5000/devolucoes/q')
   }
   getDevolucoesbyCodigo(codigo: number){
-    return this.http.get<Pedido[]>('http://127.0.0.1:5000/devolucao/'+codigo)
+    return this.http.get<Pedido[]>('http://127.0.0.1:5000/devolucoes/'+codigo)
   }
 }

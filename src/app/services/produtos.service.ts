@@ -60,10 +60,6 @@ export class ProdutosService {
   }
 
    changeProduto(produto: Produto){
-
-    let index = this.lista.findIndex(e => 
-      e.codigo == produto.codigo
-    )
-    this.lista[index] = produto
+    return this.http.put(`http://127.0.0.1:5000/produtos/${produto.codigo}`, produto)
   }
 }

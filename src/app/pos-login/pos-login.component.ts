@@ -25,7 +25,6 @@ export class PosLoginComponent implements OnInit {
       filter((e: any): e is RouterEvent => e instanceof RouterEvent)
     ).subscribe((evt: RouterEvent) => {
       if (evt instanceof NavigationEnd) {
-        console.log(evt.url)
       }
     })
   }
