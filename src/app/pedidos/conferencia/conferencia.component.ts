@@ -64,10 +64,13 @@ export class ConferenciaComponent implements OnInit {
         console.log(e)
       }}
       )
-      // this.router.navigate(['/home/entregas'])
+      this.router.navigate(['/home/entregas'])
     }else if(this.entregas == 0){
-      this.pedidos.realizarDevolucao(parseInt(this.id))
-      this.router.navigate(['/home/devolucoes'])
+      this.pedidos.realizarDevolucao(this.pedido)
+      .subscribe({next: (e) => {
+        console.log(e)
+      }})
+      // this.router.navigate(['/home/devolucoes'])
     }
   }
 }

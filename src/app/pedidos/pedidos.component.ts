@@ -35,7 +35,10 @@ export class PedidosComponent implements OnInit {
   }
   ngOnInit(): void {
     this.pedidosService.getPedido()
-    .subscribe({next: (e) => this.lista = e})
+      .subscribe({next: (e) => {
+        this.lista = e
+        console.log(e)
+      }})
   }
 
 }

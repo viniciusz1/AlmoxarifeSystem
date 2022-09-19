@@ -19,12 +19,12 @@ export class PedidosService {
   realizarEntrega(pedido: Pedido){
     return this.http.put(`http://127.0.0.1:5000/entregas/${pedido.codigo}`, null)
   }
-  realizarDevolucao(index: number){
-    this.devolucoes.splice(index, 1)
+  realizarDevolucao(pedido: Pedido){
+    return this.http.put(`http://127.0.0.1:5000/devolucoes/${pedido.codigo}`, null)
   }
-  addEntrega(professor: string, lista: {codigoProduto: number | undefined; quantidade: number | undefined; }[], dataEntrega: Date, dataDevolucao: Date){    
-
-    return this.http.post('http://127.0.0.1:5000/pedidos',{professor, lista, dataEntrega, dataDevolucao})
+  addEntrega(nomeProfessor: string, listaProdutos: {codigoProduto: number | undefined; quantidade: number | undefined; }[], dataEntrega: Date, dataDevolucao: Date, usuarioEmail: string | null){    
+    console.log({nomeProfessor, listaProdutos, dataEntrega, dataDevolucao, usuarioEmail})
+    return this.http.post('http://127.0.0.1:5000/pedidos',{nomeProfessor, listaProdutos, dataEntrega, dataDevolucao, usuarioEmail})
   }
   
   addPedido(pedido: Pedido){
