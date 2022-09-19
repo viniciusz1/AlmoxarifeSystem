@@ -70,7 +70,7 @@ export class ProdutosService {
   }
 
    changeProduto(produto: Produto){    
-    return this.http.put("http://127.0.0.1:5000/produto/1", {
+    return this.http.put(`http://127.0.0.1:5000/produto/${produto.codigo}`, {
       "nome": produto.nome,
       "quantidadeTotal": produto.quantidadeTotal,
       "quantidadeReservada": produto.quantidadeReservada,

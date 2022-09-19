@@ -61,7 +61,7 @@ export class DetalhesProdutoComponent implements OnInit {
         this.localidade as string,
         this.opcaoUso as string,
         this.descricao as string,
-        +this.codRota,
+        this.informacoes.codigo as number,
         this.imagem as string,
         0,
         this.informacoes.quantidadeReservada as number
