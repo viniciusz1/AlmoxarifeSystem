@@ -70,7 +70,7 @@ export class ConferenciaComponent implements OnInit {
       .subscribe({next: (e) => {
         console.log(e)
       }})
-      // this.router.navigate(['/home/devolucoes'])
+      this.router.navigate(['/home/devolucoes'])
     }
   }
 }

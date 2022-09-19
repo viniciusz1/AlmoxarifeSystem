@@ -29,7 +29,10 @@ export class EntradaComponent implements OnInit {
   ngOnInit(): void {
     this.prod.getListaProdutos()
     .subscribe({
-      next: (e) => this.lista = e,
+      next: (e) => {
+        this.lista = e
+        console.log(e)
+      },
       error: (err) => console.log(err)
     }
     )

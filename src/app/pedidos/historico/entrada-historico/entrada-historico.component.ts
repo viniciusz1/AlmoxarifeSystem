@@ -41,7 +41,10 @@ export class EntradaHistoricoComponent implements OnInit {
     this.entradaService.getEntrada()
     .subscribe(
       {
-        next: (x) => this.listaEntradas = x,
+        next: (x) => {
+          this.listaEntradas = x
+          console.log(x)
+      },
         error: (err) => console.log(err)
       }
     )
