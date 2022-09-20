@@ -64,7 +64,7 @@ export class CadastroComponent implements OnInit {
         }
         )
 
-      // this.router.navigate(['/'])
+      this.router.navigate(['/'])
     } else {
       alert("usuario ou email em uso!")
     }
