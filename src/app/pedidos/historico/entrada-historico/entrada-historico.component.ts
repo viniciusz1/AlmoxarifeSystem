@@ -24,9 +24,7 @@ export class EntradaHistoricoComponent implements OnInit {
   modo = ""
   titulo = ""
   textoBotao = ""
-  cs(){
-    console.log(this.url)
-  }
+  
   ngOnInit(): void {
     this.url = this.router.url
     if(this.url == "/home/devolucoes"){

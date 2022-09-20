@@ -17,25 +17,29 @@ export class EntradaComponent implements OnInit {
     private router: ActivatedRoute,
     private route: Router) { }
 
-  lista:Produto[] = []
-  nomeProduto=""
-  estoqueQuantidade=0
-  novaQuantidade=0
+  lista: Produto[] = []
+  nomeProduto = ""
+  estoqueQuantidade = 0
+  novaQuantidade = 0
   pesquisaProduto = ""
   codigo = 0;
   imagem = ""
   tiraQuantidade = true
 
-  ngOnInit(): void {
+  atualizarProdutos() {
     this.prod.getListaProdutos()
-    .subscribe({
-      next: (e) => {
-        this.lista = e
-        console.log(e)
-      },
-      error: (err) => console.log(err)
-    }
-    )
+      .subscribe({
+        next: (e) => {
+          this.lista = e
+        },
+        error: (err) => alert(err)
+      }
+      )
+  }
+
+  ngOnInit(): void {
+    this.atualizarProdutos();
+
     this.router.params.subscribe(e => {
       this.codigo = parseInt(e['id'])
       this.mostrarProduto(parseInt(e['id']))
@@ -44,15 +48,15 @@ export class EntradaComponent implements OnInit {
     )
   }
 
-  mostrarProduto(codigo: number | undefined){
-    let produto = this.lista.find(e => e.codigo==codigo)
+  mostrarProduto(codigo: number | undefined) {
+    let produto = this.lista.find(e => e.codigo == codigo)
     this.route.navigate(['home/entrada/', codigo])
     this.imagem = produto?.imagem as string
     this.nomeProduto = produto?.nome as string
     this.estoqueQuantidade = produto?.quantidadeTotal as number
   }
 
-  atualizarQuantidade(){
+  atualizarQuantidade() {
     Swal.fire({
       title: 'Confirmar entrada',
       html: `Você está adicionando "${this.novaQuantidade}" quantidades <br> <b>Produto</b>: ${this.nomeProduto}`,
@@ -65,10 +69,14 @@ export class EntradaComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
         this.entradaService.darEntradaDeQuantidadeProduto(this.codigo, this.novaQuantidade)
-        ?.subscribe(
-          {next: e => console.log(e)}
-        )
-
+          ?.subscribe(
+            {
+              next: e => {
+                console.log(e)
+                this.atualizarProdutos();
+              }
+            }
+          )
       }
     })
   }
