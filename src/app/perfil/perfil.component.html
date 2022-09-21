@@ -42,7 +42,7 @@
             <span>Telefone:</span>
             <input [(ngModel)]="telefone" [disabled]="disabled" class="control" type="tel" placeholder="(**) *****-****">
             <div style="    margin-top: 39px;">
-              <button *ngIf="!disabled" class="btn btn-primary">Confirmar</button>
+              <button (click)="mandarAlteracaoUsuarioDB()" *ngIf="!disabled" class="btn btn-primary">Confirmar</button>
             </div>
           </div>
         </div>

@@ -30,6 +30,11 @@ export const navbarData = [
         label: 'Alterar Status'
     },
     {
+        routeLink: '/home/solicitacoes',
+        icon: 'bi bi-check-lg',
+        label: 'Confirmar Usuários'
+    },
+    {
         routeLink: '/home/perfil',
         icon: 'bi bi-person-circle',
         label: 'Seu perfil',

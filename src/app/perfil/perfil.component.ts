@@ -25,6 +25,26 @@ export class PerfilComponent implements OnInit {
     this.disabled = !this.disabled
   }
 
+  mandarAlteracaoUsuarioDB(){
+    this.usuarioService.alterarUsuario(
+      new Usuario(
+        this.usuario as string, 
+        this.email as string, 
+        this.nome as string, 
+        this.telefone as string, 
+        this.senha as string
+        )
+      )
+    .subscribe({
+      next: (e) => {
+        console.log(e)
+      },
+      error: (err) => {
+        console.log(err.error.message)
+      }
+    })
+  }
+
   sendValuesToModel(user: Usuario){
     this.usuario = user.usuario
     this.email = user.email

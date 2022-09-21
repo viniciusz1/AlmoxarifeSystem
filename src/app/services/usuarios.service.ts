@@ -17,7 +17,11 @@ export class UsuariosService {
   ]
 
   mudarSenha(senha: string){
-    return this.http.put(`http://localhost:5000/usuario/${localStorage.getItem('EMAIL')}`, {'senha': senha})
+    return this.http.put(`http://localhost:5000/usuario-senha/${localStorage.getItem('EMAIL')}`, {'senha': senha})
+  }
+
+  alterarUsuario(usuario: Usuario){
+    return this.http.put(`http://localhost:5000/usuario/${localStorage.getItem('EMAIL')}`, {'nome': usuario.nome, 'telefone': usuario.telefone, 'senha': usuario.senha, 'usuario': usuario.usuario, 'email': usuario.email,  'nivelAcesso': usuario.nivelAcesso})
   }
 
   login(usuario: string, senha: string){
