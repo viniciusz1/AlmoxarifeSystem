@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { UsuariosService } from 'src/app/services/usuarios.service';
+import { Usuario } from 'src/app/shared/usuario.model';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +9,7 @@ import { UsuariosService } from 'src/app/services/usuarios.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  
+
 
   constructor(
     private router: Router,
@@ -22,20 +23,22 @@ export class LoginComponent implements OnInit {
 
   usuario = "";
   senha = "";
-
-  login(){
-    let usuarios =  this.usuariosService.getListaUser().find(lista => lista.usuario == this.usuario && lista.senha == this.senha);
-    if(usuarios){
-      localStorage.setItem('USUARIO', this.usuario); 
-      localStorage.setItem('EMAIL', usuarios.email); 
-      localStorage.setItem('SENHA', this.senha);
-      localStorage.removeItem('lista');
-      this.router.navigate(['/home'])
-    }else{
-      alert('Usuário não cadastrado!');
-    }
+  usuarios: Usuario = new Usuario()
+  login() {
+    this.usuariosService.login(this.usuario, this.senha)
+      .subscribe({
+        next: (x) => {
+          this.usuarios = x
+          localStorage.setItem('USUARIO', this.usuario);
+          localStorage.setItem('EMAIL', this.usuarios.email as string);
+          localStorage.setItem('SENHA', this.senha);
+          localStorage.removeItem('lista');
+          this.router.navigate(['/home'])
+        },
+        error(err) {
+          alert(err.error.message)
+        },
+      }
+      )
   }
-
-  
-
 }

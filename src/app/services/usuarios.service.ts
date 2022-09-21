@@ -16,6 +16,12 @@ export class UsuariosService {
     new Usuario("1", "1@", "1", "1", "admin"),
   ]
 
+  login(usuario: string, senha: string){
+    return this.http.post<Usuario>("http://localhost:5000/login", {'usuario': usuario, 'senha': senha})
+  }
+  getUser(){
+    return this.http.get(`http://localhost:5000/usuario/${localStorage.getItem('EMAIL')}`)
+  }
 
   getListaUser(){
     return this.lista
@@ -26,7 +32,7 @@ export class UsuariosService {
  setUser(usuario: string, telefone: string){
   let index =  this.lista.findIndex(listas => listas.usuario == usuario);
   let us = this.lista[index];
-  let user = new Usuario(us.nome, us.email, us.usuario, us.senha, telefone);
+  let user = new Usuario(us.nome as string, us.email as string, us.usuario as string, us.senha as string, telefone);
   this.lista[index] = user;
   console.log(this.lista)
  }
