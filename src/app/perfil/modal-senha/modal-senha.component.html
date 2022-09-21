@@ -6,22 +6,22 @@
     </div>
     <span>Senha atual:</span>
     <div class="control">
-        <input class="input" type="password">
+        <input [(ngModel)]="AtualSenha" class="input" type="password">
         <i style="font-size: 24px;" class="bi bi-eye-slash"></i>
     </div>
     <span>Nova senha:</span>
     <div class="control">
-        <input class="input" type="password">
+        <input [(ngModel)]="novaSenha" class="input" type="password">
         <i style="font-size: 24px;" class="bi bi-eye-slash"></i>
     </div>
     <span>Digite novamente sua senha:</span>
     <div class="control">
-        <input class="input" type="password">
+        <input [(ngModel)]="confirmaNovaSenha" class="input" type="password">
         <i style="font-size: 24px;" class="bi bi-eye-slash"></i>
     </div>
     <div class="botoes"> 
-        <button (click)="fecharModal()" class="botao1">Cancelar</button>
-        <button (click)="fecharModal()" class="botao2">Confirmar</button>
+        <button (click)="fecharModal()  " class="botao1">Cancelar</button>
+        <button (click)="mudarSenha()" class="botao2">Confirmar</button>
     </div>
 </div>
 <div class="overlay"></div>

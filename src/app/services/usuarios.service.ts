@@ -16,6 +16,10 @@ export class UsuariosService {
     new Usuario("1", "1@", "1", "1", "admin"),
   ]
 
+  mudarSenha(senha: string){
+    return this.http.put(`http://localhost:5000/usuario/${localStorage.getItem('EMAIL')}`, {'senha': senha})
+  }
+
   login(usuario: string, senha: string){
     return this.http.post<Usuario>("http://localhost:5000/login", {'usuario': usuario, 'senha': senha})
   }

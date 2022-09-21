@@ -19,7 +19,7 @@
     <div>
       <div class="container bu">
         <div class="cargo">
-          Professor
+          <span>{{nivelAcesso | uppercase}}</span>
         </div>
         <div class="esquerda">
           <div class="imagem">
@@ -36,18 +36,16 @@
         <div class="direita">
           <div class="inputsPerfil">
             <span>Usuario:</span>
-            <input class="control" type="text" placeholder="FulanoDeTal">
+            <input [(ngModel)]="usuario" class="control" type="text" placeholder="FulanoDeTal">
             <span>Email:</span>
-            <input class="control" type="email" placeholder="fulano@gmail.com">
-            <span>Data de Nascimento:</span>
-            <input class="control" placeholder="DD/MM/AAAA" type="date">
+            <input [(ngModel)]="email" class="control" type="email" placeholder="fulano@gmail.com">
             <span>Telefone:</span>
-            <input class="control" type="tel" placeholder="(**) *****-****">
+            <input [(ngModel)]="telefone" class="control" type="tel" placeholder="(**) *****-****">
           </div>
         </div>
       </div>
     </div>
   </div>
   </body>
-<app-modal-senha (alterandoModal)="modificaAlteraSenha()" *ngIf="alteraSenha"></app-modal-senha>
+<app-modal-senha [senha]="senha" (alterandoModal)="modificaAlteraSenha()" *ngIf="alteraSenha"></app-modal-senha>
 </div>
