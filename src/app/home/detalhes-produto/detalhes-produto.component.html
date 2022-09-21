@@ -25,13 +25,13 @@
                         <label class="input-file" for="inputTag">
                             <img *ngIf="imagem" class="imagem" [src]="imagem" alt="">
                             <i *ngIf="!imagem"  class="bi bi-plus-lg" style="font-size: 40px; color:#000"></i>
-                            <input id="inputTag" (change)="upload($event)" type="file" />
+                            <input [disabled]="disabled" id="inputTag" (change)="upload($event)" type="file" />
                         </label>
                     </div>
                     <div class="row">
                         <div class="mt-2 padding-input">
                             <label for="">Opcao de uso</label>
-                            <select class="form-control" [(ngModel)]="opcaoUso" id="uso">
+                            <select [disabled]="disabled" class="form-control" [(ngModel)]="opcaoUso" id="uso">
                                 <option value="Descartável">Descartável</option>
                                 <option value="Não Descartável">Não Descartável</option>
                             </select>
@@ -41,27 +41,27 @@
                 <div class="col-lg-6">
                     <div class="row input-group mb-3 padding-input">
                         <label for="">Nome do produto</label>
-                        <input  class="form-control" type="text" [(ngModel)]="nome">
+                        <input [disabled]="disabled" class="form-control" type="text" [(ngModel)]="nome">
                     </div>
                     <div class="row input-group mb-3 padding-input">
                         <label for="">Quantide em estoque</label>
-                        <input class="form-control" type="text" [(ngModel)]="quantidade">
-                        <!-- [disabled]="disabled"  -->
+                        <input [disabled]="disabledQuantidade" class="form-control" type="text" [(ngModel)]="quantidade">
+                        <!--   -->
                     </div>
                     <div class="row input-group mb-3 padding-input">
                         <label for="">Classificação</label>
-                        <input class="form-control" type="text" [(ngModel)]="classificacao">
+                        <input [disabled]="disabled" class="form-control" type="text" [(ngModel)]="classificacao">
                     </div>
                     <div class="row input-group mb-3 padding-input">
                         <label for="">Localidade</label>
-                        <input class="form-control" type="text" [(ngModel)]="localidade">
+                        <input [disabled]="disabled" class="form-control" type="text" [(ngModel)]="localidade">
                     </div>
                 </div>
             </div>
             <div class="row mb-3">
                 <div class="padding-select">
                     <label for="exampleFormControlTextarea1" class="">Descrição</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" [(ngModel)]="descricao"
+                    <textarea [disabled]="disabled" class="form-control" id="exampleFormControlTextarea1" [(ngModel)]="descricao"
                         rows="3"></textarea>
                 </div>
 

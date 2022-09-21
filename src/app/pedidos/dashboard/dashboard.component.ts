@@ -10,25 +10,47 @@ import { Pedido } from 'src/app/shared/pedido.model';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  panelOpenState =false
+  panelOpenState = false
   constructor(
     private pedidosService: PedidosService,
     private _adapter: DateAdapter<any>,
     @Inject(MAT_DATE_LOCALE) private _locale: string,
-    ) { }
+  ) { }
   selected: Date = new Date()
   entregas: Pedido[] = []
   devolucoes: Pedido[] = []
-  mudou(){
-  this.entregas = this.pedidosService.getEntregasByDate(this.selected)
-  this.devolucoes = this.pedidosService.getDevolucoesByDate(this.selected)
-
+  mudou() {
+    this.pedidosService.getEntregasByDate(this.selected)
+      .subscribe({
+        next: (e) => {
+          console.log(this.selected)
+          this.entregas = e
+        }, error: (err) => { console.log(err) }
+      })
+    this.pedidosService.getDevolucoesByDate(this.selected)
+    .subscribe({
+      next: (e) => {
+        console.log(this.selected)
+        this.devolucoes = e
+      }, error: (err) => { console.log(err) }
+    })
   }
   ngOnInit(): void {
     this._locale = 'pt-br';
     this._adapter.setLocale(this._locale);
-    this.entregas = this.pedidosService.getEntregasByDate(this.selected)
-    this.devolucoes = this.pedidosService.getDevolucoesByDate(this.selected)
+    this.pedidosService.getEntregasByDate(this.selected)
+    .subscribe({
+      next: (e) => {
+        this.entregas = e
+      }, error: (err) => { console.log(err) }
+    })
+    this.pedidosService.getDevolucoesByDate(this.selected)
+    .subscribe({
+      next: (e) => {
+        console.log(this.selected)
+        this.devolucoes = e
+      }, error: (err) => { console.log(err) }
+    })
   }
 
 }

@@ -29,18 +29,21 @@
             <span class="nome">Fulano de Tal</span>
           </div>
           <div class="botao">
-            <button>Alterar Perfil</button>
+            <button (click)="alteraPerfil()">Alterar Perfil</button>
             <button (click)="modificaAlteraSenha()">Redefinir Senha</button>
           </div>
         </div>
         <div class="direita">
           <div class="inputsPerfil">
             <span>Usuario:</span>
-            <input [(ngModel)]="usuario" class="control" type="text" placeholder="FulanoDeTal">
+            <input [(ngModel)]="usuario" [disabled]="disabled" class="control" type="text" placeholder="FulanoDeTal">
             <span>Email:</span>
-            <input [(ngModel)]="email" class="control" type="email" placeholder="fulano@gmail.com">
+            <input [(ngModel)]="email" [disabled]="disabled" class="control" type="email" placeholder="fulano@gmail.com">
             <span>Telefone:</span>
-            <input [(ngModel)]="telefone" class="control" type="tel" placeholder="(**) *****-****">
+            <input [(ngModel)]="telefone" [disabled]="disabled" class="control" type="tel" placeholder="(**) *****-****">
+            <div style="    margin-top: 39px;">
+              <button *ngIf="!disabled" class="btn btn-primary">Confirmar</button>
+            </div>
           </div>
         </div>
       </div>

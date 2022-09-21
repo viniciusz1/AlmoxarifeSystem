@@ -50,22 +50,10 @@ export class PedidosService {
     return this.http.get<Pedido[]>('http://127.0.0.1:5000/entregas/'+codigo)
   }
   getDevolucoesByDate(dataBuscada: Date){
-    let listaRetornada: Pedido[] = []
-    this.devolucoes.forEach((e)=>{
-      if((e.dataEntrega?.getDate() == dataBuscada.getDate())){
-        listaRetornada.push(e)
-      }
-    })
-    return listaRetornada
+    return this.http.get<Pedido[]>(`http://127.0.0.1:5000/dashboard-devolucao/${dataBuscada.getFullYear()+"-"+(dataBuscada.getMonth()+1)+"-"+ dataBuscada.getDate()}`)
   }
   getEntregasByDate(dataBuscada: Date){
-    let listaRetornada: Pedido[] = []
-    this.entregas.forEach((e)=>{
-      if((e.dataEntrega?.getDate() == dataBuscada.getDate())){
-        listaRetornada.push(e)
-      }
-    })
-    return listaRetornada
+    return this.http.get<Pedido[]>(`http://127.0.0.1:5000/dashboard-entrega/${dataBuscada.getFullYear()+"-"+(dataBuscada.getMonth()+1)+"-"+ dataBuscada.getDate()}`)
   }
 
   getEntregas(){

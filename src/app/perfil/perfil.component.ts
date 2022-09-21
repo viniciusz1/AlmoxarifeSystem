@@ -20,8 +20,10 @@ export class PerfilComponent implements OnInit {
   nivelAcesso? = ""
   telefone? = ""
   senha? = ""
-
-  
+  disabled = true
+  alteraPerfil(){
+    this.disabled = !this.disabled
+  }
 
   sendValuesToModel(user: Usuario){
     this.usuario = user.usuario

@@ -20,7 +20,8 @@ export class DetalhesProdutoComponent implements OnInit {
   botao = ""
   cadastrarProduto = ""
   select = ""
-  disabled = true
+  disabledQuantidade = false
+  disabled = false
   modo = ""
   // user = "admin"
   // user = "atendente"
@@ -53,7 +54,6 @@ export class DetalhesProdutoComponent implements OnInit {
         }
         )
       )
-
     } else if (this.modo == "editar") {
       this.prod.changeProduto(new Produto(this.nome as string,
         this.quantidade as number,
@@ -116,12 +116,16 @@ public upload(event: Event): void {
         if (url[0].path == "cadastrar-produto") {
           this.botao = "Cadastrar produto"
           this.modo = "cadastrar"
+
         } else if (url[0].path == "editar-produto") {
+          this.disabledQuantidade = true
           this.modo = "editar"
           this.codRota = url[1].path
           this.botao = "Editar produto"
           this.mostrarDados()
         } else if (url[0].path == "detalhes-produto") {
+          this.disabled = true
+          this.disabledQuantidade = true
           this.modo = "detalhar"
           this.codRota = url[1].path
           this.botao = "Detalhes-produto"
