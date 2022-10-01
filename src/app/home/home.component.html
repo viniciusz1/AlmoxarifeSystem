@@ -20,17 +20,18 @@
                             <div class="lupa">
                                 <i class="bi bi-search"></i>
                             </div>
-                            <input class="input-pedido" [(ngModel)]="pesquisaProduto" placeholder="Pesquisar Produto">
+                            <input class="input-pedido" [(ngModel)]="pesquisaProduto")] placeholder="Pesquisar Produto">
                             <div style="cursor:pointer" class="filtrar">
                                 <i class="bi bi-sliders" (click)="modalOpen(false)"></i>
                             </div>
                         </li>
                         <li class="nav-item selecionar">
-                            <select class="ordenar botoes" style="cursor:pointer; min-width:12vw">
+                            <select  [(ngModel)]="ordenarCampo" class="ordenar botoes" style="cursor:pointer; min-width:12vw">
                                 <option selected>Ordenar</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                                <option value="1">Maior Quantidade</option>
+                                <option value="2">Menor Quantidade</option>
+                                <option value="3">Descartável</option>
+                                <option value="4">Reutilizável</option>
                             </select>
                             <i class="bi bi-caret-down" style="color: white; padding-right: 4px;"></i>
                         </li>
@@ -73,11 +74,11 @@
                     (produtoSelecionado)="abreDetalhesProduto($event)" [listaProdutos]="lista"></app-produto-lista>
             </div>
             <div *ngIf="exibicao == false" class="row">
-                <app-produto class="col-xl-4 index col-md-6" [indiceProduto]="i" [produto]="lista" *ngFor="let lista of (lista ) | filtroProdutos:pesquisaProduto | paginate:{
+                <app-produto class="col-xl-4 index col-md-6" [indiceProduto]="i" [produto]="lista" *ngFor="let lista of (lista)  | paginate:{
                     itemsPerPage: tableSize,
                     currentPage: page,
                     totalItems: count
-                }; let i = index">
+                }| ordenar:ordenarCampo; let i = index">
                 </app-produto>
             </div>
             <div [ngClass]="{pagInf: lista.length < 10}" class="paginacao-div">

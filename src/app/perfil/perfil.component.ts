@@ -37,6 +37,7 @@ export class PerfilComponent implements OnInit {
       )
     .subscribe({
       next: (e) => {
+        alert("Usuários alterado")
         console.log(e)
       },
       error: (err) => {
