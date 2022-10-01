@@ -15,6 +15,7 @@ import { EntradaComponent } from './entrada/entrada.component';
 import { ExportsModule } from '../shared/exports/exports.module';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { NgModelChangeDebouncedDirective } from '../directives/debounced.directive';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ReservaComponent,
     ProdutoListaComponent,
     DetalhesProdutoComponent,
-    EntradaComponent
+    EntradaComponent,
+    NgModelChangeDebouncedDirective
   ],
   imports: [
     CommonModule,

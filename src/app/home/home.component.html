@@ -20,7 +20,8 @@
                             <div class="lupa">
                                 <i class="bi bi-search"></i>
                             </div>
-                            <input class="input-pedido" [(ngModel)]="pesquisaProduto")] placeholder="Pesquisar Produto">
+                            <input class="input-pedido" [(ngModel)]="pesquisaProduto" (ngModelChangeDebounced)="buscarFiltrado()"
+                            placeholder="Pesquisar Produto">
                             <div style="cursor:pointer" class="filtrar">
                                 <i class="bi bi-sliders" (click)="modalOpen(false)"></i>
                             </div>

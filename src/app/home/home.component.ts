@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { PedidosService } from './../services/pedidos.service';
 import { Produto } from './../shared/produto.model';
 import { ProdutosService } from './../services/produtos.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Pipe } from '@angular/core';
 import { CarrinhoService } from '../services/carrinho.service';
 import { debounceTime } from "rxjs/operators";
 
@@ -35,14 +35,8 @@ export class HomeComponent implements OnInit {
   page: number = 1;
   count: number = 0;
   tableSize: number = 21;
-  obs:PushSubscription = new PushSubscription();
 
-  search(evt : Event) {
-      const searchText = evt.target?.addEventListener('keyup', (e: any) => {
-       console.log(e)
-      }, false);
-  }
-
+  
   onDataTableChange(event: any){
     this.page = event;
   }
@@ -101,9 +95,9 @@ export class HomeComponent implements OnInit {
       (e) => this.numeroCarrinho = e
     )
 
-    // this.obs=this.pesquisaProduto
-    // .pipe(debounceTime(500))
-    // .subscribe(data => console.log(data));
-
+    //debounceTime
+  }
+  buscarFiltrado(){
+    this.prod.getListaProdutosFiltrado(this.pesquisaProduto);
   }
 }
