@@ -11,7 +11,7 @@ import { ConnectedOverlayPositionChange } from '@angular/cdk/overlay';
 export class ProdutosService {
   constructor(private http: HttpClient) { }
   getListaProdutosFiltrado(search: string){
-    return this.http.get<Produto[]>('http://127.0.0.1:5000/produtos');
+    return this.http.get<Produto[]>(`http://127.0.0.1:5000/produtos/${search}`);
   }
    getListaProdutos(){
       return this.http.get<Produto[]>('http://127.0.0.1:5000/produtos')

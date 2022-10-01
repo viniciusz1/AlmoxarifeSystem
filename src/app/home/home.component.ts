@@ -98,6 +98,9 @@ export class HomeComponent implements OnInit {
     //debounceTime
   }
   buscarFiltrado(){
-    this.prod.getListaProdutosFiltrado(this.pesquisaProduto);
+    this.prod.getListaProdutosFiltrado(this.pesquisaProduto).subscribe(e => {
+      this.lista = e
+    })
+    
   }
 }

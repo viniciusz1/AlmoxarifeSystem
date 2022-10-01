@@ -13,7 +13,7 @@ export class NgModelChangeDebouncedDirective implements OnDestroy {
   @Output()
   ngModelChangeDebounced = new EventEmitter<any>();
   @Input()
-  ngModelChangeDebounceTime = 900;
+  ngModelChangeDebounceTime = 600;
 
   subscription: Subscription;
   ngOnDestroy() {
