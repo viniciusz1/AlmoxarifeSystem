@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PedidosService } from './../services/pedidos.service';
 import { Produto } from './../shared/produto.model';
@@ -14,12 +14,28 @@ import { debounceTime } from "rxjs/operators";
 })
 export class HomeComponent implements OnInit {
   constructor(private car: CarrinhoService,
-     private prod: ProdutosService,
-     private pedidosService: PedidosService,
-     private router: ActivatedRoute,
-     private route: Router) { 
-     }
+    private prod: ProdutosService,
+    private pedidosService: PedidosService,
+    private router: ActivatedRoute,
+    private route: Router) {
 
+    this.modelChanged
+      .pipe(
+        debounceTime(500))
+      .subscribe(() => {
+        if(this.pesquisaProduto == ""){
+          this.pegarListaProdutos()
+        }else{
+          this.prod.getListaProdutosFiltrado(this.pesquisaProduto)
+          .subscribe({next: (e)=> {
+            this.lista = e;
+          }});
+        }
+      })
+  }
+  changed() {
+    this.modelChanged.next(this.pesquisaProduto);
+  }
   modal = false;
   modalReserva = false;
   state = "fechado";
@@ -35,61 +51,59 @@ export class HomeComponent implements OnInit {
   page: number = 1;
   count: number = 0;
   tableSize: number = 21;
+  modelChanged = new Subject<string>();
 
-  
-  onDataTableChange(event: any){
+  onDataTableChange(event: any) {
     this.page = event;
   }
-  onTableSizeChange(event: any){
+  onTableSizeChange(event: any) {
     this.tableSize = event.target.value;
     this.page = 1;
   }
 
-  exibicaoLista(){
+  exibicaoLista() {
     this.exibicao = true;
   }
-  exibicaoCard(){
+  exibicaoCard() {
     this.exibicao = false;
   }
-  mudarModalReserva(arg: boolean | Event){
+  mudarModalReserva(arg: boolean | Event) {
     this.modalReserva = !this.modalReserva;
   }
-  executarFiltroEspecializado(evento: Produto){
+  executarFiltroEspecializado(evento: Produto) {
     this.filtroEspecializado = evento
   }
   modalOpen(arg: boolean | Event) {
     this.modal = !this.modal
-  }  
-  openCart(){
+  }
+  openCart() {
     this.carState = "aberto"
   }
-  closeCart(param: boolean | Event){
+  closeCart(param: boolean | Event) {
     this.carState = "fechado"
   }
 
   abreDetalhesProduto(codigo: number) {
-    this.route.navigate(['/home/detalhes-produto/',codigo])
+    this.route.navigate(['/home/detalhes-produto/', codigo])
   }
-
-  // onChangeOrdenar(){
-  //   console.log(this.ordenarCampo)
-  // }
-  pesquisaProduto=""
-  ngOnInit(): void {  
+  pegarListaProdutos(){
     this.prod.getListaProdutos()
     .subscribe(e => {
-      console.log(e)
       this.lista = e
     })
+  }
+  pesquisaProduto = ""
+  ngOnInit(): void {
+    this.pegarListaProdutos();
     this.router.params.subscribe(params => {
-    this.rota = params['id'];
-    if(this.rota == 'produtos'){
-      this.titulo = 'Edição'
-      this.home = false
-    }else{
-      this.titulo = 'Home'
-      this.home = true
-    }
+      this.rota = params['id'];
+      if (this.rota == 'produtos') {
+        this.titulo = 'Edição'
+        this.home = false
+      } else {
+        this.titulo = 'Home'
+        this.home = true
+      }
     })
     this.car.tamanhoCarrinho.subscribe(
       (e) => this.numeroCarrinho = e
@@ -97,10 +111,5 @@ export class HomeComponent implements OnInit {
 
     //debounceTime
   }
-  buscarFiltrado(){
-    this.prod.getListaProdutosFiltrado(this.pesquisaProduto).subscribe(e => {
-      this.lista = e
-    })
-    
-  }
+
 }
