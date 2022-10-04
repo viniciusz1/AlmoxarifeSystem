@@ -7,7 +7,7 @@ import { ConnectedOverlayPositionChange } from '@angular/cdk/overlay';
 @Injectable({
   providedIn: 'root'
 })
-
+//https://levelup.gitconnected.com/angular-server-side-pagination-and-filtering-2206ce8279d1
 export class ProdutosService {
   constructor(private http: HttpClient) { }
   getListaProdutosFiltrado(search: string){
