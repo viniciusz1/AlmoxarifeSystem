@@ -33,6 +33,9 @@ export class HomeComponent implements OnInit {
         }
       })
   }
+  teste(){
+    this.prod.teste(1,1,'sçflka')
+  }
   changed() {
     this.modelChanged.next(this.pesquisaProduto);
   }
