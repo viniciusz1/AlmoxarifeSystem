@@ -6,12 +6,9 @@ import { PedidosComponent } from './pedidos.component'
 import { NgModule } from '@angular/core';
 import { ConfirmarComponent } from './confirmar/confirmar.component';
 import { CommonModule } from '@angular/common';
-import { PedidoHistoricoComponent } from './historico/pedido-historico/pedido-historico.component';
-import { Routes } from '@angular/router';
 import { RotasModule } from '../rotas.module';
 import { FiltroHistoricoComponent } from './historico/filtro-historico/filtro-historico/filtro-historico.component';
 import { HistoricoService } from '../services/historico.service';
-import { FiltroProdutosPipe } from '../pipes/filtro-produtos.pipe';
 import { FormsModule } from '@angular/forms';
 import { ExportsModule } from '../shared/exports/exports.module';
 import { EntradaHistoricoComponent } from './historico/entrada-historico/entrada-historico.component';
@@ -38,7 +35,6 @@ import { PedidosTableProfessorComponent } from './pedidos-table-professor/pedido
     PedidosComponent,
     HistoricoComponent,
     ConfirmarComponent,
-    PedidoHistoricoComponent,
     FiltroHistoricoComponent,
     EntradaHistoricoComponent,
     DashboardComponent,

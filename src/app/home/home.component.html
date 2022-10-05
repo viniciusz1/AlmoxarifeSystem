@@ -21,13 +21,14 @@
                                 <i class="bi bi-search"></i>
                             </div>
                             <input class="input-pedido" [(ngModel)]="pesquisaProduto" (ngModelChange)="changed()"
-                            placeholder="Pesquisar Produto">
+                                placeholder="Pesquisar Produto">
                             <div style="cursor:pointer" class="filtrar">
                                 <i class="bi bi-sliders" (click)="modalOpen(false)"></i>
                             </div>
                         </li>
                         <li class="nav-item selecionar">
-                            <select  [(ngModel)]="ordenarCampo" (change)="changed()" class="ordenar botoes" style="cursor:pointer; min-width:12vw">
+                            <select [(ngModel)]="ordenarCampo" (change)="changed()" class="ordenar botoes"
+                                style="cursor:pointer; min-width:12vw">
                                 <option selected>Ordenar</option>
                                 <option value="1">Maior Quantidade</option>
                                 <option value="2">Menor Quantidade</option>
@@ -52,54 +53,33 @@
                         </li>
                     </nav>
                 </nav>
-                </nav>
-                <div class="nav-item div-filtros mt-3">
-                    <div class="d-flex">
-                        <div class="default-icones" [ngClass]="{icones: exibicao}">
-                            <i class="bi bi-list-ul" (click)="exibicaoLista()"></i>
-                        </div>
-                        <div class="default-icones" [ngClass]="{icones: !exibicao}">
-                            <i class="bi bi-grid-3x3-gap-fill" (click)="exibicaoCard()"></i>
-                        </div>
+            </nav>
+            <div class="nav-item div-filtros mt-3">
+                <div class="d-flex">
+                    <div class="default-icones" [ngClass]="{icones: exibicao}">
+                        <i class="bi bi-list-ul" (click)="exibicaoLista()"></i>
+                    </div>
+                    <div class="default-icones" [ngClass]="{icones: !exibicao}">
+                        <i class="bi bi-grid-3x3-gap-fill" (click)="exibicaoCard()"></i>
                     </div>
                 </div>
+            </div>
         </div>
-
-
-
         <div class="container-fluid">
             <div *ngIf="exibicao == true" class="row mt-3">
-                <app-produto-lista [page]="page" [count]="count"
-                    (produtoSelecionado)="abreDetalhesProduto($event)" [listaProdutos]="lista"></app-produto-lista>
+                <app-produto-lista [page]="page" [count]="count" (produtoSelecionado)="abreDetalhesProduto($event)"
+                    [listaProdutos]="lista"></app-produto-lista>
             </div>
             <div *ngIf="exibicao == false" class="row">
-                <app-produto class="col-xl-4 index col-md-6" [indiceProduto]="i" [produto]="lista" *ngFor="let lista of (lista); let i = index">
+                <app-produto class="col-xl-4 index col-md-6" [indiceProduto]="i" [produto]="lista"
+                    *ngFor="let lista of (lista); let i = index">
                 </app-produto>
             </div>
-            <!-- <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center mt-4">
-                    <li class="page-item disabled">
-                        <a class="page-link" tabindex="-1">Previous</a>
-                    </li>
-                    <li class="page-item"><a (click)="onDataTableChange(f)" #f class="page-link">1</a></li>
-                    <li class="page-item"><a (click)="onDataTableChange(f)" #f class="page-link">2</a></li>
-                    <li class="page-item"><a (click)="onDataTableChange(f)" #f class="page-link">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" (click)="onDataTableChange(f)" #f>Next</a>
-                    </li>
-                </ul>
-            </nav> -->
-            <mat-paginator [length]="lengthProudutos"
-                [pageIndex]="0"
-               [pageSizeOptions]="[18, 24, 30, 48, 90]"
-               (page)="pegarListaProdutos()"
-               aria-label="Select page"
-               #paginator>
-</mat-paginator>
+            <mat-paginator [length]="lengthProudutos" [pageIndex]="0" [pageSizeOptions]="[18, 24, 30, 48, 90]"
+                (page)="pegarListaProdutos()" aria-label="Select page" #paginator>
+            </mat-paginator>
         </div>
     </div>
-
-
     <app-carrinho (fechaCarrinho)="closeCart($event)" (reserva)="mudarModalReserva($event)" [state]="carState"
         class="position-fixed bg-primary carrinho-side"></app-carrinho>
     <app-modal-filtro (fechaModal)="modalOpen($event)" (filtragem)="executarFiltroEspecializado($event)" *ngIf="modal"
