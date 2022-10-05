@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-center retangulo position-relative">
+<!-- <div class="d-flex justify-content-center retangulo position-relative">
     <div [ngStyle]="{'background-color': corCodigo}" class="bloco-azul"></div>
     <div class="ms-4" style="width:10%">{{produto.codigo}}</div>
         <div style="width:30%">{{produto.nome}}</div>
@@ -20,4 +20,37 @@
             height: 17px;">
             <i *ngIf="!dashboard" [routerLink]="['/home/editar-produto/', produto.codigo]" class="bi bi-pen" 
             style="position:absolute;right: 5px;bottom: 5px;"></i>
-</div>
+</div> -->
+
+
+
+
+<table class="table table-hover table-responsive">
+    <thead class="">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Quantidade</th>
+            <th scope="col">Classificação</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="cursor:pointer" *ngFor="let produto of listaProdutos; let i = index">
+            <th (click)="mandaProdutoClicado(i)" scope="row">{{produto.codigo}}</th>
+            <td (click)="mandaProdutoClicado(i)">{{produto.nome}}</td>
+            <td (click)="mandaProdutoClicado(i)" class="text-truncate" style="max-width: 30%;">{{produto.quantidade}}</td>
+            <td (click)="mandaProdutoClicado(i)">{{produto.classificacao}}</td>
+            <td *ngIf="tiraQuantidade == false" style="justify-content: space-around;display: flex;">
+                <div   class=" div-group">
+                    <input [(ngModel)]="quantidadeCarrinho" type="text" class="">
+                    <div class="div-adicionar-carrinho">
+                        <span (click)="adicionarCarrinho(i)"><i class="bi bi-plus-lg"></i></span>
+                    </div>
+                </div>
+                <i [routerLink]="['/home/editar-produto/', produto.codigo]" class="bi bi-pen" 
+                style=""></i>
+            </td>
+            <td><input *ngIf="dashboard" type="checkbox" name="" id="" ></td>
+        </tr>
+    </tbody>
+</table>

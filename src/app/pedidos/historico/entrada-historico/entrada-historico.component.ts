@@ -4,7 +4,6 @@ import { EntradasService } from 'src/app/services/entradas.service';
 import { Produto } from 'src/app/shared/produto.model';
 interface Entrada{
   codigo: number,
-  professor: string,
   produto: Produto,
   quantidade: number,
   data: Date
@@ -39,7 +38,7 @@ export class EntradaHistoricoComponent implements OnInit {
       this.textoBotao = "Entregar"
     }
   this.listaEntradas = this.entradaService.getEntrada()
-    
+    console.log(this.listaEntradas)
   }
 
 }

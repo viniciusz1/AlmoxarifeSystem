@@ -1,6 +1,6 @@
 import { CarrinhoService } from './../../services/carrinho.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Produto } from 'src/app/shared/produto.model';
 import Swal from 'sweetalert2';
 
@@ -10,11 +10,11 @@ import Swal from 'sweetalert2';
   styleUrls: ['./produto-lista.component.css']
 })
 export class ProdutoListaComponent implements OnInit {
-  @Input() produto: Produto = new Produto();
+  @Input() listaProdutos: Produto[] = []
   @Input() indiceProduto: number = 0;
   @Input() tiraQuantidade = false
   @Input() dashboard: boolean = false
-
+  @Output() produtoSelecionado: EventEmitter<number> = new EventEmitter()
   rota = ""
   quantidadeCarrinho = 0
   corCodigo = "275577"
@@ -22,36 +22,42 @@ export class ProdutoListaComponent implements OnInit {
   abreDetalhesProduto() {
     this.router.navigate(['/detalhes-produto'])
   }
-  mudarCor() {
-    if (this.corCodigo == '#275577') {
-      this.corCodigo = '#000'
-    }
+
+
+  ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      this.rota = params['id'];
+    })
   }
+
+  mandaProdutoClicado(index:number){
+    this.produtoSelecionado.emit(this.listaProdutos[index].codigo)
+  }
+
 
   constructor(private router: Router,
     private carrinhoService: CarrinhoService,
     private route: ActivatedRoute) { }
 
-  adicionarCarrinho() {
+  adicionarCarrinho(index: number) {
     console.log(this.quantidadeCarrinho)
-    this.carrinhoService.addProduto(new Produto(this.produto.nome as string,
-      this.produto.quantidade as number,
-      this.produto.classificacao as string,
-      this.produto.localidade as string,
-      this.produto.opcaoUso as string,
-      this.produto.descricao as string,
-      this.produto.codigo as number,
-      this.produto.imagem as string,
+    this.carrinhoService.addProduto(new Produto(this.listaProdutos[index].nome as string,
+      this.listaProdutos[index].quantidade as number,
+      this.listaProdutos[index].classificacao as string,
+      this.listaProdutos[index].localidade as string,
+      this.listaProdutos[index].opcaoUso as string,
+      this.listaProdutos[index].descricao as string,
+      this.listaProdutos[index].codigo as number,
+      this.listaProdutos[index].imagem as string,
       this.quantidadeCarrinho as number))
-    this.mudarCor()
     Swal.fire({
       position: 'bottom-end',
-      imageUrl: this.produto.imagem,
+      imageUrl: this.listaProdutos[index].imagem,
       imageHeight: '100px',
       imageWidth: '100px',
       timerProgressBar: true,
       html:
-        'Produto <b>' + this.produto.nome + '</b> adicionado ao carrinho!',
+        'Produto <b>' + this.listaProdutos[index].nome + '</b> adicionado ao carrinho!',
       color: 'black',
       showConfirmButton: false,
       background: '#dbdbdb',
@@ -66,11 +72,6 @@ export class ProdutoListaComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {
-    this.route.params.subscribe(params => {
-      this.rota = params['id'];
-    })
-    console.log(this.tiraQuantidade)
-  }
+
 
 }

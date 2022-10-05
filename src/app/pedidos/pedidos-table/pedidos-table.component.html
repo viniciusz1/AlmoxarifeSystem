@@ -1,19 +1,19 @@
 
-<table style="border-collapse:separate">
-    <tr>
-        <th>Código</th>
-        <th>Professor</th>
-        <th>Produtos</th>
-        <th>Ação</th>
-
-    </tr>
-  
-    <tr class="linha-tabela" *ngFor="let pedido of pedidos">
-        
-        <td style="position:relative;
-         padding-left: 20px;">{{pedido.codigo}}<div class="bloco-azul"></div></td>
-        <td>{{pedido.nomeProfessor}}</td>
-        <td class="text-truncate" style="max-width:249px;"><span *ngFor="let produto of pedido.listaProdutos">{{produto.nome}}, </span></td>
-        <td><button class="btn btn-primary">{{botao}}</button></td>
-    </tr>
-</table>
+ <table class="table table-hover table-responsive">
+    <thead class="">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Professor</th>
+            <th scope="col">Produtos</th>
+            <th scope="col">Ação</th>
+          </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pedido of pedidos; let i = index">
+            <th scope="row">{{pedido.codigo}}</th>
+            <td>{{pedido.nomeProfessor}}</td>
+            <td class="text-truncate" style="max-width:249px;"><span *ngFor="let l of pedido.listaProdutos">{{l.nome}}, </span></td>
+            <td><button class="btn-primary rounded">{{botao}}</button></td>
+          </tr>
+    </tbody>
+  </table>

@@ -4,8 +4,6 @@
             <div class="d-flex" style="position:relative ;justify-content: space-between;">
                 <nav aria-label="breadcrumb" style="position: absolute;top: -30px;">
                     <ol class="breadcrumb">
-                        <!-- <li class="breadcrumb-item"><a href="#">Home</a></li>
-                          <li class="breadcrumb-item"><a href="#">Library</a></li> -->
                         <li class="breadcrumb-item active" aria-current="page">Home</li>
                     </ol>
                 </nav>
@@ -17,7 +15,7 @@
                 </div>
 
 
-                <div class="topo-2 ">
+                <div class="topo-2 row">
                     <div style="cursor:pointer" class="d-flex superior-direito">
                         <div class="pesquisa d-flex">
                             <div class="lupa">
@@ -28,12 +26,15 @@
                                 <i class="bi bi-sliders" (click)="modalOpen(false)"></i>
                             </div>
                         </div>
-                        <select class="ordenar botoes" style="cursor:pointer; min-width:150px">
-                            <option value="5">Ordenar</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
+                        <div class="selecionar">
+                            <select class="ordenar botoes" style="cursor:pointer; min-width:12vw">
+                                <option selected>Ordenar</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                            <i class="bi bi-caret-down" style="color: white; padding-right: 4px;"></i>
+                        </div>
                         <div class="botoes" style="cursor:pointer">
                             <div class="icone">
                                 <button class="filtross" [routerLink]="['/home/cadastrar-produto']">Adicionar</button>
@@ -69,23 +70,20 @@
 
         <div class="container-fluid">
             <div *ngIf="exibicao == true" class="row mt-3">
-                <b class="d-flex  mb-1" style="min-width: 10px; 
-                height: 30px; background-color: #f2f2f2;
-                box-shadow: 4px 5px 7px -5px;
-                align-items: center;">
-                    <div style="width: 10%">Código</div>
-                    <div style="width: 30%;
-                            margin-left: 22px;">Nome</div>
-                    <div style="width: 30%">Classificação</div>
-                    <div style="width: 30%">Quantidade</div>
-                </b>
-                <app-produto-lista [indiceProduto]="i" [produto]="lista" *ngFor="let lista of (lista); let i = index">
-                </app-produto-lista>
+                <app-produto-lista (produtoSelecionado)="abreDetalhesProduto($event)" [listaProdutos]="lista"></app-produto-lista>
             </div>
             <div *ngIf="exibicao == false" class="row">
-                <app-produto class="col-xl-4 index col-md-6" [indiceProduto]="i" [produto]="lista"
-                    *ngFor="let lista of (lista ) | filtroProdutos:pesquisaProduto; let i = index">
+                <app-produto 
+                class="col-xl-4 index col-md-6" [indiceProduto]="i" [produto]="lista"
+                *ngFor="let lista of (lista ) | filtroProdutos:pesquisaProduto | paginate:{
+                    itemsPerPage: tableSize,
+                    currentPage: page,
+                    totalItems: count
+                }; let i = index">
                 </app-produto>
+            </div>
+            <div class="paginacao-div">
+                <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onDataTableChange($event)"></pagination-controls>
             </div>
         </div>
     </div>

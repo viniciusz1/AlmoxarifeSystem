@@ -30,7 +30,6 @@ export class ProdutoComponent implements OnInit {
     }
   }
   adicionarCarrinho() {
-    // if(!this.carrinhoService.verificaSeJaTem(this.produto.codigo)){
       this.mudarCor();
       try{
         this.carrinhoService.addProduto(new Produto(this.produto.nome as string, 
@@ -64,30 +63,6 @@ export class ProdutoComponent implements OnInit {
       }catch(err){
         alert(err)
       }
-      
-      
-    // }
-    // else{
-    //   Swal.fire({
-    //     position: 'bottom-end',
-    //     icon: 'error',
-    //     imageHeight: '100px',
-    //     imageWidth:'100px',
-    //     timerProgressBar: true,
-    //     html:
-    //     'Produto <b>'+ this.produto.nome+'</b> já está em seu carrinho!',
-    //     color: 'white',
-    //     showConfirmButton: false,
-    //     background: '#1f394f',
-    //     backdrop: `
-    //     transparent
-    //     `,
-        
-    //     width:'200px',
-    //     heightAuto: false,
-    //     timer: 1500
-    //   })
-    // }
     
   }
   rota = ""

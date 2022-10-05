@@ -3,13 +3,14 @@ import { ProdutosService } from 'src/app/services/produtos.service';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
+import { VirtualTimeScheduler } from 'rxjs';
 
 @Component({
   selector: 'app-detalhes-produto',
   templateUrl: './detalhes-produto.component.html',
   styleUrls: ['./detalhes-produto.component.css']
 })
-export class DetalhesProdutoComponent implements OnInit{
+export class DetalhesProdutoComponent implements OnInit {
 
 
   codRota = "";
@@ -39,49 +40,50 @@ export class DetalhesProdutoComponent implements OnInit{
   });
 
   onSubmit() {
-    if(this.modo == "cadastrar"){
-      this.prod.addProduto(
-        new Produto(this.detalhesForm.value.nome as string, 
-          this.detalhesForm.value.quantidade as number, 
+    if (this.modo == "cadastrar") {
+      console.log(this.prod.addProduto(
+        new Produto(this.detalhesForm.value.nome as string,
+          this.detalhesForm.value.quantidade as number,
           this.detalhesForm.value.classificacao as string,
-          this.detalhesForm.value.localidade as string, 
+          // this.detalhesForm.value.localidade as string, 
           this.detalhesForm.value.opcaoUso as string,
           this.detalhesForm.value.descricao as string,
-          123))
-          this.router.navigate(['/home/produtos'])
-    }else if(this.modo == "editar"){
-        this.prod.changeProduto(new Produto(this.detalhesForm.value.nome as string, 
-          this.detalhesForm.value.quantidade as number, 
-          this.detalhesForm.value.classificacao as string,
-          this.detalhesForm.value.localidade as string, 
-          this.detalhesForm.value.opcaoUso as string,
-          this.detalhesForm.value.descricao as string,
-          +this.codRota,
-          this.imagem as string))
-          this.router.navigate(['/home/produtos'])
+          "sdfasdfsdafsdfafa")))
+      // this.router.navigate(['/home/produtos'])
+    } else if (this.modo == "editar") {
+      this.prod.changeProduto(new Produto(this.detalhesForm.value.nome as string,
+        this.detalhesForm.value.quantidade as number,
+        this.detalhesForm.value.classificacao as string,
+        this.detalhesForm.value.localidade as string,
+        this.detalhesForm.value.opcaoUso as string,
+        this.detalhesForm.value.descricao as string,
+        +this.codRota,
+        this.imagem as string))
+      this.router.navigate(['/home/produtos'])
     }
-    
+
   }
 
-  darEntrada(){
+  darEntrada() {
     this.router.navigate(['/home/entrada/', this.codRota])
   }
 
-  imagem? = ""
-  
+  imagem?= ""
+  teste: any
   ngOnInit(): void {
+    this.prod.getIdProduto()
+      .subscribe(e => {
+        console.log(e)
+      })
     this.route.url.subscribe(
       url => {
-        if(url[0].path == "cadastrar-produto"){
+        if (url[0].path == "cadastrar-produto") {
           this.botao = "Cadastrar produto"
           this.modo = "cadastrar"
-
-
-        }else if(url[0].path == "editar-produto"){ 
+        } else if (url[0].path == "editar-produto") {
           this.modo = "editar"
           this.codRota = url[1].path
           this.botao = "Editar produto"
-          this.informacoes = this.prod.getIdProduto(parseInt(this.codRota))
           this.imagem = this.informacoes.imagem
           this.detalhesForm.controls['quantidade'].disable()
           this.detalhesForm.patchValue({
@@ -94,12 +96,13 @@ export class DetalhesProdutoComponent implements OnInit{
           })
 
 
-        }else if(url[0].path == "detalhes-produto"){
+        } else if (url[0].path == "detalhes-produto") {
           this.modo = "detalhar"
           this.codRota = url[1].path
           this.botao = "Detalhes-produto"
           this.detalhesForm.disable();
-          this.informacoes = this.prod.getIdProduto(parseInt(this.codRota))
+          this.teste = this.prod.getIdProduto()
+          console.log(this.teste)
           this.imagem = this.informacoes.imagem
 
           this.detalhesForm.patchValue({
@@ -113,9 +116,9 @@ export class DetalhesProdutoComponent implements OnInit{
         }
       }
     )
-    
-    
-    
+
+
+
 
   }
 

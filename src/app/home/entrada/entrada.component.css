@@ -18,7 +18,18 @@
     color:white;
 }
 
+.select{
+    background-color: #275577;
+    border: 1px solid black;
+    border-radius: 3px;
+}
 
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+  }
 
 .filtrar{
     background-color: #275577;
@@ -44,16 +55,17 @@
     align-items: center;
     padding: 9px;
 }
+
 .ordenar{
     outline: none;
-    width:120px;
+    min-width: 11vw;
     color: white;
     background-color: #275577;
-    border: 1px solid #333;
+    border: transparent;
     padding-right: 20px;
-    border-radius: 3px;
     outline:none
 }
+
 .botoes{
     background-color: #275577;
         padding: 5px 10px;
@@ -61,17 +73,19 @@
         border-radius: 3px;
 }
 
-
 .form-control{
     border: 1px solid black;
 }
+
 input{
     border: transparent;
     outline: none;
 }
+
 .div-imagem{
     text-align: center;
 }
+
 .imagem{
     width: 200px;
     height: 200px;

@@ -2,8 +2,15 @@
     width: 60px;
     height: 91vh;
 }
-.linha{
+
+.linha {
     width: 20%;
+}
+.paginacao-div{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+
 }
 .input-input{
     box-shadow: 0 0 0 0;
@@ -12,7 +19,7 @@
     margin-left: 5px;
 }
 
-.bola-carrinho{
+.bola-carrinho {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,13 +27,13 @@
     width: 13px;
     height: 13px;
     border-radius: 12px;
-    position:absolute;
+    position: absolute;
     right: 0px;
     color: aliceblue;
     font-size: 10px;
 }
 
-.fundo{
+.fundo {
     position: fixed;
     opacity: 10px;
     width: 100vw;
@@ -34,20 +41,24 @@
     right: 0;
     top: 0;
 }
-.filtrar-mais{
+
+.filtrar-mais {
     background-color: #275577;
     margin-left: 50px;
     margin-right: 50px;
 }
-.div-input{
+
+.div-input {
     border-bottom: 1px black solid;
     align-items: flex-end;
     justify-content: center;
 }
-.carrinho{
+
+.carrinho {
     font-size: 25px
 }
-.icones{
+
+.icones {
     font-size: 20px;
     background: #275577 !important;
     color: white;
@@ -59,8 +70,9 @@
     align-items: center;
     text-align: center;
 }
-.default-icones{
-    cursor:pointer;
+
+.default-icones {
+    cursor: pointer;
     font-size: 20px;
     background: white;
     border-radius: 30px;
@@ -72,34 +84,39 @@
     text-align: center;
     transition: 0.3s;
 }
-.default-icones:hover{
-    background-color:#dbdbdb;
+
+.default-icones:hover {
+    background-color: #dbdbdb;
 }
-.div-filtros{
+
+.div-filtros {
     display: flex;
     align-items: center;
     justify-content: end
 }
-.carrinho-side{
+
+.carrinho-side {
     right: 0;
 }
 
 
-.duas-div{
+.duas-div {
     display: grid;
 }
-.superior-direito{
+
+.superior-direito {
     align-items: center;
     justify-content: center;
     column-gap: 14px;
 }
-.alinhar-meio{
+
+.alinhar-meio {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.div-cima{
+.div-cima {
     background-color: #275577;
     color: white;
     font-weight: bold;
@@ -110,129 +127,147 @@
     border-bottom: 1px solid black;
 }
 
-p{
+p {
     margin: 0px;
 }
 
-.bold{
+.bold {
     font-weight: 700;
 }
 
 
-.baixo{
+.baixo {
     display: flex;
     column-gap: 50vw;
     width: 100%;
 }
 
-.footer{
+.footer {
     display: flex;
     column-gap: 58vw;
     padding: 10px;
     font-weight: 500;
 }
 
-.datas{
+.datas {
     display: flex;
     column-gap: 10px;
 }
 
-.dataRetirada, .dataDevolucao, .nome{
+.dataRetirada,
+.dataDevolucao,
+.nome {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.nome, .produtos{
+.nome,
+.produtos {
     margin-left: 10px;
 }
 
-.topo-2{
-    display: flex;  
+.topo-2 {
+    display: flex;
     justify-content: end;
     align-items: center;
 }
 
 
-input{
+input {
     border: transparent;
     outline: none;
 }
 
 ::-webkit-input-placeholder {
     color: black;
- }
+}
 
-.icone{
+.icone {
     color: white;
     display: flex;
 }
 
 
 
-.filtrar{
+.filtrar {
     background-color: #275577;
     padding: 5px 10px;
-    color:white;
+    color: white;
     border-radius: 0px 3px 3px 0px;
 }
-.input-pedido{
+
+.input-pedido {
     max-width: 180px;
 }
-.lupa{
+
+.lupa {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0 10px 0 10px;
 }
-.pesquisa{
+
+.pesquisa {
     border: 0.5px solid black;
     border-radius: 5px;
 
     z-index: 1;
 }
-.botoes{
+
+.botoes {
     background-color: #275577;
-        padding: 5px 10px;
-        color:white;
-        border-radius: 3px;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 3px;
 }
-.ordenar{
+
+.ordenar {
     outline: none;
-    width:120px;
+    min-width: 11vw;
     color: white;
     background-color: #275577;
-    border: 1px solid #333;
+    border: transparent;
     padding-right: 20px;
-    border-radius: 3px;
-    outline:none
+    outline: none
 }
-.select::after{
+/* 
+.select::after {
     content: '\25BC';
     position: absolute;
     top: 0%;
     right: 0;
     padding: 0 1em;
     background: #000;
+} */
+
+.selecionar {
+    background-color: #275577;
+    border: 1px solid black;
+    border-radius: 3px;
 }
 
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+  }
 
-
-
-.filtross{
+.filtross {
     border: none;
     background-color: transparent;
     color: white;
 }
 
 
-  .body{
+.body {
     display: flex;
     justify-content: end;
     align-items: center;
-  }
+}
 
-  body{
+body {
     display: grid;
     justify-content: center;
     /* align-items: center; */

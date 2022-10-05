@@ -13,6 +13,14 @@
     padding: 0.6rem 0.6rem 0 0.6rem;
     width: 100%;
 }
+.inverte{
+    transform: rotate(90deg);
+    transition: 0.5s;
+}
+.naoinverte{
+    transform: rotate(0);
+    transition: 0.5s;
+}
 .logo {
     background: #fff;
     text-align: center;

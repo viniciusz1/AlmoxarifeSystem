@@ -102,28 +102,24 @@ input{
 }
 
 .professor{
-    width: 9vw;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .data{
-    width: 10vw;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .pedido{
-    width: 5vw;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .produtos{
-    width: 40vw;
     display: flex;
     align-items: center;
     justify-content: center;
