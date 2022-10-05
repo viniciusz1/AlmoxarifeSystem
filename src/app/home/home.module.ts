@@ -16,7 +16,7 @@ import { ExportsModule } from '../shared/exports/exports.module';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgModelChangeDebouncedDirective } from '../directives/debounced.directive';
-
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -39,7 +39,8 @@ import { NgModelChangeDebouncedDirective } from '../directives/debounced.directi
     ReactiveFormsModule,
     ExportsModule,
     NgxSliderModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    MatPaginatorModule
   ],
   exports:[
     HomeComponent,

@@ -1,6 +1,8 @@
 .blue {
     background-color: #1f394f;
-    position: sticky;
+    position: fixed;
+    left: 0;
+    width: 100%;
     top: 0;
 }
 .imagem-logo{

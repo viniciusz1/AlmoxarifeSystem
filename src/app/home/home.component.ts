@@ -3,16 +3,19 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { PedidosService } from './../services/pedidos.service';
 import { Produto } from './../shared/produto.model';
 import { ProdutosService } from './../services/produtos.service';
-import { Component, OnInit, Pipe } from '@angular/core';
+import { AfterViewInit, Component, OnInit, Pipe, ViewChild } from '@angular/core';
 import { CarrinhoService } from '../services/carrinho.service';
 import { debounceTime } from "rxjs/operators";
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
+  @ViewChild('paginator') paginator: MatPaginator | undefined
+
   constructor(private car: CarrinhoService,
     private prod: ProdutosService,
     private pedidosService: PedidosService,
@@ -23,16 +26,22 @@ export class HomeComponent implements OnInit {
       .pipe(
         debounceTime(500))
       .subscribe(() => {
-          this.prod.getListaProdutos(this.page,this.tableSize,this.pesquisaProduto, this.ordenarCampo)
+          this.prod.getListaProdutos(this.page,this.paginator?.pageSize as number,this.pesquisaProduto, this.ordenarCampo)
           .subscribe({next: (e)=> {
             this.lista = e;            
           }});
       })
+      
+
   }
+
   changed() {
     this.modelChanged.next(this.pesquisaProduto);
   }
-
+  teste(){
+    console.log(this.paginator?.pageIndex);
+    
+  }
   modal = false;
   modalReserva = false;
   state = "fechado";
@@ -47,7 +56,6 @@ export class HomeComponent implements OnInit {
   ordenarCampo = ""
   page: number = 1;
   count: number = 0;
-  tableSize: number = 21;
   modelChanged = new Subject<string>();
 
   onDataTableChange(event: any) {
@@ -56,9 +64,18 @@ export class HomeComponent implements OnInit {
     
     this.changed()
   }
-  onTableSizeChange(event: any) {
-    this.tableSize = event.target.value;
-    this.page = 1;
+  lengthProudutos = 0
+  sizeProducts(){
+    this.prod.getSizeProducts()
+    .subscribe({next: (e) => {
+      this.lengthProudutos = e
+    }}
+    )
+  }
+
+  ngAfterViewInit(): void {
+    this.sizeProducts();
+    this.pegarListaProdutos();
   }
 
   exibicaoLista() {
@@ -87,14 +104,13 @@ export class HomeComponent implements OnInit {
     this.route.navigate(['/home/detalhes-produto/', codigo])
   }
   pegarListaProdutos(){
-    this.prod.getListaProdutos(this.page, this.tableSize, this.pesquisaProduto, "")
+    this.prod.getListaProdutos(this.paginator?.pageIndex as number, this.paginator?.pageSize as number, this.pesquisaProduto, "")
     .subscribe(e => {
       this.lista = e
     })
   }
   pesquisaProduto = ""
   ngOnInit(): void {
-    this.pegarListaProdutos();
     this.router.params.subscribe(params => {
       this.rota = params['id'];
       if (this.rota == 'produtos') {
@@ -108,8 +124,6 @@ export class HomeComponent implements OnInit {
     this.car.tamanhoCarrinho.subscribe(
       (e) => this.numeroCarrinho = e
     )
-
-    //debounceTime
   }
 
 }

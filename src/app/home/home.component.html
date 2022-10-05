@@ -69,14 +69,14 @@
 
         <div class="container-fluid">
             <div *ngIf="exibicao == true" class="row mt-3">
-                <app-produto-lista [tableSize]="tableSize" [page]="page" [count]="count"
+                <app-produto-lista [page]="page" [count]="count"
                     (produtoSelecionado)="abreDetalhesProduto($event)" [listaProdutos]="lista"></app-produto-lista>
             </div>
             <div *ngIf="exibicao == false" class="row">
                 <app-produto class="col-xl-4 index col-md-6" [indiceProduto]="i" [produto]="lista" *ngFor="let lista of (lista); let i = index">
                 </app-produto>
             </div>
-            <nav aria-label="Page navigation example">
+            <!-- <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center mt-4">
                     <li class="page-item disabled">
                         <a class="page-link" tabindex="-1">Previous</a>
@@ -88,7 +88,14 @@
                         <a class="page-link" (click)="onDataTableChange(f)" #f>Next</a>
                     </li>
                 </ul>
-            </nav>
+            </nav> -->
+            <mat-paginator [length]="lengthProudutos"
+                [pageIndex]="0"
+               [pageSizeOptions]="[18, 24, 30, 48, 90]"
+               (page)="pegarListaProdutos()"
+               aria-label="Select page"
+               #paginator>
+</mat-paginator>
         </div>
     </div>
 

@@ -11,6 +11,11 @@ import { ConnectedOverlayPositionChange } from '@angular/cdk/overlay';
 export class ProdutosService {
   constructor(private http: HttpClient) { }
 
+
+  getSizeProducts(){
+    return this.http.get<number>('http://127.0.0.1:5000/size-produtos')
+  }
+
   getListaProdutos(page: number, size: number, search: string, order: string){
       let params = new HttpParams()
         .set('page', page)
