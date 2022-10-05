@@ -25,9 +25,7 @@ export class HomeComponent implements OnInit {
       .subscribe(() => {
           this.prod.getListaProdutos(this.page,this.tableSize,this.pesquisaProduto, this.ordenarCampo)
           .subscribe({next: (e)=> {
-            this.lista = e;
-            console.log(e);
-            
+            this.lista = e;            
           }});
       })
   }
@@ -54,6 +52,9 @@ export class HomeComponent implements OnInit {
 
   onDataTableChange(event: any) {
     this.page = event;
+    console.log(this.page);
+    
+    this.changed()
   }
   onTableSizeChange(event: any) {
     this.tableSize = event.target.value;
