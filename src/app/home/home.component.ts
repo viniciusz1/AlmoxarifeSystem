@@ -23,22 +23,18 @@ export class HomeComponent implements OnInit {
       .pipe(
         debounceTime(500))
       .subscribe(() => {
-        if(this.pesquisaProduto == ""){
-          this.pegarListaProdutos()
-        }else{
-          this.prod.getListaProdutosFiltrado(this.pesquisaProduto)
+          this.prod.getListaProdutos(this.page,this.tableSize,this.pesquisaProduto, this.ordenarCampo)
           .subscribe({next: (e)=> {
             this.lista = e;
+            console.log(e);
+            
           }});
-        }
       })
-  }
-  teste(){
-    this.prod.teste(1,1,'sçflka')
   }
   changed() {
     this.modelChanged.next(this.pesquisaProduto);
   }
+
   modal = false;
   modalReserva = false;
   state = "fechado";
@@ -90,7 +86,7 @@ export class HomeComponent implements OnInit {
     this.route.navigate(['/home/detalhes-produto/', codigo])
   }
   pegarListaProdutos(){
-    this.prod.getListaProdutos()
+    this.prod.getListaProdutos(this.page, this.tableSize, this.pesquisaProduto, "")
     .subscribe(e => {
       this.lista = e
     })

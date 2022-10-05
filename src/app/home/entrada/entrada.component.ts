@@ -27,7 +27,7 @@ export class EntradaComponent implements OnInit {
   tiraQuantidade = true
 
   atualizarProdutos() {
-    this.prod.getListaProdutos()
+    this.prod.getListaProdutos(1,1,'0', "1")
       .subscribe({
         next: (e) => {
           this.lista = e

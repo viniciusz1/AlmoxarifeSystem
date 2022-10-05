@@ -13,7 +13,6 @@
                         <b>
                             <span>{{titulo | uppercase}}</span>
                         </b>
-                        <button (click)="teste()">test</button>
                         <hr style="margin: 0; width: 200px; opacity: 1;">
                     </div>
                     <nav class="nav" style="column-gap: 0.6em;">
@@ -28,12 +27,10 @@
                             </div>
                         </li>
                         <li class="nav-item selecionar">
-                            <select  [(ngModel)]="ordenarCampo" class="ordenar botoes" style="cursor:pointer; min-width:12vw">
+                            <select  [(ngModel)]="ordenarCampo" (change)="changed()" class="ordenar botoes" style="cursor:pointer; min-width:12vw">
                                 <option selected>Ordenar</option>
                                 <option value="1">Maior Quantidade</option>
                                 <option value="2">Menor Quantidade</option>
-                                <option value="3">Descartável</option>
-                                <option value="4">Reutilizável</option>
                             </select>
                             <i class="bi bi-caret-down" style="color: white; padding-right: 4px;"></i>
                         </li>
@@ -76,11 +73,7 @@
                     (produtoSelecionado)="abreDetalhesProduto($event)" [listaProdutos]="lista"></app-produto-lista>
             </div>
             <div *ngIf="exibicao == false" class="row">
-                <app-produto class="col-xl-4 index col-md-6" [indiceProduto]="i" [produto]="lista" *ngFor="let lista of (lista)  | paginate:{
-                    itemsPerPage: tableSize,
-                    currentPage: page,
-                    totalItems: count
-                }| ordenar:ordenarCampo; let i = index">
+                <app-produto class="col-xl-4 index col-md-6" [indiceProduto]="i" [produto]="lista" *ngFor="let lista of (lista);let i = index">
                 </app-produto>
             </div>
             <div [ngClass]="{pagInf: lista.length < 10}" class="paginacao-div">

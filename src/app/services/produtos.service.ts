@@ -11,32 +11,19 @@ import { ConnectedOverlayPositionChange } from '@angular/cdk/overlay';
 export class ProdutosService {
   constructor(private http: HttpClient) { }
 
-  teste(page: number, size: number, search: string){
-    console.log("here");
-    console.log("2here");
-    console.log("h3ere");
-    console.log("he4re");
-    console.log("her5e");
-    console.log("here6");
-    console.log("here");
-    console.log("here");
-    
+  getListaProdutos(page: number, size: number, search: string, order: string){
       let params = new HttpParams()
-        .set('page', 1)
-        .set('size', 2);
-      if (3==3) params = params.set('search', 3);
-      return this.http.get('http://127.0.0.1:5000/produtos', { params })
-        .subscribe(e=>{
-          console.log(e)
-        })
+        .set('page', page)
+        .set('size', size);
+      if (search) params = params.set('search', search);
+      if (order) params = params.set('order', order)
+      return this.http.get<Produto[]>('http://127.0.0.1:5000/produtos', { params })
   }
 
   getListaProdutosFiltrado(search: string){
     return this.http.get<Produto[]>(`http://127.0.0.1:5000/produtos/${search}`);
   }
-   getListaProdutos(){
-      return this.http.get<Produto[]>('http://127.0.0.1:5000/produtos')
-   }
+   
    getIdProduto(codigo: string){
     let url = "http://127.0.0.1:5000/produto/" + codigo
 
