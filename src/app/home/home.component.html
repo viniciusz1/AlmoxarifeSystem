@@ -48,8 +48,8 @@
                             </div>
                         </div>
                         <div style="cursor:pointer" class="d-flex position-relative">
-                            <i class="bi bi-cart4 carrinho" (click)="openCart()"></i>
-                            <div class="bola-carrinho">{{numeroCarrinho}}</div>
+                            <i class="bi bi-basket2 cesta" (click)="openCesta()"></i>
+                            <div class="bola-cesta">{{numeroCesta}}</div>
                         </div>
                     </div>
                 </div>
@@ -89,8 +89,8 @@
     </div>
 
 
-    <app-carrinho (fechaCarrinho)="closeCart($event)" (reserva)="mudarModalReserva($event)" [state]="carState"
-        class="position-fixed bg-primary carrinho-side"></app-carrinho>
+    <app-carrinho (fechaCesta)="closeCesta($event)" (reserva)="mudarModalReserva($event)" [state]="cestaState"
+        class="position-fixed bg-primary cesta-side"></app-carrinho>
     <app-modal-filtro (fechaModal)="modalOpen($event)" (filtragem)="executarFiltroEspecializado($event)" *ngIf="modal"
         style="z-index: 2;" class="fundo">
     </app-modal-filtro>

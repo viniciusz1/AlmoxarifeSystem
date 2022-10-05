@@ -13,26 +13,26 @@ import Swal, { SweetAlertResult } from 'sweetalert2';
 export class ProdutoComponent implements OnInit {
   @Input() produto: Produto = new Produto();
   @Input() indiceProduto = 0
-  @Input() carrinho = false;
+  @Input() cesta = false;
 
   abreDetalhesProduto() {
     this.router.navigate(['/home/detalhes-produto/',this.produto.codigo])
   }
   constructor(private router: Router,
-    private carrinhoService: CarrinhoService,
+    private cestaService: CarrinhoService,
     private route: ActivatedRoute
     ) { }
   corCodigo = '#275577'
-  quantidadeCarrinho = 0
+  quantidadeCesta = 0
   mudarCor(){
     if(this.corCodigo == '#275577'){
       this.corCodigo = '#000'
     }
   }
-  adicionarCarrinho() {
+  adicionarCesta() {
       this.mudarCor();
       try{
-        this.carrinhoService.addProduto(new Produto(this.produto.nome as string, 
+        this.cestaService.addProduto(new Produto(this.produto.nome as string, 
           this.produto.quantidade as number, 
           this.produto.classificacao as string,
           this.produto.localidade as string, 
@@ -40,7 +40,7 @@ export class ProdutoComponent implements OnInit {
           this.produto.descricao as string, 
           this.produto.codigo as number,
           this.produto.imagem as string,
-          this.quantidadeCarrinho as number))
+          this.quantidadeCesta as number))
           Swal.fire({
             position: 'bottom-end',
             imageUrl: this.produto.imagem,

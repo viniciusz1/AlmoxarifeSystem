@@ -4,12 +4,12 @@ import { Produto } from '../shared/produto.model';
   providedIn: 'root'
 })
 export class CarrinhoService {
-  tamanhoCarrinho = new EventEmitter<number>()
+  tamanhoCesta = new EventEmitter<number>()
   private lista: Produto[] = []
 
   removeLista(index: number) {
     this.lista.splice(index, 1)
-    this.tamanhoCarrinho.emit(this.lista.length)
+    this.tamanhoCesta.emit(this.lista.length)
   }
   verificaSeJaTem(codigo: number | undefined) {
     return this.lista.some(e => e.codigo == codigo)
@@ -41,7 +41,7 @@ export class CarrinhoService {
     }else{
       throw new Error("Quantidade insuficiente em estoque!")
     }
-    this.tamanhoCarrinho.emit(this.lista.length)
+    this.tamanhoCesta.emit(this.lista.length)
   }
   constructor() { }
 }

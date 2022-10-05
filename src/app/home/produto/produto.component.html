@@ -1,6 +1,6 @@
 <div  class="position-relative d-flex bloco" style="max-width: 540px;">
 
-        <img [ngClass]="{imagemCarrinho: carrinho == true}" (click)="abreDetalhesProduto()" class="imagem "
+        <img [ngClass]="{imagemCarrinho: cesta == true}" (click)="abreDetalhesProduto()" class="imagem "
         src="{{produto.imagem}}" alt="">
         <div (click)="abreDetalhesProduto()" class="sombra retangulo">
             <div class="itens-retangulo d-flex" >
@@ -27,10 +27,10 @@
         <i [routerLink]="['/home/editar-produto/', produto.codigo]" class="bi bi-pen 
         position-absolute" style="right: 5px; top:29px;"></i>
        
-        <div *ngIf="!carrinho" style="" class="d-flex div-group">
-            <input type="text" class="" [(ngModel)]="quantidadeCarrinho">
-            <div class="div-adicionar-carrinho">
-              <span (click)="adicionarCarrinho()"><i class="bi bi-plus-lg"></i></span>
+        <div *ngIf="!cesta" style="" class="d-flex div-group">
+            <input type="text" class="" [(ngModel)]="quantidadeCesta">
+            <div class="div-adicionar-cesta">
+              <span (click)="adicionarCesta()"><i class="bi bi-plus-lg"></i></span>
             </div>
         </div>
 </div>

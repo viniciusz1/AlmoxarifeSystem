@@ -21,17 +21,17 @@ import { Produto } from 'src/app/shared/produto.model';
   ]
 })
 export class CarrinhoComponent implements OnInit {
-  @Output() fechaCarrinho = new EventEmitter<boolean>();
+  @Output() fechaCesta = new EventEmitter<boolean>();
   @Output() reserva = new EventEmitter<boolean>();
   @Input('state') state = "aberto";
-  carrinho = true;
+  cesta = true;
   stateTxt= "fechado";
-  listaCarrinho:Produto[] = [];
-  mensagemPrevia = "Adicione algum Item ao carrinho!"
-  carrinhoVazio = false
+  listaCesta:Produto[] = [];
+  mensagemPrevia = "Adicione algum Item à Sacola!"
+  cestaVazio = false
 
   clicouModal(){
-    this.fechaCarrinho.emit(false)
+    this.fechaCesta.emit(false)
   }
 
   changeStatus(){
@@ -48,11 +48,11 @@ export class CarrinhoComponent implements OnInit {
   abreReserva(){
     this.reserva.emit(false)
   }
-  constructor(private car: CarrinhoService) { 
+  constructor(private cestinha: CarrinhoService) { 
   }
 
   lixo(i:number){
-    this.car.removeLista(i)
+    this.cestinha.removeLista(i)
   }
   // pressionou(){
   //   for(let i in this.listaCarrinho){
@@ -63,20 +63,20 @@ export class CarrinhoComponent implements OnInit {
   // }
   listaQtd: number[]  = []
   ngOnInit(): void {
-    this.listaCarrinho = this.car.getLista();
+    this.listaCesta = this.cestinha.getLista();
     
-    this.car.tamanhoCarrinho.subscribe(
+    this.cestinha.tamanhoCesta.subscribe(
       e => {
         if(e != 0){
-          this.carrinhoVazio = false
-          for(let i in this.listaCarrinho){
-            this.listaQtd[i] = this.listaCarrinho[i].qtdCart as number
+          this.cestaVazio = false
+          for(let i in this.listaCesta){
+            this.listaQtd[i] = this.listaCesta[i].qtdCart as number
           }
         }
       }
     )
-    if(this.listaCarrinho.length == 0){
-      this.carrinhoVazio = true
+    if(this.listaCesta.length == 0){
+      this.cestaVazio = true
     }
   }
 

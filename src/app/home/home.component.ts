@@ -11,7 +11,7 @@ import { CarrinhoService } from '../services/carrinho.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  constructor(private car: CarrinhoService,
+  constructor(private cesta: CarrinhoService,
      private prod: ProdutosService,
      private pedidosService: PedidosService,
      private router: ActivatedRoute,
@@ -20,12 +20,12 @@ export class HomeComponent implements OnInit {
   modal = false;
   modalReserva = false;
   state = "fechado";
-  carState = "fechado";
+  cestaState = "fechado";
   lista: Produto[] = [];
   pesquisaProduto = "";
   filtroEspecializado: Produto = new Produto()
   exibicao = true; // false == bloco ! == lista
-  numeroCarrinho = 0
+  numeroCesta = 0
   titulo = ""
   rota = "";
   home = true
@@ -59,12 +59,12 @@ export class HomeComponent implements OnInit {
   modalOpen(arg: boolean | Event) {
     this.modal = !this.modal
   }  
-  openCart(){
-    this.carState = "aberto"
+  openCesta(){
+    this.cestaState = "aberto"
     console.log(this.state)
   }
-  closeCart(param: boolean | Event){
-    this.carState = "fechado"
+  closeCesta(param: boolean | Event){
+    this.cestaState = "fechado"
   }
 
   abreDetalhesProduto(codigo: number) {
@@ -87,8 +87,8 @@ export class HomeComponent implements OnInit {
       this.home = true
     }
     })
-    this.car.tamanhoCarrinho.subscribe(
-      (e) => this.numeroCarrinho = e
+    this.cesta.tamanhoCesta.subscribe(
+      (e) => this.numeroCesta = e
     )
   }
 }
