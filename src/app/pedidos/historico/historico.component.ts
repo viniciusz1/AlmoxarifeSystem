@@ -4,6 +4,8 @@ import { HistoricoService } from 'src/app/services/historico.service';
 import { PedidosService } from 'src/app/services/pedidos.service';
 import { Pedido } from 'src/app/shared/pedido.model';
 import { Produto } from 'src/app/shared/produto.model';
+import { Subject } from 'rxjs'
+
 interface Entrada {
   codigo: number,
   professor: string,
@@ -22,8 +24,14 @@ export class HistoricoComponent implements OnInit {
   pesquisaPedido = ""
   listaEntradas: Pedido[] = [new Pedido()]
   listaPedidos: Pedido[] = []
+  modelChanged = new Subject<string>();
   ngOnInit(): void {
   }
+
+  changed() {
+    this.modelChanged.next(this.pesquisaPedido);
+  }
+  lengthProdutos=0
   exibicao = false
   mudarParaEntradas() {
     this.exibicao = false

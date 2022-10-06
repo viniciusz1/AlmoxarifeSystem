@@ -40,7 +40,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
   teste(){
     console.log(this.paginator?.pageIndex);
-    
   }
   modal = false;
   modalReserva = false;

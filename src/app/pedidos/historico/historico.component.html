@@ -49,7 +49,10 @@
                 <app-pedidos-table [botao]="'Ver'" [pedidos]="listaPedidos">
                 </app-pedidos-table>
             </div>
-
+            <mat-paginator [length]="lengthProdutos" [pageIndex]="0"
+            [pageSizeOptions]="[18, 24, 30, 48, 90]" (page)="changed()"
+            aria-label="Select page" #paginator>
+        </mat-paginator>
         </div>
     </div>
     <app-filtro-historico *ngIf="filtroState" (mudarFiltro)="mudaFiltro()" class="meu-fixed"></app-filtro-historico>

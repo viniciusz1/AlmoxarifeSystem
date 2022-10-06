@@ -25,6 +25,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { ModalPedidosComponent } from './modal-pedidos/modal-pedidos.component';
 import { DevolucoesTableComponent } from './devolucoes/devolucoes-table/devolucoes-table.component';
 import { PedidosTableProfessorComponent } from './pedidos-table-professor/pedidos-table-professor.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { PedidosTableProfessorComponent } from './pedidos-table-professor/pedido
     HomeModule,
     MatTooltipModule,
     MatFormFieldModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatPaginatorModule
   ],
   exports:[
     ConferenciaComponent,
