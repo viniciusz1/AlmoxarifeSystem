@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit {
     this.usuariosService.login(this.usuario, this.senha)
       .subscribe({
         next: (x) => {
+          console.log(x)
           this.usuarios = x
           localStorage.setItem('USUARIO', this.usuario);
           localStorage.setItem('EMAIL', this.usuarios.email as string);

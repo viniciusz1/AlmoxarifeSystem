@@ -17,7 +17,7 @@ export class UsuariosService {
   ]
 
   mudarSenha(senha: string){
-    return this.http.put(`http://localhost:5000/usuario-senha/${localStorage.getItem('EMAIL')}`, {'senha': senha})
+    return this.http.put(`http://localhost:8080/login/${localStorage.getItem('EMAIL')}`, {'senha': senha})
   }
 
   alterarUsuario(usuario: Usuario){
@@ -25,10 +25,11 @@ export class UsuariosService {
   }
 
   login(usuario: string, senha: string){
-    return this.http.post<Usuario>("http://localhost:5000/login", {'usuario': usuario, 'senha': senha})
+    return this.http.post<Usuario>("http://localhost:8080/login", {'usuario': usuario, 'senha': senha})
   }
+  
   getUser(){
-    return this.http.get(`http://localhost:5000/usuario/${localStorage.getItem('EMAIL')}`)
+    return this.http.get(`http://localhost:8080/${localStorage.getItem('EMAIL')}`)
   }
 
   getListaUser(){

@@ -65,6 +65,9 @@
                 </div>
             </div>
         </div>
+        <mat-paginator [length]="lengthProudutos" [pageIndex]="0" [pageSizeOptions]="[18, 24, 30, 48, 90]"
+                (page)="pegarListaProdutos()" aria-label="Select page" #paginator>
+            </mat-paginator>
         <div class="container-fluid">
             <div *ngIf="exibicao == true" class="row mt-3">
                 <app-produto-lista [page]="page" [count]="count" (produtoSelecionado)="abreDetalhesProduto($event)"
@@ -75,9 +78,7 @@
                     *ngFor="let lista of (lista); let i = index">
                 </app-produto>
             </div>
-            <mat-paginator [length]="lengthProudutos" [pageIndex]="0" [pageSizeOptions]="[18, 24, 30, 48, 90]"
-                (page)="pegarListaProdutos()" aria-label="Select page" #paginator>
-            </mat-paginator>
+            
         </div>
     </div>
     <app-carrinho (fechaCarrinho)="closeCart($event)" (reserva)="mudarModalReserva($event)" [state]="carState"
