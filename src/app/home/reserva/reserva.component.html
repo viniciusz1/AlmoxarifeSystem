@@ -36,12 +36,11 @@
                 <input [(ngModel)]="dataDevolucao" type="date" class="mb-4 p-1" style="width:215px">
             </div>
             <div *ngIf="user == 'atendente'"  class="d-flex flex-column align-items-center">
-                <label for="">Nome Professor:</label>
                 <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>Number</mat-label>
                     <input type="text"
                            placeholder="Pick one"
-                           aria-label="Number"
+                           aria-label="Nome Professor"
                            matInput
                            [formControl]="professor"
                            [matAutocomplete]="auto">
