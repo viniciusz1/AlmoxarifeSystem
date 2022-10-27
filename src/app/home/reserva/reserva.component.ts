@@ -24,14 +24,18 @@ export class ReservaComponent implements OnInit {
     this.fechaReserva.emit(false)
   }
   addPedido(){
-    let newList = []
+    let produtos = []
+    let quantidades = []
     for(let i of this.listaCarrinho){
-      newList.push({
-        codigoProduto: i.codigo,
-        quantidade: i.qtdCart 
+      produtos.push({
+        codigo: i.codigo
       })      
     }
-    this.pedidoService.addEntrega(this.professor, newList, this.dataRetirada, this.dataDevolucao, localStorage.getItem('EMAIL'))
+    for(let i of this.listaCarrinho){
+      quantidades.push(i.qtdCart)      
+    }
+
+    this.pedidoService.addEntrega(produtos, quantidades, this.dataRetirada, this.dataDevolucao, localStorage.getItem('USUARIO'))
     .subscribe({next: e => console.log(e),
     error: x => console.log(x)})
     // this.fecharReserva()

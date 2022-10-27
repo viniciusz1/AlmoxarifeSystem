@@ -98,7 +98,7 @@ export class EntradaComponent implements OnInit {
       confirmButtonText: 'Confirmar'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.entradaService.darEntradaDeQuantidadeProduto(this.codigo, this.novaQuantidade)
+        this.entradaService.darEntradaDeQuantidadeProduto(this.codigo, this.novaQuantidade, localStorage.getItem("USUARIO") as string)
           ?.subscribe(
             {
               next: e => {
