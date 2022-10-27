@@ -50,7 +50,7 @@ input{
 textarea{
     max-width: 100%;
 }
-input, textarea, select{
+select{
     border: 0.5px solid black
 }
 .div-imagem{

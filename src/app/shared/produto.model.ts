@@ -1,8 +1,9 @@
+import { Localidade } from "./localidade.model";
 export class Produto {
     public nome?: string;
     public quantidadeTotal?: number;
     public classificacao?: string;
-    public localidade?: string;
+    public localidade?: Localidade[];
     public opcaoUso?: string;
     public descricao?: string;
     public codigo?: number;
@@ -11,11 +12,11 @@ export class Produto {
     public quantidadeReservada?: number;
 
     constructor()
-    constructor(nome: string, quantidadeTotal: number, classificacao: string, localidade: string, opcaoUso: string,descricao: string, codigo: number)
-    constructor(nome: string, quantidadeTotal: number, classificacao: string, localidade: string, opcaoUso: string,descricao: string, codigo: number, imagem: string)
-    constructor(nome: string, quantidadeTotal: number, classificacao: string, localidade: string, opcaoUso: string,descricao: string, codigo: number, imagem: string, qtdCart: number)
-    constructor(nome: string, quantidadeTotal: number, classificacao: string, localidade: string, opcaoUso: string,descricao: string, codigo: number, imagem: string, qtdCart: number, quantidadeReservada: number)
-    constructor(nome?: string, quantidadeTotal?: number, classificacao?: string, localidade?: string, opcaoUso?: string,descricao?: string, codigo?: number, imagem?: string, qtdCart?: number, quantidadeReservada?: number) {
+    constructor(nome: string, quantidadeTotal: number, classificacao: string, localidade: Localidade[], opcaoUso: string,descricao: string, codigo: number)
+    constructor(nome: string, quantidadeTotal: number, classificacao: string, localidade: Localidade[], opcaoUso: string,descricao: string, codigo: number, imagem: string)
+    constructor(nome: string, quantidadeTotal: number, classificacao: string, localidade: Localidade[], opcaoUso: string,descricao: string, codigo: number, imagem: string, qtdCart: number)
+    constructor(nome: string, quantidadeTotal: number, classificacao: string, localidade: Localidade[], opcaoUso: string,descricao: string, codigo: number, imagem: string, qtdCart: number, quantidadeReservada: number)
+    constructor(nome?: string, quantidadeTotal?: number, classificacao?: string, localidade?: Localidade[], opcaoUso?: string,descricao?: string, codigo?: number, imagem?: string, qtdCart?: number, quantidadeReservada?: number) {
     this.nome = nome;
     this.quantidadeTotal = quantidadeTotal;
     this.classificacao = classificacao;

@@ -1,3 +1,4 @@
+import { Localidade } from './../shared/localidade.model';
 import { FormControl } from '@angular/forms';
 import { Injectable } from '@angular/core';
 import { Produto } from '../shared/produto.model';
@@ -12,49 +13,62 @@ export class ProdutosService {
   constructor(private http: HttpClient) { }
 
 
-  getSizeProducts(){
+  getSizeProducts() {
     return this.http.get<number>('http://localhost:8080/produtos/tamanho')
   }
 
-  getListaProdutos(page: number, size: number, search: string, order: string){
-      let params = new HttpParams()
-        .set('page', page)
-        .set('size', size);
-      if (search) params = params.set('search', search);
-      if (order) params = params.set('sort', order)
-      return this.http.get<Produto[]>('http://localhost:8080/produtos/filtro', { params })
+  getAllLocalizacoes() {
+    return this.http.get<Localidade[]>('http://localhost:8080/home/localicacao')
   }
 
-  getListaProdutosFiltrado(search: string){
+  getListaProdutos(page: number, size: number, search: string, order: string) {
+    let params = new HttpParams()
+      .set('page', page)
+      .set('size', size);
+    if (search) params = params.set('search', search);
+    if (order) params = params.set('sort', order)
+    return this.http.get<Produto[]>('http://localhost:8080/produtos/filtro', { params })
+  }
+
+  getListaProdutosFiltrado(search: string) {
     return this.http.get<Produto[]>(`http://localhost:8080/produtos/${search}`);
   }
-   
-   getIdProduto(codigo: string){
+
+  getIdProduto(codigo: string) {
     let url = "http://localhost:8080/produtos/codigo/" + codigo
 
     // console.log(url)
     // console.log(codigo)
     return this.http.get<Produto>(url)
-   }
-   addProduto(produto: Produto){
-      return this.http.post('http://localhost:8080/produtos', {
-        "nome": produto.nome,
-        "quantidadeTotal": produto.quantidadeTotal,
-        // "classificacao": produto.classificacao,
-        "localizacoes": [{codigo: produto.localidade}],
-        "opcaoUso": produto.opcaoUso,
-        "descricao": produto.descricao,
-        // "imagem": produto.imagem
-    })
-   }
+  }
+  addProduto(produto: Produto) {
+    this.getAllLocalizacoes()
+      .subscribe(e => {
+        for (let i of e) {
+          if (i.codigo == produto.codigo) {
+          }
+        }
+      }
+      )
 
-   
+    return this.http.post('http://localhost:8080/produtos', {
+      "nome": produto.nome,
+      "quantidadeTotal": produto.quantidadeTotal,
+      // "classificacao": produto.classificacao,
+      "localizacoes": [{ codigo: produto.localidade }],
+      "opcaoUso": produto.opcaoUso,
+      "descricao": produto.descricao,
+      // "imagem": produto.imagem
+    })
+  }
+
+
 
   //  isDefined<T>(val: T | undefined | null): val is T {
   //   return val !== undefined && val !== null;
   // }
 
-   changeProduto(produto: Produto){    
+  changeProduto(produto: Produto) {
     return this.http.put(`http://localhost:8080/produtos/${produto.codigo}`, {
       "nome": produto.nome,
       "quantidadeTotal": produto.quantidadeTotal,
@@ -64,6 +78,6 @@ export class ProdutosService {
       "opcaoUso": produto.opcaoUso,
       "descricao": produto.descricao,
       "imagem": produto.imagem
-  })
+    })
   }
 }

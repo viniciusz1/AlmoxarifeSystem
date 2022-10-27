@@ -43,11 +43,10 @@ export class ProdutoListaComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   adicionarCarrinho(index: number) {
-    console.log(this.quantidadeCarrinho)
     this.carrinhoService.addProduto(new Produto(this.listaProdutos[index].nome as string,
       this.listaProdutos[index].quantidadeTotal as number,
       this.listaProdutos[index].classificacao as string,
-      this.listaProdutos[index].localidade as string,
+      this.listaProdutos[index].localidade!,
       this.listaProdutos[index].opcaoUso as string,
       this.listaProdutos[index].descricao as string,
       this.listaProdutos[index].codigo as number,

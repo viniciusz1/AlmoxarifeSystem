@@ -6,7 +6,7 @@ import { ProdutosService } from './../services/produtos.service';
 import { AfterViewInit, Component, OnInit, Pipe, ViewChild } from '@angular/core';
 import { CarrinhoService } from '../services/carrinho.service';
 import { debounceTime } from "rxjs/operators";
-import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { MatPaginator, MatPaginatorIntl, PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-home',
