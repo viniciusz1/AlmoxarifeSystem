@@ -11,7 +11,7 @@
         <tbody>
             <tr *ngFor="let lista of listaEntradas; let i = index">
                 <th scope="row">{{lista.codigo}}</th>
-                <td>{{lista.nomeProduto}}</td>
+                <td>{{lista.produto.nome}}</td>
                 <td class="text-truncate" style="max-width: 30%;">{{lista.quantidade}}</td>
                 <td>{{lista.data | date: 'dd/MM/yyyy'}}</td>
               </tr>

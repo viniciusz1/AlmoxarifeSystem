@@ -1,11 +1,11 @@
 
-<table class="table table-hover table-responsive">
+<table matSort (matSortChange)="sortData($event)" class="table table-hover table-responsive">
     <thead class="">
         <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nome</th>
-            <th scope="col">Quantidade</th>
-            <th scope="col">Classificação</th>
+            <th scope="col" mat-sort-header="codigo">#</th>
+            <th scope="col" mat-sort-header="nome">Nome</th>
+            <th scope="col" mat-sort-header="quantidade">Quantidade</th>
+            <th scope="col" mat-sort-header="classificacao">Classificação</th>
         </tr>
     </thead>
     <tbody>

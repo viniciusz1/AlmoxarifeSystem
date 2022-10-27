@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Produto } from 'src/app/shared/produto.model';
 import Swal from 'sweetalert2';
+import { Sort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-produto-lista',
@@ -18,6 +19,7 @@ export class ProdutoListaComponent implements OnInit {
   @Input() tableSize = 0
   @Input() page = 0
   @Input() count = 0
+  
   rota = ""
   quantidadeCarrinho = 0
   corCodigo = "275577"
@@ -26,7 +28,10 @@ export class ProdutoListaComponent implements OnInit {
     this.router.navigate(['/detalhes-produto'])
   }
 
-
+  sortData(sort: Sort) {
+    console.log(sort)
+  }
+  
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.rota = params['id'];

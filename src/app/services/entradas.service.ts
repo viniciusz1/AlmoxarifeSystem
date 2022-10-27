@@ -3,9 +3,8 @@ import { Injectable } from '@angular/core';
 import { Produto } from '../shared/produto.model';
 interface Entrada{
   codigo: number,
-  data: Date
-  nomeProduto: string,
-  produtoCodigo: number,
+  data: Date,
+  produto: Produto,
   quantidade: number,
 }
 @Injectable({
@@ -15,19 +14,17 @@ interface Entrada{
 export class EntradasService {
   listaEntradas: Entrada[] = []
 
-  darEntradaDeQuantidadeProduto(codigoProduto: number, quantidade:number){
+  darEntradaDeQuantidadeProduto(produto: number, quantidade:number, usuario:string){
     if(!isNaN(quantidade)){
       let data = new Date()
-      return this.http.post('http://127.0.0.1:5000/entradas', {codigoProduto, quantidade, data})
+      return this.http.post('http://localhost:8080/historico/entrada', 
+      {"produto":{"codigo":produto}, "usuario":{"usuario": usuario}, "quantidade": quantidade, "data": data})
     }
     return
    }
 
-  addEntrada(entrada: Entrada) {
-    this.listaEntradas.push(entrada)
-  }
   getEntrada() {
-    return this.http.get<Entrada[]>('http://127.0.0.1:5000/entradas')
+    return this.http.get<Entrada[]>('http://localhost:8080/historico/entrada')
   }
   constructor(private http: HttpClient) { }
 }

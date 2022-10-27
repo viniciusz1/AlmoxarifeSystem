@@ -4,9 +4,8 @@ import { EntradasService } from 'src/app/services/entradas.service';
 import { Produto } from 'src/app/shared/produto.model';
 interface Entrada{
   codigo: number,
-  data: Date
-  nomeProduto: string,
-  produtoCodigo: number,
+  data: Date,
+  produto: Produto,
   quantidade: number,
 }
 @Component({
