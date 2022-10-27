@@ -18,54 +18,89 @@
 
     </div>
     <div class="quadrado container ">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="div-imagem">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="div-imagem">
 
-                        <label class="input-file" for="inputTag">
-                            <img *ngIf="imagem" class="imagem" [src]="imagem" alt="">
-                            <i *ngIf="!imagem"  class="bi bi-plus-lg" style="font-size: 40px; color:#000"></i>
-                            <input [disabled]="disabled" id="inputTag" (change)="upload($event)" type="file" />
-                        </label>
-                    </div>
-                    <div class="row">
-                        <div class="mt-2 padding-input">
-                            <label for="">Opcao de uso</label>
-                            <select [disabled]="disabled" class="form-control" [(ngModel)]="opcaoUso" id="uso">
-                                <option value="Descartável">Descartável</option>
-                                <option value="Não Descartável">Não Descartável</option>
-                            </select>
-                        </div>
-                    </div>
+                    <label class="input-file" for="inputTag">
+                        <img *ngIf="imagem" class="imagem" [src]="imagem" alt="">
+                        <i *ngIf="!imagem" class="bi bi-plus-lg" style="font-size: 40px; color:#000"></i>
+                        <input [disabled]="disabled" id="inputTag" (change)="upload($event)" type="file" />
+                    </label>
                 </div>
-                <div class="col-lg-6">
-                    <div class="row input-group mb-3 padding-input">
-                        <label for="">Nome do produto</label>
-                        <input [disabled]="disabled" class="form-control" type="text" [(ngModel)]="nome">
-                    </div>
-                    <div class="row input-group mb-3 padding-input">
-                        <label for="">Quantide em estoque</label>
-                        <input [disabled]="disabledQuantidade" class="form-control" type="text" [(ngModel)]="quantidade">
-                        <!--   -->
-                    </div>
-                    <div class="row input-group mb-3 padding-input">
-                        <label for="">Classificação</label>
-                        <input [disabled]="disabled" class="form-control" type="text" [(ngModel)]="classificacao">
-                    </div>
-                    <div class="row input-group mb-3 padding-input">
-                        <label for="">Localidade</label>
-                        <input [disabled]="disabled" class="form-control" type="text" [(ngModel)]="localidade">
+                <div class="row">
+                    <div class="mt-2 padding-input">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Opção de uso</mat-label>
+                            <mat-select  [disabled]="disabled" [(ngModel)]="opcaoUso" id="uso">
+                              <mat-option>
+                                Descartável
+                              </mat-option>
+                              <mat-option>
+                                Reutilizável
+                              </mat-option>
+                            </mat-select>
+                          </mat-form-field>                          
                     </div>
                 </div>
             </div>
-            <div class="row mb-3">
-                <div class="padding-select">
-                    <label for="exampleFormControlTextarea1" class="">Descrição</label>
-                    <textarea [disabled]="disabled" class="form-control" id="exampleFormControlTextarea1" [(ngModel)]="descricao"
-                        rows="3"></textarea>
-                </div>
+            <div class="col-lg-6">
+                <div class="row input-group padding-input">
 
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Nome do produto:</mat-label>
+                        <input [disabled]="disabled" type="text" [(ngModel)]="nome"
+                        matInput placeholder="Ex. Pizza" value="Sushi">
+                      </mat-form-field>
+                      <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Quantide em estoque</mat-label>
+                        <input [disabled]="disabledQuantidade" type="text" [(ngModel)]="quantidade" matInput placeholder="Ex. Pizza" value="Sushi">
+                      </mat-form-field>
+
+                      <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Classificação</mat-label>
+                        <input [disabled]="disabled" type="text" [(ngModel)]="classificacao" matInput placeholder="Ex. Pizza" value="Sushi">
+                      </mat-form-field>
+
+                    <mat-form-field class="example-chip-list" appearance="fill">
+                       <mat-label>Localização</mat-label>
+                        <mat-chip-list #chipList aria-label="Fruit selection">
+                          <mat-chip
+                            *ngFor="let local of localidades"
+                            (removed)="remove(local)">
+                            {{local}}
+                            <button matChipRemove>
+                              <mat-icon>cancel</mat-icon>
+                            </button>
+                          </mat-chip>
+                          <input
+                            placeholder="New fruit..."
+                            #fruitInput
+                            [formControl]="localidadeCtrl"
+                            [matAutocomplete]="auto"
+                            [matChipInputFor]="chipList"
+                            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                            (matChipInputTokenEnd)="add($event)">
+                        </mat-chip-list>
+                        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+                          <mat-option *ngFor="let local of allLocalidades" [value]="local">
+                            {{local}}
+                          </mat-option>
+                        </mat-autocomplete>
+                      </mat-form-field>
+                      
+
+
+
+                </div>
             </div>
+        </div>
+        <div class="row mx-3">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Leave a comment</mat-label>
+                <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+              </mat-form-field>
+        </div>
         <div *ngIf="botao != 'Detalhes-produto'" class="margem-botao" style="display: flex; justify-content: end;">
             <button (click)="onSubmit()" class="btn btn-primary">{{botao}}</button>
         </div>

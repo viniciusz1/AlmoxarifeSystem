@@ -1,19 +1,22 @@
+import { Localidade } from './../../shared/localidade.model';
+import { map } from 'rxjs/operators';
+import { FormControl } from '@angular/forms';
+import { COMMA, ENTER } from '@angular/cdk/keycodes';
+import { Observable, startWith } from 'rxjs';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Produto } from 'src/app/shared/produto.model';
 import { ProdutosService } from 'src/app/services/produtos.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { FormGroup, FormControl } from '@angular/forms';
-import { VirtualTimeScheduler } from 'rxjs';
-import { SafeSubscriber } from 'rxjs/internal/Subscriber';
-
+import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
+import { MatChipInputEvent } from '@angular/material/chips';
 @Component({
   selector: 'app-detalhes-produto',
   templateUrl: './detalhes-produto.component.html',
   styleUrls: ['./detalhes-produto.component.css']
 })
-export class DetalhesProdutoComponent implements OnInit {
 
+export class DetalhesProdutoComponent implements OnInit {
 
   codRota = "";
   informacoes = new Produto()
@@ -23,15 +26,70 @@ export class DetalhesProdutoComponent implements OnInit {
   disabledQuantidade = false
   disabled = false
   modo = ""
-  // user = "admin"
-  // user = "atendente"
   user = "supervisor"
-  // user = "professor"
-
- 
 
 
-    
+  constructor(private prod: ProdutosService,
+    private router: Router,
+    private route: ActivatedRoute,
+    private sanitizer: DomSanitizer) {
+
+      this.prod.getAllLocalizacoes()
+      .subscribe({
+        next: e => {
+          for(let i of e){
+            this.allLocalidades.push(i.nome)
+          }
+        }
+      })
+
+    this.filteredLocalidade = this.localidadeCtrl.valueChanges.pipe(
+      startWith(null),
+      map((fruit: string | null) => (fruit ? this._filter(fruit) : this.allLocalidades.slice())),
+    );
+  }
+
+
+  listaLocalizacao: string[] = ['teste1', 'teste2']
+
+
+
+  separatorKeysCodes: number[] = [ENTER, COMMA];
+  localidadeCtrl = new FormControl('');
+  filteredLocalidade: Observable<string[]>;
+  localidades: string[] = [];
+  allLocalidades: string[] = [];
+
+  @ViewChild('fruitInput') fruitInput: ElementRef<HTMLInputElement> = {} as ElementRef;;
+
+
+  add(event: MatChipInputEvent): void {
+    const value = (event.value || '').trim();
+    if (value) { this.localidades.push(value); }
+    event.chipInput!.clear();
+    this.localidadeCtrl.setValue(null);
+  }
+
+  remove(fruit: string): void {
+    const index = this.localidades.indexOf(fruit);
+    if (index >= 0) this.localidades.splice(index, 1);
+  }
+
+  selected(event: MatAutocompleteSelectedEvent): void {
+    this.localidades.push(event.option.viewValue);
+    this.fruitInput.nativeElement.value = '';
+    this.localidadeCtrl.setValue(null);
+  }
+
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+    return this.allLocalidades.filter(fruit => fruit.toLowerCase().includes(filterValue));
+  }
+
+
+
+
+
 
   onSubmit() {
     if (this.modo == "cadastrar") {
@@ -39,7 +97,7 @@ export class DetalhesProdutoComponent implements OnInit {
         new Produto(this.nome as string,
           this.quantidade as number,
           this.classificacao as string,
-          this.localidade as string,
+          this.localidade,
           this.opcaoUso as string,
           this.descricao as string,
           0))
@@ -65,40 +123,36 @@ export class DetalhesProdutoComponent implements OnInit {
         this.imagem as string,
         0,
         this.informacoes.quantidadeReservada as number
-        ))
+      ))
         .subscribe(e => console.log(e))
       // this.router.navigate(['/home/produtos'])
     }
 
   }
 
-  constructor(private prod: ProdutosService,
-    private router: Router,
-    private route: ActivatedRoute,
-    private sanitizer: DomSanitizer) { 
-    }
 
-public upload(event: Event): void {
-  let list = (event.target as HTMLInputElement).files?.item(0)
-  const urlToBlob = window.URL.createObjectURL(list as Blob) 
-  this.imagem = this.sanitizer.bypassSecurityTrustResourceUrl(urlToBlob); 
-}
-  teste(){
+
+  public upload(event: Event): void {
+    let list = (event.target as HTMLInputElement).files?.item(0)
+    const urlToBlob = window.URL.createObjectURL(list as Blob)
+    this.imagem = this.sanitizer.bypassSecurityTrustResourceUrl(urlToBlob);
+  }
+  teste() {
 
   }
   darEntrada() {
     this.router.navigate(['/home/entrada/', this.codRota])
   }
   list: Produto = new Produto
-  imagem?: SafeResourceUrl= ""
+  imagem?: SafeResourceUrl = ""
 
 
-  opcaoUso?=''
-  nome?=''
-  quantidade?=0
-  classificacao?=''
-  localidade?=''
-  descricao?=''
+  opcaoUso?= ''
+  nome?= ''
+  quantidade?= 0
+  classificacao?= ''
+  localidade?= ''
+  descricao?= ''
 
   mostrarDados() {
     this.imagem = this.informacoes.imagem
@@ -111,6 +165,7 @@ public upload(event: Event): void {
   }
 
   ngOnInit(): void {
+    
     this.route.url.subscribe(
       url => {
         if (url[0].path == "cadastrar-produto") {
