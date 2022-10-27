@@ -22,9 +22,9 @@ export class PedidosService {
   realizarDevolucao(pedido: Pedido){
     return this.http.put(`http://127.0.0.1:5000/devolucoes/${pedido.codigo}`, null)
   }
-  addEntrega(nomeProfessor: string, listaProdutos: {codigoProduto: number | undefined; quantidade: number | undefined; }[], dataEntrega: Date, dataDevolucao: Date, usuarioEmail: string | null){    
-    console.log({nomeProfessor, listaProdutos, dataEntrega, dataDevolucao, usuarioEmail})
-    return this.http.post('http://127.0.0.1:5000/pedidos',{nomeProfessor, listaProdutos, dataEntrega, dataDevolucao, usuarioEmail})
+  addEntrega(listaProdutos: {codigoProduto: number | undefined; quantidade: number | undefined; }[], dataEntrega: Date, dataDevolucao: Date, usuarioEmail: string | null){    
+    console.log({listaProdutos, dataEntrega, dataDevolucao, usuarioEmail})
+    return this.http.post('http://127.0.0.1:5000/pedidos',{listaProdutos, dataEntrega, dataDevolucao, usuarioEmail})
   }
   
   addPedido(pedido: Pedido){

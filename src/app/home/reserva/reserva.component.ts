@@ -1,3 +1,8 @@
+import { Usuario } from 'src/app/shared/usuario.model';
+import { ReservaService } from './../../services/reserva.service';
+import { map } from 'rxjs/operators';
+import { FormControl } from '@angular/forms';
+import { Observable, startWith } from 'rxjs';
 import { Pedido } from './../../shared/pedido.model';
 import { PedidosService } from './../../services/pedidos.service';
 import { CarrinhoService } from 'src/app/services/carrinho.service';
@@ -15,37 +20,61 @@ export class ReservaComponent implements OnInit {
   listaCarrinho: Produto[] = [];
   dataRetirada: Date = new Date();
   dataDevolucao: Date = new Date();
-  professor: string = ""
-  user= "atendente"
+  user = "atendente"
   // user= "professor"
 
 
-  fecharReserva(){
+  fecharReserva() {
     this.fechaReserva.emit(false)
   }
-  addPedido(){
+  addPedido() {
     let newList = []
-    for(let i of this.listaCarrinho){
+    for (let i of this.listaCarrinho) {
       newList.push({
         codigoProduto: i.codigo,
-        quantidade: i.qtdCart 
-      })      
+        quantidade: i.qtdCart
+      })
     }
-    this.pedidoService.addEntrega(this.professor, newList, this.dataRetirada, this.dataDevolucao, localStorage.getItem('EMAIL'))
-    .subscribe({next: e => console.log(e),
-    error: x => console.log(x)})
+
+
+
+    this.pedidoService.addEntrega(newList, this.dataRetirada, this.dataDevolucao, localStorage.getItem('EMAIL'))
+      .subscribe({
+        next: e => console.log(e),
+        error: x => console.log(x)
+      })
     // this.fecharReserva()
   }
+
   constructor(private car: CarrinhoService,
     private pedidoService: PedidosService,
-    private historicoService: HistoricoService) { }
+    private reservaService: ReservaService) { }
 
-  
+  private _filter(value: string): Usuario[] {
+    const filterValue = value.toLowerCase();
+    return this.listaProfessores.filter(option => {
+      return option.nome?.toLowerCase().includes(filterValue);
+    });
+  }
+
+  professor = new FormControl('');
+  listaProfessores: Usuario[] = [];
+  filteredProfessores: Observable<Usuario[]> = new Observable;
+
   ngOnInit(): void {
+    this.reservaService.getListaProfessores().subscribe(e => {
+      this.listaProfessores = e;
+    })
+
+    this.filteredProfessores = this.professor.valueChanges.pipe(
+      startWith(''),
+      map(value =>  this._filter(value || '')),
+    );
+
     this.listaCarrinho = this.car.getLista();
     this.car.tamanhoCarrinho.subscribe(
       e => {
-        if(e != 0){
+        if (e != 0) {
         }
       }
     )

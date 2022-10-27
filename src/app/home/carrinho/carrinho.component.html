@@ -10,7 +10,7 @@ p-1 bg-light po" style="transition:2s; height: 91vh; width: 400px !important;">
         </div>
         <div class="row justify-content-center">
             <div class="col-12 ">
-                <h5 class="d-flex justify-content-center">Carrinho da reserva</h5>
+                <h5 class="d-flex justify-content-center">Cesta da reserva</h5>
                 <hr>
             </div>
         </div>
@@ -27,7 +27,7 @@ p-1 bg-light po" style="transition:2s; height: 91vh; width: 400px !important;">
             </div>
         </div>
         <div *ngIf="carrinhoVazio == true" class="row DivWithScroll" style="display: flex; align-items:center; justify-content:center">
-            Adicione um item ao carrinho
+            Adicione um item a cesta
         </div>
         <div  *ngIf="carrinhoVazio == false" class="row justify-content-center mt-5">
             <button class="btn btn-primary w-50" (click)="abreReserva()">Realizar Pedido</button>
