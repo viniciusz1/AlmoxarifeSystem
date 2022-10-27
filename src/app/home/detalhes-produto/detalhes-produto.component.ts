@@ -38,7 +38,7 @@ export class DetalhesProdutoComponent implements OnInit {
       .subscribe({
         next: e => {
           for(let i of e){
-            this.allLocalidades.push(i.nome)
+            this.allLocalidades.push(i)
           }
         }
       })
@@ -50,40 +50,46 @@ export class DetalhesProdutoComponent implements OnInit {
   }
 
 
-  listaLocalizacao: string[] = ['teste1', 'teste2']
+  listaLocalizacao: Localidade[] = []
 
 
 
   separatorKeysCodes: number[] = [ENTER, COMMA];
   localidadeCtrl = new FormControl('');
-  filteredLocalidade: Observable<string[]>;
-  localidades: string[] = [];
-  allLocalidades: string[] = [];
+  filteredLocalidade: Observable<Localidade[]>;
+  localidades: Localidade[] = [];
+  allLocalidades: Localidade[] = [];
 
   @ViewChild('fruitInput') fruitInput: ElementRef<HTMLInputElement> = {} as ElementRef;;
 
 
   add(event: MatChipInputEvent): void {
     const value = (event.value || '').trim();
-    if (value) { this.localidades.push(value); }
+    let local = this.allLocalidades.find(e => e.nome == value)
+    if(local){
+      this.localidades.push(local)
+    }
     event.chipInput!.clear();
     this.localidadeCtrl.setValue(null);
   }
 
-  remove(fruit: string): void {
-    const index = this.localidades.indexOf(fruit);
+  remove(item: Localidade): void {
+    const index = this.localidades.findIndex(e => e.nome == item.nome);
     if (index >= 0) this.localidades.splice(index, 1);
   }
 
   selected(event: MatAutocompleteSelectedEvent): void {
-    this.localidades.push(event.option.viewValue);
+    let local = this.allLocalidades.find(e => e.nome == event.option.viewValue)
+    if(local){
+      this.localidades.push();
+    } 
     this.fruitInput.nativeElement.value = '';
     this.localidadeCtrl.setValue(null);
   }
 
-  private _filter(value: string): string[] {
+  private _filter(value: string): Localidade[] {
     const filterValue = value.toLowerCase();
-    return this.allLocalidades.filter(fruit => fruit.toLowerCase().includes(filterValue));
+    return this.allLocalidades.filter(local => local.nome.toLowerCase().includes(filterValue));
   }
 
 
@@ -97,7 +103,7 @@ export class DetalhesProdutoComponent implements OnInit {
         new Produto(this.nome as string,
           this.quantidade as number,
           this.classificacao as string,
-          this.localidade,
+          this.localidades,
           this.opcaoUso as string,
           this.descricao as string,
           0))
@@ -116,7 +122,7 @@ export class DetalhesProdutoComponent implements OnInit {
       this.prod.changeProduto(new Produto(this.nome as string,
         this.quantidade as number,
         this.classificacao as string,
-        this.localidade as string,
+        this.localidades,
         this.opcaoUso as string,
         this.descricao as string,
         this.informacoes.codigo as number,
@@ -151,7 +157,6 @@ export class DetalhesProdutoComponent implements OnInit {
   nome?= ''
   quantidade?= 0
   classificacao?= ''
-  localidade?= ''
   descricao?= ''
 
   mostrarDados() {
@@ -159,7 +164,6 @@ export class DetalhesProdutoComponent implements OnInit {
     this.nome = this.informacoes.nome
     this.quantidade = this.informacoes.quantidadeTotal
     this.classificacao = this.informacoes.classificacao
-    this.localidade = this.informacoes.localidade
     this.opcaoUso = this.informacoes.opcaoUso
     this.descricao = this.informacoes.descricao
   }

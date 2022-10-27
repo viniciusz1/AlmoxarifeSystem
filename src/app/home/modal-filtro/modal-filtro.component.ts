@@ -1,3 +1,4 @@
+import { Localidade } from './../../shared/localidade.model';
 import { NgForm } from '@angular/forms';
 import { Produto } from 'src/app/shared/produto.model';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
@@ -32,8 +33,9 @@ export class ModalFiltroComponent implements OnInit {
   ngOnInit(): void {
     
   }
+  provisorio:Localidade[] = []
   filtrar(form: NgForm){
-    this.filtragem.emit(new Produto(form.value.nome, form.value.estoque, form.value.classificacao, "", form.value.opcaoUso, "", form.value.codigo))
+    this.filtragem.emit(new Produto(form.value.nome, form.value.estoque, form.value.classificacao, this.provisorio, form.value.opcaoUso, "", form.value.codigo))
   }
   constructor() { }
 

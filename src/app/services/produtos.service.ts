@@ -1,3 +1,4 @@
+import { Localidade } from './../shared/localidade.model';
 import { FormControl } from '@angular/forms';
 import { Injectable } from '@angular/core';
 import { Produto } from '../shared/produto.model';
@@ -17,7 +18,7 @@ export class ProdutosService {
   }
 
   getAllLocalizacoes() {
-    return this.http.get<{ 'nome': string, 'codigo': number }[]>('http://localhost:8080/home/localicacao')
+    return this.http.get<Localidade[]>('http://localhost:8080/home/localicacao')
   }
 
   getListaProdutos(page: number, size: number, search: string, order: string) {
@@ -44,7 +45,7 @@ export class ProdutosService {
     this.getAllLocalizacoes()
       .subscribe(e => {
         for (let i of e) {
-          if (i.codigo == produto.localidade) {
+          if (i.codigo == produto.codigo) {
           }
         }
       }

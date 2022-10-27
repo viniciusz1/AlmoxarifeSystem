@@ -34,7 +34,7 @@ export class ProdutoComponent implements OnInit {
         this.carrinhoService.addProduto(new Produto(this.produto.nome as string, 
           this.produto.quantidadeTotal as number, 
           this.produto.classificacao as string,
-          this.produto.localidade as string, 
+          this.produto.localidade!, 
           this.produto.opcaoUso as string, 
           this.produto.descricao as string, 
           this.produto.codigo as number,
