@@ -67,6 +67,9 @@ export class DetalhesProdutoComponent implements OnInit {
     const value = (event.value || '').trim();
     let local = this.allLocalidades.find(e => e.nome == value)
     if(local){
+      if(this.verificarExistenciaLocal(local)){
+        return
+      }
       this.localidades.push(local)
     }
     event.chipInput!.clear();
@@ -77,11 +80,17 @@ export class DetalhesProdutoComponent implements OnInit {
     const index = this.localidades.findIndex(e => e.nome == item.nome);
     if (index >= 0) this.localidades.splice(index, 1);
   }
+  verificarExistenciaLocal(local: Localidade){
+    return this.localidades.find(e => e.nome == local.nome)
+  }
 
   selected(event: MatAutocompleteSelectedEvent): void {
     let local = this.allLocalidades.find(e => e.nome == event.option.viewValue)
     if(local){
-      this.localidades.push();
+      if(this.verificarExistenciaLocal(local)){
+        return
+      }
+      this.localidades.push(local);
     } 
     this.fruitInput.nativeElement.value = '';
     this.localidadeCtrl.setValue(null);
