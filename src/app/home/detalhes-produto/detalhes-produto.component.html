@@ -33,10 +33,10 @@
                         <mat-form-field appearance="fill">
                             <mat-label>Opção de uso</mat-label>
                             <mat-select  [disabled]="disabled" [(ngModel)]="opcaoUso" id="uso">
-                              <mat-option>
+                              <mat-option value="0">
                                 Descartável
                               </mat-option>
-                              <mat-option>
+                              <mat-option value="1">
                                 Reutilizável
                               </mat-option>
                             </mat-select>
