@@ -42,20 +42,21 @@ export class ProdutosService {
     return this.http.get<Produto>(url)
   }
   addProduto(produto: Produto) {
-    this.getAllLocalizacoes()
-      .subscribe(e => {
-        for (let i of e) {
-          if (i.codigo == produto.codigo) {
-          }
-        }
-      }
-      )
+    // this.getAllLocalizacoes()
+    //   .subscribe(e => {
+    //     for (let i of e) {
+    //       if (i.codigo == produto.codigo) {
+    //       }
+    //     }
+    //   }
+    //   )
+    let localidades = []
 
     return this.http.post('http://localhost:8080/produtos', {
       "nome": produto.nome,
       "quantidadeTotal": produto.quantidadeTotal,
       // "classificacao": produto.classificacao,
-      "localizacoes": [{ codigo: produto.localidade }],
+      "localizacoes": produto.localidade,
       "opcaoUso": produto.opcaoUso,
       "descricao": produto.descricao,
       // "imagem": produto.imagem
