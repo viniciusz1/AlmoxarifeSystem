@@ -64,16 +64,17 @@
 
                     <mat-form-field class="example-chip-list" appearance="fill">
                        <mat-label>Localização</mat-label>
-                        <mat-chip-list #chipList aria-label="Seleção de localidade">
-                          <mat-chip
+                        <mat-chip-list  [disabled]="disabled" #chipList aria-label="Seleção de localidade">
+                          <mat-chip [disabled]="disabled"
                             *ngFor="let local of localidades"
                             (removed)="remove(local)">
                             {{local.nome}}
                             <button matChipRemove>
                               <mat-icon>cancel</mat-icon>
                             </button>
-                          </mat-chip>
+                          </mat-chip >
                           <input
+                            [disabled]="disabled"
                             placeholder="Add localidade..."
                             #fruitInput
                             [formControl]="localidadeCtrl"
@@ -98,7 +99,7 @@
         <div class="row mx-3">
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Leave a comment</mat-label>
-                <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+                <textarea  [disabled]="disabled" [(ngModel)]="descricao" matInput placeholder="Ex. It makes me feel..."></textarea>
               </mat-form-field>
         </div>
         <div *ngIf="botao != 'Detalhes-produto'" class="margem-botao" style="display: flex; justify-content: end;">
