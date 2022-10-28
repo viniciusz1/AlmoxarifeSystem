@@ -25,6 +25,7 @@ import {MatInputModule} from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import {MatSortModule} from '@angular/material/sort';
+import { MatRangeDateSelectionModel, MatDatepickerModule } from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import {MatSortModule} from '@angular/material/sort';
     MatSelectModule,
     MatOptionModule,
     MatSortModule,
+    MatDatepickerModule
   ],
   exports:[
     HomeComponent,
