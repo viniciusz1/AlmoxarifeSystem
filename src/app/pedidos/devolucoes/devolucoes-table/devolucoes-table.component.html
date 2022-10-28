@@ -10,7 +10,7 @@
     <tbody>
         <tr *ngFor="let lista of lista; let i = index">
             <th scope="row">{{lista.codigo}}</th>
-            <td>{{lista.nomeProfessor}}</td>
+            <td>{{lista.usuario?.nome}}</td>
             <td class="text-truncate" style="max-width: 249px;"><span *ngFor="let l of lista.listaProdutos | slice: 0:10">{{l.nome}}, </span></td>
             <td *ngIf="modo == 'devolucoes'">{{lista.dataDevolucao | date: 'dd/MM/yyyy'}}</td>
             <td *ngIf="modo == 'entregas'">{{lista.dataEntrega | date: 'dd/MM/yyyy'}}</td>

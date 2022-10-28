@@ -1,6 +1,7 @@
 import { Produto } from 'src/app/shared/produto.model';
+import { Usuario } from './usuario.model';
 export class Pedido{
-    public nomeProfessor?: string;
+    public usuario?: Usuario;
     public listaProdutos?: Produto[];
     public dataEntrega?: Date;
     public dataDevolucao?: Date;
@@ -8,11 +9,11 @@ export class Pedido{
     public status?: number;
 
     constructor()
-    constructor(nomeProfessor: string, listaProdutos: Produto[], dataEntrega: Date, dataDevolucao: Date, 
+    constructor(usuario: Usuario, listaProdutos: Produto[], dataEntrega: Date, dataDevolucao: Date, 
     codigo: number,status: number)
-    constructor(nomeProfessor?: string, listaProdutos?: Produto[],dataEntrega?: Date,dataDevolucao?: Date, 
+    constructor(usuario?: Usuario, listaProdutos?: Produto[],dataEntrega?: Date,dataDevolucao?: Date, 
     codigo?:number, status?: number){
-            this.nomeProfessor = nomeProfessor;
+            this.usuario = usuario;
             this.listaProdutos = listaProdutos;
             this.dataEntrega = dataEntrega;
             this.dataDevolucao = dataDevolucao;
