@@ -31,8 +31,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
             this.lista = e;            
           }});
       })
-      
-
   }
 
   changed() {
@@ -42,7 +40,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     console.log(this.paginator?.pageIndex);
   }
   modal = false;
-  modalReserva = true;
+  modalReserva = false;
   state = "fechado";
   carState = "fechado";
   lista: Produto[] = [];
@@ -60,10 +58,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
   onDataTableChange(event: any) {
     this.page = event;
     console.log(this.page);
-    
     this.changed()
   }
+
   lengthProudutos = 0
+
   sizeProducts(){
     this.prod.getSizeProducts()
     .subscribe({next: (e) => {

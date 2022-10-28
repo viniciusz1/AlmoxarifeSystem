@@ -34,7 +34,7 @@
             <div class="d-flex flex-column align-items-center">
                 <mat-form-field appearance="fill">
                     <mat-label>Enter a date range</mat-label>
-                    <mat-date-range-input [rangePicker]="picker">
+                    <mat-date-range-input [rangePicker]="picker" [dateFilter]="filtroData">
                       <input matStartDate placeholder="Start date">
                       <input matEndDate placeholder="End date">
                     </mat-date-range-input>
