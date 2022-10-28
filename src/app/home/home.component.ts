@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     console.log(this.paginator?.pageIndex);
   }
   modal = false;
-  modalReserva = false;
+  modalReserva = true;
   state = "fechado";
   carState = "fechado";
   lista: Produto[] = [];

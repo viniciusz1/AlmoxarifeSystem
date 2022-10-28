@@ -36,8 +36,20 @@
                 <input [(ngModel)]="dataDevolucao" type="date" class="mb-4 p-1" style="width:215px">
             </div>
             <div *ngIf="user == 'atendente'"  class="d-flex flex-column align-items-center">
-                <label for="">Nome Professor:</label>
-                <input [(ngModel)]="professor" type="text" class="m-4 p-1" style="width:215px" placeholder="Professor">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Number</mat-label>
+                    <input type="text"
+                           placeholder="Pick one"
+                           aria-label="Nome Professor"
+                           matInput
+                           [formControl]="professor"
+                           [matAutocomplete]="auto">
+                    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                      <mat-option *ngFor="let option of filteredProfessores | async" [value]="option.nome">
+                        {{option.nome}}
+                      </mat-option>
+                    </mat-autocomplete>
+                  </mat-form-field>
             </div>
             <hr *ngIf="user == 'professor'" class="m-5">
             <div class="row justify-content-center">
