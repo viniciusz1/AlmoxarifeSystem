@@ -1,3 +1,5 @@
+import { ModalClassificacaoComponent } from './../modal-classificacao/modal-classificacao.component';
+import { ModalLocalizacaoComponent } from './../modal-localizacao/modal-localizacao.component';
 import { Localidade } from './../../shared/localidade.model';
 import { map } from 'rxjs/operators';
 import { FormControl } from '@angular/forms';
@@ -10,6 +12,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { MatChipInputEvent } from '@angular/material/chips';
+import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-detalhes-produto',
   templateUrl: './detalhes-produto.component.html',
@@ -32,7 +35,8 @@ export class DetalhesProdutoComponent implements OnInit {
   constructor(private prod: ProdutosService,
     private router: Router,
     private route: ActivatedRoute,
-    private sanitizer: DomSanitizer) {
+    private sanitizer: DomSanitizer,
+    private dialog: MatDialog) {
 
       this.prod.getAllLocalizacoes()
       .subscribe({
@@ -51,7 +55,12 @@ export class DetalhesProdutoComponent implements OnInit {
 
 
   listaLocalizacao: Localidade[] = []
-
+  abrirModalLocalizacao(){
+    this.dialog.open(ModalLocalizacaoComponent)
+  }
+  abrirModalClassificacao(){
+    this.dialog.open(ModalClassificacaoComponent)
+  }
 
 
   separatorKeysCodes: number[] = [ENTER, COMMA];

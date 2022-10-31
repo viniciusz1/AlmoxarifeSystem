@@ -26,6 +26,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import {MatSortModule} from '@angular/material/sort';
 import { MatRangeDateSelectionModel, MatDatepickerModule } from '@angular/material/datepicker';
+import { ModalLocalizacaoComponent } from './modal-localizacao/modal-localizacao.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { ModalClassificacaoComponent } from './modal-classificacao/modal-classificacao.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,9 @@ import { MatRangeDateSelectionModel, MatDatepickerModule } from '@angular/materi
     ProdutoListaComponent,
     DetalhesProdutoComponent,
     EntradaComponent,
-    NgModelChangeDebouncedDirective
+    NgModelChangeDebouncedDirective,
+    ModalLocalizacaoComponent,
+    ModalClassificacaoComponent
   ],
   imports: [
     CommonModule,
@@ -58,7 +63,8 @@ import { MatRangeDateSelectionModel, MatDatepickerModule } from '@angular/materi
     MatSelectModule,
     MatOptionModule,
     MatSortModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatDialogModule
   ],
   exports:[
     HomeComponent,
