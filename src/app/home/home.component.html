@@ -20,13 +20,7 @@
                             <div class="lupa">
                                 <i class="bi bi-search"></i>
                             </div>
-                            <input class="input-pedido" [(ngModel)]="pesquisaProduto" (ngModelChange)="changed()"
-                                placeholder="Pesquisar Produto" [formControl]="pesquisaProduto" [matAutocomplete]="auto">
-                            <mat-autocomplete #auto="matAutocomplete">
-                                <mat-option *ngFor="let street of filteredStreets | async" [value]="street">
-                                    {{street}}
-                                </mat-option>
-                            </mat-autocomplete>
+                            <input class="input-pedido" [(ngModel)]="pesquisaProduto" (ngModelChange)="changed()" placeholder="Pesquisar Produto" >
 
                             <div style="cursor:pointer" class="filtrar">
                                 <i class="bi bi-sliders" (click)="modalOpen(false)"></i>

@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
         this.prod.getListaProdutos(
           this.page,
           this.paginator?.pageSize as number,
-          this.pesquisaProduto.value as string,
+          this.pesquisaProduto as string,
           this.ordenarCampo
         )
           .subscribe({
@@ -58,17 +58,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
   page: number = 1;
   count: number = 0;
   modelChanged = new Subject<string>();
-  pesquisaProduto = new FormControl('');
+  pesquisaProduto = "";
   lengthProudutos = 0
-  streets: string[] = ['Champs-Élysées', 'Lombard Street', 'Abbey Road', 'Fifth Avenue'];
-  filteredStreets: Observable<string[]> = new Observable();
-
   ngOnInit(): void {
-
-    this.filteredStreets = this.pesquisaProduto.valueChanges.pipe(
-      startWith(''),
-      map(value => this._filter(value || '')),
-    );
 
     this.router.params.subscribe(params => {
       this.rota = params['id'];
@@ -85,17 +77,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
     )
   }
 
-  private _filter(value: string): string[] {
-    const filterValue = this._normalizeValue(value);
-    return this.streets.filter(street => this._normalizeValue(street).includes(filterValue));
-  }
 
   private _normalizeValue(value: string): string {
     return value.toLowerCase().replace(/\s/g, '');
   }
 
   changed() {
-    this.modelChanged.next(this.pesquisaProduto.value as string);
+    this.modelChanged.next(this.pesquisaProduto as string);
   }
 
   onDataTableChange(event: any) {
@@ -151,7 +139,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.prod.getListaProdutos(
       this.paginator?.pageIndex as number,
       this.paginator?.pageSize as number,
-      this.pesquisaProduto.value as string, "")
+      this.pesquisaProduto as string, "")
       .subscribe(e => {
         this.lista = e
       })
