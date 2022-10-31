@@ -48,7 +48,8 @@ export class EntradaComponent implements OnInit {
       });
   }
 
-
+  descricao = ""
+  selectTipoTela = "Entrada"
   page = 0
   ordenarCampo = ""
   modelChanged = new Subject<string>();

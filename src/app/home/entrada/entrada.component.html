@@ -11,12 +11,13 @@
             <div class="row">
                 <div class="col-md-2 col-sm-12" style="font-size: calc(1.3rem + .6vw);">
                     <b>
-                        <span>ENTRADAS</span>
+                        <span *ngIf="selectTipoTela == 'Entrada'">ENTRADAS </span>
+                        <span *ngIf="selectTipoTela == 'Quebra'">QUEBRAS </span>
                     </b>
                     <hr style="margin: 0; width: 200px; opacity: 1;">
                 </div>
 
-                <div class="d-flex mt-4">
+                <div class="d-flex mt-4  align-items-center">
                     <div class="pesquisa d-flex">
                         <i class="bi bi-search icon" style="cursor:pointer"></i>
                         <input [(ngModel)]="pesquisaProduto" (ngModelChange)="changed()"
@@ -25,6 +26,18 @@
                             <i class="bi bi-sliders"></i>
                         </div>
                     </div>
+                    <mat-form-field class="ms-3" appearance="fill">
+                        <mat-label>Tipo</mat-label>
+                        <mat-select [(ngModel)]="selectTipoTela">
+                            <mat-option value="Entrada">
+                                Entrada
+                            </mat-option>
+
+                            <mat-option value="Quebra">
+                                Quebra
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
                 </div>
 
                 <div class="row" style="justify-content: space-around;">
@@ -52,17 +65,33 @@
                             <img class="img-fluid imagem" [src]="imagem" alt="">
                         </div>
                         <div>
-                            <label for="">Nome Produto</label>
-                            <input [(ngModel)]="nomeProduto" disabled="true" type="text" class="form-control">
+                            <mat-form-field class="mt-5 example-full-width" appearance="fill" style="width: 100%;">
+                                <mat-label>Nome Produto</mat-label>
+                                <input disabled="true" type="text" [(ngModel)]="estoqueQuantidade" disabled="true"
+                                    matInput placeholder="Ex. Material Elétrico" value="Sushi">
+                            </mat-form-field>
                         </div>
                         <div>
-                            <label for="">Quantidade em estoque</label>
-                            <input [(ngModel)]="estoqueQuantidade" disabled="true" type="text" class="form-control">
+                            <mat-form-field class="example-full-width" appearance="fill" style="width: 100%;">
+                                <mat-label>Quantidade em estoque</mat-label>
+                                <input type="text" [(ngModel)]="estoqueQuantidade" disabled="true" matInput
+                                    placeholder="Ex. Material Elétrico" value="Sushi">
+                            </mat-form-field>
                         </div>
-                        <hr>
                         <div>
-                            <label for="">Adicionar quantidade</label>
-                            <input [(ngModel)]="novaQuantidade" type="text" class="form-control">
+                            <mat-form-field class="example-full-width" appearance="fill" style="width:100%;">
+                                <mat-label *ngIf="selectTipoTela == 'Entrada'">Quantidade a adicionar</mat-label>
+                                <mat-label *ngIf="selectTipoTela == 'Quebra'">Quantidade Afetada</mat-label>
+                                <input type="text" [(ngModel)]="novaQuantidade" matInput
+                                    placeholder="Ex. Material Elétrico" value="Sushi">
+                            </mat-form-field>
+                        </div>
+                        <div *ngIf="selectTipoTela == 'Quebra'">
+                            <mat-form-field class="w-100" appearance="fill">
+                                <mat-label>Descrição da quebra</mat-label>
+                                <textarea [(ngModel)]="descricao" matInput
+                                  placeholder="Ex. Este produto foi quebrado porque caiu no chão..."></textarea>
+                              </mat-form-field>
                         </div>
                         <div class="text-center mt-4">
                             <button (click)="atualizarQuantidade()" class="btn btn-primary">Confirmar entrada</button>
