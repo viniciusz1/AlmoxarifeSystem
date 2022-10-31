@@ -1,12 +1,9 @@
+import { Entrada } from './../shared/entrada.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Produto } from '../shared/produto.model';
-interface Entrada{
-  codigo: number,
-  data: Date,
-  produto: Produto,
-  quantidade: number,
-}
+
+
 @Injectable({
   providedIn: 'root'
 })

@@ -1,18 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { EntradasService } from 'src/app/services/entradas.service';
-import { HistoricoService } from 'src/app/services/historico.service';
-import { PedidosService } from 'src/app/services/pedidos.service';
 import { Pedido } from 'src/app/shared/pedido.model';
-import { Produto } from 'src/app/shared/produto.model';
 import { Subject } from 'rxjs'
 
-interface Entrada {
-  codigo: number,
-  professor: string,
-  produto: Produto,
-  quantidade: number,
-  data: Date
-}
 @Component({
   selector: 'app-historico',
   templateUrl: './historico.component.html',
@@ -21,25 +10,31 @@ interface Entrada {
 export class HistoricoComponent implements OnInit {
 
   constructor() { }
+
   pesquisaPedido = ""
   listaEntradas: Pedido[] = [new Pedido()]
   listaPedidos: Pedido[] = []
   modelChanged = new Subject<string>();
+  filtroState = false
+  lengthProdutos=0
+  exibicao = 'pedidos'
+
   ngOnInit(): void {
   }
 
   changed() {
     this.modelChanged.next(this.pesquisaPedido);
   }
-  lengthProdutos=0
-  exibicao = false
+  
   mudarParaEntradas() {
-    this.exibicao = false
+    this.exibicao = 'entradas'
   }
   mudarParaPedidos() {
-    this.exibicao = true
+    this.exibicao = 'pedidos'
   }
-  filtroState = false
+  mudarParaSaidas() {
+    this.exibicao = 'saidas'
+  }
   mudaFiltro() {
     this.filtroState = !this.filtroState;
   }
