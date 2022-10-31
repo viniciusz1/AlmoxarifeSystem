@@ -23,6 +23,12 @@ export class ReservaComponent implements OnInit {
   user = "atendente"
   // user= "professor"
 
+  filtroData = (d: Date | null): boolean => {
+    const day = (d || new Date()).getDay();
+    // Prevent Saturday and Sunday from being selected.
+    return day !== 0 && day !== 6;
+  };
+
 
   fecharReserva() {
     this.fechaReserva.emit(false)
