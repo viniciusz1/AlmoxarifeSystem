@@ -44,17 +44,20 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   modal = false;
   modalReserva = false;
-  home = true
-  exibicao = false; // false == bloco ! == lista
+
+  state = "fechado";
+  carState = "fechado";
   lista: Produto[] = [];
-  listaFiltro: Produto[] = [];
   filtroEspecializado: Produto = new Produto()
+
+  home = true
+
+  exibicao = false; // false == bloco ! == lista
+  listaFiltro: Produto[] = [];
   numeroCarrinho = 0
   titulo = ""
   rota = "";
   ordenarCampo = ""
-  state = "fechado";
-  carState = "fechado";
   page: number = 1;
   count: number = 0;
   modelChanged = new Subject<string>();
