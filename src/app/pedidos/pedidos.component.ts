@@ -29,7 +29,7 @@ export class PedidosComponent implements OnInit {
 
   tooltip(index: number){
     this.produtosString=""
-    this.produtosDaLista = this.lista[index].listaProdutos as Produto[]
+    this.produtosDaLista = this.lista[index].produtos as Produto[]
     for(let i of this.produtosDaLista){
       this.produtosString += i.nome + ", "
     }
