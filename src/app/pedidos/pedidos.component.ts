@@ -2,6 +2,9 @@ import { Pedido } from './../shared/pedido.model';
 import { Produto } from '../shared/produto.model';
 import { PedidosService } from './../services/pedidos.service';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalPedidosComponent } from './modal-pedidos/modal-pedidos.component';
+import { Dialog } from '@angular/cdk/dialog';
 
 @Component({
   selector: 'app-pedidos',
@@ -10,7 +13,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PedidosComponent implements OnInit {
 
-  constructor(private pedidosService: PedidosService) { }
+  constructor(
+    private pedidosService: PedidosService,
+    private dialog: Dialog
+    ) { }
 
   lista: Pedido[] =  []
   exibicaoModal = false
@@ -18,7 +24,7 @@ export class PedidosComponent implements OnInit {
   produtosString = ""
 
   changeModal(){
-    this.exibicaoModal = !this.exibicaoModal
+    this.dialog.open(ModalPedidosComponent, {panelClass: "tirarPadding"});
   }
 
   tooltip(index: number){

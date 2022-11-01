@@ -17,6 +17,7 @@ export class SolicitacoesComponent implements OnInit {
   
   pesquisaUser = "";
 
+  lengthUsuarios = 1;
   lista: Usuario[] = [new Usuario("Camilly", "camilly@gmail.com", "camilly", "123", "Professor", "(47) 99222-2222")];
 
   ngOnInit(): void {

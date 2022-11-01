@@ -22,6 +22,7 @@ import { HomeModule } from './home/home.module';
 import { PedidosModule } from './pedidos/pedidos.module';
 import { SidenavComponent } from './pos-login/sidenav/sidenav.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HomeModule,
     PedidosModule,
-    HttpClientModule
+    HttpClientModule,
+    MatPaginatorModule
   ],
   providers: [CarrinhoService, ProdutosService, CheckLogged, HistoricoService],
   bootstrap: [AppComponent]
