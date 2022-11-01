@@ -20,12 +20,13 @@ i{
     margin-bottom: 50px;
 }
 
-.container{
+.bu{
     display: flex;
-    column-gap: 100px;
     padding: 30px;
     width: 100%;
     position: relative;
+    margin: 5vh 0vh 0vh 0vh;
+    justify-content: space-around;
 }
 
 .esquerda{
@@ -45,14 +46,6 @@ i{
     justify-content: center;
     align-items: center;
 }
-
-body{
-    display: grid;
-    justify-content: center;
-    /* align-items: center; */
-    width: 100%;
-}
-
 
 button{
     background-color: #275577;

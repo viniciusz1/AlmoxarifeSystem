@@ -44,14 +44,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   modal = false;
   modalReserva = false;
-
   state = "fechado";
   carState = "fechado";
   lista: Produto[] = [];
   filtroEspecializado: Produto = new Produto()
-
   home = true
-
   exibicao = false; // false == bloco ! == lista
   listaFiltro: Produto[] = [];
   numeroCarrinho = 0

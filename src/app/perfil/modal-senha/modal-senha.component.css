@@ -54,7 +54,7 @@
 .redef{
     position: absolute;
     top: -20px;
-    background-color: #0047B5;
+    background-color: #275577;
     color: white;
     font-size: 24px;
     padding-top: 5px ;
@@ -92,7 +92,7 @@ span{
 
 .botao2{
     color: #fff;
-    background-color: #0047B5;
+    background-color: #275577;
     border: none;
     border-radius: 5px;
     padding: 0.5vw 3vw 0.5vw 3vw;

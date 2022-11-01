@@ -1,54 +1,54 @@
+<div class="d-flex">
+  <div class="container">
 
-<div class="d-flex bg-light">
-  
-  <body>
     <nav aria-label="breadcrumb" style="position: absolute;
-       left: 154px; top: 81px;">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/home">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Perfil</li>
-            </ol>
-        </nav>
-    <div class="">
-        <b>
-          <div class="perfil">SEU PERFIL
-            <hr style="margin: 0; width: 200px; opacity: 1;">
-          </div>
-        
-        </b>
-    <div>
-      <div class="container bu">
-        <div class="cargo">
-          <span>{{nivelAcesso | uppercase}}</span>
+      top: 81px;">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/home">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Perfil</li>
+      </ol>
+    </nav>
+    <div class="row mt-5" style="display: flex; justify-content: center;">
+      <div class="row">
+        <div class="col-md-2 col-sm-12" style="font-size: calc(1.3rem + .6vw);">
+          <b>
+            <span>PERFIL</span>
+          </b>
+          <hr style="margin: 0; width: 200px; opacity: 1;">
         </div>
-        <div class="esquerda">
-          <div class="imagem">
-            <i style="font-size: 150px;" class="bi bi-person"></i>
-          </div>
-          <div class="span">
-            <span class="nome">Fulano de Tal</span>
-          </div>
-          <div class="botao">
-            <button (click)="alteraPerfil()">Alterar Perfil</button>
-            <button (click)="modificaAlteraSenha()">Redefinir Senha</button>
-          </div>
+      </div>
+    </div>
+    <div class="bu">
+      <div class="cargo">
+        <!-- <span>{{nivelAcesso | uppercase}}</span> -->
+        <span>PROFESSOR</span>
+      </div>
+      <div class="esquerda">
+        <div class="imagem">
+          <i style="font-size: 150px;" class="bi bi-person"></i>
         </div>
-        <div class="direita">
-          <div class="inputsPerfil">
-            <span>Usuario:</span>
-            <input [(ngModel)]="usuario" [disabled]="disabled" class="control" type="text" placeholder="FulanoDeTal">
-            <span>Email:</span>
-            <input [(ngModel)]="email" [disabled]="disabled" class="control" type="email" placeholder="fulano@gmail.com">
-            <span>Telefone:</span>
-            <input [(ngModel)]="telefone" [disabled]="disabled" class="control" type="tel" placeholder="(**) *****-****">
-            <div style="    margin-top: 39px;">
-              <button (click)="mandarAlteracaoUsuarioDB()" *ngIf="!disabled" class="btn btn-primary">Confirmar</button>
-            </div>
+        <div class="span">
+          <span class="nome">Fulano de Tal</span>
+        </div>
+        <div class="botao">
+          <button (click)="alteraPerfil()">Alterar Perfil</button>
+          <button (click)="modificaAlteraSenha()">Redefinir Senha</button>
+        </div>
+      </div>
+      <div class="direita">
+        <div class="inputsPerfil">
+          <span>Usuario:</span>
+          <input [(ngModel)]="usuario" [disabled]="disabled" class="control" type="text" placeholder="FulanoDeTal">
+          <span>Email:</span>
+          <input [(ngModel)]="email" [disabled]="disabled" class="control" type="email" placeholder="fulano@gmail.com">
+          <span>Telefone:</span>
+          <input [(ngModel)]="telefone" [disabled]="disabled" class="control" type="tel" placeholder="(**) *****-****">
+          <div style="    margin-top: 39px;">
+            <button (click)="mandarAlteracaoUsuarioDB()" *ngIf="!disabled" class="btn btn-primary">Confirmar</button>
           </div>
         </div>
       </div>
     </div>
   </div>
-  </body>
-<app-modal-senha [senha]="senha" (alterandoModal)="modificaAlteraSenha()" *ngIf="alteraSenha"></app-modal-senha>
 </div>
+<app-modal-senha [senha]="senha" (alterandoModal)="modificaAlteraSenha()" *ngIf="alteraSenha"></app-modal-senha>

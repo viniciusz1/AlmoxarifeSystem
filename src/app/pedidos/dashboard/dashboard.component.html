@@ -1,61 +1,65 @@
-
-<div class="container">
-    <div class="row mt-5" style="display: flex; justify-content: center;">
+<div class="d-flex">
+    <div class="container">
         <nav aria-label="breadcrumb" style="position: absolute;
-        top: 81px; left: 154px;">
+        top: 81px;">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/home">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
             </ol>
         </nav>
-    <div class="" style="font-size: calc(1.3rem + .6vw);">
-        <b>
-            <span>Dashboard</span>
-        </b>
-        <hr style="margin: 0; width: 200px; opacity: 1;">
-    </div>
-    <div class="fundo mt-4" style="">
-        <div class="row">
-            <div class="col-8">
-                <h5>
-                    PRODUTOS DO DIA
-                </h5>
-                <div class="scroll">
-                    <mat-accordion>
-                        <mat-expansion-panel *ngFor="let entrega of entregas" (opened)="panelOpenState = true"
-                                             (closed)="panelOpenState = false">
-                          <mat-expansion-panel-header>
-                            <mat-panel-title>
-                              Entrega: {{entrega.codigo}}
-                            </mat-panel-title>
-                          </mat-expansion-panel-header>
-                          <app-produto-lista [dashboard]="true" [tiraQuantidade]="true" 
-                        [listaProdutos]="entrega.listaProdutos!"></app-produto-lista>
-                        </mat-expansion-panel>
-                      </mat-accordion>
+        <div class="row mt-5" style="display: flex; justify-content: center;">
+            <div class="row">
+                <div class="col-md-2 col-sm-12" style="font-size: calc(1.3rem + .6vw);">
+                    <b>
+                        <span>DASHBOARD</span>
+                    </b>
+                    <hr style="margin: 0; width: 200px; opacity: 1;">
                 </div>
-                
             </div>
-            <div class="col-4 d-flex justify-content-center">
-                <mat-card class="demo-inline-calendar-card">
-                    <mat-calendar (click)="mudou()" [(selected)]="selected"></mat-calendar>
-                </mat-card>
-            </div>
-        </div> 
-        <hr>
-        <div class="row my-3">
-            <div class="scroll col-xl-6" style="min-height: 30vh;">
-                <h5>
-                    ENTREGAS DO DIA
-                </h5>
-                <app-pedidos-table [botao]="'Entregar'" [pedidos]="entregas"></app-pedidos-table>
-            </div>
-            <div class="scroll col-xl-6" style="min-height: 30vh;">
-                <h5>
-                    DEVOLUÇÕES DO DIA
-                </h5>
-                <app-pedidos-table [botao]="'Devolver'" [pedidos]="devolucoes"></app-pedidos-table>
+                <div class="fundo mt-4">
+                    <div class="row">
+                        <div class="col-8">
+                            <h5>
+                                PRODUTOS DO DIA
+                            </h5>
+                            <div class="scroll">
+                                <mat-accordion>
+                                    <mat-expansion-panel *ngFor="let entrega of entregas"
+                                        (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                                        <mat-expansion-panel-header>
+                                            <mat-panel-title>
+                                                Entrega: {{entrega.codigo}}
+                                            </mat-panel-title>
+                                        </mat-expansion-panel-header>
+                                        <app-produto-lista [dashboard]="true" [tiraQuantidade]="true"
+                                            [listaProdutos]="entrega.listaProdutos!"></app-produto-lista>
+                                    </mat-expansion-panel>
+                                </mat-accordion>
+                            </div>
+
+                        </div>
+                        <div class="col-4 d-flex justify-content-center">
+                            <mat-card class="demo-inline-calendar-card">
+                                <mat-calendar (click)="mudou()" [(selected)]="selected"></mat-calendar>
+                            </mat-card>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row my-3">
+                        <div class="scroll col-xl-6" style="min-height: 30vh;">
+                            <h5>
+                                ENTREGAS DO DIA
+                            </h5>
+                            <app-pedidos-table [botao]="'Entregar'" [pedidos]="entregas"></app-pedidos-table>
+                        </div>
+                        <div class="scroll col-xl-6" style="min-height: 30vh;">
+                            <h5>
+                                DEVOLUÇÕES DO DIA
+                            </h5>
+                            <app-pedidos-table [botao]="'Devolver'" [pedidos]="devolucoes"></app-pedidos-table>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>

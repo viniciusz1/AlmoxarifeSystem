@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Usuario } from '../shared/usuario.model';
 
@@ -45,5 +45,14 @@ export class UsuariosService {
   this.lista[index] = user;
   console.log(this.lista)
  }
+
+ getListaUsuarios(page: number, size: number, search: string, order: string) {
+  let params = new HttpParams()
+    .set('page', page)
+    .set('size', size);
+  if (search) params = params.set('search', search);
+  if (order) params = params.set('sort', order)
+  return this.http.get<Usuario[]>('http://localhost:8080/usuario/filtro', { params })
+}
 
 }
