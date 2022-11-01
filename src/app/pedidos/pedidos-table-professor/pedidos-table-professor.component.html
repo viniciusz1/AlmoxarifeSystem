@@ -12,7 +12,7 @@
         <tr (click)="changeModal()" *ngFor="let pedido of lista; let i = index">
             <th scope="row">{{pedido.codigo}}</th>
             <td>{{pedido.usuario?.nome}}</td>
-            <td class="text-truncate" style="max-width: 150px"><span *ngFor="let l of pedido.listaProdutos | slice: 0:8">{{l.nome}}, </span></td>
+            <td class="text-truncate" style="max-width: 150px"><span *ngFor="let l of pedido.produtos | slice: 0:8">{{l.nome}}, </span></td>
             <td>{{pedido.dataDevolucao | date: 'dd/MM/yyyy'}}</td>
             <td>{{pedido.dataEntrega | date: 'dd/MM/yyyy'}}</td>
             <td><button class="btn-primary" style="border-radius: 5px;">Cancelar</button></td>
