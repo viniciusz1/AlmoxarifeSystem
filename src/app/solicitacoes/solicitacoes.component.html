@@ -20,7 +20,7 @@
                 <table class="table table-hover table-responsive">
                     <thead class="">
                         <tr>
-                            <th scope="col">#</th>
+                            <!-- <th scope="col">#</th> -->
                             <th scope="col">Nome</th>
                             <th scope="col">Email</th>
                             <th scope="col">Aceitar</th>
@@ -29,9 +29,9 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let usuario of lista; let i = index" style="height: 8vh;">
-                            <th>
+                            <!-- <th>
                                1
-                            </th>
+                            </th> -->
                             <th scope="row">{{usuario.nome}}</th>
                             <td>{{usuario.email}}</td>
                             <td><button class="icon-2">
