@@ -42,13 +42,16 @@ export class PedidosService {
     this.pedidos.splice(index, 1)
   }
   getPedido(){
-    return this.http.get<Pedido[]>('http://localhost:8080/pedidoProduto')
+    return this.http.get<Pedido[]>('http://localhost:8080/pedido')
   }
   getPedidobyCode(codigo: number){
     return this.pedidos.filter(e => e.codigo == codigo)
   }
   getPedidobyIndex(index: number){
     return this.pedidos[index]
+  }
+  getPedidobyCodigo(codigo:number){
+    return this.http.get<Pedido>('http://localhost:8080/pedido/'+codigo)
   }
   getEntregasbyCodigo(codigo: number){
     return this.http.get<Pedido[]>('http://localhost:8080/pedido/'+codigo)

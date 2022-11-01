@@ -7,11 +7,11 @@ import { Pedido } from 'src/app/shared/pedido.model';
   styleUrls: ['./pedidos-table-professor.component.css']
 })
 export class PedidosTableProfessorComponent implements OnInit {
-  @Output() modal = new EventEmitter<boolean>();
+  @Output() modal = new EventEmitter<number>();
   @Input() lista: Pedido[] = []
   constructor() { }
-  changeModal(){
-    this.modal.emit()
+  changeModal(codigo: number | undefined){
+    this.modal.emit(codigo)
   }
   ngOnInit(): void {
   }

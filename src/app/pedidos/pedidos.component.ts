@@ -17,7 +17,7 @@ export class PedidosComponent implements OnInit {
   produtosDaLista: Produto[] = []
   produtosString = ""
 
-  changeModal(){
+  changeModal(codigo: number){
     this.exibicaoModal = !this.exibicaoModal
   }
 

@@ -28,7 +28,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let produto of pedido.listaProdutos; let i = index">
+                        <tr *ngFor="let produto of pedido.produtos; let i = index">
                             <th scope="row">{{produto.codigo}}</th>
                             <td>{{produto.nome}}</td>
                             <td>{{produto.quantidadeReservada}}</td>
