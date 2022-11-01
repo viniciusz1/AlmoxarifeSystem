@@ -9,7 +9,7 @@
     </div>
     <ul class="sidenav-nav">
         <li class="sidenav-nav-item" *ngFor="let data of navData">
-            <a class="sidenav-nav-link mt-2" *ngIf="verificaUsuario(data)" [routerLink]="[data.routeLink]" routerLinkActive="active"
+            <a class="sidenav-nav-link mt-1" *ngIf="verificaUsuario(data)" [routerLink]="[data.routeLink]" routerLinkActive="active"
                 [routerLinkActiveOptions]="{exact: true}">
                 <i class="sidenav-link-icon" [class]="data.icon" routerLinkActive="active-icon" [routerLinkActiveOptions]="{exact: true}"></i>
                 <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed"  routerLinkActive="active-icon" [routerLinkActiveOptions]="{exact: true}">

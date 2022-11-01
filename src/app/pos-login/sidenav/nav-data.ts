@@ -13,7 +13,7 @@ export const navbarData = [
     },
     {
         routeLink: '/home/entregas',
-        icon: 'bi bi-journal-text',
+        icon: 'bi bi-envelope-paper',
         label: 'Pedidos',
         notAllowed: ['Professor']
     },
@@ -52,5 +52,11 @@ export const navbarData = [
         icon: 'bi bi-list-task',
         label: 'Dashboard',
         notAllowed: ['Professor']
+    },
+    {
+        routeLink: '/',
+        icon: 'bi bi-box-arrow-left',
+        label: 'Sair',
+        notAllowed: ['']
     },
 ];
