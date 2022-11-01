@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('USUARIO', this.usuario);
           localStorage.setItem('EMAIL', this.usuarios.email as string);
           localStorage.setItem('SENHA', this.senha);
+          localStorage.setItem('cadeira', this.usuarios.nivelAcesso as string);
           localStorage.removeItem('lista');
           this.router.navigate(['/home'])
         },
