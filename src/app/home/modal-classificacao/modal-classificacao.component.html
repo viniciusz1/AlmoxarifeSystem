@@ -1,0 +1,44 @@
+
+    <h4>Classificações</h4>
+    <div class="d-flex">
+        <table matSort class="table table-hover table-responsive" style="overflow-y: auto;">
+            <thead class="">
+                <tr>
+                    <th scope="col" mat-sort-header="codigo">#</th>
+                    <th scope="col" mat-sort-header="nome">Nome</th>
+                    <th scope="col" mat-sort-header="quantidade">Remover</th>
+                    <th scope="col" mat-sort-header="quantidade">Editar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="cursor:pointer">
+                    <th>1</th>
+                    <td>Material Elétrico</td>
+                    <td><i class="bi bi-trash"></i></td>
+                    <td><i class="bi bi-pen"></i></td>
+                </tr>
+                <tr style="cursor:pointer">
+                    <th>1</th>
+                    <td>Armário Esquerdo</td>
+                    <td><i class="bi bi-trash"></i></td>
+                    <td><i class="bi bi-pen"></i></td>
+                </tr>
+                <tr style="cursor:pointer">
+                    <th>1</th>
+                    <td>Armário Esquerdo</td>
+                    <td><i class="bi bi-trash"></i></td>
+                    <td><i class="bi bi-pen"></i></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="ms-4">
+            <h6 *ngIf="modo == 'adicionar'">Adicionar</h6>
+            <h6 *ngIf="modo == 'editar'">Editar</h6>
+            <mat-form-field class="example-full-width" appearance="fill" style="width: 80%;">
+                <mat-label>Localizações</mat-label>
+                <input type="text" [(ngModel)]="nomeLocalizacao" matInput placeholder="Ex. Material Elétrico" value="Sushi">
+            </mat-form-field>
+            <button *ngIf="modo == 'editar'" class="btn btn-primary">Editar</button>
+            <button *ngIf="modo == 'adicionar'" class="btn btn-primary">Adicionar</button>
+        </div>
+    </div>

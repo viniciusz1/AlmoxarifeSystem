@@ -1,105 +1,104 @@
 <div class="container">
-    <div class="d-flex" style="justify-content: space-between;">
-        <div class="pg" style="min-width: 240px;font-size: calc(1.3rem + .6vw);">
-            <b (click)="teste()">
-                <span>{{botao | uppercase}}</span>
-            </b>
-            <hr style="margin: 0; width: 200px; opacity: 1;">
-        </div>
-        <div *ngIf="user == 'supervisor'" style="width: 63%;
+  <div class="d-flex" style="justify-content: space-between;">
+    <div class="pg" style="min-width: 240px;font-size: calc(1.3rem + .6vw);">
+      <b (click)="teste()">
+        <span>{{botao | uppercase}}</span>
+      </b>
+      <hr style="margin: 0; width: 200px; opacity: 1;">
+    </div>
+    <div *ngIf="user == 'supervisor'" style="width: 63%;
         justify-content: flex-end;
         display: flex;
         align-items: end;">
-            <button *ngIf="(modo != 'cadastrar' && user == 'supervisor')" (click)="darEntrada()"
-                class="btn btn-primary">
-                Dar Entrada +
-            </button>
-        </div>
-
+      <button *ngIf="(modo != 'cadastrar' && user == 'supervisor')" (click)="darEntrada()" class="btn btn-primary">
+        Dar Entrada +
+      </button>
     </div>
-    <div class="quadrado container ">
+
+  </div>
+  <div class="quadrado container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="div-imagem">
+
+          <label class="input-file" for="inputTag">
+            <img *ngIf="imagem" class="imagem" [src]="imagem" alt="">
+            <i *ngIf="!imagem" class="bi bi-plus-lg" style="font-size: 40px; color:#000"></i>
+            <input [disabled]="disabled" id="inputTag" (change)="upload($event)" type="file" />
+          </label>
+        </div>
         <div class="row">
-            <div class="col-lg-6">
-                <div class="div-imagem">
-
-                    <label class="input-file" for="inputTag">
-                        <img *ngIf="imagem" class="imagem" [src]="imagem" alt="">
-                        <i *ngIf="!imagem" class="bi bi-plus-lg" style="font-size: 40px; color:#000"></i>
-                        <input [disabled]="disabled" id="inputTag" (change)="upload($event)" type="file" />
-                    </label>
-                </div>
-                <div class="row">
-                    <div class="mt-2 padding-input">
-                        <mat-form-field appearance="fill">
-                            <mat-label>Opção de uso</mat-label>
-                            <mat-select  [disabled]="disabled" [(ngModel)]="opcaoUso" id="uso">
-                              <mat-option value="0">
-                                Descartável
-                              </mat-option>
-                              <mat-option value="1">
-                                Reutilizável
-                              </mat-option>
-                            </mat-select>
-                          </mat-form-field>                          
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="row input-group padding-input">
-
-                    <mat-form-field class="example-full-width" appearance="fill">
-                        <mat-label>Nome do produto:</mat-label>
-                        <input [disabled]="disabled" type="text" [(ngModel)]="nome"
-                        matInput placeholder="Ex. Pizza" value="Sushi">
-                      </mat-form-field>
-                      <mat-form-field class="example-full-width" appearance="fill">
-                        <mat-label>Quantide em estoque</mat-label>
-                        <input [disabled]="disabledQuantidade" type="text" [(ngModel)]="quantidade" matInput placeholder="Ex. Pizza" value="Sushi">
-                      </mat-form-field>
-
-                      <mat-form-field class="example-full-width" appearance="fill">
-                        <mat-label>Classificação</mat-label>
-                        <input [disabled]="disabled" type="text" [(ngModel)]="classificacao" matInput placeholder="Ex. Pizza" value="Sushi">
-                      </mat-form-field>
-
-                    <mat-form-field class="example-chip-list" appearance="fill">
-                       <mat-label>Localização</mat-label>
-                        <mat-chip-list  [disabled]="disabled" #chipList aria-label="Seleção de localidade">
-                          <mat-chip [disabled]="disabled"
-                            *ngFor="let local of localidades"
-                            (removed)="remove(local)">
-                            {{local.nome}}
-                            <button matChipRemove>
-                              <mat-icon>cancel</mat-icon>
-                            </button>
-                          </mat-chip >
-                          <input
-                            [disabled]="disabled"
-                            placeholder="Add localidade..."
-                            #fruitInput
-                            [formControl]="localidadeCtrl"
-                            [matAutocomplete]="auto"
-                            [matChipInputFor]="chipList"
-                            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-                            (matChipInputTokenEnd)="add($event)">
-                        </mat-chip-list>
-                        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
-                          <mat-option *ngFor="let local of allLocalidades" [value]="local">
-                            {{local.nome}}
-                          </mat-option>
-                        </mat-autocomplete>
-                      </mat-form-field>
-                </div>
-            </div>
+          <div class="mt-2 padding-input">
+            <mat-form-field appearance="fill">
+              <mat-label>Opção de uso</mat-label>
+              <mat-select [disabled]="disabled" [(ngModel)]="opcaoUso" id="uso">
+                <mat-option value="0">
+                  Descartável
+                </mat-option>
+                <mat-option value="1">
+                  Reutilizável
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
         </div>
-        <div class="row mx-3">
-            <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Leave a comment</mat-label>
-                <textarea  [disabled]="disabled" [(ngModel)]="descricao" matInput placeholder="Ex. It makes me feel..."></textarea>
-              </mat-form-field>
+      </div>
+      <div class="col-lg-6">
+        <div class="row input-group padding-input">
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Nome do produto:</mat-label>
+            <input [disabled]="disabled" type="text" [(ngModel)]="nome" matInput placeholder="Ex. Pizza" value="Sushi">
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Quantide em estoque</mat-label>
+            <input [disabled]="disabledQuantidade" type="text" [(ngModel)]="quantidade" matInput placeholder="Ex. Pizza"
+              value="Sushi">
+          </mat-form-field>
+          <div class="d-flex align-items-center justify-content-between ">
+            <mat-form-field class="example-full-width" appearance="fill" style="width: 80%;">
+              <mat-label>Classificação</mat-label>
+              <input [disabled]="disabled" type="text" [(ngModel)]="classificacao" matInput
+                placeholder="Ex. Material Elétrico" value="Sushi">
+            </mat-form-field>
+            <button class="btn btn-primary" (click)="abrirModalClassificacao()">+</button>
+          </div>
+
+          <div class="d-flex align-items-center justify-content-between">
+            <mat-form-field class="example-chip-list" appearance="fill" style="width: 80%;">
+              <mat-label>Localização</mat-label>
+              <mat-chip-list [disabled]="disabled" #chipList aria-label="Seleção de localidade">
+                <mat-chip [disabled]="disabled" *ngFor="let local of localidades" (removed)="remove(local)">
+                  {{local.nome}}
+                  <button matChipRemove>
+                    <mat-icon>cancel</mat-icon>
+                  </button>
+                </mat-chip>
+                <input [disabled]="disabled" placeholder="Add localidade..." #fruitInput [formControl]="localidadeCtrl"
+                  [matAutocomplete]="auto" [matChipInputFor]="chipList"
+                  [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (matChipInputTokenEnd)="add($event)">
+              </mat-chip-list>
+              <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+                <mat-option *ngFor="let local of allLocalidades" [value]="local">
+                  {{local.nome}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+            <button class="btn btn-primary" (click)="abrirModalLocalizacao()">+</button>
+
+          </div>
         </div>
-        <div *ngIf="botao != 'Detalhes-produto'" class="margem-botao" style="display: flex; justify-content: end;">
-            <button (click)="onSubmit()" class="btn btn-primary">{{botao}}</button>
-        </div>
+      </div>
     </div>
+    <div class="row mx-3">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Leave a comment</mat-label>
+        <textarea [disabled]="disabled" [(ngModel)]="descricao" matInput
+          placeholder="Ex. It makes me feel..."></textarea>
+      </mat-form-field>
+    </div>
+    <div *ngIf="botao != 'Detalhes-produto'" class="margem-botao" style="display: flex; justify-content: end;">
+      <button (click)="onSubmit()" class="btn btn-primary">{{botao}}</button>
+    </div>
+  </div>
 </div>

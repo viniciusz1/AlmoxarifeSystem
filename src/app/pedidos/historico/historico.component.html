@@ -31,14 +31,19 @@
                 </div>
             </div>
         </div>
-        <button [ngClass]="{'reverse': !exibicao}" (click)="mudarParaEntradas()" class="buttons"
-            style="position: relative;">Entradas</button>
-        <button [ngClass]="{'reverse': exibicao}" (click)="mudarParaPedidos()" class="buttons"
+
+        <button [ngClass]="{'reverse':  exibicao == 'pedidos'}" (click)="mudarParaPedidos()" class="buttons"
             style="position: relative;">Pedidos</button>
+        <button [ngClass]="{'reverse': exibicao == 'entradas'}" (click)="mudarParaEntradas()" class="buttons"
+            style="position: relative;">Entradas</button>
+        <button [ngClass]="{'reverse':  exibicao == 'saidas'}" (click)="mudarParaSaidas()" class="buttons"
+            style="position: relative;">Saídas</button>
+
+
         <div style="position: absolute;" class="container bu">
-            <app-entrada-historico *ngIf="!exibicao"></app-entrada-historico>
+            <app-entrada-historico [entradaOuSaida]="exibicao" *ngIf="exibicao == 'entradas' ||  exibicao == 'saidas'"></app-entrada-historico>
             <div *ngIf="exibicao">
-                <app-pedidos-table [botao]="'Ver'" [pedidos]="listaPedidos">
+                <app-pedidos-table *ngIf="exibicao == 'pedidos'" [botao]="'Ver'" [pedidos]="listaPedidos">
                 </app-pedidos-table>
             </div>
             <mat-paginator [length]="lengthProdutos" [pageIndex]="0"
