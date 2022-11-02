@@ -37,7 +37,7 @@ export class PerfilComponent implements OnInit {
       )
     .subscribe({
       next: (e) => {
-        alert("Usuários alterado")
+        // alert("Usuários alterado")
         console.log(e)
       },
       error: (err) => {
@@ -61,7 +61,7 @@ export class PerfilComponent implements OnInit {
       this.sendValuesToModel(e)
     },
     error: (err) => {
-      alert(err.error.message)
+      // alert(err.error.message)
     }
   })
   }

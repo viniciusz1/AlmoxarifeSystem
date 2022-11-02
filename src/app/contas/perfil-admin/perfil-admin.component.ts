@@ -9,7 +9,11 @@ export class PerfilAdminComponent implements OnInit {
 
   @Output() estadoPerfil = new EventEmitter<boolean>();
   constructor() { }
-
+  nivelacesso = ""
+  usuario = ""
+  email = ""
+  telefone =""
+  data = new Date()
   ngOnInit(): void {
   }
 

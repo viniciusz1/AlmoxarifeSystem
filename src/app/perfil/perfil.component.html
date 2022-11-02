@@ -36,13 +36,22 @@
         </div>
       </div>
       <div class="direita">
-        <div class="inputsPerfil">
-          <span>Usuario:</span>
-          <input [(ngModel)]="usuario" [disabled]="disabled" class="control" type="text" placeholder="FulanoDeTal">
-          <span>Email:</span>
-          <input [(ngModel)]="email" [disabled]="disabled" class="control" type="email" placeholder="fulano@gmail.com">
-          <span>Telefone:</span>
-          <input [(ngModel)]="telefone" [disabled]="disabled" class="control" type="tel" placeholder="(**) *****-****">
+        <div class="inputsPerfil d-flex flex-column" style="width: 300px">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Usuario</mat-label>
+            <input [(ngModel)]="usuario" [disabled]="disabled" matInput placeholder="Ex. Pizza"
+            value="Sushi">
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input [(ngModel)]="email" [disabled]="disabled" matInput placeholder="Ex. Pizza"
+            value="Sushi">
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Telefone</mat-label>
+            <input [(ngModel)]="telefone" [disabled]="disabled"  type="tel" placeholder="(**) *****-****" matInput 
+            value="Sushi">
+          </mat-form-field>
           <div style="    margin-top: 39px;">
             <button (click)="mandarAlteracaoUsuarioDB()" *ngIf="!disabled" class="btn btn-primary">Confirmar</button>
           </div>

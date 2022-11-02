@@ -1,3 +1,7 @@
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatSelectModule } from '@angular/material/select';
+import { MatOptionModule } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
 
 import { PerfilAdminComponent } from './contas/perfil-admin/perfil-admin.component';
 import { RotasModule } from './rotas.module';
@@ -44,7 +48,11 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HomeModule,
     PedidosModule,
-    HttpClientModule
+    HttpClientModule,
+    MatInputModule,
+    MatOptionModule,
+    MatSelectModule,
+    MatDatepickerModule
   ],
   providers: [CarrinhoService, ProdutosService, CheckLogged, HistoricoService],
   bootstrap: [AppComponent]
