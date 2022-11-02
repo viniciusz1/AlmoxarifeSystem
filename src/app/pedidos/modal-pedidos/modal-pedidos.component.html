@@ -1,37 +1,39 @@
-<body style="height: 100vh; width: 100vw;">
-
-    <div style="height: 100vh;" class="centralizar">
-        <div class="centro">
-            <div class="topo centralizar">
-                <h5 style="margin-top: 5px;">Código do Pedido: ##</h5>
-                <h2 style="margin-left: 250px;" (click)="closeModal()">x</h2>
+<div class="centralizar">
+    <div class="centro">
+        <div class="topo centralizar" style="display: flex; justify-content: space-between;">
+            <h5 style="margin-top: 5px; margin-left: 8px;">{{pedido.usuario?.nome}}</h5>
+            <h2 style="margin-right: 1.5vw; cursor: pointer;" (click)="closeModal()">x</h2>
+        </div>
+        <div style="margin-top: 10px; display: flex; justify-content: space-between;">
+            <div class="centralizar">
+                <i class="bi bi-calendar-plus" style="font-size: 30px; margin-left: 1vw;"></i>
+                <span style="margin-left: 1vw; font-size: 12px;">{{pedido.dataEntrega}}</span>
             </div>
-            <div class="centralizar" style="margin-top: 10px;">
-                <div class="centralizar">
-                    <i class="bi bi-calendar-plus" style="font-size: 40px;"></i>
-                    <span style="margin-left: 15px;">DD/MM/AAAA</span>
-                </div>
-                <div class="centralizar" style="margin-left: 30px;">
-                    <i class="bi bi-calendar-check" style="font-size: 40px;"></i>
-                    <span style="margin-left: 15px;">DD/MM/AAAA</span>
-                </div>
-            </div>
-            <div style="margin-top: 10px; overflow: scroll; overflow-x: hidden; height: 350px;">
-                <div class="centralizar" style="margin-top: 30px; position: relative; " *ngFor="let item of listaProdutos">
-                    <div class="tabelinha">
-                        <div class="centralizar" style="column-gap: 30px; margin-top: 10px;">
-                            <h5>Produto</h5>
-                            <h5>Estoque</h5>
-                            <h5>Quantidade</h5>
-                        </div>
-                        <div class="centralizar" style="margin-top: 15px;">
-                            <h6 style="position: absolute; margin-right: 240px;">{{item.Produto}}</h6>
-                            <h6 style="position: absolute; margin-right: 30px;">{{item.Estoque}}</h6>
-                            <h6 style="position: absolute; margin-left: 200px;">{{item.Quantidade}}</h6>
-                        </div>
-                    </div>
-                </div>
+            <div class="centralizar" style="margin-left: 30px;">
+                <i class="bi bi-calendar-check" style="font-size: 30px; "></i>
+                <span style="margin-left: 1vw; font-size: 12px; margin-right: 1vw;">{{pedido.dataDevolucao}}</span>
             </div>
         </div>
+
+        <div style="margin-top: 10px; overflow: scroll; overflow-x: hidden; height: 44.3vh;">
+            <table class="table table-hover table-responsive" style=" border-top: 2px solid black;">
+                <thead class="">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Produto</th>
+                        <th scope="col">Quantidade</th>
+                        <th scope="col">Estoque</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let produto of pedido.produtos; let i = index">
+                        <th scope="row">{{produto.codigo}}</th>
+                        <td>{{produto.nome}}</td>
+                        <td>{{produto.quantidadeReservada}}</td>
+                        <td>{{produto.quantidadeTotal}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-</body>
+</div>

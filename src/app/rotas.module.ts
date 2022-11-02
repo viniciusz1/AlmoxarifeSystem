@@ -163,7 +163,13 @@ import { DashboardComponent } from './pedidos/dashboard/dashboard.component';
           component: HomeComponent,
           canActivate: [],
         },
+        
       ]},
+      {
+        path: 'modal-pedidos',
+        component: ModalPedidosComponent,
+        canActivate: [],
+      },
       {
         path: '',
         component: LoginComponent,

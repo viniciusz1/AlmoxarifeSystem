@@ -1,3 +1,4 @@
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
@@ -52,7 +53,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatInputModule,
     MatOptionModule,
     MatSelectModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatPaginatorModule
   ],
   providers: [CarrinhoService, ProdutosService, CheckLogged, HistoricoService],
   bootstrap: [AppComponent]

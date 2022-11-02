@@ -40,8 +40,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
       })
   }
 
-  
-
   modal = false;
   modalReserva = false;
   state = "fechado";
@@ -76,7 +74,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
       (e) => this.numeroCarrinho = e
     )
   }
-
 
   private _normalizeValue(value: string): string {
     return value.toLowerCase().replace(/\s/g, '');

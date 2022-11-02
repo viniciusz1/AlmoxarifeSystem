@@ -1,12 +1,8 @@
-body {
-    background-color: #cacaca;
-    box-shadow: inset 4px 4px 250px 10px #000;
-}
 
 .centro {
-    height: 500px;
-    width: 500px;
+    width: 34.7vw;
     background-color: white;
+    border-radius: 5px;
 }
 
 .centralizar {
@@ -17,19 +13,19 @@ body {
 
 .icons {
     font-size: 30px;
-    color: #0047B5;
 }
 
 .topo {
-    background-color: #0047B5;
-    width: 500px;
-    height: 50px;
+    background-color: #275577;
+    width: 34.7vw;
+    height: 6.3vh;
     color: white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
-.tabelinha {
-    border: 1px solid black;
-    height: 80px;
-    width: 400px;
-    box-shadow: 4px 4px 10px 4px rgba(0, 0, 0, 0.171);
+.linha-tabela{
+    box-shadow: 4px 5px 7px -5px;
+    background-color: #f2f2f2;
+    margin-bottom: 5px;
 }
