@@ -1,26 +1,29 @@
-.pg{
+.pg {
     font-size: calc(1.3rem + .6vw);
     margin-top: 50px;
     margin-bottom: 50px;
 }
-.meu-absolute{
-    position:fixed;
+
+.meu-absolute {
+    position: fixed;
     top: 0;
     left: 50%;
 }
 
-button{
+button {
     width: 10vw;
     background: #275577;
     color: white;
     align-items: baseline;
     box-shadow: 1px 0px 5px 1px #1f394f4d;
 }
-.reverse{
+
+.reverse {
     background-color: #f1f1f1 !IMPORTANT;
     color: #1f394f;
 }
-.buttons{
+
+.buttons {
     margin-left: 20px;
     top: 1vh;
     padding: 5px;
@@ -31,48 +34,53 @@ button{
 }
 
 
-.duas-div{
+.duas-div {
     display: grid;
 }
 
-.filtrar{
+.filtrar {
     background-color: #275577;
     padding: 5px 10px;
-    color:white;
+    color: white;
     border-radius: 0px 3px 3px 0px;
 }
-.input-pedido{
+
+.input-pedido {
     max-width: 180px;
 }
-.lupa{
+
+.lupa {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0 10px 0 10px;
 }
-.pesquisa{
+
+.pesquisa {
     border: 0.5px solid black;
     border-radius: 5px;
 
     z-index: 1;
 }
-.botoes{
+
+.botoes {
     background-color: #275577;
-        padding: 5px 10px;
-        color:white;
-        border-radius: 3px;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 3px;
 }
-.ordenar{
+
+.ordenar {
     outline: none;
     min-width: 11vw;
     color: white;
     background-color: #275577;
     border: transparent;
     padding-right: 20px;
-    outline:none
+    outline: none
 }
 
-.div-cima{
+.div-cima {
     background-color: #275577;
     color: white;
     font-weight: bold;
@@ -84,75 +92,80 @@ button{
 }
 
 
-p{
+p {
     margin: 0px;
 }
 
-.bold{
+.bold {
     font-weight: 700;
 }
 
 
-.baixo{
+.baixo {
     display: flex;
     justify-content: space-between;
     width: 100%;
 }
 
-.footer{
-    display: flex;    
+.footer {
+    display: flex;
     justify-content: space-between;
     padding: 10px;
     font-weight: 500;
 }
 
-.datas{
+.datas {
     display: flex;
     column-gap: 10px;
 }
 
-.dataRetirada, .dataDevolucao, .nome{
+.dataRetirada,
+.dataDevolucao,
+.nome {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.nome, .produtos{
+.nome,
+.produtos {
     margin-left: 10px;
 }
-.gap{
+
+.gap {
     column-gap: 10px;
 }
-.topo-2{
+
+.topo-2 {
     display: flex;
     justify-content: flex-end;
     column-gap: 10px;
 }
 
-.pesquisa{
+.pesquisa {
     border-bottom: 0.5px solid black;
 }
 
-input{
+input {
     border: transparent;
     outline: none;
 }
 
 ::-webkit-input-placeholder {
     color: black;
- }
+}
 
-.icone{
+.icone {
     color: white;
 }
 
-.select{
+.select {
     background-color: #275577;
     border: 1px solid black;
     border-radius: 3px;
 }
 
-.filtross{
+.filtross {
     border: none;
     background-color: transparent;
     color: white;
@@ -163,11 +176,20 @@ select {
     -moz-appearance: none;
     text-indent: 1px;
     text-overflow: '';
-  }
+}
 
-  .body{
+.body {
     display: grid;
     justify-content: center;
     /* align-items: center; */
     width: 150vw;
-  }
+}
+
+::ng-deep .mat-paginator-container {
+    background-color: #F8F9FA !important;
+}
+
+.mat-paginator {
+    padding: 0px !important;
+    margin-top: 10px;
+}

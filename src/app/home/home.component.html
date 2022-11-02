@@ -71,7 +71,7 @@
 
         </div>
         <mat-paginator [length]="lengthProudutos" [pageIndex]="0" [pageSizeOptions]="[18, 24, 30, 48, 90]"
-            (page)="pegarListaProdutos()" aria-label="Select page" #paginator>
+            (page)="pegarListaProdutos()" aria-label="Select page" #paginator >
         </mat-paginator>
     </div>
     <app-carrinho (fechaCarrinho)="closeCart($event)" (reserva)="mudarModalReserva($event)" [state]="carState"
