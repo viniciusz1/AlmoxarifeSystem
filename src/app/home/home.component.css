@@ -189,6 +189,7 @@ p {
 input {
     border: transparent;
     outline: none;
+    background-color: transparent;
 }
 
 ::-webkit-input-placeholder {
@@ -221,8 +222,7 @@ input {
 .pesquisa {
     border: 0.5px solid black;
     border-radius: 5px;
-
-    z-index: 1;
+    z-index: 0;
 }
 
 .botoes {
@@ -283,4 +283,13 @@ body {
     justify-content: center;
     /* align-items: center; */
     width: 150vw;
+}
+
+::ng-deep .mat-paginator-container{
+    background-color: #F8F9FA !important;
+}
+
+.mat-paginator{
+    padding: 0px !important;
+    margin-top: 10px;
 }
