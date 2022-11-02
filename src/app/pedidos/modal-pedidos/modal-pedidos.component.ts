@@ -1,15 +1,13 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { DialogRef, DIALOG_DATA } from '@angular/cdk/dialog';
+import { Component, EventEmitter, Inject, Input, OnInit, Output } from '@angular/core';
 import { PedidosService } from 'src/app/services/pedidos.service';
 import { Pedido } from 'src/app/shared/pedido.model';
-import { Produto } from 'src/app/shared/produto.model';
-import { Usuario } from 'src/app/shared/usuario.model';
-
-
 @Component({
   selector: 'app-modal-pedidos',
   templateUrl: './modal-pedidos.component.html',
   styleUrls: ['./modal-pedidos.component.css']
 })
+
 export class ModalPedidosComponent implements OnInit {
   @Output() fecharModal: EventEmitter<number> = new EventEmitter()
   // @Input() pedido: Pedido = new Pedido(new Usuario(), [new Produto ("Resistor Elétrico", 1, "Material Elétrico", [{nome: "bla", codigo: 1}], "Descartável", "Descrição", 1, "https://s4.static.brasilescola.uol.com.br/img/2017/01/resistor.jpg"),
@@ -18,16 +16,24 @@ export class ModalPedidosComponent implements OnInit {
   // ], new Date('2022-11-01 12:30:00'), new Date('2022-11-01 17:00:00'), 1, 1)
   // constructor() { }
   @Input() pedido:Pedido = new Pedido();
-  closeModal() {
-    this.fecharModal.emit()
+  
+  constructor(@Inject(DIALOG_DATA) public data: Pedido,
+  private dialogRef: DialogRef) { 
+    this.pedido = data
+    console.log(this.pedido)
   }
-  constructor(private pedidosService: PedidosService) { }
+
+  closeModal() {
+    this.dialogRef.close()
+  }
+
   ngOnInit(): void {
-    this.pedidosService.getPedidobyCodigo(9)
-    .subscribe({next: (e) => {
-      console.log(e);
-      this.pedido = e
-    }})
+    // console.log(this.pedido)
+    // this.pedidosService.getPedidobyCodigo(9)
+    // .subscribe({next: (e) => {
+    //   console.log(e);
+    //   this.pedido = e
+    // }})
   }
 
 
