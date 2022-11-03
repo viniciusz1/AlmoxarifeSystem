@@ -23,7 +23,7 @@
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 8px #333;
-    min-width: 320px;
+    min-width: 30vw;
     position: relative;
     left: 50%;
     padding: 24px;
@@ -124,7 +124,7 @@ i {
 .prof {
     position: absolute;
     top: -20px;
-    left: 30%;
+    left: 15%;
     background-color: #275577;
     color: white;
     font-size: 24px;
@@ -133,4 +133,9 @@ i {
     padding-left: 7vw;
     padding-right: 7vw;
     z-index: 9999;
+}
+
+.centro-quadrado{
+    flex: 0 0 auto;
+    display: grid;
 }
