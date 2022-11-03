@@ -11,6 +11,7 @@ export class HistoricoComponent implements OnInit {
 
   constructor() { }
 
+  modal = false;
   pesquisaPedido = ""
   listaEntradas: Pedido[] = [new Pedido()]
   listaPedidos: Pedido[] = []
@@ -37,6 +38,9 @@ export class HistoricoComponent implements OnInit {
   }
   mudaFiltro() {
     this.filtroState = !this.filtroState;
+  }
+  modalOpen(arg: boolean | Event) {
+    this.modal = !this.modal
   }
 
 }

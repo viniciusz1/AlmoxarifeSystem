@@ -43,8 +43,8 @@
     color:white;
     border-radius: 0px 3px 3px 0px;
 }
-.input-pedido{
-    max-width: 180px;
+.input-pedido {
+    max-width: 12.5vw;
 }
 .lupa{
     display: flex;
@@ -237,3 +237,11 @@ select {
 }
 
 
+::ng-deep .mat-paginator-container {
+    background-color: #F8F9FA !important;
+}
+
+.mat-paginator {
+    padding: 0px !important;
+    margin-top: 10px;
+}

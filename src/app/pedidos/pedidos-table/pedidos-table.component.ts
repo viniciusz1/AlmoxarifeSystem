@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Sort } from '@angular/material/sort';
 import { PedidosService } from 'src/app/services/pedidos.service';
 import { Pedido } from 'src/app/shared/pedido.model';
 
@@ -12,10 +13,14 @@ export class PedidosTableComponent implements OnInit {
   @Input() botao: string = ""
   constructor(private pedidosService: PedidosService) { }
   ngOnInit(): void {
-    this.pedidosService.getPedido()
-    .subscribe({next: (e) => {
-      this.pedidos = e
-    }})
+    if(!this.pedidos){
+      this.pedidosService.getPedido()
+      .subscribe({next: (e) => {
+        this.pedidos = e
+      }})
+    }
   }
+  sortData(sort: Sort){
 
+  }
 }

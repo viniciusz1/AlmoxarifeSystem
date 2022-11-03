@@ -70,9 +70,12 @@
             </div>
 
         </div>
-        <mat-paginator [length]="lengthProudutos" [pageIndex]="0" [pageSizeOptions]="[18, 24, 30, 48, 90]"
-            (page)="pegarListaProdutos()" aria-label="Select page" #paginator >
-        </mat-paginator>
+        <div class="container position-fixed" style="bottom: 10px">
+            <mat-paginator [length]="lengthProudutos" [pageIndex]="0" [pageSizeOptions]="[18, 24, 30, 48, 90]"
+                (page)="pegarListaProdutos()" aria-label="Select page" #paginator >
+            </mat-paginator>
+
+        </div>
     </div>
     <app-carrinho (fechaCarrinho)="closeCart($event)" (reserva)="mudarModalReserva($event)" [state]="carState"
         class="position-fixed bg-primary carrinho-side"></app-carrinho>

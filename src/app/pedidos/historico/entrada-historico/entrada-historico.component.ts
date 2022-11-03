@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Component, Input, OnInit } from '@angular/core';
 import { EntradasService } from 'src/app/services/entradas.service';
 import { Produto } from 'src/app/shared/produto.model';
+import { Sort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-entrada-historico',
@@ -17,7 +18,9 @@ export class EntradaHistoricoComponent implements OnInit {
     private entradaService: EntradasService) { }
   listaEntradas: Entrada[] = []
 
+  sortData(sort : Sort){
 
+  }
   ngOnInit(): void {
     if (this.entradaOuSaida == 'entradas') {
       this.entradaService.getEntrada()

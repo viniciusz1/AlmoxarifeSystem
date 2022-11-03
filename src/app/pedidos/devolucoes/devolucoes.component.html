@@ -17,27 +17,32 @@
                 </div>
                 <div class="topo-2 col-md-10 col-sm-12" style="margin-bottom:30px;">
                     <div class="d-flex justify-content-end gap" style="align-items: center;">
-                        <div class="pesquisa d-flex">
+                        <li class="nav-item pesquisa d-flex">
                             <div class="lupa">
                                 <i class="bi bi-search"></i>
                             </div>
-                            <input class="input-pedido" [(ngModel)]="pesquisaPedido" placeholder="Pesquisar Produto">
-                            <div style="cursor:pointer" class="filtrar">
-                                <i class="bi bi-sliders" (click)="mudaFiltro()"></i>
+                            <input class="input-pedido" [(ngModel)]="pesquisaPedido" (ngModelChange)="changed()"
+                                placeholder="Pesquisar Produto">
+                            <div style="cursor:pointer" class="filtrar" (click)="modalOpen(false)">
+                                <i class="bi bi-sliders"></i>
                             </div>
-                        </div>
+                        </li>
                     </div>
                 </div>
             </div>
+
         </div>
+        
         <div>
-            <button [ngClass]="{'reverse': modo == 'entregas'}" (click)="mudarParaEntregas()" class="buttons button" style="position: relative;">Entregas</button>
-            <button [ngClass]="{'reverse': modo == 'devolucoes'}" (click)="mudarParaDevolucoes()" class="buttons button" style="position: relative;">Devoluções</button>
+            <button [ngClass]="{'reverse': modo == 'entregas'}" (click)="mudarParaEntregas()" class="buttons button"
+                style="position: relative;">Entregas</button>
+            <button [ngClass]="{'reverse': modo == 'devolucoes'}" (click)="mudarParaDevolucoes()" class="buttons button"
+                style="position: relative;">Devoluções</button>
         </div>
         <div style="position: absolute;" class="container bu">
             <app-devolucoes-table [url]="url" [modo]="modo" [textoBotao]="textoBotao" [lista]="lista"></app-devolucoes-table>
         </div>
+        <mat-paginator [length]="3" [pageIndex]="0" [pageSizeOptions]="[18, 24, 30, 48, 90]"
+            (page)="pegarListaPedidos()" aria-label="Select page" #paginator>
+        </mat-paginator>
     </div>
-
-
-

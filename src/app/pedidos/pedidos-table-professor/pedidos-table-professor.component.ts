@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Sort } from '@angular/material/sort';
 import { Pedido } from 'src/app/shared/pedido.model';
 
 @Component({
@@ -14,6 +15,10 @@ export class PedidosTableProfessorComponent implements OnInit {
     this.modal.emit(pedido)
   }
   ngOnInit(): void {
+  }
+
+  sortData(sort: Sort) {
+    console.log(sort)
   }
 
 

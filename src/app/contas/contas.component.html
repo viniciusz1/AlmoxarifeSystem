@@ -17,26 +17,27 @@
                 </div>
                 <div class="topo-2 col-md-10 col-sm-12" style="margin-bottom:30px;">
                     <div class="d-flex justify-content-end gap" style="align-items: center;">
-                        <div class="pesquisa d-flex" style="margin-right: 10px;">
+                        <li class="nav-item pesquisa d-flex">
                             <div class="lupa">
                                 <i class="bi bi-search"></i>
                             </div>
-                            <input class="input-pedido" [(ngModel)]="pesquisaConta" placeholder="Pesquisar Produto">
-                            <div style="cursor:pointer" class="filtrar">
-                                <i class="bi bi-sliders"></i>
+                            <input class="input-pedido" [(ngModel)]="pesquisaConta" (ngModelChange)="changed()"
+                                placeholder="Pesquisar Produto">
+                            <div style="cursor:pointer" class="filtrar" (click)="modalOpen(false)">
+                                <i class="bi bi-sliders" ></i>
                             </div>
-                        </div>
+                        </li>
                     </div>
                 </div>
             </div>
             <div class="container bu">
-                <table class="table table-hover table-responsive">
+                <table matSort (matSortChange)="sortData($event)" class="table table-hover table-responsive">
                     <thead class="">
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Nome</th>
-                            <th scope="col">Email</th>
-                            <th scope="col" class="tamanho">Ação</th>
+                            <th scope="col" mat-sort-header="codigo">#</th>
+                            <th scope="col" mat-sort-header="nome">Nome</th>
+                            <th scope="col" mat-sort-header="email">Email</th>
+                            <th scope="col" mat-sort-header="Acao" class="tamanho">Ação</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -53,7 +54,9 @@
                     </tbody>
                 </table>
             </div>
-            
+            <mat-paginator [length]="3" [pageIndex]="0" [pageSizeOptions]="[18, 24, 30, 48, 90]"
+                (page)="pegarListaContas()" aria-label="Select page" #paginator>
+            </mat-paginator>
         </div>
         <app-perfil-admin (estadoPerfil)="mudarPerfilState()" class="perfil-admin" *ngIf="perfilState == true">
         </app-perfil-admin>
