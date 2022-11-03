@@ -151,6 +151,7 @@ export class DetalhesProdutoComponent implements OnInit {
         .subscribe(e => console.log(e))
       // this.router.navigate(['/home/produtos'])
     }
+    this.router.navigate(['/home'])
 
   }
 

@@ -18,7 +18,7 @@ export class ProdutosService {
   }
 
   getAllLocalizacoes() {
-    return this.http.get<Localidade[]>('http://localhost:8080/home/localicacao')
+    return this.http.get<Localidade[]>('http://localhost:8080/localizacao')
   }
 
   getListaProdutos(page: number, size: number, search: string, order: string) {
