@@ -6,7 +6,7 @@
     <div class="cargo">
         <i (click)="estadoPerfil.emit()" class="bi bi-x-circle" style="cursor:pointer; font-size: 20px;"></i>
     </div>
-    <div class="row">
+    <div class="row d-flex justify-content-center flex-column align-items-center">
         <div class="cool" style="padding-top: 15px;">
             <div class="centralizar">
                 <i class="bi bi-person-circle"></i>
@@ -22,26 +22,6 @@
                 <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>Email</mat-label>
                     <input type="text" [(ngModel)]="email" matInput placeholder="Ex. Material Elétrico" value="Sushi">
-                </mat-form-field>
-            </div>
-        </div>
-        <div class="cool" style="padding-top: 60px;">
-            <div class="prin">
-                <mat-form-field appearance="fill">
-                    <mat-label>Data de Nascimento</mat-label>
-                    <input matInput [(ngModel)]="data" [matDatepicker]=" picker">
-                    <mat-hint>MM/DD/YYYY</mat-hint>
-                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-datepicker #picker></mat-datepicker>
-                </mat-form-field>
-
-
-            </div>
-            <div class="prin">
-                <mat-form-field class="example-full-width" appearance="fill">
-                    <mat-label>Telefone</mat-label>
-                    <input type="text" [(ngModel)]="telefone" matInput placeholder="Ex. Material Elétrico"
-                        value="Sushi">
                 </mat-form-field>
             </div>
             <div class="prin">
@@ -66,12 +46,12 @@
         </div>
     </div>
     <div class="botoes d-flex" style="justify-content: center;">
-        <div class="divRemove">
-            <button class="remover">Remover Usuário</button>
+        <div class="">
+            <button class="btn btn-danger">Remover Usuário</button>
         </div>
-        <div class="divHistorico">
-            <i class="bi bi-clock-history" style="font-size: 20px;"></i>
-            <button class="historico">Ver Histórico</button>
+        <div class="">
+           
+            <button class="btn btn-primary d-flex align-items-center"> <i class="bi bi-clock-history me-2" style="font-size: 20px;"></i>Ver Histórico</button>
         </div>
     </div>
 </div>

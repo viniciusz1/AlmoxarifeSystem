@@ -52,7 +52,7 @@ export class UsuariosService {
     .set('size', size);
   if (search) params = params.set('search', search);
   if (order) params = params.set('sort', order)
-  return this.http.get<Usuario[]>('http://localhost:8080/usuario/filtro', { params })
+  return this.http.get<Usuario[]>('http://localhost:8080/usuario')
 }
 
 }
