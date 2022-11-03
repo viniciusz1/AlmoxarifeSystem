@@ -1,8 +1,8 @@
 i{
     border-radius: 50%;
     border: 2px solid black;
-    width: 200px;
-    height: 200px;
+    width: 16vw;
+    height: 16vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,7 +23,7 @@ i{
 .bu{
     display: flex;
     padding: 30px;
-    width: 100%;
+    width: 80%;
     position: relative;
     margin: 5vh 0vh 0vh 0vh;
     justify-content: space-around;

@@ -38,6 +38,7 @@ export class DevolucoesComponent implements OnInit {
     }else{      
     this.pedidos.getEntregas()
     .subscribe({next: e =>{
+      console.log(e)
       this.lista = e
     }})
       this.modo = 'entregas'
