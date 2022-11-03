@@ -31,13 +31,13 @@
                 </div>
             </div>
             <div class="container bu">
-                <table class="table table-hover table-responsive">
+                <table matSort (matSortChange)="sortData($event)" class="table table-hover table-responsive">
                     <thead class="">
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Nome</th>
-                            <th scope="col">Email</th>
-                            <th scope="col" class="tamanho">Ação</th>
+                            <th scope="col" mat-sort-header="codigo">#</th>
+                            <th scope="col" mat-sort-header="nome">Nome</th>
+                            <th scope="col" mat-sort-header="email">Email</th>
+                            <th scope="col" mat-sort-header="Acao" class="tamanho">Ação</th>
                         </tr>
                     </thead>
                     <tbody>

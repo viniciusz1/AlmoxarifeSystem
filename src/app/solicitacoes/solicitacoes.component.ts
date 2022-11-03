@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
+import { Sort } from '@angular/material/sort';
 import { UsuariosService } from '../services/usuarios.service';
 import { Usuario } from '../shared/usuario.model';
 
@@ -22,6 +23,10 @@ export class SolicitacoesComponent implements OnInit {
 
   ngOnInit(): void {
     
+  }
+
+  sortData(sort: Sort){
+
   }
 
   pegarListaProdutos() {

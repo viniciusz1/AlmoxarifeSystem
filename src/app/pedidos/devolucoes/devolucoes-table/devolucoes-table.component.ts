@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Sort } from '@angular/material/sort';
 import { Pedido } from 'src/app/shared/pedido.model';
 import { Produto } from 'src/app/shared/produto.model';
 
@@ -15,6 +16,9 @@ export class DevolucoesTableComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+  sortData(sort: Sort){
+    console.log("teste")
   }
 
 }

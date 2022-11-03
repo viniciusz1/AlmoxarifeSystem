@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Sort } from '@angular/material/sort';
 import { PedidosService } from 'src/app/services/pedidos.service';
 import { Pedido } from 'src/app/shared/pedido.model';
 
@@ -19,5 +20,7 @@ export class PedidosTableComponent implements OnInit {
       }})
     }
   }
+  sortData(sort: Sort){
 
+  }
 }

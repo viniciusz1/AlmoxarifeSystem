@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Sort } from '@angular/material/sort';
 import { Subject } from 'rxjs';
 
 @Component({
@@ -33,6 +34,10 @@ export class ContasComponent implements OnInit {
 
   modalOpen(arg: boolean | Event) {
     this.modal = !this.modal
+  }
+  sortData(sort: Sort){
+
+
   }
 
   pegarListaContas() {
