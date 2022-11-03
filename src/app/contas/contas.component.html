@@ -47,9 +47,11 @@
                             </th>
                             <th scope="row">{{usuario.nome}}</th>
                             <td>{{usuario.email}}</td>
-                            <td><button class="btn-primary rounded" (click)="mudarPerfilState()">
+                            <td><button class="btn-primary rounded" (click)="mudarPerfilState(i)">
                                 Mais Informações
                             </button></td>
+                            <app-perfil-admin [user]="lista[0]" (estadoPerfil)="mudarPerfilState(i)" class="perfil-admin" *ngIf="perfilState == true">
+                            </app-perfil-admin>
                         </tr>
                     </tbody>
                 </table>
@@ -58,6 +60,5 @@
                 (page)="pegarListaContas()" aria-label="Select page" #paginator>
             </mat-paginator>
         </div>
-        <app-perfil-admin (estadoPerfil)="mudarPerfilState()" class="perfil-admin" *ngIf="perfilState == true">
-        </app-perfil-admin>
+        
     </div>

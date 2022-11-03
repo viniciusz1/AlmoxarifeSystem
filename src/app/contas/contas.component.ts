@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
 import { Sort } from '@angular/material/sort';
 import { Subject } from 'rxjs';
+import { UsuariosService } from '../services/usuarios.service';
+import { Usuario } from '../shared/usuario.model';
 
 @Component({
   selector: 'app-contas',
@@ -12,43 +15,34 @@ export class ContasComponent implements OnInit {
   modal = false;
   modelChanged = new Subject<string>();
   pesquisaProduto = "";
+  @ViewChild('paginator') paginator: MatPaginator | undefined
 
-  mudarPerfilState() {
+  mudarPerfilState(index: number) {
     this.perfilState = !this.perfilState
   }
   pesquisaConta = ""
-  lista = [
-    {
-      nome: "Carlinhos Rech",
-      email: "carlinhos@edu.sesisenai.org.br"
-    },
-    {
-      nome: "Camilly Vitoria da Rocha Goltz",
-      email: "camilly_goltz@estudante.sesisenai.org.br"
-    }];
+  lista: Usuario[] = [];
 
-  constructor() { }
+  constructor(private usuarioService: UsuariosService) { }
 
   ngOnInit(): void {
+    this.pegarListaContas()
   }
 
   modalOpen(arg: boolean | Event) {
     this.modal = !this.modal
   }
-  sortData(sort: Sort){
+  sortData(sort: Sort) {
 
 
   }
 
   pegarListaContas() {
-    // this.lista.getListaUsuarios(
-    //   this.paginator?.pageIndex as number,
-    //   this.paginator?.pageSize as number,
-    //   this.pesquisaUser as string, "")
-    //   .subscribe(e => {
-    //     this.lista = e
-    //   })
-
+    this.usuarioService.getListaUsuarios(this.paginator?.pageIndex as number,
+      this.paginator?.pageSize as number,
+      this.pesquisaConta as string, "").subscribe(
+        e => this.lista = e
+      )
   }
 
   changed() {
