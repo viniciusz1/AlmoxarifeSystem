@@ -79,6 +79,14 @@ input{
     color: black;
  }
 
+ ::ng-deep .mat-paginator-container {
+    background-color: #F8F9FA !important;
+}
+
+.mat-paginator {
+    padding: 0px !important;
+    margin-top: 10px;
+}
 
 
 .pesquisa-total{
