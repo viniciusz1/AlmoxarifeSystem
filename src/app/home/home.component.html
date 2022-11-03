@@ -27,13 +27,13 @@
                                 <i class="bi bi-sliders" ></i>
                             </div>
                         </li>
-                        <li class="nav-item btn btn-primary botoes" style="cursor:pointer">
+                        <li class="nav-item btn btn-primary botoes" style="cursor:pointer" *ngIf="acesso">
                             <div class="icone">
                                 <button class="filtross" [routerLink]="['/home/cadastrar-produto']">Adicionar</button>
                                 <i class="bi bi-plus-lg"></i>
                             </div>
                         </li>
-                        <li class="nav-item botoes">
+                        <li class="nav-item botoes" *ngIf="acesso">
                             <div class="icone" style="cursor:pointer">
                                 <button class="filtross" routerLink="/home/entrada/0">Entrada</button>
                                 <i class="bi bi-chevron-double-up"></i>
@@ -71,7 +71,7 @@
 
         </div>
         <div class="container position-fixed" style="bottom: 10px">
-            <mat-paginator [length]="lengthProudutos" [pageIndex]="0" [pageSizeOptions]="[18, 24, 30, 48, 90]"
+            <mat-paginator [length]="lengthProudutos" [pageIndex]="0" [pageSizeOptions]="[12, 15, 18, 21, 24]"
                 (page)="pegarListaProdutos()" aria-label="Select page" #paginator >
             </mat-paginator>
 

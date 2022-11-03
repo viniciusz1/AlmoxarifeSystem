@@ -47,11 +47,11 @@
         <div class="row input-group padding-input">
           <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Nome do produto:</mat-label>
-            <input [disabled]="disabled" type="text" [(ngModel)]="nome" matInput placeholder="Ex. Pizza" value="Sushi">
+            <input [disabled]="disabled" type="text" [(ngModel)]="nome" matInput placeholder="Ex. Resistor" value="Sushi">
           </mat-form-field>
           <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Quantide em estoque</mat-label>
-            <input [disabled]="disabledQuantidade" type="text" [(ngModel)]="quantidade" matInput placeholder="Ex. Pizza"
+            <input [disabled]="disabledQuantidade" type="text" [(ngModel)]="quantidade" matInput placeholder="Ex. 15"
               value="Sushi">
           </mat-form-field>
           <div class="d-flex align-items-center justify-content-between ">
@@ -91,9 +91,9 @@
     </div>
     <div class="row mx-3">
       <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Leave a comment</mat-label>
+        <mat-label>Descrição</mat-label>
         <textarea [disabled]="disabled" [(ngModel)]="descricao" matInput
-          placeholder="Ex. It makes me feel..."></textarea>
+          placeholder="Ex. O produto vem do fornecedor ..."></textarea>
       </mat-form-field>
     </div>
     <div *ngIf="botao != 'Detalhes-produto'" class="margem-botao" style="display: flex; justify-content: end;">
