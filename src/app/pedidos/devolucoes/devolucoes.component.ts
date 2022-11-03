@@ -67,4 +67,15 @@ export class DevolucoesComponent implements OnInit {
   modalOpen(arg: boolean | Event) {
     this.modal = !this.modal
   }
+
+  pegarListaPedidos(){
+    // this.lista.getListaUsuarios(
+        //   this.paginator?.pageIndex as number,
+        //   this.paginator?.pageSize as number,
+        //   this.pesquisaUser as string, "")
+        //   .subscribe(e => {
+        //     this.lista = e
+        //   })
+    
+      }
 }

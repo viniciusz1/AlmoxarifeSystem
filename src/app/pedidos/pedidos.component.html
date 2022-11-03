@@ -19,6 +19,9 @@
                     <app-pedidos-table-professor (modal)="changeModal($event)" [lista]="lista"></app-pedidos-table-professor>                    
                 </div>
             </div>
+            <mat-paginator [length]="3" [pageIndex]="0" [pageSizeOptions]="[18, 24, 30, 48, 90]"
+                (page)="pegarListaPedidos()" aria-label="Select page" #paginator>
+            </mat-paginator>
         </div>
         <app-modal-pedidos [pedido]="pedidoModal" *ngIf="exibicaoModal" style="position:fixed; top:0; left:0"></app-modal-pedidos>
     </div>

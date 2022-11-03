@@ -40,6 +40,17 @@ export class PedidosComponent implements OnInit {
   removerPedido(index: number){
     this.pedidosService.removePedido(index)
   }
+  pegarListaPedidos(){
+// this.lista.getListaUsuarios(
+    //   this.paginator?.pageIndex as number,
+    //   this.paginator?.pageSize as number,
+    //   this.pesquisaUser as string, "")
+    //   .subscribe(e => {
+    //     this.lista = e
+    //   })
+
+  }
+
   ngOnInit(): void {
     this.pedidosService.getPedido()
       .subscribe({next: (e) => {
