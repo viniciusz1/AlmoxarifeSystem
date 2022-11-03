@@ -17,10 +17,10 @@ export class PedidosService {
     private http: HttpClient) { }
 
   realizarEntrega(pedido: Pedido){
-    return this.http.put(`http://127.0.0.1:5000/entregas/${pedido.codigo}`, null)
+    return this.http.put(`http://localhost:8080/pedido/trocarStatus/${pedido.codigo}`, null)
   }
   realizarDevolucao(pedido: Pedido){
-    return this.http.put(`http://127.0.0.1:5000/devolucoes/${pedido.codigo}`, null)
+    return this.http.put(`http://localhost:8080/pedido/trocarStatus/${pedido.codigo}`, null)
   }
   addEntrega(listaProdutos: {codigo: number | undefined;}[],
     qtdProdutos: (number | undefined)[], dataEntrega: Date, dataDevolucao: Date, usuario: string | null){    
@@ -54,7 +54,7 @@ export class PedidosService {
     return this.http.get<Pedido>('http://localhost:8080/pedido/'+codigo)
   }
   getEntregasbyCodigo(codigo: number){
-    return this.http.get<Pedido[]>('http://localhost:8080/pedido/'+codigo)
+    return this.http.get<Pedido>('http://localhost:8080/pedido/'+codigo)
   }
   getDevolucoesByDate(dataBuscada: Date){
     return this.http.get<Pedido[]>(`http://127.0.0.1:5000/dashboard-devolucao/${dataBuscada.getFullYear()+"-"+(dataBuscada.getMonth()+1)+"-"+ dataBuscada.getDate()}`)
@@ -70,6 +70,6 @@ export class PedidosService {
     return this.http.get<Pedido[]>('http://localhost:8080/pedido/status/1')
   }
   getDevolucoesbyCodigo(codigo: number){
-    return this.http.get<Pedido[]>('http://127.0.0.1:5000/devolucoes/'+codigo)
+    return this.http.get<Pedido>('http://127.0.0.1:5000/devolucoes/'+codigo)
   }
 }

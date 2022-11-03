@@ -14,10 +14,10 @@ export class PerfilComponent implements OnInit {
   modificaAlteraSenha(){
     this.alteraSenha = !this.alteraSenha
   }
-  usuario? = ""
-  email? = ""
-  nome? = ""
-  nivelAcesso? = ""
+  usuario? = localStorage.getItem("USUARIO");
+  email? = localStorage.getItem("EMAIL");
+  nome? = localStorage.getItem("Name");
+  nivelAcesso? = localStorage.getItem("cadeira");
   telefone? = ""
   senha? = ""
   disabled = true

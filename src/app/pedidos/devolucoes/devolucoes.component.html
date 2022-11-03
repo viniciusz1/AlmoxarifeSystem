@@ -35,7 +35,6 @@
             <button [ngClass]="{'reverse': modo == 'devolucoes'}" (click)="mudarParaDevolucoes()" class="buttons button" style="position: relative;">Devoluções</button>
         </div>
         <div style="position: absolute;" class="container bu">
-
             <app-devolucoes-table [url]="url" [modo]="modo" [textoBotao]="textoBotao" [lista]="lista"></app-devolucoes-table>
         </div>
     </div>
