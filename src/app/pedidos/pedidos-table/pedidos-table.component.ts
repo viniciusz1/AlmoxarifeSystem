@@ -12,10 +12,12 @@ export class PedidosTableComponent implements OnInit {
   @Input() botao: string = ""
   constructor(private pedidosService: PedidosService) { }
   ngOnInit(): void {
-    this.pedidosService.getPedido()
-    .subscribe({next: (e) => {
-      this.pedidos = e
-    }})
+    if(!this.pedidos){
+      this.pedidosService.getPedido()
+      .subscribe({next: (e) => {
+        this.pedidos = e
+      }})
+    }
   }
 
 }

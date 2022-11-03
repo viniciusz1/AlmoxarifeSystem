@@ -18,15 +18,16 @@
                 </div>
                 <div class="topo-2 col-md-10 col-sm-12" style="margin-bottom:30px;">
                     <div class="d-flex justify-content-end gap" style="align-items: center;">
-                        <div class="pesquisa d-flex">
+                        <li class="nav-item pesquisa d-flex">
                             <div class="lupa">
                                 <i class="bi bi-search"></i>
                             </div>
-                            <input class="input-pedido" [(ngModel)]="pesquisaPedido" placeholder="Pesquisar Produto">
-                            <div style="cursor:pointer" class="filtrar">
-                                <i class="bi bi-sliders" (click)="mudaFiltro()"></i>
+                            <input class="input-pedido" [(ngModel)]="pesquisaPedido" (ngModelChange)="changed()"
+                                placeholder="Pesquisar Pedido">
+                            <div style="cursor:pointer" class="filtrar" (click)="modalOpen(false)">
+                                <i class="bi bi-sliders" ></i>
                             </div>
-                        </div>
+                        </li>
                     </div>
                 </div>
             </div>

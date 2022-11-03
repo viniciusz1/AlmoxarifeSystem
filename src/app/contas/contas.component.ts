@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-contas',
@@ -7,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContasComponent implements OnInit {
   perfilState = false
+  modal = false;
+  modelChanged = new Subject<string>();
+  pesquisaProduto = "";
 
   mudarPerfilState(){
     this.perfilState = !this.perfilState
@@ -27,4 +31,11 @@ export class ContasComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  modalOpen(arg: boolean | Event) {
+    this.modal = !this.modal
+  }
+
+  changed() {
+    this.modelChanged.next(this.pesquisaProduto as string);
+  }
 }

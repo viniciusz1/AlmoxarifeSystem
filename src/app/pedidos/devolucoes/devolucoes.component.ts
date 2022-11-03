@@ -2,6 +2,7 @@ import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Pedido } from 'src/app/shared/pedido.model';
 import { PedidosService } from 'src/app/services/pedidos.service';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-devolucoes',
@@ -14,6 +15,8 @@ export class DevolucoesComponent implements OnInit {
   constructor(private router: Router,
     private pedidos: PedidosService) {
   }
+
+  modal = false;
   url = ""
   lista: Pedido[] = []
   modo = 'devolucoes'
@@ -21,6 +24,8 @@ export class DevolucoesComponent implements OnInit {
   titulo=""
   pesquisaPedido = ""
   page = 1
+  modelChanged = new Subject<string>();
+  pesquisaProduto = "";
   //1 - entrada, 2 - devulucao, 3 - histórico
   ngOnInit(): void { 
     this.url = this.router.url
@@ -56,6 +61,10 @@ export class DevolucoesComponent implements OnInit {
   mudaFiltro(){
     this.filtroState = !this.filtroState;
   }
-
-
+  changed() {
+    this.modelChanged.next(this.pesquisaProduto as string);
+  }
+  modalOpen(arg: boolean | Event) {
+    this.modal = !this.modal
+  }
 }

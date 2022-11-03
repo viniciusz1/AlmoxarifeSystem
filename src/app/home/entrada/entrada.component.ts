@@ -48,6 +48,7 @@ export class EntradaComponent implements OnInit {
       });
   }
 
+  modal = false;
   descricao = ""
   selectTipoTela = "Entrada"
   page = 0
@@ -110,5 +111,9 @@ export class EntradaComponent implements OnInit {
           )
       }
     })
+  }
+
+  modalOpen(arg: boolean | Event) {
+    this.modal = !this.modal
   }
 }
