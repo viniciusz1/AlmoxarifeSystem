@@ -28,6 +28,7 @@ import { PedidosModule } from './pedidos/pedidos.module';
 import { SidenavComponent } from './pos-login/sidenav/sidenav.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSortModule } from '@angular/material/sort';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { MatSortModule } from '@angular/material/sort';
     MatSelectModule,
     MatDatepickerModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSnackBarModule
   ],
   providers: [CarrinhoService, ProdutosService, CheckLogged, HistoricoService],
   bootstrap: [AppComponent]

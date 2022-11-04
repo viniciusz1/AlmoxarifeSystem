@@ -21,6 +21,7 @@ import { Produto } from 'src/app/shared/produto.model';
   ]
 })
 export class CarrinhoComponent implements OnInit {
+
   @Output() fechaCarrinho = new EventEmitter<boolean>();
   @Output() reserva = new EventEmitter<boolean>();
   @Input('state') state = "aberto";
@@ -28,7 +29,7 @@ export class CarrinhoComponent implements OnInit {
   stateTxt = "fechado";
   listaCarrinho: Produto[] = [];
   mensagemPrevia = "Adicione algum Item ao carrinho!"
-  carrinhoVazio = false
+  carrinhoVazio = true;
 
   clicouModal() {
     this.fechaCarrinho.emit(false)
@@ -50,12 +51,20 @@ export class CarrinhoComponent implements OnInit {
   lixo(i: number) {
     this.car.removeLista(i)
   }
+  verificaVazio(){
+    if(this.listaCarrinho.length == 0){
+      this.carrinhoVazio = true
+    }else{
+      this.carrinhoVazio = false
+    }
+  }
 
   listaQtd: number[] = []
   ngOnInit(): void {
     this.car.changeList.subscribe({
       next: (e: Produto[]) => {
         this.listaCarrinho = e
+        this.verificaVazio()
       }
     })
 

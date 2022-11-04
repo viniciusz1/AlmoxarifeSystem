@@ -20,7 +20,7 @@ export class ReservaComponent implements OnInit {
   listaCarrinho: Produto[] = [];
   dataRetirada: Date = new Date();
   dataDevolucao: Date = new Date();
-  user = "atendente"
+  user? = ""
   // user= "professor"
 
   filtroData = (d: Date | null): boolean => {
@@ -83,6 +83,7 @@ export class ReservaComponent implements OnInit {
         }
       }
     )
+    this.user = localStorage.getItem("cadeira") as string
   }
 
 }
