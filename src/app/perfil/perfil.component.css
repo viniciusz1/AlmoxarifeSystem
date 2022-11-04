@@ -63,6 +63,7 @@ i{
 
 .button{
     background-color: #275577;
+    font-size: 1rem !important;
     border: transparent;
     color: white; 
     margin: 10px;
