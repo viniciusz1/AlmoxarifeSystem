@@ -77,8 +77,8 @@
 
         </div>
     </div>
-    <app-carrinho (fechaCarrinho)="closeCart($event)" (reserva)="mudarModalReserva($event)" [state]="carState"
-        class="position-fixed bg-primary carrinho-side"></app-carrinho>
+    <app-carrinho (fechaCarrinho)="closeCart($event)" (reserva)="mudarModalReserva($event)" *ngIf="carState == 'aberto'"
+        class="position-fixed bg-primary cart carrinho-side"></app-carrinho>
     <app-modal-filtro (fechaModal)="modalOpen($event)" (filtragem)="executarFiltroEspecializado($event)" *ngIf="modal"
         style="z-index: 2;" class="fundo">
     </app-modal-filtro>

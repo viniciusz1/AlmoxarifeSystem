@@ -20,7 +20,6 @@
     <div class="row">
       <div class="col-lg-6">
         <div class="div-imagem">
-
           <label class="input-file" for="inputTag">
             <img *ngIf="imagem" class="imagem" [src]="imagem" alt="">
             <i *ngIf="!imagem" class="bi bi-plus-lg" style="font-size: 40px; color:#000"></i>
@@ -29,7 +28,7 @@
         </div>
         <div class="row">
           <div class="mt-2 padding-input">
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="fill" class="w-100">
               <mat-label>Opção de uso</mat-label>
               <mat-select [disabled]="disabled" [(ngModel)]="opcaoUso" id="uso">
                 <mat-option value="0">
@@ -60,7 +59,7 @@
               <input [disabled]="disabled" type="text" [(ngModel)]="classificacao" matInput
                 placeholder="Ex. Material Elétrico" value="Sushi">
             </mat-form-field>
-            <button class="btn btn-primary" (click)="abrirModalClassificacao()">+</button>
+            <button class="btn btn-primary mb-3" (click)="abrirModalClassificacao()">+</button>
           </div>
 
           <div class="d-flex align-items-center justify-content-between">
@@ -83,7 +82,7 @@
                 </mat-option>
               </mat-autocomplete>
             </mat-form-field>
-            <button class="btn btn-primary" (click)="abrirModalLocalizacao()">+</button>
+            <button class="btn btn-primary mb-3" (click)="abrirModalLocalizacao()">+</button>
 
           </div>
         </div>

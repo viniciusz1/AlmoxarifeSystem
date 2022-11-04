@@ -1,11 +1,11 @@
-<div *ngIf="state == 'aberto'" [@teste]="state" class="index border d-flex 
+<div class="index border d-flex 
 p-1 bg-light po" style="transition:2s; height: 91vh; width: 400px !important;">
 
 
     <div class="container">
         <div class="row justify-content-end">
             <div class="col-2">
-                <i (click)="clicouModal()" style="" class="bi bi-x-lg"></i>
+                <i role="button" (click)="clicouModal()" class="bi bi-x-lg"></i>
             </div>
         </div>
         <div class="row justify-content-center">
@@ -16,13 +16,13 @@ p-1 bg-light po" style="transition:2s; height: 91vh; width: 400px !important;">
         </div>
         <div *ngIf="carrinhoVazio == false" class="row DivWithScroll" id="style-2">
             <div *ngFor="let produto of listaCarrinho; let i = index" style="height: 150px;" class="d-flex justify-content-center align-items-center">
-                <i (click)="lixo(i)" class="bi bi-trash-fill col-1" ></i>
+                <i role="button" (click)="lixo(i)" class="bi bi-trash-fill col-1" ></i>
                 <app-produto [carrinho]="carrinho" [produto]="produto" class="col-9"></app-produto>
                 <div class="div col-2 adicionar" >
-                    <i class="bi bi-plus-lg"></i>
+                    <i  role="button" (click)="changeQuantidade('add', listaCarrinho[i])" class="bi bi-plus-lg"></i>
                     <input [(ngModel)]="listaCarrinho[i].qtdCart" type="text" 
                     class="form-control" style="padding: 5px 0 5px 7px;width: 40px;">
-                    <i class="bi bi-dash-lg"></i>
+                    <i  role="button" (click)="changeQuantidade('remove', listaCarrinho[i])" class="bi bi-dash-lg"></i>
                 </div>
             </div>
         </div>

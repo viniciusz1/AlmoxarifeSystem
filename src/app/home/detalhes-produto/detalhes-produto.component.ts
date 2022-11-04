@@ -13,6 +13,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { MatDialog } from '@angular/material/dialog';
+import {MatSnackBar} from '@angular/material/snack-bar';
+
 @Component({
   selector: 'app-detalhes-produto',
   templateUrl: './detalhes-produto.component.html',
@@ -32,12 +34,14 @@ export class DetalhesProdutoComponent implements OnInit {
   user = "supervisor"
 
 
-  constructor(private prod: ProdutosService,
+  constructor(
+    private prod: ProdutosService,
     private router: Router,
     private route: ActivatedRoute,
     private sanitizer: DomSanitizer,
-    private dialog: MatDialog) {
-
+    private dialog: MatDialog,
+    private _snackBar: MatSnackBar
+    ) {
       this.prod.getAllLocalizacoes()
       .subscribe({
         next: e => {
@@ -53,6 +57,9 @@ export class DetalhesProdutoComponent implements OnInit {
     );
   }
 
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action);
+  }
 
   listaLocalizacao: Localidade[] = []
   abrirModalLocalizacao(){
@@ -132,10 +139,10 @@ export class DetalhesProdutoComponent implements OnInit {
           error(err) {
             console.log(err)
           }
-
         }
         )
       )
+      this.openSnackBar("Produto Adicionado com sucesso!", "ok")
     } else if (this.modo == "editar") {
       this.prod.changeProduto(new Produto(this.nome as string,
         this.quantidade as number,
@@ -150,6 +157,7 @@ export class DetalhesProdutoComponent implements OnInit {
       ))
         .subscribe(e => console.log(e))
       // this.router.navigate(['/home/produtos'])
+    this.openSnackBar("Produto Editado com sucesso!", "ok")
     }
     this.router.navigate(['/home'])
 
