@@ -21,9 +21,10 @@ export class CarrinhoComponent implements OnInit {
   }
   changeQuantidade(type: string, produto: Produto){
     if(type == "add"){
-      produto.qtdCart!  += 1
+      produto.qtdCart = parseInt(produto.qtdCart!.toString())
+      produto.qtdCart!+= 1
     }else{
-      produto.qtdCart! -= 1
+      produto.qtdCart!-= 1
     }
   }
 
