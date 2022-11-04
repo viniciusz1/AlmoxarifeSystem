@@ -1,47 +1,32 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { state, style, trigger, transition, animate } from '@angular/animations';
 import { CarrinhoService } from 'src/app/services/carrinho.service';
 import { Produto } from 'src/app/shared/produto.model';
 @Component({
   selector: 'app-carrinho',
   templateUrl: './carrinho.component.html',
-  styleUrls: ['./carrinho.component.css'],
-  animations: [
-    trigger('teste', [
-      state('aberto', style({
-        'width': '400px',
-      })),
-      state('fechado', style({
-        'width': '60px'
-      })),
-      transition('aberto => fechado', [
-        animate('3s')
-      ]),
-    ]),
-  ]
+  styleUrls: ['./carrinho.component.css']
 })
 export class CarrinhoComponent implements OnInit {
 
   @Output() fechaCarrinho = new EventEmitter<boolean>();
   @Output() reserva = new EventEmitter<boolean>();
-  @Input('state') state = "aberto";
   carrinho = true;
-  stateTxt = "fechado";
   listaCarrinho: Produto[] = [];
   mensagemPrevia = "Adicione algum Item ao carrinho!"
   carrinhoVazio = true;
+  listaQtd: number[] = []
 
   clicouModal() {
     this.fechaCarrinho.emit(false)
   }
-
-  changeStatus() {
-    if (this.state == "fechado") {
-      this.state = "aberto"
-    } else {
-      this.state = "fechado"
+  changeQuantidade(type: string, produto: Produto){
+    if(type == "add"){
+      produto.qtdCart!  += 1
+    }else{
+      produto.qtdCart! -= 1
     }
   }
+
   abreReserva() {
     this.reserva.emit(false)
   }
@@ -59,7 +44,6 @@ export class CarrinhoComponent implements OnInit {
     }
   }
 
-  listaQtd: number[] = []
   ngOnInit(): void {
     this.car.changeList.subscribe({
       next: (e: Produto[]) => {
@@ -67,7 +51,10 @@ export class CarrinhoComponent implements OnInit {
         this.verificaVazio()
       }
     })
-
+    if(this.listaCarrinho.length == 0){
+      this.listaCarrinho = this.car.getLista()
+      this.verificaVazio()
+    }
   }
 
 }

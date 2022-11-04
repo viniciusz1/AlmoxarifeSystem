@@ -62,6 +62,7 @@ export class CarrinhoService {
     this.tamanhoCarrinho.emit(this.lista.length)
     return this.lista
   }
+  
   addProduto(produto: Produto) {
     if (produto.qtdCart as number <= 0) {
       throw new Error("Adicione uma quantidade ao produto")
