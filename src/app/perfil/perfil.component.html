@@ -2,7 +2,7 @@
   <div class="container">
 
     <nav aria-label="breadcrumb" style="position: absolute;
-      top: 81px;">
+      top: 10vh;">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/home">Home</a></li>
         <li class="breadcrumb-item active" aria-current="page">Perfil</li>
@@ -25,12 +25,14 @@
         <span>{{nivelAcesso}}</span>
       </div>
       <div class="esquerda">
-        <div class="imagem" style="margin-bottom: 3vw;">
-          <i style="font-size: 10vw;" class="bi bi-person"></i>
-        </div>
-        <div class="botao">
-          <button (click)="alteraPerfil()">Alterar Perfil</button>
-          <button (click)="modificaAlteraSenha()">Redefinir Senha</button>
+        <div class="perfil-alterar">
+          <div class="imagem" style="margin-bottom: 2vw;">
+            <i style="font-size: 7vw;" class="bi bi-person"></i>
+          </div>
+          <div class="botao">
+            <button (click)="alteraPerfil()" class="button">Alterar Perfil</button>
+            <button (click)="modificaAlteraSenha()" class="button">Redefinir Senha</button>
+          </div>
         </div>
       </div>
       <div class="direita">
@@ -52,7 +54,7 @@
           </mat-form-field>
           
           <div style="margin-top: 2vh;">
-            <button (click)="mandarAlteracaoUsuarioDB()" *ngIf="!disabled" class="btn btn-primary">Confirmar</button>
+            <button (click)="mandarAlteracaoUsuarioDB()" *ngIf="!disabled" class="btn-conf">Confirmar</button>
           </div>
         </div>
       </div>
