@@ -59,6 +59,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
   pesquisaProduto = "";
   lengthProudutos = 0
   acesso = true
+  tipoUsuario = ""
+
   ngOnInit(): void {
 
     this.router.params.subscribe(params => {
@@ -74,16 +76,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.car.tamanhoCarrinho.subscribe(
       (e) => this.numeroCarrinho = e
     )
-
-    if(localStorage.getItem("cadeira") == "Professor"){
+    if(localStorage.getItem("cadeira") == "Professor" || localStorage.getItem("cadeira") == "Atendente"){
+      console.log("hehei")
       this.acesso = false
     }
     
   }
 
-  private _normalizeValue(value: string): string {
-    return value.toLowerCase().replace(/\s/g, '');
-  }
 
   changed() {
     this.modelChanged.next(this.pesquisaProduto as string);

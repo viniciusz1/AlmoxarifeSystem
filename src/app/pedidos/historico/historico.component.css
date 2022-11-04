@@ -188,3 +188,7 @@ select {
     padding: 0px !important;
     margin-top: 10px;
 }
+
+.buttons:hover {
+    background-color: #224863;
+}

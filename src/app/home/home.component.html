@@ -1,7 +1,7 @@
 <div class="d-flex">
     <div class="container">
         <nav aria-label="breadcrumb" style="position: absolute;
-        top: 81px;">
+        top: 10vh;">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/home">Home</a></li>
             </ol>
@@ -27,7 +27,7 @@
                                 <i class="bi bi-sliders" ></i>
                             </div>
                         </li>
-                        <li class="nav-item btn btn-primary botoes" style="cursor:pointer" *ngIf="acesso">
+                        <li class="nav-item botoes" style="cursor:pointer" *ngIf="acesso">
                             <div class="icone">
                                 <button class="filtross" [routerLink]="['/home/cadastrar-produto']">Adicionar</button>
                                 <i class="bi bi-plus-lg"></i>
@@ -77,8 +77,8 @@
 
         </div>
     </div>
-    <app-carrinho (fechaCarrinho)="closeCart($event)" (reserva)="mudarModalReserva($event)" [state]="carState"
-        class="position-fixed bg-primary carrinho-side"></app-carrinho>
+    <app-carrinho (fechaCarrinho)="closeCart($event)" (reserva)="mudarModalReserva($event)" *ngIf="carState == 'aberto'"
+        class="position-fixed bg-primary cart carrinho-side"></app-carrinho>
     <app-modal-filtro (fechaModal)="modalOpen($event)" (filtragem)="executarFiltroEspecializado($event)" *ngIf="modal"
         style="z-index: 2;" class="fundo">
     </app-modal-filtro>

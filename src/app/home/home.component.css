@@ -30,6 +30,10 @@
     margin-left: 5px;
 }
 
+.cart {
+    transition: width 2s, height 4s;
+}
+
 .bola-carrinho {
     display: flex;
     justify-content: center;
@@ -182,7 +186,7 @@ p {
     display: flex;
     justify-content: end;
     align-items: center;
-    
+
 }
 
 
@@ -272,6 +276,7 @@ select {
 }
 
 
+
 .body {
     display: flex;
     justify-content: end;
@@ -285,11 +290,19 @@ body {
     width: 150vw;
 }
 
-::ng-deep .mat-paginator-container{
+::ng-deep .mat-paginator-container {
     background-color: #F8F9FA !important;
 }
 
-.mat-paginator{
+.mat-paginator {
     padding: 0px !important;
     margin-top: 10px;
+}
+
+.icone:hover{
+    background-color: #224863;
+}
+
+.botoes:hover{
+    background-color: #224863;
 }

@@ -33,11 +33,13 @@
 
 }
 .DivWithScroll{
-    height:330px;
+    height:70vh;
     overflow:scroll;
     overflow-x:hidden;
 
 }
+
+
 
 #style-2::-webkit-scrollbar-track
 {

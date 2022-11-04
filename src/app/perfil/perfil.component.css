@@ -1,8 +1,8 @@
 i{
     border-radius: 50%;
     border: 2px solid black;
-    width: 16vw;
-    height: 16vw;
+    width: 13vw;
+    height: 13vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,9 +30,10 @@ i{
 }
 
 .esquerda{
+    display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 3vw;
+    margin-bottom: 3vh;
 }
 
 .direita{
@@ -47,8 +48,22 @@ i{
     align-items: center;
 }
 
-button{
+.btn-conf{
     background-color: #275577;
+    border: transparent;
+    color: white; 
+    height: 5vh;
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.button{
+    background-color: #275577;
+    font-size: 1rem !important;
     border: transparent;
     color: white; 
     margin: 10px;
@@ -114,4 +129,8 @@ position: absolute;
  padding-left: 7vw;
  padding-right: 7vw;
  justify-content: center;
+}
+
+button:hover{
+    background-color: #224863;
 }

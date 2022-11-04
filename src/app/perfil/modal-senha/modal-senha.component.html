@@ -4,21 +4,18 @@
             Redefinir Senha
         </div>
     </div>
-    <span>Senha atual:</span>
-    <div class="control">
-        <input [(ngModel)]="AtualSenha" class="input" type="password">
-        <i style="font-size: 24px;" class="bi bi-eye-slash"></i>
-    </div>
-    <span>Nova senha:</span>
-    <div class="control">
-        <input [(ngModel)]="novaSenha" class="input" type="password">
-        <i style="font-size: 24px;" class="bi bi-eye-slash"></i>
-    </div>
-    <span>Digite novamente sua senha:</span>
-    <div class="control">
-        <input [(ngModel)]="confirmaNovaSenha" class="input" type="password">
-        <i style="font-size: 24px;" class="bi bi-eye-slash"></i>
-    </div>
+    <mat-form-field class="example-full-width" appearance="fill" style="margin-top: 1.5vh;">
+        <mat-label>Senha Atual:</mat-label>
+        <input type="tel" placeholder="*****-****" matInput >
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Nova senha:</mat-label>
+        <input type="tel" placeholder="*****-****" matInput >
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Repita sua nova senha:</mat-label>
+        <input type="tel" placeholder="*****-****" matInput >
+      </mat-form-field>
     <div class="botoes"> 
         <button (click)="fecharModal()  " class="botao1">Cancelar</button>
         <button (click)="mudarSenha()" class="botao2">Confirmar</button>
