@@ -43,7 +43,7 @@
                     <mat-date-range-picker #picker></mat-date-range-picker>
                   </mat-form-field>
             </div>
-            <div *ngIf="user == 'atendente'"  class="d-flex flex-column align-items-center">
+            <div *ngIf="user == 'Atendente' || user == 'Supervisor' || user == 'admin'"  class="d-flex flex-column align-items-center">
                 <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>Professor</mat-label>
                     <input type="text"
