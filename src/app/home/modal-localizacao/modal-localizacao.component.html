@@ -7,27 +7,16 @@
                     <th scope="col" mat-sort-header="codigo">#</th>
                     <th scope="col" mat-sort-header="nome">Nome</th>
                     <th scope="col" mat-sort-header="quantidade">Remover</th>
-                    <th scope="col" mat-sort-header="quantidade">Editar</th>
+                    <th scope="col" mat-sort-header="quantidade" *ngIf="modo == 'adicionar'">Editar</th>
+                    <th scope="col" mat-sort-header="quantidade" *ngIf="modo == 'editar'">Adicionar</th>
                 </tr>
             </thead>
             <tbody>
-                <tr style="cursor:pointer">
-                    <th>1</th>
-                    <td>Armário Esquerdo</td>
-                    <td><i class="bi bi-trash"></i></td>
-                    <td><i class="bi bi-pen"></i></td>
-                </tr>
-                <tr style="cursor:pointer">
-                    <th>1</th>
-                    <td>Armário Esquerdo</td>
-                    <td><i class="bi bi-trash"></i></td>
-                    <td><i class="bi bi-pen"></i></td>
-                </tr>
-                <tr style="cursor:pointer">
-                    <th>1</th>
-                    <td>Armário Esquerdo</td>
-                    <td><i class="bi bi-trash"></i></td>
-                    <td><i class="bi bi-pen"></i></td>
+                <tr style="cursor:pointer" *ngFor="let localizacao of localidades">
+                    <th>{{localizacao.codigo}}</th>
+                    <td>{{localizacao.nome}}</td>
+                    <td (click)="removerLocalizacao(localizacao.codigo)"><i class="bi bi-trash"></i></td>
+                    <td (click)="mudarModo()"><i class="bi bi-pen"></i></td>
                 </tr>
             </tbody>
         </table>
@@ -36,9 +25,9 @@
             <h6 *ngIf="modo == 'editar'">Editar</h6>
             <mat-form-field class="example-full-width" appearance="fill" style="width: 80%;">
                 <mat-label>Localizações</mat-label>
-                <input type="text" [(ngModel)]="nomeLocalizacao" matInput placeholder="Ex. Material Elétrico" value="Sushi">
+                <input type="text" [(ngModel)]="nomeLocalizacao" matInput placeholder="Ex. Armário Esquerdo" value="Sushi">
             </mat-form-field>
             <button *ngIf="modo == 'editar'" class="btn btn-primary">Editar</button>
-            <button *ngIf="modo == 'adicionar'" class="btn btn-primary">Adicionar</button>
+            <button *ngIf="modo == 'adicionar'" (click)="adicionarLocalizacao()" class="btn btn-primary">Adicionar</button>
         </div>
     </div>

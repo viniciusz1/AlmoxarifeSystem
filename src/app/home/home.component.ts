@@ -58,7 +58,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   modelChanged = new Subject<string>();
   pesquisaProduto = "";
   lengthProudutos = 0
-  acesso = false
+  acesso = true
   ngOnInit(): void {
 
     this.router.params.subscribe(params => {
@@ -74,9 +74,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.car.tamanhoCarrinho.subscribe(
       (e) => this.numeroCarrinho = e
     )
+
     if(localStorage.getItem("cadeira") == "Professor"){
-      this.acesso == true
+      this.acesso = false
     }
+    
   }
 
   private _normalizeValue(value: string): string {

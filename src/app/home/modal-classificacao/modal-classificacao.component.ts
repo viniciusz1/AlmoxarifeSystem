@@ -9,7 +9,7 @@ export class ModalClassificacaoComponent implements OnInit {
 
   constructor() { }
 
-  modo = "editar"
+  modo = "adicionar"
   nomeLocalizacao = ""
   ngOnInit(): void {
   }
