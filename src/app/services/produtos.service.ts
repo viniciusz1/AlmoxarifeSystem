@@ -17,9 +17,6 @@ export class ProdutosService {
     return this.http.get<number>('http://localhost:8080/produtos/tamanho')
   }
 
-  getAllLocalizacoes() {
-    return this.http.get<Localidade[]>('http://localhost:8080/localizacao')
-  }
 
   getListaProdutos(page: number, size: number, search: string, order: string) {
     let params = new HttpParams()
@@ -42,21 +39,13 @@ export class ProdutosService {
     return this.http.get<Produto>(url)
   }
   addProduto(produto: Produto) {
-    // this.getAllLocalizacoes()
-    //   .subscribe(e => {
-    //     for (let i of e) {
-    //       if (i.codigo == produto.codigo) {
-    //       }
-    //     }
-    //   }
-    //   )
-    let localidades = []
-
+    console.log("aaa")
+    console.log(produto.imagem)
     return this.http.post('http://localhost:8080/produtos', {
       "nome": produto.nome,
       "quantidadeTotal": produto.quantidadeTotal,
-      // "classificacao": produto.classificacao,
-      "localizacoes": produto.localidade,
+      "classificacao": produto.classificacao,
+      "localizacoes": produto.localizacoes,
       "opcaoUso": produto.opcaoUso,
       "descricao": produto.descricao,
       // "imagem": produto.imagem
@@ -75,7 +64,7 @@ export class ProdutosService {
       "quantidadeTotal": produto.quantidadeTotal,
       "quantidadeReservada": produto.quantidadeReservada,
       "classificacao": produto.classificacao,
-      "localidade": produto.localidade,
+      "localidade": produto.localizacoes,
       "opcaoUso": produto.opcaoUso,
       "descricao": produto.descricao,
       "imagem": produto.imagem

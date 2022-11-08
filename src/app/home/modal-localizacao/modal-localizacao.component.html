@@ -16,7 +16,8 @@
                     <th>{{localizacao.codigo}}</th>
                     <td>{{localizacao.nome}}</td>
                     <td (click)="removerLocalizacao(localizacao.codigo)"><i class="bi bi-trash"></i></td>
-                    <td (click)="mudarModo()"><i class="bi bi-pen"></i></td>
+                    <td *ngIf="modo == 'adicionar'" (click)="mudarModo(localizacao)"><i class="bi bi-pen"></i></td>
+                    <td *ngIf="modo == 'editar'" (click)="mudarModo(localizacao)"><i class="bi bi-plus-circle"></i></td>
                 </tr>
             </tbody>
         </table>
@@ -27,7 +28,7 @@
                 <mat-label>Localizações</mat-label>
                 <input type="text" [(ngModel)]="nomeLocalizacao" matInput placeholder="Ex. Armário Esquerdo" value="Sushi">
             </mat-form-field>
-            <button *ngIf="modo == 'editar'" class="btn btn-primary">Editar</button>
+            <button *ngIf="modo == 'editar'" (click)="editarLocalizacao()" class="btn btn-primary">Editar</button>
             <button *ngIf="modo == 'adicionar'" (click)="adicionarLocalizacao()" class="btn btn-primary">Adicionar</button>
         </div>
     </div>

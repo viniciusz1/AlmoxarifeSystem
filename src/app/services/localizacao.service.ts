@@ -24,5 +24,12 @@ export class LocalizacaoService {
         return this.http.delete('http://localhost:8080/localizacao/'+ codigo)
     }
 
+    putLocalizacao(localidade: Localidade) {
+        return this.http.put('http://localhost:8080/localizacao', {
+            "nome": localidade.nome,
+            "codigo": localidade.codigo
+        })
+    }
+
 }
 

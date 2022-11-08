@@ -4,6 +4,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Produto } from 'src/app/shared/produto.model';
 import Swal from 'sweetalert2';
 import { Sort } from '@angular/material/sort';
+import { Classificacao } from 'src/app/shared/classificacao.model';
 
 @Component({
   selector: 'app-produto-lista',
@@ -50,8 +51,8 @@ export class ProdutoListaComponent implements OnInit {
   adicionarCarrinho(index: number) {
     this.carrinhoService.addProduto(new Produto(this.listaProdutos[index].nome as string,
       this.listaProdutos[index].quantidadeTotal as number,
-      this.listaProdutos[index].classificacao as string,
-      this.listaProdutos[index].localidade!,
+      this.listaProdutos[index].classificacao as Classificacao,
+      this.listaProdutos[index].localizacoes!,
       this.listaProdutos[index].opcaoUso as string,
       this.listaProdutos[index].descricao as string,
       this.listaProdutos[index].codigo as number,

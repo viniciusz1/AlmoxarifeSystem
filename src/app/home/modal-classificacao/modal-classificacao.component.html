@@ -7,27 +7,17 @@
                     <th scope="col" mat-sort-header="codigo">#</th>
                     <th scope="col" mat-sort-header="nome">Nome</th>
                     <th scope="col" mat-sort-header="quantidade">Remover</th>
-                    <th scope="col" mat-sort-header="quantidade">Editar</th>
+                    <th scope="col" mat-sort-header="quantidade" *ngIf="modo == 'adicionar'">Editar</th>
+                    <th scope="col" mat-sort-header="quantidade" *ngIf="modo == 'editar'">Adicionar</th>
                 </tr>
             </thead>
             <tbody>
-                <tr style="cursor:pointer">
-                    <th>1</th>
-                    <td>Material Elétrico</td>
-                    <td><i class="bi bi-trash"></i></td>
-                    <td><i class="bi bi-pen"></i></td>
-                </tr>
-                <tr style="cursor:pointer">
-                    <th>1</th>
-                    <td>Armário Esquerdo</td>
-                    <td><i class="bi bi-trash"></i></td>
-                    <td><i class="bi bi-pen"></i></td>
-                </tr>
-                <tr style="cursor:pointer">
-                    <th>1</th>
-                    <td>Armário Esquerdo</td>
-                    <td><i class="bi bi-trash"></i></td>
-                    <td><i class="bi bi-pen"></i></td>
+                <tr style="cursor:pointer" *ngFor="let classificacao of classificacoes">
+                    <th>{{classificacao.codigo}}</th>
+                    <td>{{classificacao.nome}}</td>
+                    <td (click)="removerClassificacao(classificacao.codigo)"><i class="bi bi-trash"></i></td>
+                    <td *ngIf="modo == 'adicionar'" (click)="mudarModo(classificacao)"><i class="bi bi-pen"></i></td>
+                    <td *ngIf="modo == 'editar'" (click)="mudarModo(classificacao)"><i class="bi bi-plus-circle"></i></td>
                 </tr>
             </tbody>
         </table>
@@ -36,9 +26,9 @@
             <h6 *ngIf="modo == 'editar'">Editar</h6>
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Classificações</mat-label>
-                <input type="text" [(ngModel)]="nomeLocalizacao" matInput placeholder="Ex. Material Elétrico" value="Sushi">
+                <input type="text" [(ngModel)]="nomeClassificacao" matInput placeholder="Ex. Material Elétrico" value="Sushi">
             </mat-form-field>
-            <button *ngIf="modo == 'editar'" class="btn btn-primary">Editar</button>
-            <button *ngIf="modo == 'adicionar'" class="btn btn-primary">Adicionar</button>
+            <button *ngIf="modo == 'editar'" (click)="editarClassificacao()" class="btn btn-primary">Editar</button>
+            <button *ngIf="modo == 'adicionar'"(click)="adicionarClassificacao()" class="btn btn-primary">Adicionar</button>
         </div>
     </div>

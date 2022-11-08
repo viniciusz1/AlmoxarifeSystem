@@ -53,11 +53,19 @@
             <input [disabled]="disabledQuantidade" type="text" [(ngModel)]="quantidade" matInput placeholder="Ex. 15"
               value="Sushi">
           </mat-form-field>
-          <div class="d-flex align-items-center justify-content-between ">
-            <mat-form-field class="example-full-width" appearance="fill" style="width: 80%;">
+          <div class="d-flex align-items-center justify-content-between">
+            <mat-form-field class="example-full-width" appearance="fill" style="width: 80%;" >
               <mat-label>Classificação</mat-label>
-              <input [disabled]="disabled" type="text" [(ngModel)]="classificacao" matInput
-                placeholder="Ex. Material Elétrico" value="Sushi">
+              <input *ngIf="!disabled" matInput type="text"
+                placeholder="Ex. Material Elétrico" [formControl]="classificadaCtrl"
+                [matAutocomplete]="auto2">
+                <input *ngIf="disabled" [disabled]="disabled" matInput [(ngModel)] = "classificacao">
+
+                <mat-autocomplete #auto2="matAutocomplete" (optionSelected)="selectedClasse($event)" >
+                  <mat-option [disabled]="disabled" *ngFor="let classe of allClassificacoes" [value]="classe">
+                    {{classe.nome}}
+                  </mat-option>
+                </mat-autocomplete>
             </mat-form-field>
             <button class="btn btn-primary" (click)="abrirModalClassificacao()" [disabled]="disabled">+</button>
           </div>
