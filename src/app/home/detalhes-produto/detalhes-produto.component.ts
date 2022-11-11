@@ -3,7 +3,7 @@ import { ModalLocalizacaoComponent } from './../modal-localizacao/modal-localiza
 import { Localidade } from './../../shared/localidade.model';
 import { map } from 'rxjs/operators';
 import { FormControl } from '@angular/forms';
-import { COMMA, ENTER } from '@angular/cdk/keycodes';
+import { COMMA, ENTER, K } from '@angular/cdk/keycodes';
 import { Observable, startWith } from 'rxjs';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Produto } from 'src/app/shared/produto.model';
@@ -18,6 +18,7 @@ import { Dialog } from '@angular/cdk/dialog';
 import { LocalizacaoService } from 'src/app/services/localizacao.service';
 import { ClassificacaoService } from 'src/app/services/classificacao.service';
 import { Classificacao } from 'src/app/shared/classificacao.model';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-detalhes-produto',
@@ -48,7 +49,8 @@ export class DetalhesProdutoComponent implements OnInit {
     private dialog: MatDialog,
     private _snackBar: MatSnackBar,
     private local: LocalizacaoService,
-    private classe: ClassificacaoService
+    private classe: ClassificacaoService,
+    private http: HttpClient
     ) {
       if(this.disabled){
         this.classificadaCtrl.disabled;
@@ -126,6 +128,7 @@ export class DetalhesProdutoComponent implements OnInit {
   classificadas: Classificacao[] = [];
   allClassificacoes: Classificacao[] = [];
   classificacao?= "";
+  testeImage: File | undefined = undefined;
 
   @ViewChild('fruitInput') fruitInput: ElementRef<HTMLInputElement> = {} as ElementRef;;
 
@@ -188,25 +191,54 @@ export class DetalhesProdutoComponent implements OnInit {
 
   onSubmit() {
     if (this.modo == "cadastrar") {
-      console.log(this.prod.addProduto(
-        new Produto(this.nome as string,
-          this.quantidade as number,
-          this.allClassificacoes.find(e => e.nome == this.classificadaCtrl.value as string) as Classificacao,
-          this.localidades,
-          this.opcaoUso as string,
-          this.descricao as string,
-          0))
-        .subscribe({
-          next(e) {
-            console.log(e)
-          },
-          error(err) {
-            console.log(err)
-          }
-        }
-        )
-      )
-      this.openSnackBar("Produto Adicionado com sucesso!", "ok")
+      console.log(this.testeImage)
+      let obj:FormData = new FormData()
+      // obj.append("imagem", this.testeImage as File)
+      
+      
+      // img.set("nome", this.nome as)
+      //   "quantidadeTotal": this.quantidade,
+      //   "classificacao": this.allClassificacoes.find(e => e.nome == this.classificadaCtrl.value as string) as Classificacao,
+      //   "localizacoes": this.localidades,
+      //   "opcaoUso": this.opcaoUso,
+      //   "descricao": this.descricao,
+      // })
+      // obj.set("nome", JSON.stringify(this.nome))
+      // obj.set("quantidadeTotal", JSON.stringify(this.quantidade))
+      // obj.set("classificacao", JSON.stringify(this.allClassificacoes.find(e => e.nome == this.classificadaCtrl.value as string)))
+      // obj.set("localizacoes",JSON.stringify(this.localidades))
+      // obj.set("opcaoUso", JSON.stringify(this.opcaoUso))
+      // obj.set("descricao", JSON.stringify(this.descricao))
+
+      // console.log(obj)
+
+      let prod = {"nome": this.nome, "quantidadeTotal": this.quantidade, "classificacao": this.allClassificacoes.find(e => e.nome == this.classificadaCtrl.value),
+                  "localizacoes": this.localidades, "opcaoUso": this.opcaoUso, "descricao": this.descricao};
+      // let dto = {"produto": produtoObj,"imagem": imagemObj}
+      obj.append('produto', JSON.stringify(this.prod));
+      obj.append('imagem', new Blob([JSON.stringify(this.testeImage)], { type: "application/json" }));
+      this.http.post('http://localhost:8080/produtos',  obj)
+      .subscribe(e => console.log(e))
+      // console.log(this.prod.addProduto(
+      //   new Produto(this.nome as string,
+      //     this.quantidade as number,
+      //     this.allClassificacoes.find(e => e.nome == this.classificadaCtrl.value as string) as Classificacao,
+      //     this.localidades,
+      //     this.opcaoUso as string,
+      //     this.descricao as string,
+      //     0))
+      //   .subscribe({
+      //     next(e) {
+      //       console.log(e)
+      //     },
+      //     error(err) {
+      //       console.log(err)
+      //     }
+      //   }
+      //   )
+      // )
+      // this.openSnackBar("Produto Adicionado com sucesso!", "ok")
+
     } else if (this.modo == "editar") {
       this.prod.changeProduto(new Produto(this.nome as string,
         this.quantidade as number,
@@ -223,16 +255,14 @@ export class DetalhesProdutoComponent implements OnInit {
       // this.router.navigate(['/home/produtos'])
     this.openSnackBar("Produto Editado com sucesso!", "ok")
     }
-    this.router.navigate(['/home'])
+   // this.router.navigate(['/home'])
 
   }
 
 
-
   public upload(event: Event): void {
     let list = (event.target as HTMLInputElement).files?.item(0)
-    const urlToBlob = window.URL.createObjectURL(list as Blob)
-    this.imagem = this.sanitizer.bypassSecurityTrustResourceUrl(urlToBlob);
+    this.testeImage = list as File;
   }
   teste() {
 
