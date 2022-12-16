@@ -306,3 +306,7 @@ body {
 .botoes:hover{
     background-color: #224863;
 }
+
+i:hover{
+    opacity: 50% !important;
+}
