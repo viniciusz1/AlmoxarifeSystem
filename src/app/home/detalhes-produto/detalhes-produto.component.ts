@@ -2,7 +2,7 @@ import { ModalClassificacaoComponent } from './../modal-classificacao/modal-clas
 import { ModalLocalizacaoComponent } from './../modal-localizacao/modal-localizacao.component';
 import { Localidade } from './../../shared/localidade.model';
 import { map } from 'rxjs/operators';
-import { FormControl } from '@angular/forms';
+import { FormBuilder, FormControl } from '@angular/forms';
 import { COMMA, ENTER, K } from '@angular/cdk/keycodes';
 import { Observable, startWith } from 'rxjs';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
@@ -128,7 +128,7 @@ export class DetalhesProdutoComponent implements OnInit {
   classificadas: Classificacao[] = [];
   allClassificacoes: Classificacao[] = [];
   classificacao?= "";
-  testeImage: FileList | undefined = undefined;
+  testeImage: File | undefined = undefined;
 
   @ViewChild('fruitInput') fruitInput: ElementRef<HTMLInputElement> = {} as ElementRef;;
 
@@ -191,16 +191,21 @@ export class DetalhesProdutoComponent implements OnInit {
 
   onSubmit() {
     if (this.modo == "cadastrar") {
-      const formData: FormData = new FormData();
-      formData.append('file',this.testeImage?.item(0) as Blob);
-      formData.append('nome', this.nome as string);
-      formData.append('quantidadeTotal', this.quantidade?.toString() as string);
-      formData.append('classificacao', JSON.stringify({'codigo': 1, 'nome': 'rtwe'}));
-      formData.append('localizacoes', JSON.stringify(this.localidades));
-      formData.append('opcaoUso', this.opcaoUso as string);
-      formData.append('descricao', this.descricao as string);
-      console.log(formData.getAll('classificacao'))
-      this.http.post("http://localhost:8080/produtos", formData)
+      let meuform = {
+        'nome': this.nome as string,
+        'quantidadeTotal': this.quantidade?.toString() as string,
+        'classificacao': {'codigo': 1, 'nome': 'rtwe'},
+        'localizacoes': this.localidades,
+        'opcaoUso': this.opcaoUso as string,
+        'descricao': this.descricao as string
+      }
+      let form2Data: FormData = new FormData();
+      form2Data.append('imagem', this.testeImage as Blob, this.testeImage?.name);
+      form2Data.append('produto', JSON.stringify(meuform))
+      console.log(form2Data.getAll('imagem'))
+      console.log(form2Data.getAll('produto'))
+      console.log(this.testeImage as Blob)
+      this.http.post("http://localhost:8080/produtos", form2Data)
       .subscribe({
         next: e => {
           console.log(e)
@@ -231,8 +236,8 @@ export class DetalhesProdutoComponent implements OnInit {
 
 
   public upload(event: Event): void {
-    let list = (event.target as HTMLInputElement).files
-    this.testeImage = list as FileList;
+    const file = new FileReader
+    this.testeImage = (event.target as HTMLInputElement).files?.item(0) as File
   }
   teste() {
 
