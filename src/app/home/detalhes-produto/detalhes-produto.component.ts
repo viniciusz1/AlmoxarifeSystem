@@ -128,7 +128,7 @@ export class DetalhesProdutoComponent implements OnInit {
   classificadas: Classificacao[] = [];
   allClassificacoes: Classificacao[] = [];
   classificacao?= "";
-  testeImage: File | undefined = undefined;
+  testeImage: FileList | undefined = undefined;
 
   @ViewChild('fruitInput') fruitInput: ElementRef<HTMLInputElement> = {} as ElementRef;;
 
@@ -161,7 +161,7 @@ export class DetalhesProdutoComponent implements OnInit {
         return
       }
       this.localidades.push(local);
-    } 
+    }
     this.fruitInput.nativeElement.value = '';
     this.localidadeCtrl.setValue(null);
   }
@@ -176,8 +176,8 @@ export class DetalhesProdutoComponent implements OnInit {
       if(this.verificarExistenciaClasse(classif)){
         return
       }
-    } 
-    
+    }
+
     this.classificadaCtrl.setValue(event.option.value.nome);
   }
 
@@ -186,59 +186,29 @@ export class DetalhesProdutoComponent implements OnInit {
     return this.allLocalidades.filter(local => local.nome?.toLowerCase().includes(filterValue));
   }
 
-  
+
 
 
   onSubmit() {
     if (this.modo == "cadastrar") {
-      console.log(this.testeImage)
-      let obj:FormData = new FormData()
-      // obj.append("imagem", this.testeImage as File)
-      
-      
-      // img.set("nome", this.nome as)
-      //   "quantidadeTotal": this.quantidade,
-      //   "classificacao": this.allClassificacoes.find(e => e.nome == this.classificadaCtrl.value as string) as Classificacao,
-      //   "localizacoes": this.localidades,
-      //   "opcaoUso": this.opcaoUso,
-      //   "descricao": this.descricao,
-      // })
-      // obj.set("nome", JSON.stringify(this.nome))
-      // obj.set("quantidadeTotal", JSON.stringify(this.quantidade))
-      // obj.set("classificacao", JSON.stringify(this.allClassificacoes.find(e => e.nome == this.classificadaCtrl.value as string)))
-      // obj.set("localizacoes",JSON.stringify(this.localidades))
-      // obj.set("opcaoUso", JSON.stringify(this.opcaoUso))
-      // obj.set("descricao", JSON.stringify(this.descricao))
-
-      // console.log(obj)
-
-      let prod = {"nome": this.nome, "quantidadeTotal": this.quantidade, "classificacao": this.allClassificacoes.find(e => e.nome == this.classificadaCtrl.value),
-                  "localizacoes": this.localidades, "opcaoUso": this.opcaoUso, "descricao": this.descricao};
-      // let dto = {"produto": produtoObj,"imagem": imagemObj}
-      obj.append('produto', JSON.stringify(this.prod));
-      obj.append('imagem', new Blob([JSON.stringify(this.testeImage)], { type: "application/json" }));
-      this.http.post('http://localhost:8080/produtos',  obj)
-      .subscribe(e => console.log(e))
-      // console.log(this.prod.addProduto(
-      //   new Produto(this.nome as string,
-      //     this.quantidade as number,
-      //     this.allClassificacoes.find(e => e.nome == this.classificadaCtrl.value as string) as Classificacao,
-      //     this.localidades,
-      //     this.opcaoUso as string,
-      //     this.descricao as string,
-      //     0))
-      //   .subscribe({
-      //     next(e) {
-      //       console.log(e)
-      //     },
-      //     error(err) {
-      //       console.log(err)
-      //     }
-      //   }
-      //   )
-      // )
-      // this.openSnackBar("Produto Adicionado com sucesso!", "ok")
-
+      const formData: FormData = new FormData();
+      formData.append('file',this.testeImage?.item(0) as Blob);
+      formData.append('nome', this.nome as string);
+      formData.append('quantidadeTotal', this.quantidade?.toString() as string);
+      formData.append('classificacao', JSON.stringify({'codigo': 1, 'nome': 'rtwe'}));
+      formData.append('localizacoes', JSON.stringify(this.localidades));
+      formData.append('opcaoUso', this.opcaoUso as string);
+      formData.append('descricao', this.descricao as string);
+      console.log(formData.getAll('classificacao'))
+      this.http.post("http://localhost:8080/produtos", formData)
+      .subscribe({
+        next: e => {
+          console.log(e)
+        },
+        error: e => {
+          console.error(e)
+        }
+      })
     } else if (this.modo == "editar") {
       this.prod.changeProduto(new Produto(this.nome as string,
         this.quantidade as number,
@@ -261,8 +231,8 @@ export class DetalhesProdutoComponent implements OnInit {
 
 
   public upload(event: Event): void {
-    let list = (event.target as HTMLInputElement).files?.item(0)
-    this.testeImage = list as File;
+    let list = (event.target as HTMLInputElement).files
+    this.testeImage = list as FileList;
   }
   teste() {
 
@@ -294,7 +264,7 @@ export class DetalhesProdutoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
+
     this.route.url.subscribe(
       url => {
         if (url[0].path == "cadastrar-produto") {
