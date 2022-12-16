@@ -1,38 +1,40 @@
-<div class="index border d-flex 
-p-1 bg-light po" style="transition:2s; height: 91vh; width: 400px !important;">
-
-
-    <div class="container">
-        <div class="row justify-content-end">
-            <div class="col-2">
-                <i role="button" (click)="clicouModal()" class="bi bi-x-lg"></i>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-12 ">
-                <h5 class="d-flex justify-content-center">Cesta da reserva</h5>
-                <hr>
-            </div>
-        </div>
-        <div *ngIf="carrinhoVazio == false" class="row DivWithScroll" id="style-2">
-            <div *ngFor="let produto of listaCarrinho; let i = index" style="height: 150px;" class="d-flex justify-content-center align-items-center">
-                <i role="button" (click)="lixo(i)" class="bi bi-trash-fill col-1" ></i>
-                <app-produto [carrinho]="carrinho" [produto]="produto" class="col-9"></app-produto>
-                <div class="div col-2 adicionar" >
-                    <i  role="button" (click)="changeQuantidade('add', listaCarrinho[i])" class="bi bi-plus-lg"></i>
-                    <input [(ngModel)]="listaCarrinho[i].qtdCart" type="text" 
-                    class="form-control" style="padding: 5px 0 5px 7px;width: 40px;">
-                    <i  role="button" (click)="changeQuantidade('remove', listaCarrinho[i])" class="bi bi-dash-lg"></i>
+<nav >
+    <div class="index border d-flex
+    p-1 bg-light po" style="transition:2s; height: 91vh; width: 400px !important;">
+    
+    
+        <div class="container">
+            <div class="row justify-content-end">
+                <div class="col-2">
+                    <i role="button" (click)="clicouModal()" class="bi bi-x-lg"></i>
                 </div>
             </div>
+            <div class="row justify-content-center">
+                <div class="col-12 ">
+                    <h5 class="d-flex justify-content-center">Cesta da reserva</h5>
+                    <hr>
+                </div>
+            </div>
+            <div *ngIf="carrinhoVazio == false" class="row DivWithScroll" id="style-2">
+                <div *ngFor="let produto of listaCarrinho; let i = index" style="height: 150px;" class="d-flex justify-content-center align-items-center">
+                    <i role="button" (click)="lixo(i)" class="bi bi-trash-fill col-1" ></i>
+                    <app-produto [carrinho]="carrinho" [produto]="produto" class="col-9"></app-produto>
+                    <div class="div col-2 adicionar" >
+                        <i  role="button" (click)="changeQuantidade('add', listaCarrinho[i])" class="bi bi-plus-lg"></i>
+                        <input [(ngModel)]="listaCarrinho[i].qtdCart" type="text" 
+                        class="form-control" style="padding: 5px 0 5px 7px;width: 40px;">
+                        <i  role="button" (click)="changeQuantidade('remove', listaCarrinho[i])" class="bi bi-dash-lg"></i>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="carrinhoVazio == true" class="row DivWithScroll" style="display: flex; align-items:center; justify-content:center">
+                Adicione um item a cesta
+            </div>
+            <div  *ngIf="carrinhoVazio == false" class="row justify-content-center mt-5">
+                <button class="btn btn-primary w-50" (click)="abreReserva()">Realizar Pedido</button>
+            </div>
         </div>
-        <div *ngIf="carrinhoVazio == true" class="row DivWithScroll" style="display: flex; align-items:center; justify-content:center">
-            Adicione um item a cesta
-        </div>
-        <div  *ngIf="carrinhoVazio == false" class="row justify-content-center mt-5">
-            <button class="btn btn-primary w-50" (click)="abreReserva()">Realizar Pedido</button>
-        </div>
+    
+    
     </div>
-
-
-</div>
+</nav>
