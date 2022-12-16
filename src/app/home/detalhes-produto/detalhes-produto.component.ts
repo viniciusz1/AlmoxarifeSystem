@@ -3,7 +3,7 @@ import { ModalLocalizacaoComponent } from './../modal-localizacao/modal-localiza
 import { Localidade } from './../../shared/localidade.model';
 import { map } from 'rxjs/operators';
 import { FormControl } from '@angular/forms';
-import { COMMA, ENTER } from '@angular/cdk/keycodes';
+import { COMMA, ENTER, K } from '@angular/cdk/keycodes';
 import { Observable, startWith } from 'rxjs';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Produto } from 'src/app/shared/produto.model';
@@ -14,6 +14,11 @@ import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { MatDialog } from '@angular/material/dialog';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { Dialog } from '@angular/cdk/dialog';
+import { LocalizacaoService } from 'src/app/services/localizacao.service';
+import { ClassificacaoService } from 'src/app/services/classificacao.service';
+import { Classificacao } from 'src/app/shared/classificacao.model';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-detalhes-produto',
@@ -33,6 +38,8 @@ export class DetalhesProdutoComponent implements OnInit {
   modo = ""
   user = "supervisor"
 
+  Dialog: MatDialog | undefined = undefined;
+
 
   constructor(
     private prod: ProdutosService,
@@ -40,15 +47,56 @@ export class DetalhesProdutoComponent implements OnInit {
     private route: ActivatedRoute,
     private sanitizer: DomSanitizer,
     private dialog: MatDialog,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private local: LocalizacaoService,
+    private classe: ClassificacaoService,
+    private http: HttpClient
     ) {
-      this.prod.getAllLocalizacoes()
+      if(this.disabled){
+        this.classificadaCtrl.disabled;
+      }
+      this.local.getAllLocalizacoes()
       .subscribe({
         next: e => {
           for(let i of e){
             this.allLocalidades.push(i)
           }
         }
+      })
+
+      this.Dialog = dialog
+      this.Dialog.afterAllClosed.subscribe(e => {
+        this.local.getAllLocalizacoes()
+      .subscribe({
+        next: e => {
+          this.allLocalidades = [];
+          for(let i of e){
+            this.allLocalidades.push(i)
+          }
+        }
+      })
+      })
+
+      this.classe.getAllClassificacoes()
+      .subscribe({
+        next: e => {
+          for(let i of e){
+            this.allClassificacoes.push(i)
+          }
+        }
+      })
+
+      this.Dialog = dialog
+      this.Dialog.afterAllClosed.subscribe(e => {
+        this.classe.getAllClassificacoes()
+      .subscribe({
+        next: e => {
+          this.allClassificacoes = [];
+          for(let i of e){
+            this.allClassificacoes.push(i)
+          }
+        }
+      })
       })
 
     this.filteredLocalidade = this.localidadeCtrl.valueChanges.pipe(
@@ -75,6 +123,12 @@ export class DetalhesProdutoComponent implements OnInit {
   filteredLocalidade: Observable<Localidade[]>;
   localidades: Localidade[] = [];
   allLocalidades: Localidade[] = [];
+
+  classificadaCtrl = new FormControl('');
+  classificadas: Classificacao[] = [];
+  allClassificacoes: Classificacao[] = [];
+  classificacao?= "";
+  testeImage: File | undefined = undefined;
 
   @ViewChild('fruitInput') fruitInput: ElementRef<HTMLInputElement> = {} as ElementRef;;
 
@@ -112,41 +166,83 @@ export class DetalhesProdutoComponent implements OnInit {
     this.localidadeCtrl.setValue(null);
   }
 
-  private _filter(value: string): Localidade[] {
-    const filterValue = value.toLowerCase();
-    return this.allLocalidades.filter(local => local.nome.toLowerCase().includes(filterValue));
+  verificarExistenciaClasse(classif: Classificacao){
+    return this.classificadas.find(e => e.nome == classif.nome)
   }
 
+  selectedClasse(event: MatAutocompleteSelectedEvent): void {
+    let classif = this.allClassificacoes.find(e => e.nome == event.option.viewValue)
+    if(classif){
+      if(this.verificarExistenciaClasse(classif)){
+        return
+      }
+    } 
+    
+    this.classificadaCtrl.setValue(event.option.value.nome);
+  }
 
+  private _filter(value: string): Localidade[] {
+    const filterValue = value.toLowerCase();
+    return this.allLocalidades.filter(local => local.nome?.toLowerCase().includes(filterValue));
+  }
 
-
+  
 
 
   onSubmit() {
     if (this.modo == "cadastrar") {
-      console.log(this.prod.addProduto(
-        new Produto(this.nome as string,
-          this.quantidade as number,
-          this.classificacao as string,
-          this.localidades,
-          this.opcaoUso as string,
-          this.descricao as string,
-          0))
-        .subscribe({
-          next(e) {
-            console.log(e)
-          },
-          error(err) {
-            console.log(err)
-          }
-        }
-        )
-      )
-      this.openSnackBar("Produto Adicionado com sucesso!", "ok")
+      console.log(this.testeImage)
+      let obj:FormData = new FormData()
+      // obj.append("imagem", this.testeImage as File)
+      
+      
+      // img.set("nome", this.nome as)
+      //   "quantidadeTotal": this.quantidade,
+      //   "classificacao": this.allClassificacoes.find(e => e.nome == this.classificadaCtrl.value as string) as Classificacao,
+      //   "localizacoes": this.localidades,
+      //   "opcaoUso": this.opcaoUso,
+      //   "descricao": this.descricao,
+      // })
+      // obj.set("nome", JSON.stringify(this.nome))
+      // obj.set("quantidadeTotal", JSON.stringify(this.quantidade))
+      // obj.set("classificacao", JSON.stringify(this.allClassificacoes.find(e => e.nome == this.classificadaCtrl.value as string)))
+      // obj.set("localizacoes",JSON.stringify(this.localidades))
+      // obj.set("opcaoUso", JSON.stringify(this.opcaoUso))
+      // obj.set("descricao", JSON.stringify(this.descricao))
+
+      // console.log(obj)
+
+      let prod = {"nome": this.nome, "quantidadeTotal": this.quantidade, "classificacao": this.allClassificacoes.find(e => e.nome == this.classificadaCtrl.value),
+                  "localizacoes": this.localidades, "opcaoUso": this.opcaoUso, "descricao": this.descricao};
+      // let dto = {"produto": produtoObj,"imagem": imagemObj}
+      obj.append('produto', JSON.stringify(this.prod));
+      obj.append('imagem', new Blob([JSON.stringify(this.testeImage)], { type: "application/json" }));
+      this.http.post('http://localhost:8080/produtos',  obj)
+      .subscribe(e => console.log(e))
+      // console.log(this.prod.addProduto(
+      //   new Produto(this.nome as string,
+      //     this.quantidade as number,
+      //     this.allClassificacoes.find(e => e.nome == this.classificadaCtrl.value as string) as Classificacao,
+      //     this.localidades,
+      //     this.opcaoUso as string,
+      //     this.descricao as string,
+      //     0))
+      //   .subscribe({
+      //     next(e) {
+      //       console.log(e)
+      //     },
+      //     error(err) {
+      //       console.log(err)
+      //     }
+      //   }
+      //   )
+      // )
+      // this.openSnackBar("Produto Adicionado com sucesso!", "ok")
+
     } else if (this.modo == "editar") {
       this.prod.changeProduto(new Produto(this.nome as string,
         this.quantidade as number,
-        this.classificacao as string,
+        this.allClassificacoes.find(e => e.nome == this.classificadaCtrl.value as string) as Classificacao,
         this.localidades,
         this.opcaoUso as string,
         this.descricao as string,
@@ -159,16 +255,14 @@ export class DetalhesProdutoComponent implements OnInit {
       // this.router.navigate(['/home/produtos'])
     this.openSnackBar("Produto Editado com sucesso!", "ok")
     }
-    this.router.navigate(['/home'])
+   // this.router.navigate(['/home'])
 
   }
 
 
-
   public upload(event: Event): void {
     let list = (event.target as HTMLInputElement).files?.item(0)
-    const urlToBlob = window.URL.createObjectURL(list as Blob)
-    this.imagem = this.sanitizer.bypassSecurityTrustResourceUrl(urlToBlob);
+    this.testeImage = list as File;
   }
   teste() {
 
@@ -183,16 +277,20 @@ export class DetalhesProdutoComponent implements OnInit {
   opcaoUso?= ''
   nome?= ''
   quantidade?= 0
-  classificacao?= ''
   descricao?= ''
 
   mostrarDados() {
     this.imagem = this.informacoes.imagem
     this.nome = this.informacoes.nome
     this.quantidade = this.informacoes.quantidadeTotal
-    this.classificacao = this.informacoes.classificacao
-    this.opcaoUso = this.informacoes.opcaoUso
+    this.classificacao = this.informacoes.classificacao?.nome
+    if(this.informacoes.opcaoUso == "Descartavel"){
+      this.opcaoUso = "0"
+    }else{
+      this.opcaoUso = "1"
+    }
     this.descricao = this.informacoes.descricao
+    this.localidades = this.informacoes.localizacoes as Localidade[]
   }
 
   ngOnInit(): void {

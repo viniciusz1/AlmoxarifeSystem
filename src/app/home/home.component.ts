@@ -80,6 +80,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       console.log("hehei")
       this.acesso = false
     }
+    
   }
 
 
