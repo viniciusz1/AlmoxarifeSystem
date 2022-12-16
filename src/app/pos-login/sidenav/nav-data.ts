@@ -53,10 +53,10 @@ export const navbarData = [
         label: 'Dashboard',
         notAllowed: ['Professor']
     },
-    {
-        routeLink: '/',
-        icon: 'bi bi-box-arrow-left',
-        label: 'Sair',
-        notAllowed: ['']
-    },
+    // {
+    //     routeLink: '/',
+    //     icon: 'bi bi-box-arrow-left',
+    //     label: 'Sair',
+    //     notAllowed: ['']
+    // },
 ];

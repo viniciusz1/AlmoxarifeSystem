@@ -40,7 +40,7 @@
                             </div>
                         </li>
                         <li style="cursor:pointer" class="nav-item d-flex position-relative">
-                            <i class="bi bi-basket2 cesta" style="font-size: 24px;" (click)="openCart()"></i>
+                            <i class="bi bi-basket2 cesta" style="font-size: 24px;"  (click)="openCart()"></i>
                             <div class="bola-carrinho">{{numeroCarrinho}}</div>
                         </li>
                     </nav>
@@ -77,7 +77,7 @@
 
         </div>
     </div>
-    <app-carrinho (fechaCarrinho)="closeCart($event)" (reserva)="mudarModalReserva($event)" *ngIf="carState == 'aberto'"
+    <app-carrinho @fadeAnimation (fechaCarrinho)="closeCart($event)" (reserva)="mudarModalReserva($event)" *ngIf="carState == 'aberto'"
         class="position-fixed bg-primary cart carrinho-side"></app-carrinho>
     <app-modal-filtro (fechaModal)="modalOpen($event)" (filtragem)="executarFiltroEspecializado($event)" *ngIf="modal"
         style="z-index: 2;" class="fundo">

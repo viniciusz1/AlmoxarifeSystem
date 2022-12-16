@@ -8,11 +8,13 @@ import { AfterViewInit, Component, OnInit, Pipe, ViewChild } from '@angular/core
 import { CarrinhoService } from '../services/carrinho.service';
 import { debounceTime, map } from "rxjs/operators";
 import { MatPaginator, MatPaginatorIntl, PageEvent } from '@angular/material/paginator';
+import { fadeAnimation } from '../shared/app.animation';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  animations: [fadeAnimation]
 })
 export class HomeComponent implements OnInit, AfterViewInit {
   @ViewChild('paginator') paginator: MatPaginator | undefined

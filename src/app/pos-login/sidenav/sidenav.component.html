@@ -7,15 +7,29 @@
   
             <i class="bi bi-x text-light btn2-close" @rotate *ngIf="collapsed" (click)="closeSidenav()"></i>
     </div>
-    <ul class="sidenav-nav">
-        <li class="sidenav-nav-item" *ngFor="let data of navData">
-            <a class="sidenav-nav-link mt-1" *ngIf="verificaUsuario(data)" [routerLink]="[data.routeLink]" routerLinkActive="active"
-                [routerLinkActiveOptions]="{exact: true}">
-                <i class="sidenav-link-icon" [class]="data.icon" routerLinkActive="active-icon" [routerLinkActiveOptions]="{exact: true}"></i>
-                <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed"  routerLinkActive="active-icon" [routerLinkActiveOptions]="{exact: true}">
-                    {{data.label}}
-                </span>
-            </a>
-        </li>
+    <ul class="sidenav-nav" style="display: flex; justify-content: space-between;">
+        <div>
+            <li class="sidenav-nav-item" *ngFor="let data of navData">
+                <a class="sidenav-nav-link mt-1" *ngIf="verificaUsuario(data)" [routerLink]="[data.routeLink]" routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact: true}">
+                    <i class="sidenav-link-icon" [class]="data.icon" routerLinkActive="active-icon" [routerLinkActiveOptions]="{exact: true}"></i>
+                    <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed"  routerLinkActive="active-icon" [routerLinkActiveOptions]="{exact: true}">
+                        {{data.label}}
+                    </span>
+                </a>
+            </li>
+        </div>
+        <div>
+            <li class="sidenav-nav-item">
+                <a class="sidenav-nav-link mt-1"  routerLink="/" routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact: true}">
+                    <i class="sidenav-link-icon bi bi-box-arrow-left" routerLinkActive="active-icon" [routerLinkActiveOptions]="{exact: true}"></i>
+                    <span style="width: 7.5vw;" class="sidenav-link-text" @fadeInOut *ngIf="collapsed"  routerLinkActive="active-icon" [routerLinkActiveOptions]="{exact: true}">
+                        Sair
+                    </span>
+                </a>
+            </li>
+        </div>
     </ul>
 </div>
+
