@@ -202,18 +202,8 @@ export class DetalhesProdutoComponent implements OnInit {
       let form2Data: FormData = new FormData();
       form2Data.append('imagem', this.testeImage as Blob, this.testeImage?.name);
       form2Data.append('produto', JSON.stringify(meuform))
-      console.log(form2Data.getAll('imagem'))
-      console.log(form2Data.getAll('produto'))
-      console.log(this.testeImage as Blob)
-      this.http.post("http://localhost:8080/produtos", form2Data)
-      .subscribe({
-        next: e => {
-          console.log(e)
-        },
-        error: e => {
-          console.error(e)
-        }
-      })
+      this.prod.addProduto(form2Data)
+      .subscribe(e => console.log(e))
     } else if (this.modo == "editar") {
       this.prod.changeProduto(new Produto(this.nome as string,
         this.quantidade as number,
@@ -222,7 +212,7 @@ export class DetalhesProdutoComponent implements OnInit {
         this.opcaoUso as string,
         this.descricao as string,
         this.informacoes.codigo as number,
-        this.imagem as string,
+        this.imagem as File,
         0,
         this.informacoes.quantidadeReservada as number
       ))

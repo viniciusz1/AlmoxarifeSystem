@@ -20,7 +20,7 @@ export class ProdutoListaComponent implements OnInit {
   @Input() tableSize = 0
   @Input() page = 0
   @Input() count = 0
-  
+
   rota = ""
   quantidadeCarrinho = 0
   corCodigo = "275577"
@@ -32,7 +32,7 @@ export class ProdutoListaComponent implements OnInit {
   sortData(sort: Sort) {
     console.log(sort)
   }
-  
+
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.rota = params['id'];
@@ -56,11 +56,11 @@ export class ProdutoListaComponent implements OnInit {
       this.listaProdutos[index].opcaoUso as string,
       this.listaProdutos[index].descricao as string,
       this.listaProdutos[index].codigo as number,
-      this.listaProdutos[index].imagem as string,
+      this.listaProdutos[index].imagem as File,
       this.quantidadeCarrinho as number))
     Swal.fire({
       position: 'bottom-end',
-      imageUrl: this.listaProdutos[index].imagem,
+      imageUrl: 'this.listaProdutos[index].imagem',
       imageHeight: '100px',
       imageWidth: '100px',
       timerProgressBar: true,

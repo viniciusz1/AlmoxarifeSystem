@@ -38,18 +38,8 @@ export class ProdutosService {
     // console.log(codigo)
     return this.http.get<Produto>(url)
   }
-  addProduto(produto: Produto) {
-    console.log("aaa")
-    console.log(produto.imagem)
-    return this.http.post('http://localhost:8080/produtos', {
-      "nome": produto.nome,
-      "quantidadeTotal": produto.quantidadeTotal,
-      "classificacao": produto.classificacao,
-      "localizacoes": produto.localizacoes,
-      "opcaoUso": produto.opcaoUso,
-      "descricao": produto.descricao,
-      // "imagem": produto.imagem
-    })
+  addProduto(form: FormData) {
+    return this.http.post('http://localhost:8080/produtos', form)
   }
 
 

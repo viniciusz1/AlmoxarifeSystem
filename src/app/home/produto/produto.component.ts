@@ -39,12 +39,12 @@ export class ProdutoComponent implements OnInit {
         this.produto.opcaoUso as string,
         this.produto.descricao as string,
         this.produto.codigo as number,
-        this.produto.imagem as string,
+        this.produto.imagem as File,
         this.quantidadeCarrinho as number))
       this.mudarCor();
       Swal.fire({
         position: 'bottom-end',
-        imageUrl: this.produto.imagem,
+        imageUrl: 'https://i.imgur.com/4NZ6uLY.png',
         imageHeight: '100px',
         imageWidth: '100px',
         timerProgressBar: true,

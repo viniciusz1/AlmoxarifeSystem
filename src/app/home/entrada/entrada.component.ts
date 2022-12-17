@@ -42,7 +42,7 @@ export class EntradaComponent implements OnInit {
       .subscribe({
         next: (e) => {
           console.log(e);
-          
+
           this.lista = e;
         }
       });
@@ -60,7 +60,7 @@ export class EntradaComponent implements OnInit {
   novaQuantidade = 0
   pesquisaProduto = ""
   codigo = 0;
-  imagem = ""
+  imagem: File | undefined = undefined
   tiraQuantidade = true
   lengthProdutos = 0
 
@@ -83,7 +83,7 @@ export class EntradaComponent implements OnInit {
   mostrarProduto(codigo: number | undefined) {
     let produto = this.lista.find(e => e.codigo == codigo)
     this.route.navigate(['home/entrada/', codigo])
-    this.imagem = produto?.imagem as string
+    this.imagem = produto?.imagem as File
     this.nomeProduto = produto?.nome as string
     this.estoqueQuantidade = produto?.quantidadeTotal as number
   }
